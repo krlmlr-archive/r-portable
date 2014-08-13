@@ -15,3 +15,13 @@ Function Unpack {
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 }
+
+Function CreateImage {
+    [CmdletBinding()]
+    Param()
+
+    rm -Recurse -Force .\Output
+    md .\Output
+
+    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\Output\R.iso .\Image
+}

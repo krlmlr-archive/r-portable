@@ -9,7 +9,7 @@ Function Unpack {
     [CmdletBinding()]
     Param()
 
-    rm -Recurse -Force .\Image
+    #rm -Recurse -Force .\Image
     md .\Image
     .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe
     mv ".\Image\{app}" .\Image\R
@@ -20,7 +20,7 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
-    rm -Recurse -Force .\Output
+    #rm -Recurse -Force .\Output
     md .\Output
 
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\Output\R.iso .\Image

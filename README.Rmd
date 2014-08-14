@@ -1,0 +1,17 @@
+r-portable
+==========
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+
+A script to create an ISO image that contains everything necessary to build R packages.
+
+Uses (and includes) [innounp](http://innounp.sourceforge.net/) and [.NET DiscUtils](http://discutils.codeplex.com/).
+
+**Download image** [.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) [.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz)
+
+Contents
+--------
+
+```{r}
+sessionInfo()
+knitr::kable(installed.packages())
+```

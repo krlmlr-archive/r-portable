@@ -32,14 +32,20 @@ Function Unpack {
     #rm -Recurse -Force .\Image
     md .\Image
 
+    # R
     .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 
-    #.\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe
-    #mv ".\Image\{app}" .\Image\Rtools
-
+    # R packages devtools and testthat
     Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat }
+
+    # Rtools
+    .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe
+    mv ".\Image\{app}" .\Image\Rtools
+    # Don't seem to need those to build packages -- only to build R
+    rm ".\Image\{code_rhome}" -Recurse
+    rm ".\Image\{code_rhome64}" -Recurse
 }
 
 Function CreateImage {

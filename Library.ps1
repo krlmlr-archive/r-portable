@@ -15,6 +15,19 @@ Function Exec
     }
 }
 
+Function Progress
+{
+    [CmdletBinding()]
+    param (
+        [Parameter(Position=0, Mandatory=0)]
+        [string]$Message = ""
+    )
+
+    $ProgressMessage = '== ' + (Get-Date) + ': ' + $Message
+
+    Write-Host $ProgressMessage -ForegroundColor Magenta
+}
+
 Function Download {
     [CmdletBinding()]
     Param()

@@ -53,4 +53,5 @@ Function CreateImage {
     Param()
 
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+    gzip -k R.iso
 }

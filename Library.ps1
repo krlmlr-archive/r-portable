@@ -68,6 +68,8 @@ Function CreateImage {
 
     Progress "Knitting."
     Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
+
+    Progress "Diffing."
     $DiffOutput = (git diff README.md) | Out-String
     If ($DiffOutput.Length -eq 0) {
         Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow

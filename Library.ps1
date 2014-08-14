@@ -38,7 +38,7 @@ Function Unpack {
     rm .\Image\install_script.iss
 
     # R packages devtools and testthat
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat }
+    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr }
 
     # Rtools
     .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe

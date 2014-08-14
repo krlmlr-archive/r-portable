@@ -63,6 +63,7 @@ Function CreateImage {
     $DiffOutput
 
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+    bash -c 'gzip -c R.iso > R.iso.gz'
 
     Exec { git add README.md }
     Exec { git commit -m "[skip ci] auto-generated README.md" }

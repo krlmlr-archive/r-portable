@@ -53,5 +53,17 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
+    $DiffOutput = (git diff README.md) | Out-String
+    If ($DiffOutput.Length -eq 0) {
+        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
+        Return
+    }
+
+    $DiffOutput
+
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+
+    Exec { git add README.md }
+    Exec { git commit -m "[skip ci] auto-generated README.md" }
 }

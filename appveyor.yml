@@ -24,5 +24,5 @@ deploy:
   container: r-portable
   storage_access_key:
     secure: 58T9IWbnnWbEPR77jBqYSrXfTP3glkvVoWQ2i2wEFa7EJzU2KYLjdjsoNTPnlzxR0dX2Ao4of8jsZAxSJEm5VjQP4wnRBwV6gwY2DilgLF8zkhUHxAz5s9ZA5HgdYeDK
-  folder: $(APPVEYOR_BUILD_VERSION)
+  folder:
   artifact: ISO

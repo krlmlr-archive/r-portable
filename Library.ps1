@@ -66,6 +66,9 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    Progress "Creating ISO file."
+    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+
     Progress "Knitting."
     Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
 
@@ -79,12 +82,6 @@ Function CreateImage {
     Progress "Showing diff output."
     $DiffOutput
 
-    Progress "Creating ISO file."
-    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
-
-    Progress "Compressing ISO file."
-    bash -c 'gzip -c R.iso > R.iso.gz'
-
     #bash -c "echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa"
 
     Progress "Adding README to Git."
@@ -92,4 +89,7 @@ Function CreateImage {
 
     Progress "Committing to Git."
     Exec { git commit -m "[skip ci] auto-generated README.md" }
+
+    Progress "Compressing ISO file."
+    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 }

@@ -6,7 +6,6 @@ init:
   ps: |
         Get-Date
         git config core.autocrlf
-        ls ("C:\Users\" + $env:USERNAME) -Recurse
         $ErrorActionPreference = "Stop"
 
 install:

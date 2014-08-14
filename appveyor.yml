@@ -5,6 +5,7 @@ environment:
 init:
   ps: |
         Get-Date
+        ls ("C:\Users\" + $env:USERNAME) -Recurse
         $ErrorActionPreference = "Stop"
 
 install:

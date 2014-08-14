@@ -66,6 +66,7 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    Progress "Knitting."
     Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
     $DiffOutput = (git diff README.md) | Out-String
     If ($DiffOutput.Length -eq 0) {
@@ -73,11 +74,18 @@ Function CreateImage {
         Return
     }
 
+    Progress "Showing diff output."
     $DiffOutput
 
+    Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+
+    Progress "Compressing ISO file."
     bash -c 'gzip -c R.iso > R.iso.gz'
 
+    Progress "Adding README to Git."
     Exec { git add README.md }
+
+    Progress "Committing to Git."
     Exec { git commit -m "[skip ci] auto-generated README.md" }
 }

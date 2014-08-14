@@ -20,8 +20,5 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
-    #rm -Recurse -Force .\Output
-    md .\Output
-
-    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\Output\R.iso .\Image
+    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
 }

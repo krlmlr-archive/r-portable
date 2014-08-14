@@ -15,7 +15,7 @@ test_script:
   - ps: CreateImage
 
 artifacts:
-  - path: Output\R.iso
+  - path: R.iso
     name: ISO
 
 deploy:

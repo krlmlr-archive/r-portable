@@ -13,5 +13,5 @@ Contents
 
 ```{r}
 sessionInfo()
-knitr::kable(installed.packages())
+as.data.frame(installed.packages())[c("Version", "Priority")]
 ```

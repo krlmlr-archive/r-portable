@@ -13,3 +13,11 @@ build_script:
 
 test_script:
   - ps: CreateImage
+
+deploy:
+  provider: AzureBlob
+  storage_account_name: rportable
+  storage_access_key:
+    secure: 58T9IWbnnWbEPR77jBqYSrXfTP3glkvVoWQ2i2wEFa7EJzU2KYLjdjsoNTPnlzxR0dX2Ao4of8jsZAxSJEm5VjQP4wnRBwV6gwY2DilgLF8zkhUHxAz5s9ZA5HgdYeDK
+  folder: $(APPVEYOR_BUILD_VERSION)
+  artifact: Output\R.iso

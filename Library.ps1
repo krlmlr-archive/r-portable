@@ -21,6 +21,8 @@ Function Unpack {
 
     #.\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe
     #mv ".\Image\{app}" .\Image\Rtools
+
+    .\Image\R\bin\i386\Rscript -e 'install.packages(commandArgs(TRUE), repos="http://cran.r-project.org")' devtools testthat
 }
 
 Function CreateImage {

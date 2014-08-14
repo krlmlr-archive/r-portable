@@ -85,6 +85,8 @@ Function CreateImage {
     Progress "Compressing ISO file."
     bash -c 'gzip -c R.iso > R.iso.gz'
 
+    #bash -c "echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa"
+
     Progress "Adding README to Git."
     Exec { git add README.md }
 

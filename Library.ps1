@@ -99,6 +99,9 @@ Function CreateImage {
     Progress "Committing to Git."
     Exec { git commit -m "Auto-generate README.md from README.Rmd [ci skip]" }
 
+    Progress "Pushing to Git."
+    Exec { git push origin }
+
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 }

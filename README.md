@@ -13,6 +13,14 @@ Contents
 
 
 ```r
+md5sum("R.iso")
+```
+
+```
+## Error: could not find function "md5sum"
+```
+
+```r
 sessionInfo()
 ```
 

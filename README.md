@@ -1,27 +1,21 @@
 
-
-r-portable
+r-portable (Branch: readme-crlf)
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/readme-crlf)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/readme-crlf)
 
-A script to create an ISO image that contains everything necessary to build R packages.
+ISO images that contain everything necessary to build R packages.
 
-Uses (and includes) [innounp](http://innounp.sourceforge.net/) and [.NET DiscUtils](http://discutils.codeplex.com/).
+Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sourceforge.net/) and [.NET DiscUtils](http://discutils.codeplex.com/).
 
-**Download image** [.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) [.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz)
+Download
+--------
+
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso) (`R size_mb_iso` MB, MD5 hash: `R MD5_iso`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso.gz) (`R size_mb_iso_gz` MB)
 
 Contents
 --------
 
-
-```r
-tools::md5sum("R.iso")
-```
-
-```
-##                              R.iso 
-## "61494c2a984ea12930f7e15cd910a932"
-```
 
 ```r
 sessionInfo()

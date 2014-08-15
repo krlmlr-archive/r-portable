@@ -11,7 +11,7 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (385.4 MB, MD5 hash: `cf6475dacfb0eca611cd436e0fda1ae9`)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (385.4 MB, MD5 hash: `210c9bba871e98065455171f5294a3f6`)
 - [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (much smaller)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
@@ -20,7 +20,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-08-15 r66394)
+R Under development (unstable) (2014-08-17 r66408)
 
 ### Package versions
 

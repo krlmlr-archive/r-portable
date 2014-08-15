@@ -85,7 +85,7 @@ Function CreateImage {
     Progress "Showing diff output."
     $DiffOutput
 
-    #bash -c "echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa"
+    Exec { bash -c "echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa" }
 
     Exec { git config --global user.email "krlmlr+rappveyor@mailbox.org" }
     Exec { git config --global user.name "R-AppVeyor commit bot" }

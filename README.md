@@ -1,7 +1,7 @@
 
-r-portable (Branch: readme-crlf)
+r-portable 
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/readme-crlf)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/readme-crlf)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
 
 ISO images that contain everything necessary to build R packages.
 
@@ -10,8 +10,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 Download
 --------
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso) (372.4 MB, MD5 hash: c3750532fd7ef32ac1b9be5f2e43d2e1)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso.gz) (NA MB)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (372.4 MB, MD5 hash: 2540b213a042c9ea288c02c78f04c6ad)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (NA MB)
 
 Contents
 --------

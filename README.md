@@ -17,7 +17,7 @@ sessionInfo()
 ```
 
 ```
-## R Under development (unstable) (2014-08-13 r66360)
+## R Under development (unstable) (2014-08-14 r66373)
 ## Platform: i386-w64-mingw32/i386 (32-bit)
 ## 
 ## locale:

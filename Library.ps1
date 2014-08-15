@@ -93,7 +93,7 @@ Function CreateImage {
     Exec { git config --global user.email "krlmlr+rappveyor@mailbox.org" }
     Exec { git config --global user.name "R-AppVeyor commit bot" }
     Exec { git config --global push.default matching }
-    Exec { git config --global core.askpass echo }
+    Exec { git config --global core.askpass echo } # doesn't help, but doesn't harm either
     Exec { git config -l }
 
     Progress "Setting Git remotes."

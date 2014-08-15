@@ -85,11 +85,17 @@ Function CreateImage {
     Progress "Showing diff output."
     $DiffOutput
 
+    Progress "Writing deploy key."
     Exec { bash -c ("echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa") }
 
+    Progress "Setting Git configuration."
     Exec { git config --global user.email "krlmlr+rappveyor@mailbox.org" }
     Exec { git config --global user.name "R-AppVeyor commit bot" }
     Exec { git config --global push.default matching }
+
+    Progress "Setting Git remotes."
+    Exec { git remote remove origin }
+    Exec { git remote add origin git@github.com:krlmlr/r-portable.git }
 
     Progress "Checking out branch."
     Exec { git checkout $APPVEYOR_REPO_BRANCH }

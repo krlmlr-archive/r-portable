@@ -110,7 +110,8 @@ Function CreateImage {
     Exec { git status }
 
     Progress "Committing to Git."
-    Exec { git commit -m "Auto-generate README.md from README.Rmd [ci skip]" }
+    Exec { git commit -C HEAD }
+    Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
 
     Progress "Pulling from Git."
     Exec { git pull --no-edit origin }

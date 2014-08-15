@@ -46,15 +46,15 @@ Function Unpack {
     md .\Image
 
     # R
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe
+    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe > ..\R-devel-win.log
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 
     # R packages devtools and testthat
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr }
+    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr } > ..\R-packages.log
 
     # Rtools
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe
+    .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe > ..\Rtools-current.log
     mv ".\Image\{app}" .\Image\Rtools
     rm .\Image\install_script.iss
     # Don't seem to need those to build packages -- only to build R

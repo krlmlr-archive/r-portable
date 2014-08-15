@@ -101,8 +101,13 @@ Function CreateImage {
     Exec { git remote set-url origin git@github.com:krlmlr/r-portable.git }
     Exec { git remote -v }
 
+    Progress "Deleting out branch."
+    Exec { git branch -v }
+    Exec { git branch -D $env:APPVEYOR_REPO_BRANCH }
+
     Progress "Checking out branch."
     Exec { git checkout -b $env:APPVEYOR_REPO_BRANCH }
+    Exec { git branch -v }
     Exec { git status }
 
     Progress "Adding README to Git."

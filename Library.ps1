@@ -97,6 +97,7 @@ Function CreateImage {
     Exec { git config --global user.name "R-AppVeyor commit bot" }
     Exec { git config --global push.default matching }
     Exec { git config --global core.askpass echo }
+    Exec { git config -l }
 
     Progress "Setting Git remotes."
     Exec { git remote set-url origin git@github.com:krlmlr/r-portable.git }

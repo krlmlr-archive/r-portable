@@ -53,7 +53,7 @@ Function Unpack {
 
     # R packages devtools and testthat
     Progress "Installing additional packages"
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr } > .\R-packages.log
+    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr plyr } > .\R-packages.log
 
     # Rtools
     Progress "Extracting Rtools"

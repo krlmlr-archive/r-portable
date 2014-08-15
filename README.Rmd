@@ -1,23 +1,28 @@
+r-portable
+==========
 ```{r echo = FALSE, results = "hide"}
 BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
 REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
+MD5_iso <- tools::md5sum("R.iso")
+size_mb_iso <- round(file.info("R.iso")$size / (2 ** 20), 1)
+size_mb_iso_gz <- round(file.info("R.iso.gz")$size / (2 ** 20), 1)
 ```
-
-r-portable
-==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/`r BRANCH`)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/`r BRANCH`)
 
 A script to create an ISO image that contains everything necessary to build R packages.
 
 Uses (and includes) [innounp](http://innounp.sourceforge.net/) and [.NET DiscUtils](http://discutils.codeplex.com/).
 
-**Download image** [.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) [.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz)
+Download
+--------
+
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso) (`R size_mb_iso` MB, MD5 hash: `R MD5_iso`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`R size_mb_iso_gz` MB)
 
 Contents
 --------
 
 ```{r}
-tools::md5sum("R.iso")
 sessionInfo()
 as.data.frame(installed.packages())[c("Version", "Priority")]
 ```

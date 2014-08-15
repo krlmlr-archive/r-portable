@@ -23,10 +23,10 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ## Contents
 
-### Session info
+### R version
 
-```{r echo = FALSE}
-sessionInfo()
+```{r echo = FALSE results = "asis"}
+R.Version()$version.string
 ```
 
 ### Package versions

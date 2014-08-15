@@ -89,6 +89,7 @@ Function CreateImage {
 
     Exec { git config --global user.email "krlmlr+rappveyor@mailbox.org" }
     Exec { git config --global user.name "R-AppVeyor commit bot" }
+    Exec { git config --global push.default matching }
 
     Progress "Checking out branch."
     Exec { git checkout $APPVEYOR_REPO_BRANCH }

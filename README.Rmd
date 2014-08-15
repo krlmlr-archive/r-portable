@@ -1,4 +1,4 @@
-```{r echo = FALSE results = "hide"}
+```{r echo = FALSE, results = "hide"}
 BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
 REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
 ```

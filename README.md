@@ -11,34 +11,16 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/package-list/R.iso) (385.4 MB, MD5 hash: 9a7fa2a4ff029f157efdf8f953e80b2a)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/package-list/R.iso) (385.4 MB, MD5 hash: 158f281d1aeb8b787081a4ea478669c9)
 - [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/package-list/R.iso.gz) (much smaller)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
 ## Contents
 
-### Session info
+### R version
 
-
-```
-## R Under development (unstable) (2014-08-14 r66373)
-## Platform: i386-w64-mingw32/i386 (32-bit)
-## 
-## locale:
-## [1] LC_COLLATE=English_United States.1252 
-## [2] LC_CTYPE=English_United States.1252   
-## [3] LC_MONETARY=English_United States.1252
-## [4] LC_NUMERIC=C                          
-## [5] LC_TIME=English_United States.1252    
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  base     
-## 
-## loaded via a namespace (and not attached):
-## [1] evaluate_0.5.5 formatR_0.10   knitr_1.6      stringr_0.6.2 
-## [5] tools_3.2.0
-```
+[1] "R Under development (unstable) (2014-08-14 r66373)"
 
 ### Package versions
 

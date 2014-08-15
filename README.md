@@ -1,5 +1,5 @@
 
-r-portable (Branch: readme-crlf)
+r-portable (branch: readme-crlf)
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/readme-crlf)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/readme-crlf)
 
@@ -10,7 +10,7 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 Download
 --------
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso) (372.4 MB, MD5 hash: c3750532fd7ef32ac1b9be5f2e43d2e1)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso) (372.4 MB, MD5 hash: 8c32e241f8b994055e920d1a49b8f057)
 - [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/readme-crlf/R.iso.gz) (NA MB)
 
 Contents

@@ -46,15 +46,18 @@ Function Unpack {
     md .\Image
 
     # R
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe
+    Progress "Extracting R"
+    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe > .\R-devel-win.log
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 
     # R packages devtools and testthat
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr }
+    Progress "Installing additional packages"
+    Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr } > .\R-packages.log
 
     # Rtools
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe
+    Progress "Extracting Rtools"
+    .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe > .\Rtools-current.log
     mv ".\Image\{app}" .\Image\Rtools
     rm .\Image\install_script.iss
     # Don't seem to need those to build packages -- only to build R
@@ -66,6 +69,63 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
-    bash -c 'gzip -c R.iso > R.iso.gz'
+
+    Progress "Knitting."
+    Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
+
+    Progress "Diffing."
+    $DiffOutput = (git diff README.md) | Out-String
+    If ($DiffOutput.Length -eq 0) {
+        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
+        rm .\R.iso
+        Return
+    }
+
+    Progress "Showing diff output."
+    $DiffOutput
+
+    Progress "Writing deploy key."
+    Exec { bash -c ("echo $env:DEPLOY_KEY | sed 's/@/\n/g;s/_/ /g' > /c/Users/$env:USERNAME/.ssh/id_rsa") }
+    Exec { bash -c ("wc /c/Users/$env:USERNAME/.ssh/id_rsa") }
+
+    Progress "Setting Git configuration."
+    Exec { git config --global user.email "krlmlr+rportable@mailbox.org" }
+    Exec { git config --global user.name "r-portable commit bot" }
+    Exec { git config --global push.default matching }
+    Exec { git config --global core.askpass echo } # doesn't help, but doesn't harm either
+    Exec { git config -l }
+
+    Progress "Setting Git remotes."
+    Exec { git remote set-url origin git@github.com:krlmlr/r-portable.git }
+    Exec { git remote -v }
+
+    Progress "Deleting out branch."
+    Exec { git branch -v }
+    Exec { git branch -D $env:APPVEYOR_REPO_BRANCH }
+
+    Progress "Checking out branch."
+    Exec { git checkout -b $env:APPVEYOR_REPO_BRANCH }
+    Exec { git branch -v }
+    Exec { git status }
+
+    Progress "Adding README to Git."
+    Exec { git add README.md }
+    Exec { git status }
+
+    Progress "Committing to Git."
+    Exec { git commit -C HEAD }
+    Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
+
+    Progress "Pulling from Git."
+    Exec { git fetch }
+    Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
+    Exec { git commit --amend -m "Reconcile [ci skip]" }
+
+    Progress "Pushing to Git."
+    Exec { git push origin }
+
+    Progress "Compressing ISO file."
+    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 }

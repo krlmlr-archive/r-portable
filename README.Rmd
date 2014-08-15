@@ -5,7 +5,7 @@ MD5_iso <- tools::md5sum("R.iso")
 size_mb_iso <- round(file.info("R.iso")$size / (2 ** 20), 1)
 size_mb_iso_gz <- round(file.info("R.iso.gz")$size / (2 ** 20), 1)
 ```
-r-portable
+r-portable `r if (BRANCH != "master") sprintf("(Branch: %s)", BRANCH)`
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/`r BRANCH`)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/`r BRANCH`)
 

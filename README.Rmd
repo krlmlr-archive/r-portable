@@ -2,7 +2,6 @@
 BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
 REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
 ```
-
 r-portable
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/`r BRANCH`)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/`r BRANCH`)

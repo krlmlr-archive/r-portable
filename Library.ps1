@@ -101,7 +101,7 @@ Function CreateImage {
     Exec { git remote -v }
 
     Progress "Checking out branch."
-    Exec { git checkout $APPVEYOR_REPO_BRANCH }
+    Exec { git checkout $env:APPVEYOR_REPO_BRANCH }
     Exec { git status }
 
     Progress "Adding README to Git."

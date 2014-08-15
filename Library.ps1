@@ -110,7 +110,7 @@ Function CreateImage {
     Exec { git commit -m "Auto-generate README.md from README.Rmd [ci skip]" }
 
     Progress "Pushing to Git."
-    Exec { git push origin }
+    Exec { bash -c "git push origin < /dev/null" }
 
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }

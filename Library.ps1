@@ -119,7 +119,7 @@ Function CreateImage {
     Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
 
     Progress "Pulling from Git."
-    Exec { git pull --no-edit origin }
+    Exec { git pull --no-edit origin $env:APPVEYOR_REPO_BRANCH }
 
     Progress "Pushing to Git."
     Exec { git push origin }

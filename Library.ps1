@@ -94,14 +94,16 @@ Function CreateImage {
     Exec { git config --global push.default matching }
 
     Progress "Setting Git remotes."
-    Exec { git remote remove origin }
-    Exec { git remote add origin git@github.com:krlmlr/r-portable.git }
+    Exec { git remote set-url origin git@github.com:krlmlr/r-portable.git }
+    Exec { git remote -v }
 
     Progress "Checking out branch."
     Exec { git checkout $APPVEYOR_REPO_BRANCH }
+    Exec { git status }
 
     Progress "Adding README to Git."
     Exec { git add README.md }
+    Exec { git status }
 
     Progress "Committing to Git."
     Exec { git commit -m "Auto-generate README.md from README.Rmd [ci skip]" }

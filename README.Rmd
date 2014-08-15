@@ -3,7 +3,6 @@ BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
 REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
 MD5_iso <- tools::md5sum("R.iso")
 size_mb_iso <- round(file.info("R.iso")$size / (2 ** 20), 1)
-size_mb_iso_gz <- round(file.info("R.iso.gz")$size / (2 ** 20), 1)
 ```
 r-portable `r if (BRANCH != "master") sprintf("(branch: %s)", BRANCH)`
 ==========
@@ -17,7 +16,7 @@ Download
 --------
 
 - [R.iso](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso) (`r size_mb_iso` MB, MD5 hash: `r MD5_iso`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`r size_mb_iso_gz` MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (much smaller)
 
 Contents
 --------

@@ -87,10 +87,10 @@ Function CreateImage {
 
     Progress "Writing deploy key."
     Exec { bash -c ("echo sed 's/-----NL-----/\n/g'") }
-    Exec { bash -c ("echo $DEPLOY_KEY") }
-    Exec { bash -c ("echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa") }
-    Exec { bash -c ("wc /c/Users/" + $env:USERNAME + "/.ssh/id_rsa") }
-    Exec { bash -c ("md5sum /c/Users/" + $env:USERNAME + "/.ssh/id_rsa") }
+    Exec { bash -c ("echo $env:DEPLOY_KEY") }
+    Exec { bash -c ("echo $env:DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/$env:USERNAME/.ssh/id_rsa") }
+    Exec { bash -c ("wc /c/Users/$env:USERNAME/.ssh/id_rsa") }
+    Exec { bash -c ("md5sum /c/Users/$env:USERNAME/.ssh/id_rsa") }
 
     Progress "Setting Git configuration."
     Exec { git config --global user.email "krlmlr+rappveyor@mailbox.org" }

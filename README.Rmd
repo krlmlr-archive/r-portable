@@ -12,8 +12,7 @@ ISO images that contain everything necessary to build R packages.
 
 Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sourceforge.net/) and [.NET DiscUtils](http://discutils.codeplex.com/).
 
-Download
---------
+## Download
 
 Most recent versions:
 
@@ -22,8 +21,7 @@ Most recent versions:
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
-Contents
---------
+## Contents
 
 ```{r}
 sessionInfo()

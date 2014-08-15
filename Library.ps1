@@ -102,7 +102,7 @@ Function CreateImage {
     Exec { git remote -v }
 
     Progress "Checking out branch."
-    Exec { git checkout $env:APPVEYOR_REPO_BRANCH }
+    Exec { git checkout -b $env:APPVEYOR_REPO_BRANCH }
     Exec { git status }
 
     Progress "Adding README to Git."
@@ -111,6 +111,9 @@ Function CreateImage {
 
     Progress "Committing to Git."
     Exec { git commit -m "Auto-generate README.md from README.Rmd [ci skip]" }
+
+    Progress "Pulling from Git."
+    Exec { git pull --no-edit origin }
 
     Progress "Pushing to Git."
     Exec { git push origin }

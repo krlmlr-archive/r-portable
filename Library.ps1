@@ -87,11 +87,14 @@ Function CreateImage {
 
     #bash -c "echo $DEPLOY_KEY | sed 's/-----NL-----/\n/g' > /c/Users/" + $env:USERNAME + "/.ssh/id_rsa"
 
+    Exec { git config --global user.email "krlmlr+rappveyor@mailbox.org" }
+    Exec { git config --global user.name "R-AppVeyor commit bot" }
+
     Progress "Adding README to Git."
     Exec { git add README.md }
 
     Progress "Committing to Git."
-    Exec { git commit -m "[skip ci] auto-generated README.md" }
+    Exec { git commit -m "Auto-generate README.md from README.Rmd [ci skip]" }
 
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }

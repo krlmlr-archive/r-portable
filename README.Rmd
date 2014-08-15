@@ -18,4 +18,5 @@ Contents
 tools::md5sum("R.iso")
 sessionInfo()
 as.data.frame(installed.packages())[c("Version", "Priority")]
+list.files("Image", recursive = TRUE)
 ```

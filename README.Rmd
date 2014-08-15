@@ -16,8 +16,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 Download
 --------
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso) (`R size_mb_iso` MB, MD5 hash: `R MD5_iso`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`R size_mb_iso_gz` MB)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso) (`r size_mb_iso` MB, MD5 hash: `r MD5_iso`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`r size_mb_iso_gz` MB)
 
 Contents
 --------

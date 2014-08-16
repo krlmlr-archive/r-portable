@@ -69,32 +69,35 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    Progress "Adding files from image."
+    Exec { git add -A Image }
+
+    Progress "Checking status."
+    $StatusOutput = (git status Image --porcelain) | Out-String
+
+    If ($StatusOutput.Length -eq 0) {
+        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
+        rm .\R.iso
+        Return
+    }
+
+    $StatusOutput
+
     Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
 
     Progress "Knitting."
     Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
 
-    Progress "Diffing."
-    $DiffOutput = (git diff README.md) | Out-String
-    If ($DiffOutput.Length -eq 0) {
-        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
-        rm .\R.iso
-        Return
-    }
-
-    Progress "Showing diff output."
-    $DiffOutput
-
     SetupGit
 
-    Progress "Adding README to Git."
+    Progress "Adding also README to Git."
     Exec { git add README.md }
     Exec { git status }
 
     Progress "Committing to Git."
     Exec { git commit -C HEAD }
-    Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
+    Exec { git commit --amend -m "Update image [ci skip]" }
 
     Progress "Pulling from Git."
     Exec { git fetch }

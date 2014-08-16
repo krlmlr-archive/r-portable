@@ -1,0 +1,23 @@
+Package: markdown
+Type: Package
+Title: Markdown rendering for R
+Version: 0.7.2
+Date: 2014-07-25
+Author: JJ Allaire, Jeffrey Horner, Vicent Marti, and Natacha Porte
+Maintainer: Yihui Xie <xie@yihui.name>
+Description: Markdown is a plain-text formatting syntax that can be
+    converted to XHTML or other formats. This package provides R bindings
+    to the Sundown markdown rendering library.
+Depends: R (>= 2.11.1)
+Imports: mime (>= 0.1.1)
+Suggests: knitr, RCurl
+License: GPL-2
+URL: https://github.com/rstudio/markdown
+BugReports: https://github.com/rstudio/markdown/issues
+VignetteBuilder: knitr
+Packaged: 2014-07-25 03:53:20 UTC; yihui
+NeedsCompilation: yes
+Repository: CRAN
+Date/Publication: 2014-07-25 07:43:20
+Built: R 3.1.1; x86_64-w64-mingw32; 2014-08-15 22:42:57 UTC; windows
+Archs: i386, x64

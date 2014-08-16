@@ -91,6 +91,7 @@ Function CreateImage {
     Exec { bash -c ("wc /c/Users/$env:USERNAME/.ssh/id_rsa") }
 
     Progress "Setting Git configuration."
+    Exec { git --version }
     Exec { git config --global user.email "krlmlr+rportable@mailbox.org" }
     Exec { git config --global user.name "r-portable commit bot" }
     Exec { git config --global push.default matching }

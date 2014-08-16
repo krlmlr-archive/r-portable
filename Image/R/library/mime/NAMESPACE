@@ -1,0 +1,2 @@
+export(guess_type)
+export(mimemap)

@@ -1,0 +1,6 @@
+tidy.dir                Format the R scripts under a directory
+tidy.eval               Evaluate R code and mask the output by a prefix
+tidy.gui                A GUI to format R code
+tidy.source             Reformat R code while preserving blank lines
+                        and comments
+usage                   Show the usage of a function

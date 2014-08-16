@@ -1,99 +1,77 @@
 
-r-portable 
+r-portable (branch: 7-timestamp)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/7-timestamp)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/7-timestamp)
 
 ISO images that contain everything necessary to build R packages.
 
 Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sourceforge.net/) and [.NET DiscUtils](http://discutils.codeplex.com/).
 
-Download
---------
+## Download
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (372.4 MB, MD5 hash: d8c53b2618568694f0937f29fd1e1323)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (much smaller)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/7-timestamp/R.iso) (385.4 MB, MD5 hash: `460370378e595a9fe2b889e08f7275e7`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/7-timestamp/R.iso.gz) (much smaller)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
-Contents
---------
+## Contents
 
+### R version
 
-```r
-sessionInfo()
-```
+R Under development (unstable) (2014-08-15 r66394)
 
-```
-## R Under development (unstable) (2014-08-14 r66373)
-## Platform: i386-w64-mingw32/i386 (32-bit)
-## 
-## locale:
-## [1] LC_COLLATE=English_United States.1252 
-## [2] LC_CTYPE=English_United States.1252   
-## [3] LC_MONETARY=English_United States.1252
-## [4] LC_NUMERIC=C                          
-## [5] LC_TIME=English_United States.1252    
-## 
-## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  base     
-## 
-## loaded via a namespace (and not attached):
-## [1] evaluate_0.5.5 formatR_0.10   knitr_1.6      stringr_0.6.2 
-## [5] tools_3.2.0
-```
+### Package versions
 
-```r
-as.data.frame(installed.packages())[c("Version", "Priority")]
-```
-
-```
-##               Version    Priority
-## base            3.2.0        base
-## bitops          1.0-6        <NA>
-## boot           1.3-11 recommended
-## class          7.3-11 recommended
-## cluster        1.15.2 recommended
-## codetools       0.2-8 recommended
-## compiler        3.2.0        base
-## datasets        3.2.0        base
-## devtools          1.5        <NA>
-## digest          0.6.4        <NA>
-## evaluate        0.5.5        <NA>
-## foreign        0.8-61 recommended
-## formatR          0.10        <NA>
-## graphics        3.2.0        base
-## grDevices       3.2.0        base
-## grid            3.2.0        base
-## highr             0.3        <NA>
-## httr              0.4        <NA>
-## jsonlite       0.9.10        <NA>
-## KernSmooth    2.23-12 recommended
-## knitr             1.6        <NA>
-## lattice       0.20-29 recommended
-## markdown        0.7.2        <NA>
-## MASS           7.3-33 recommended
-## Matrix          1.1-4 recommended
-## memoise         0.2.1        <NA>
-## methods         3.2.0        base
-## mgcv            1.8-2 recommended
-## mime            0.1.2        <NA>
-## nlme          3.1-117 recommended
-## nnet            7.3-8 recommended
-## parallel        3.2.0        base
-## RCurl        1.95-4.3        <NA>
-## rpart           4.1-8 recommended
-## spatial         7.3-8 recommended
-## splines         3.2.0        base
-## stats           3.2.0        base
-## stats4          3.2.0        base
-## stringr         0.6.2        <NA>
-## survival       2.37-7 recommended
-## tcltk           3.2.0        base
-## testthat        0.8.1        <NA>
-## tools           3.2.0        base
-## translations    3.2.0        <NA>
-## utils           3.2.0        base
-## whisker         0.3-2        <NA>
-```
+####  base 
+[`base`](cran.r-project.org/package=base) (3.2.0),
+[`compiler`](cran.r-project.org/package=compiler) (3.2.0),
+[`datasets`](cran.r-project.org/package=datasets) (3.2.0),
+[`graphics`](cran.r-project.org/package=graphics) (3.2.0),
+[`grDevices`](cran.r-project.org/package=grDevices) (3.2.0),
+[`grid`](cran.r-project.org/package=grid) (3.2.0),
+[`methods`](cran.r-project.org/package=methods) (3.2.0),
+[`parallel`](cran.r-project.org/package=parallel) (3.2.0),
+[`splines`](cran.r-project.org/package=splines) (3.2.0),
+[`stats`](cran.r-project.org/package=stats) (3.2.0),
+[`stats4`](cran.r-project.org/package=stats4) (3.2.0),
+[`tcltk`](cran.r-project.org/package=tcltk) (3.2.0),
+[`tools`](cran.r-project.org/package=tools) (3.2.0),
+[`utils`](cran.r-project.org/package=utils) (3.2.0) 
+####  recommended 
+[`boot`](cran.r-project.org/package=boot) (1.3-11),
+[`class`](cran.r-project.org/package=class) (7.3-11),
+[`cluster`](cran.r-project.org/package=cluster) (1.15.2),
+[`codetools`](cran.r-project.org/package=codetools) (0.2-8),
+[`foreign`](cran.r-project.org/package=foreign) (0.8-61),
+[`KernSmooth`](cran.r-project.org/package=KernSmooth) (2.23-12),
+[`lattice`](cran.r-project.org/package=lattice) (0.20-29),
+[`MASS`](cran.r-project.org/package=MASS) (7.3-33),
+[`Matrix`](cran.r-project.org/package=Matrix) (1.1-4),
+[`mgcv`](cran.r-project.org/package=mgcv) (1.8-2),
+[`nlme`](cran.r-project.org/package=nlme) (3.1-117),
+[`nnet`](cran.r-project.org/package=nnet) (7.3-8),
+[`rpart`](cran.r-project.org/package=rpart) (4.1-8),
+[`spatial`](cran.r-project.org/package=spatial) (7.3-8),
+[`survival`](cran.r-project.org/package=survival) (2.37-7) 
+####  other 
+[`bitops`](cran.r-project.org/package=bitops) (1.0-6),
+[`devtools`](cran.r-project.org/package=devtools) (1.5),
+[`digest`](cran.r-project.org/package=digest) (0.6.4),
+[`evaluate`](cran.r-project.org/package=evaluate) (0.5.5),
+[`formatR`](cran.r-project.org/package=formatR) (0.10),
+[`highr`](cran.r-project.org/package=highr) (0.3),
+[`httr`](cran.r-project.org/package=httr) (0.4),
+[`jsonlite`](cran.r-project.org/package=jsonlite) (0.9.10),
+[`knitr`](cran.r-project.org/package=knitr) (1.6),
+[`markdown`](cran.r-project.org/package=markdown) (0.7.2),
+[`memoise`](cran.r-project.org/package=memoise) (0.2.1),
+[`mime`](cran.r-project.org/package=mime) (0.1.2),
+[`plyr`](cran.r-project.org/package=plyr) (1.8.1),
+[`Rcpp`](cran.r-project.org/package=Rcpp) (0.11.2),
+[`RCurl`](cran.r-project.org/package=RCurl) (1.95-4.3),
+[`stringr`](cran.r-project.org/package=stringr) (0.6.2),
+[`testthat`](cran.r-project.org/package=testthat) (0.8.1),
+[`translations`](cran.r-project.org/package=translations) (3.2.0),
+[`whisker`](cran.r-project.org/package=whisker) (0.3-2) 

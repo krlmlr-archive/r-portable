@@ -42,7 +42,7 @@ Function Unpack {
     [CmdletBinding()]
     Param()
 
-    #rm -Recurse -Force .\Image
+    rm -Recurse -Force .\Image
     md .\Image
 
     # R

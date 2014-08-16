@@ -86,6 +86,32 @@ Function CreateImage {
     Progress "Showing diff output."
     $DiffOutput
 
+    SetupGit
+
+    Progress "Adding README to Git."
+    Exec { git add README.md }
+    Exec { git status }
+
+    Progress "Committing to Git."
+    Exec { git commit -C HEAD }
+    Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
+
+    Progress "Pulling from Git."
+    Exec { git fetch }
+    Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
+    Exec { git commit --amend -m "Reconcile [ci skip]" }
+
+    Progress "Pushing to Git."
+    Exec { git push origin }
+
+    Progress "Compressing ISO file."
+    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
+}
+
+Function SetupGit {
+    [CmdletBinding()]
+    Param()
+
     Progress "Writing deploy key."
     Exec { bash -c ("echo $env:DEPLOY_KEY | sed 's/@/\n/g;s/_/ /g' > /c/Users/$env:USERNAME/.ssh/id_rsa") }
     Exec { bash -c ("wc /c/Users/$env:USERNAME/.ssh/id_rsa") }
@@ -110,23 +136,4 @@ Function CreateImage {
     Exec { git checkout -b $env:APPVEYOR_REPO_BRANCH }
     Exec { git branch -v }
     Exec { git status }
-
-    Progress "Adding README to Git."
-    Exec { git add README.md }
-    Exec { git status }
-
-    Progress "Committing to Git."
-    Exec { git commit -C HEAD }
-    Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
-
-    Progress "Pulling from Git."
-    Exec { git fetch }
-    Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
-    Exec { git commit --amend -m "Reconcile [ci skip]" }
-
-    Progress "Pushing to Git."
-    Exec { git push origin }
-
-    Progress "Compressing ISO file."
-    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 }

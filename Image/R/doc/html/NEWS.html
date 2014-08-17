@@ -193,9 +193,10 @@ tested by<br />
 <p><code>R CMD check</code> gains <span class="option">--run-dontrun</span> and
 <span class="option">--run-donttest</span> options.
 </p>
-<p><code>R CMD check</code> now reports empty imports in
-&lsquo;<span class="file">NAMESPACE</span>&rsquo; as these are common errors (writing
-<code>importFrom(Pkg)</code> where <code>import(Pkg)</code> was intended).
+<p><code>R CMD check</code> now reports empty <code>importFrom</code>
+declarations in a &lsquo;<span class="file">NAMESPACE</span>&rsquo; file, as these are common
+errors (writing <code>importFrom(Pkg)</code> where <code>import(Pkg)</code>
+was intended).
 </p>
 </li>
 <li> <p><code>R CMD check --as-cran</code> now checks code usage

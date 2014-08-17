@@ -129,9 +129,9 @@ CHANGES IN R-devel:
 
       R CMD check gains --run-dontrun and --run-donttest options.
 
-      R CMD check now reports empty imports in NAMESPACE as these are
-      common errors (writing importFrom(Pkg) where import(Pkg) was
-      intended).
+      R CMD check now reports empty importFrom declarations in a
+      NAMESPACE file, as these are common errors (writing
+      importFrom(Pkg) where import(Pkg) was intended).
 
     * R CMD check --as-cran now checks code usage directly on the
       package namespace without loading and attaching the package and

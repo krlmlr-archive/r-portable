@@ -77,11 +77,8 @@ Function CreateImage {
 
     If ($StatusOutput.Length -eq 0) {
         Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
-        rm .\R.iso
         Return
     }
-
-    $StatusOutput
 
     Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
@@ -93,7 +90,7 @@ Function CreateImage {
 
     Progress "Adding also README to Git."
     Exec { git add README.md }
-    Exec { git status }
+    Exec { git status README.md }
 
     Progress "Committing to Git."
     Exec { git commit -C HEAD }

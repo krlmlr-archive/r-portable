@@ -6,8 +6,6 @@ init:
   ps: |
         Get-Date
         git config core.autocrlf
-        git config --global core.autocrlf input
-        git config --global core.eol input
         $ErrorActionPreference = "Stop"
 
 install:

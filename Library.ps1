@@ -77,7 +77,6 @@ Function CreateImage {
 
     If ($StatusOutput.Length -eq 0) {
         Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
-        rm .\R.iso
         Return
     }
 

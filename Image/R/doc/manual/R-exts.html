@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-08-17).
+<!-- This manual is for R, version 3.2.0 Under development (2014-08-18).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -169,7 +169,10 @@ p {
     <ul class="no-bullet">
       <li><a name="toc-The-DESCRIPTION-file-1" href="#The-DESCRIPTION-file">1.1.1 The <samp>DESCRIPTION</samp> file</a></li>
       <li><a name="toc-Licensing-1" href="#Licensing">1.1.2 Licensing</a></li>
-      <li><a name="toc-Package-Dependencies-1" href="#Package-Dependencies">1.1.3 Package Dependencies</a></li>
+      <li><a name="toc-Package-Dependencies-1" href="#Package-Dependencies">1.1.3 Package Dependencies</a>
+      <ul class="no-bullet">
+        <li><a name="toc-Suggested-packages-1" href="#Suggested-packages">1.1.3.1 Suggested packages</a></li>
+      </ul></li>
       <li><a name="toc-The-INDEX-file-1" href="#The-INDEX-file">1.1.4 The <samp>INDEX</samp> file</a></li>
       <li><a name="toc-Package-subdirectories-1" href="#Package-subdirectories">1.1.5 Package subdirectories</a></li>
       <li><a name="toc-Data-in-packages-1" href="#Data-in-packages">1.1.6 Data in packages</a></li>
@@ -426,7 +429,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-08-17).
+<p>This manual is for R, version 3.2.0 Under development (2014-08-18).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -976,16 +979,18 @@ on a platform with &lsquo;<samp>.Platform$OS.type</samp>&rsquo; having that valu
 see <a href="#Package-types">Package types</a>.
 </p>
 <p>One can add subject classifications for the content of the package using
-the fields &lsquo;<samp>Classification/ACM</samp>&rsquo; (using the Computing
-Classification System of the Association for Computing Machinery,
-<a href="http://www.acm.org/class/">http://www.acm.org/class/</a>), &lsquo;<samp>Classification/JEL</samp>&rsquo; (the
-Journal of Economic Literature Classification System,
+the fields &lsquo;<samp>Classification/ACM</samp>&rsquo; or &lsquo;<samp>Classification/ACM-2012</samp>&rsquo;
+(using the Computing Classification System of the Association for
+Computing Machinery, <a href="http://www.acm.org/class/">http://www.acm.org/class/</a>; the former refers
+to the 1998 version), &lsquo;<samp>Classification/JEL</samp>&rsquo; (the Journal of Economic
+Literature Classification System,
 <a href="http://www.aeaweb.org/journal/jel_class_system.html">http://www.aeaweb.org/journal/jel_class_system.html</a>), or
-&lsquo;<samp>Classification/MSC</samp>&rsquo; (the Mathematics Subject Classification of the
-American Mathematical Society, <a href="http://www.ams.org/msc/">http://www.ams.org/msc/</a>).  The
-subject classifications should be comma-separated lists of the
-respective classification codes, e.g.,
-&lsquo;<samp>Classification/ACM: G.4, H.2.8, I.5.1</samp>&rsquo;.
+&lsquo;<samp>Classification/MSC</samp>&rsquo; or &lsquo;<samp>Classification/MSC-2010</samp>&rsquo; (the
+Mathematics Subject Classification of the American Mathematical Society,
+<a href="http://www.ams.org/msc/">http://www.ams.org/msc/</a>; the former refers to the 2000 version).
+The subject classifications should be comma-separated lists of the
+respective classification codes, e.g., &lsquo;<samp>Classification/ACM: G.4,
+H.2.8, I.5.1</samp>&rsquo;.
 </p>
 <p>A &lsquo;<samp>Language</samp>&rsquo; field can be used to indicate if the package
 documentation is not in English: this should be a comma-separated list
@@ -1197,12 +1202,7 @@ suppose an example from package <strong>foo</strong> uses a dataset from package
 <strong>bar</strong>. Then it is not necessary to have <strong>bar</strong> use <strong>foo</strong>
 unless one wants to execute all the examples/tests/vignettes: it is
 useful to have <strong>bar</strong>, but not necessary.  Version requirements can
-be specified, and will be used by <code>R CMD check</code>.  Note that
-someone wanting to run the examples/tests/vignettes may not have a
-suggested package available (and it may not even be possible to install
-it for that platform), so it is desirable that the use of suggested
-packages is made conditional <em>via</em>
-<code>if(require(<var>pkgname</var>))</code>).
+be specified, and will be used by <code>R CMD check</code>.
 </p>
 <p>Finally, the &lsquo;<samp>Enhances</samp>&rsquo; field lists packages &ldquo;enhanced&rdquo; by the
 package at hand, e.g., by providing methods for classes from these
@@ -1299,6 +1299,44 @@ CRAN packages <a href="http://CRAN.R-project.org/package=BH"><strong>BH</strong>
 <a href="http://CRAN.R-project.org/package=RcppArmadillo"><strong>RcppArmadillo</strong></a> and <a href="http://CRAN.R-project.org/package=RcppEigen"><strong>RcppEigen</strong></a>.
 </p>
 <p>For another use of &lsquo;<samp>LinkingTo</samp>&rsquo; see <a href="#Linking-to-native-routines-in-other-packages">Linking to native routines in other packages</a>.
+</p>
+<table class="menu" border="0" cellspacing="0">
+<tr><td align="left" valign="top">&bull; <a href="#Suggested-packages" accesskey="1">Suggested packages</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
+</table>
+
+<hr>
+<a name="Suggested-packages"></a>
+<div class="header">
+<p>
+Previous: <a href="#Package-Dependencies" accesskey="p" rel="prev">Package Dependencies</a>, Up: <a href="#Package-Dependencies" accesskey="u" rel="up">Package Dependencies</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Suggested-packages-1"></a>
+<h4 class="subsubsection">1.1.3.1 Suggested packages</h4>
+
+<p>Note that someone wanting to run the examples/tests/vignettes may not
+have a suggested package available (and it may not even be possible to
+install it for that platform).  The recommendation used to be to make
+their use conditional <em>via</em> <code>if(require(&quot;<var>pkgname</var>&quot;))</code>):
+this is fine is that conditioning is done in examples/tests/vignettes.
+</p>
+<p>However, using <code>require</code> for conditioning <em>in package code</em> is
+not good practice as it alters the search path for the rest of the
+session and relies on functions in that package not being masked by
+other <code>require</code> or <code>library</code> calls.  It is better practice to
+use code like
+</p><div class="example">
+<pre class="example">   if (requireNamespace(&quot;rgl&quot;, quietly = TRUE)) {
+      rgl::plot3d(...)
+   } else {
+      ## do something else not involving rgl.
+   }
+</pre></div>
+<p>Note the use of <code>rgl::</code> as that object would not necessarily be
+visible (and if it is, it need not be the one from that namespace:
+<code>plot3d</code> occurs in several other packages).  If the intention is to
+give an error if the suggested package is not available, simply use
+e.g. <code>rgl::plot3d</code>.
 </p>
 <hr>
 <a name="The-INDEX-file"></a>

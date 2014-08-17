@@ -10,4 +10,4 @@ Description: Support for parallel computation, including by forking
 License: Part of R 3.2.0
 Imports: tools
 Enhances: snow, nws, Rmpi
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-18 02:19:12 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-19 02:20:33 UTC; windows

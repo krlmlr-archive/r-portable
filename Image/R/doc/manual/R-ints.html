@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-08-15).
+<!-- This manual is for R, version 3.2.0 Under development (2014-08-17).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -289,7 +289,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-08-15).
+<p>This manual is for R, version 3.2.0 Under development (2014-08-17).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4826,6 +4826,15 @@ set to &lsquo;<samp>warn</samp>&rsquo; gives a warning, to &lsquo;<samp>false</s
 check is skipped, and any other non-empty value gives an error when more
 than 2 children are spawned.
 Default: unset (but &lsquo;<samp>TRUE</samp>&rsquo; for CRAN submission checks).
+</p>
+</dd>
+<dt><code>_R_CHECK_CODE_USAGE_WITHOUT_LOADING_</code>
+<a name="index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fWITHOUT_005fLOADING_005f"></a>
+</dt>
+<dd><p>If set, check code usage (via <a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>) directly on the
+package namespace without loading and attaching the package and its
+suggests and enhances.
+Default: false (but true for CRAN submission checks).
 </p></dd>
 </dl>
 
@@ -4843,6 +4852,7 @@ _R_CHECK_DOC_SIZES2_=TRUE
 _R_CHECK_CODE_ASSIGN_TO_GLOBALENV_=TRUE
 _R_CHECK_CODE_ATTACH_=TRUE
 _R_CHECK_CODE_DATA_INTO_GLOBALENV_=TRUE
+_R_CHECK_CODE_USAGE_WITHOUT_LOADING_=TRUE
 _R_CHECK_DOT_FIRSTLIB_=TRUE
 _R_CHECK_DEPRECATED_DEFUNCT_=TRUE
 _R_CHECK_REPLACING_IMPORTS_=TRUE
@@ -5312,6 +5322,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fASSIGN_005fTO_005fGLOBALENV_005f"><code>_R_CHECK_CODE_ASSIGN_TO_GLOBALENV_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fATTACH_005f"><code>_R_CHECK_CODE_ATTACH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fDATA_005fINTO_005fGLOBALENV_005f"><code>_R_CHECK_CODE_DATA_INTO_GLOBALENV_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fWITHOUT_005fLOADING_005f"><code>_R_CHECK_CODE_USAGE_WITHOUT_LOADING_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODOC_005fS4_005fMETHODS_005f"><code>_R_CHECK_CODOC_S4_METHODS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCOMPACT_005fDATA_005f"><code>_R_CHECK_COMPACT_DATA_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCRAN_005fINCOMING_005f"><code>_R_CHECK_CRAN_INCOMING_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>

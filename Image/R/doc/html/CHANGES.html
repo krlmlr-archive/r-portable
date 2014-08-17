@@ -86,7 +86,7 @@ from the standard installer even on a 32-bit version of Windows.
 <li><p> As the current toolchain uses only 32-bit executables, it is
 possible to compile a package for both architectures on 32-bit
 Windows provided both architectures of <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> have been installed: use
-<code>Rcmd INSTALL &ndash;compile-both</code>.
+<code>Rcmd INSTALL --compile-both</code>.
 </p>
 </li>
 <li> <p><code>Rcmd INSTALL --merge-multiarch</code> will work (but do a
@@ -536,7 +536,7 @@ for files &gt; 2GB.
 </li>
 <li><p> The versions of <code>R.exe</code> in
 &lsquo;<span class="file">R_HOME/bin/i386,x64/bin</span>&rsquo; now support options such as
-<code>R &ndash;vanilla CMD</code>: there is no comparable interface for
+<code>R --vanilla CMD</code>: there is no comparable interface for
 &lsquo;<span class="file">Rcmd.exe</span>&rsquo;.
 </p>
 </li>
@@ -697,7 +697,7 @@ now support for 64-bit builds.  (Unlike the Inno Setup installer,
 there are separate MSI installers for 32- and 64-bit Windows.)
 </p>
 <p>It is now built using <code>WiX 3.x</code> rather than <code>WiX
-2.0</code>.  (As a result it is about 25% smaller.)
+	2.0</code>.  (As a result it is about 25% smaller.)
 </p>
 </li></ul>
 
@@ -1170,7 +1170,7 @@ and &lsquo;<span class="file">.pl</span>&rsquo; (Perl) scripts anywhere on the p
 
 <ul>
 <li> <p><code>Rcmd SHLIB</code> (which is used by <code>Rcmd
-INSTALL</code>) now calls <code>make</code> without a target, rather than
+       INSTALL</code>) now calls <code>make</code> without a target, rather than
 target <code>'all'</code>.  This is now the same as on Unix, and was
 announced in the &lsquo;<span class="file">NEWS</span>&rsquo; file for 2.9.0.
 </p>

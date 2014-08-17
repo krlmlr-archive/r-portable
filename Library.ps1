@@ -42,7 +42,7 @@ Function Unpack {
     [CmdletBinding()]
     Param()
 
-    #rm -Recurse -Force .\Image
+    rm -Recurse -Force .\Image
     md .\Image
 
     # R
@@ -69,28 +69,55 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    Progress "Adding files from image."
+    Exec { git add -A Image }
+
+    Progress "Checking status."
+    $StatusOutput = (git status Image --porcelain) | Out-String
+
+    If ($StatusOutput.Length -eq 0) {
+        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
+        Return
+    }
+
     Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
 
     Progress "Knitting."
     Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
 
-    Progress "Diffing."
-    $DiffOutput = (git diff README.md) | Out-String
-    If ($DiffOutput.Length -eq 0) {
-        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
-        rm .\R.iso
-        Return
-    }
+    SetupGit
 
-    Progress "Showing diff output."
-    $DiffOutput
+    Progress "Adding also README to Git."
+    Exec { git add README.md }
+    Exec { git status README.md }
+
+    Progress "Committing to Git."
+    Exec { git commit -C HEAD }
+    Exec { git commit --amend -m "Update image [ci skip]" }
+
+    Progress "Pulling from Git."
+    Exec { git fetch }
+    Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
+    Exec { git commit --amend -m "Reconcile [ci skip]" }
+
+    Progress "Pushing to Git."
+    Exec { git push origin }
+
+    Progress "Compressing ISO file."
+    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
+}
+
+Function SetupGit {
+    [CmdletBinding()]
+    Param()
 
     Progress "Writing deploy key."
     Exec { bash -c ("echo $env:DEPLOY_KEY | sed 's/@/\n/g;s/_/ /g' > /c/Users/$env:USERNAME/.ssh/id_rsa") }
     Exec { bash -c ("wc /c/Users/$env:USERNAME/.ssh/id_rsa") }
 
     Progress "Setting Git configuration."
+    Exec { git --version }
     Exec { git config --global user.email "krlmlr+rportable@mailbox.org" }
     Exec { git config --global user.name "r-portable commit bot" }
     Exec { git config --global push.default matching }
@@ -109,23 +136,4 @@ Function CreateImage {
     Exec { git checkout -b $env:APPVEYOR_REPO_BRANCH }
     Exec { git branch -v }
     Exec { git status }
-
-    Progress "Adding README to Git."
-    Exec { git add README.md }
-    Exec { git status }
-
-    Progress "Committing to Git."
-    Exec { git commit -C HEAD }
-    Exec { git commit --amend -m "Auto-generate README.md from README.Rmd [ci skip]" }
-
-    Progress "Pulling from Git."
-    Exec { git fetch }
-    Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
-    Exec { git commit --amend -m "Reconcile [ci skip]" }
-
-    Progress "Pushing to Git."
-    Exec { git push origin }
-
-    Progress "Compressing ISO file."
-    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 }

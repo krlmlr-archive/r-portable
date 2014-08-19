@@ -51,7 +51,13 @@ Function Unpack {
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 
-    # R packages devtools and testthat
+    # R site library
+    Progress "Creating site library"
+    Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
+    md .\Image\R\site-library
+    Exec { .\Image\R\bin\i386\Rscript.exe -e ".libPaths()" }
+
+    # Additional R packages
     Progress "Installing additional packages"
     Exec { .\Image\R\bin\i386\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr plyr } > .\R-packages.log
 
@@ -63,6 +69,9 @@ Function Unpack {
     # Don't seem to need those to build packages -- only to build R
     rm ".\Image\{code_rhome}" -Recurse
     rm ".\Image\{code_rhome64}" -Recurse
+
+    # Force-rebuild flag
+    Exec { touch DELETE_ME_TO_FORCE_REBUILD }
 }
 
 Function CreateImage {
@@ -70,10 +79,10 @@ Function CreateImage {
     Param()
 
     Progress "Adding files from image."
-    Exec { git add -A Image }
+    Exec { git add -A Image DELETE_ME_TO_FORCE_REBUILD }
 
     Progress "Checking status."
-    $StatusOutput = (git status Image --porcelain) | Out-String
+    $StatusOutput = (git status Image DELETE_ME_TO_FORCE_REBUILD --porcelain) | Out-String
 
     If ($StatusOutput.Length -eq 0) {
         Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
@@ -81,7 +90,7 @@ Function CreateImage {
     }
 
     Progress "Creating ISO file."
-    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+    Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
 
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }

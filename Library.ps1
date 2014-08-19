@@ -83,6 +83,9 @@ Function CreateImage {
     Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
 
+    Progress "Compressing ISO file."
+    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
+
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."
         Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
@@ -105,9 +108,6 @@ Function CreateImage {
         Progress "Pushing to Git."
         Exec { git push origin }
     }
-
-    Progress "Compressing ISO file."
-    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 }
 
 Function SetupGit {

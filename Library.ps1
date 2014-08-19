@@ -69,6 +69,9 @@ Function Unpack {
     # Don't seem to need those to build packages -- only to build R
     rm ".\Image\{code_rhome}" -Recurse
     rm ".\Image\{code_rhome64}" -Recurse
+
+    # Force-rebuild flag
+    Exec { touch DELETE_ME_TO_FORCE_REBUILD }
 }
 
 Function CreateImage {
@@ -76,10 +79,10 @@ Function CreateImage {
     Param()
 
     Progress "Adding files from image."
-    Exec { git add -A Image }
+    Exec { git add -A Image DELETE_ME_TO_FORCE_REBUILD }
 
     Progress "Checking status."
-    $StatusOutput = (git status Image --porcelain) | Out-String
+    $StatusOutput = (git status Image DELETE_ME_TO_FORCE_REBUILD --porcelain) | Out-String
 
     If ($StatusOutput.Length -eq 0) {
         Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow

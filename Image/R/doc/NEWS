@@ -152,6 +152,9 @@ CHANGES IN R-devel:
     * Fixed two obscure bugs in pairlist subassignment, reported by
       Radford Neal as part of pqR issue 16.
 
+    * Fixes for bugs in handling empty arguments and argument matching
+      by name in log().
+
 CHANGES IN R 3.1.1 patched:
 
   NEW FEATURES:
@@ -223,7 +226,10 @@ CHANGES IN R 3.1.1 patched:
 
     * edit() (and hence fix()) failed if an object had a non-character
       attribute named "source" (an attribute that had been used in R
-      prior to version 2.14.0).
+      prior to version 2.15.0).
+
+    * callGeneric() could fail if the generic had ... as a formal
+      argument. (PR#15937).
 
 CHANGES IN R 3.1.1:
 

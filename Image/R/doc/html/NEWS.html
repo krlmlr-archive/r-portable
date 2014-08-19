@@ -236,6 +236,10 @@ packages using them to be re-installed.
 <li><p> Fixed two obscure bugs in pairlist subassignment, reported by
 Radford Neal as part of pqR issue 16.
 </p>
+</li>
+<li><p> Fixes for bugs in handling empty arguments and argument
+matching by name in <code>log()</code>.
+</p>
 </li></ul>
 
 
@@ -351,7 +355,11 @@ no variables to drop.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.c
 </li>
 <li> <p><code>edit()</code> (and hence <code>fix()</code>) failed if 
 an object had a non-character attribute named <code>"source"</code>
-(an attribute that had been used in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> prior to version 2.14.0).
+(an attribute that had been used in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> prior to version 2.15.0).
+</p>
+</li>
+<li> <p><code>callGeneric()</code> could fail if the generic had
+<code>...</code> as a formal argument. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15937">PR#15937</a>).
 </p>
 </li></ul>
 

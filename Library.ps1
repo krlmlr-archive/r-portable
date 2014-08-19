@@ -87,7 +87,7 @@ Function CreateImage {
     }
 
     Progress "Creating ISO file."
-    .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
+    Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
 
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."

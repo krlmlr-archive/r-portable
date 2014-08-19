@@ -83,26 +83,28 @@ Function CreateImage {
     Progress "Creating ISO file."
     .\Tools\DiscUtils\ISOCreate.exe -vollabel "R-portable" -time .\R.iso .\Image
 
-    Progress "Knitting."
-    Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
+    If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
+        Progress "Knitting."
+        Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }
 
-    SetupGit
+        SetupGit
 
-    Progress "Adding also README to Git."
-    Exec { git add README.md }
-    Exec { git status README.md }
+        Progress "Adding also README to Git."
+        Exec { git add README.md }
+        Exec { git status README.md }
 
-    Progress "Committing to Git."
-    Exec { git commit -C HEAD }
-    Exec { git commit --amend -m "Update image [ci skip]" }
+        Progress "Committing to Git."
+        Exec { git commit -C HEAD }
+        Exec { git commit --amend -m "Update image [ci skip]" }
 
-    Progress "Pulling from Git."
-    Exec { git fetch }
-    Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
-    Exec { git commit --amend -m "Reconcile [ci skip]" }
+        Progress "Pulling from Git."
+        Exec { git fetch }
+        Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
+        Exec { git commit --amend -m "Reconcile [ci skip]" }
 
-    Progress "Pushing to Git."
-    Exec { git push origin }
+        Progress "Pushing to Git."
+        Exec { git push origin }
+    }
 
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }

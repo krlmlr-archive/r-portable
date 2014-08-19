@@ -45,7 +45,7 @@ plyr::d_ply(
       sub_pkgs,
       "Package",
       function(pkg) {
-        sprintf("[`%s`](cran.r-project.org/package=%s) (%s)", pkg$Package, pkg$Package, pkg$Version)
+        sprintf("[`%s`](http://cran.r-project.org/package=%s) (%s)", pkg$Package, pkg$Package, pkg$Version)
       }
     )
     cat(paste(unlist(s), collapse = ",\n"), "\n")

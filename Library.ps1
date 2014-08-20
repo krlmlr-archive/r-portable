@@ -107,12 +107,12 @@ Function CreateImage {
 
         Progress "Committing to Git."
         Exec { git commit -C HEAD }
-        Exec { git commit --amend -m "Update image [ci skip]" }
+        Exec { git commit --amend -m "Update image`n`n[ci skip]" }
 
         Progress "Pulling from Git."
         Exec { git fetch }
         Exec { git merge --no-edit origin/$env:APPVEYOR_REPO_BRANCH -s recursive -X ours }
-        Exec { git commit --amend -m "Reconcile [ci skip]" }
+        Exec { git commit --amend -m "Reconcile`n`n[ci skip]" }
 
         Progress "Pushing to Git."
         Exec { git push origin }

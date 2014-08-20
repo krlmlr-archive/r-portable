@@ -1,7 +1,7 @@
 
-r-portable (branch: ml-commit)
+r-portable 
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/ml-commit)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/ml-commit)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
 
 ISO images that contain everything necessary to build R packages.
 
@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/ml-commit/R.iso) (386.3 MB, MD5 hash: `195d8671d3091f8ccfbe9c44fe37b1e0`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/ml-commit/R.iso.gz) (129.2 MB, MD5 hash: `39933da44022c587267d2dc0e6795956`)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (386.3 MB, MD5 hash: `a73fecf844856bc864b36730f2a502d3`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `6cf7dbdbd28657744a2b45cbb353e93e`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 

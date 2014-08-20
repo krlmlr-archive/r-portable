@@ -96,10 +96,6 @@ CHANGES IN R-devel:
     * options(OutDec =) can now specify a multi-byte character, e.g.,
       options(OutDec = "\u00b7") in a UTF-8 locale.
 
-    * utils::URLencode() was updated to use unreserved and reserved
-      characters from RFC 3986, <URL:
-      http://tools.ietf.org/html/rfc3986>, instead of RFC 1738.
-
     * is.recursive(x) is no longer true when x is an external pointer,
       a weak reference or byte code; the first enables all.equal(x, x)
       when x <- getClass(.).
@@ -188,6 +184,10 @@ CHANGES IN R 3.1.1 patched:
 
     * New function icuGetCollate() to report on the ICU collation
       locale in use (if any).
+
+    * utils::URLencode() was updated to use unreserved and reserved
+      characters from RFC 3986, <URL:
+      http://tools.ietf.org/html/rfc3986>, instead of RFC 1738.
 
   INSTALLATION and INCLUDED SOFTWARE:
 

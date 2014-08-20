@@ -5,6 +5,18 @@
 
 <title>Markdown Extensions</title>
 
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
 <!-- Styles for R syntax highlighter -->
 <style type="text/css">
    pre .operator,
@@ -96,7 +108,9 @@ a:visited {
 pre, img {
   max-width: 100%;
 }
-
+pre {
+  overflow-x: auto;
+}
 pre code {
    display: block; padding: 0.5em;
 }
@@ -362,11 +376,11 @@ cat(markdownToHTML(text = &quot;2^10&quot;, extensions = c()))
 tOpt &lt;- &quot;fragment_only&quot;
 
 # skip_html example
-mkd = &#39;&lt;style&gt;&lt;/style&gt;&lt;img src=&quot;&quot;&gt;&lt;a href=&quot;&quot;&gt;Hello&lt;/a&gt;&#39;
+mkd = &#39;&lt;style&gt;&lt;/style&gt;&lt;img src=&quot;http://cran.rstudio.com/Rlogo.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;Hello&lt;/a&gt;&#39;
 cat(markdownToHTML(text = mkd, options = c(tOpt)))
 </code></pre>
 
-<p><style></style><img src=""><a href="">Hello</a></p>
+<p><style></style><img src="http://cran.rstudio.com/Rlogo.jpg"><a href="#">Hello</a></p>
 
 <pre><code class="r">cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_html&quot;)))
 </code></pre>
@@ -377,34 +391,34 @@ cat(markdownToHTML(text = mkd, options = c(tOpt)))
 cat(markdownToHTML(text = mkd, options = c(tOpt)))
 </code></pre>
 
-<p><style></style><img src=""><a href="">Hello</a></p>
+<p><style></style><img src="http://cran.rstudio.com/Rlogo.jpg"><a href="#">Hello</a></p>
 
 <pre><code class="r">cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_style&quot;)))
 </code></pre>
 
-<p><img src=""><a href="">Hello</a></p>
+<p><img src="http://cran.rstudio.com/Rlogo.jpg"><a href="#">Hello</a></p>
 
 <pre><code class="r"># skip_images example
 cat(markdownToHTML(text = mkd, options = c(tOpt)))
 </code></pre>
 
-<p><style></style><img src=""><a href="">Hello</a></p>
+<p><style></style><img src="http://cran.rstudio.com/Rlogo.jpg"><a href="#">Hello</a></p>
 
 <pre><code class="r">cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_images&quot;)))
 </code></pre>
 
-<p><style></style><a href="">Hello</a></p>
+<p><style></style><a href="#">Hello</a></p>
 
 <pre><code class="r"># skip_links example
 cat(markdownToHTML(text = mkd, options = c(tOpt)))
 </code></pre>
 
-<p><style></style><img src=""><a href="">Hello</a></p>
+<p><style></style><img src="http://cran.rstudio.com/Rlogo.jpg"><a href="#">Hello</a></p>
 
 <pre><code class="r">cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_links&quot;)))
 </code></pre>
 
-<p><style></style><img src="">Hello</p>
+<p><style></style><img src="http://cran.rstudio.com/Rlogo.jpg">Hello</p>
 
 <pre><code class="r"># safelink example
 cat(markdownToHTML(text = &#39;[foo](foo://bar &quot;baz&quot;)&#39;, options = c(tOpt)))
@@ -483,7 +497,7 @@ bar</p>
 bar</p>
 
 <pre><code class="r"># escape example
-mkd = &#39;&lt;style&gt;&lt;/style&gt;&lt;img src=&quot;&quot;&gt;&lt;a href=&quot;&quot;&gt;Hello&lt;/a&gt;&#39;
+mkd = &#39;&lt;style&gt;&lt;/style&gt;&lt;img src=&quot;http://cran.rstudio.com/Rlogo.jpg&quot;&gt;&lt;a href=&quot;#&quot;&gt;Hello&lt;/a&gt;&#39;
 cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_html&quot;)))
 </code></pre>
 
@@ -493,7 +507,7 @@ cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_html&quot;)))
 cat(markdownToHTML(text = mkd, options = c(tOpt, &quot;skip_html&quot;, &quot;escape&quot;)))
 </code></pre>
 
-<p>&lt;style&gt;&lt;/style&gt;&lt;img src=&ldquo;&rdquo;&gt;&lt;a href=&ldquo;&rdquo;&gt;Hello&lt;/a&gt;</p>
+<p>&lt;style&gt;&lt;/style&gt;&lt;img src=&ldquo;http://cran.rstudio.com/Rlogo.jpg&rdquo;&gt;&lt;a href=&ldquo;#&rdquo;&gt;Hello&lt;/a&gt;</p>
 
 <pre><code class="r"># smartypants example
 cat(markdownToHTML(text = &quot;1/2 (c)&quot;, options = c(tOpt)))

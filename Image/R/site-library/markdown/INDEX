@@ -3,7 +3,7 @@ markdownExtensions      Markdown extensions
 markdownHTMLOptions     Markdown HTML rendering options
 markdownToHTML          Render markdown to HTML
 registeredRenderers     List of Registered Markdown Renderers
-renderMarkdown          Render markdown
+renderMarkdown          Render markdown to an HTML fragment
 rendererExists          Testing for existence of a markdown renderer
 rendererOutputType      Fetch the Renderer Output Type
 rpubsUpload             Upload an HTML file to RPubs

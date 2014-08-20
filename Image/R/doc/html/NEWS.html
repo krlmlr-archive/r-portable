@@ -139,11 +139,6 @@ character, e.g., <code>options(OutDec = "\u00b7")</code> in a UTF-8
 locale.
 </p>
 </li>
-<li> <p><code>utils::URLencode()</code> was updated to use unreserved and
-reserved characters from RFC 3986,
-<a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>, instead of RFC 1738.
-</p>
-</li>
 <li> <p><code>is.recursive(x)</code> is no longer true when <code>x</code> is an
 external pointer, a weak reference or byte code; the first enables
 <code>all.equal(x, x)</code> when <code>x &lt;- getClass(.)</code>.
@@ -291,6 +286,11 @@ inappropriate (this is currently necessary on Windows).
 </li>
 <li><p> New function <code>icuGetCollate()</code> to report on the ICU
 collation locale in use (if any).
+</p>
+</li>
+<li> <p><code>utils::URLencode()</code> was updated to use unreserved and
+reserved characters from RFC 3986,
+<a href="http://tools.ietf.org/html/rfc3986">http://tools.ietf.org/html/rfc3986</a>, instead of RFC 1738.
 </p>
 </li></ul>
 

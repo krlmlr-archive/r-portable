@@ -361,6 +361,14 @@ an object had a non-character attribute named <code>"source"</code>
 <li> <p><code>callGeneric()</code> could fail if the generic had
 <code>...</code> as a formal argument. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15937">PR#15937</a>).
 </p>
+</li>
+<li><p> Forking in package <span class="pkg">parallel</span> called C entry point
+<code>exit</code> in the child.  This was unsafe (<code>_exit</code> should
+have been called), and could flush <code>stdin</code> of the main <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
+process (seen most often on Solaris).
+</p>
+<p>For good practice, <code>stdout</code> is flushed before forking a child.
+</p>
 </li></ul>
 
 

@@ -231,6 +231,13 @@ CHANGES IN R 3.1.1 patched:
     * callGeneric() could fail if the generic had ... as a formal
       argument. (PR#15937).
 
+    * Forking in package parallel called C entry point exit in the
+      child.  This was unsafe (_exit should have been called), and
+      could flush stdin of the main R process (seen most often on
+      Solaris).
+
+      For good practice, stdout is flushed before forking a child.
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:

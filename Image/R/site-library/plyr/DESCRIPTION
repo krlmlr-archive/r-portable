@@ -25,5 +25,5 @@ Packaged: 2014-02-26 16:06:36 UTC; hadley
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-02-26 17:25:17
-Built: R 3.1.1; x86_64-w64-mingw32; 2014-08-23 22:31:27 UTC; windows
+Built: R 3.1.1; x86_64-w64-mingw32; 2014-08-24 22:36:52 UTC; windows
 Archs: i386, x64

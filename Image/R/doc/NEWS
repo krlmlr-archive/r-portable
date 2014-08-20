@@ -133,7 +133,7 @@ CHANGES IN R-devel:
       NAMESPACE file, as these are common errors (writing
       importFrom(Pkg) where import(Pkg) was intended).
 
-    * R CMD check --as-cran now checks code usage directly on the
+    * R CMD check now by default checks code usage directly on the
       package namespace without loading and attaching the package and
       its suggests and enhances.
 

@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (386.3 MB, MD5 hash: `8869432f473254da864d6e948800e49c`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `86439d4acd9222217bc04f57946b6c81`)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (386.3 MB, MD5 hash: `5d55d225c227fbc4b02d96ecbcd85b21`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `d70988f0ed933b63fca64960cba8152e`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -20,7 +20,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-08-20 r66449)
+R Under development (unstable) (2014-08-21 r66456)
 
 ### Package versions
 
@@ -43,11 +43,11 @@ R Under development (unstable) (2014-08-20 r66449)
 [`boot`](http://cran.r-project.org/package=boot) (1.3-11),
 [`class`](http://cran.r-project.org/package=class) (7.3-11),
 [`cluster`](http://cran.r-project.org/package=cluster) (1.15.2),
-[`codetools`](http://cran.r-project.org/package=codetools) (0.2-8),
+[`codetools`](http://cran.r-project.org/package=codetools) (0.2-9),
 [`foreign`](http://cran.r-project.org/package=foreign) (0.8-61),
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-12),
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-29),
-[`MASS`](http://cran.r-project.org/package=MASS) (7.3-33),
+[`MASS`](http://cran.r-project.org/package=MASS) (7.3-34),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.1-4),
 [`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-2),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-117),

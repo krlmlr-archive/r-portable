@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent versions:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (386.3 MB, MD5 hash: `e44757c3a6330864c9ce648432638d89`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `a44f3f7db1545592b6ae96caa2c0cdba`)
+- [R.iso](https://rportable.blob.core.windows.net/r-portable/master/R.iso) (386.4 MB, MD5 hash: `9e7b83c52cc1515e5b5e628c9b12f8c3`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `7a43cd39885a76b85ad122a36f985c7e`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -20,7 +20,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2014-08-24 r66465)
+R Under development (unstable) (2014-08-25 r66471)
 
 ### Package versions
 
@@ -60,7 +60,7 @@ R Under development (unstable) (2014-08-24 r66465)
 [`devtools`](http://cran.r-project.org/package=devtools) (1.5),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.4),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.5.5),
-[`formatR`](http://cran.r-project.org/package=formatR) (0.10),
+[`formatR`](http://cran.r-project.org/package=formatR) (1.0),
 [`highr`](http://cran.r-project.org/package=highr) (0.3),
 [`httr`](http://cran.r-project.org/package=httr) (0.4),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.10),

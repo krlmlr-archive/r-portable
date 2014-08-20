@@ -47,5 +47,5 @@ Maintainer: R Core Team <R-core@R-project.org>
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-03-28 09:10:17
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-25 02:28:59 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-26 02:29:04 UTC; windows
 Archs: i386, x64

@@ -19,5 +19,5 @@ Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-07-21 08:47:17
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-25 02:29:21 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-26 02:29:25 UTC; windows
 Archs: i386, x64

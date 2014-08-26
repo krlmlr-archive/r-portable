@@ -19,7 +19,7 @@ test_script:
   - ps: CreateImage
 
 artifacts:
-  - path: R.tar.gz R.iso.gz
+  - path: R.tar.gz R.iso.gz R.vhd.gz
     name: ISO
   - path: R-devel-win.log R-packages.log Rtools-current.log
     name: Logs

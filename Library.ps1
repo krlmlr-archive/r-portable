@@ -98,6 +98,17 @@ Function CreateImage {
         Return
     }
 
+    Progress "Mounting VHD file."
+    Exec { gunzip R.vhd.gz }
+    Exec { git checkout R.vhd.gz }
+    $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
+    $ImageFullPath
+    Mount-DiskImage -ImagePath $ImageFullPath
+
+    Progress "Copying to VHD file."
+    $VHDPath = "E:"
+    cp -Recurse "Image\*" ($VHDPath + "\")
+
     Progress "Creating ISO file."
     Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
 
@@ -106,6 +117,12 @@ Function CreateImage {
 
     Progress "Creating TAR-GZ file."
     Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
+
+    Progress "Unmounting VHD file."
+    Dismount-DiskImage -ImagePath $ImageFullPath
+
+    Progress "Compressing VHD file."
+    Exec { bash -c 'gzip -c R.vhd > R.vhd.gz' }
 
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."

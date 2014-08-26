@@ -1,9 +1,9 @@
 
-r-portable 
+r-portable (branch: 13-vhd)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/13-vhd)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/13-vhd)
 
-Archives and ISO images that contain everything necessary to build R packages on Windows.
+Archives and disk images that contain everything necessary to build R packages on Windows.
 
 Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sourceforge.net/) and [the cygwin port of cdrtools](http://www.student.tugraz.at/thomas.plank/index_en.html).
 
@@ -11,8 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129 MB, MD5 hash: `28c63ff2a3edbb38298b632d6b0cab44`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `f9ce7e94c42a6770abd2411d136f3149`)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/13-vhd/R.tar.gz) (129 MB, MD5 hash: `0728a922486639a762b65aa1dbb08c50`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/13-vhd/R.iso.gz) (129.2 MB, MD5 hash: `e8f8e14f70ea7b60fc90d72386ff7dd9`)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/13-vhd/R.vhd.gz) (130.7 MB, MD5 hash: `550ee5c41ca0d4d74edb556bc3aec7aa`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 

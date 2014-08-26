@@ -90,7 +90,8 @@ Function CreateImage {
     }
 
     Progress "Mounting VHD file."
-    Exec { gunzip -k R.vhd.gz }
+    Exec { gunzip R.vhd.gz }
+    Exec { git checkout R.vhd.gz }
     $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
     $ImageFullPath
     Mount-DiskImage -ImagePath $ImageFullPath

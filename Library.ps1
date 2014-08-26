@@ -89,15 +89,6 @@ Function CreateImage {
         Return
     }
 
-    Progress "Creating ISO file."
-    Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
-
-    Progress "Compressing ISO file."
-    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
-
-    Progress "Creating TAR-GZ file."
-    Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
-
     Progress "Mounting VHD file."
     Exec { gunzip -k R.vhd.gz }
     $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
@@ -107,6 +98,18 @@ Function CreateImage {
     Progress "Copying to VHD file."
     $VHDPath = "E:"
     cp -Recurse "Image\*" ($VHDPath + "\")
+
+    Progress "Creating ISO file."
+    Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
+
+    Progress "Compressing ISO file."
+    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
+
+    Progress "Creating TAR-GZ file."
+    Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
+
+    Progress "Unmounting VHD file."
+    Dismount-DiskImage -ImagePath $ImageFullPath
 
     Progress "Compressing VHD file."
     Exec { bash -c 'gzip -c R.vhd > R.vhd.gz' }

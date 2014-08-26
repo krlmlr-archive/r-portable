@@ -10,7 +10,7 @@ r-portable `r if (BRANCH != "master") sprintf("(branch: %s)", BRANCH)`
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/`r BRANCH`)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/`r BRANCH`)
 
-ISO images that contain everything necessary to build R packages.
+Archives and ISO images that contain everything necessary to build R packages on Windows.
 
 Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sourceforge.net/) and [the cygwin port of cdrtools](http://www.student.tugraz.at/thomas.plank/index_en.html).
 

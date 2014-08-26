@@ -32,6 +32,17 @@ Function DownloadAndUnpack {
     [CmdletBinding()]
     Param()
 
+    # Force-rebuild flag
+    Exec { touch DELETE_ME_TO_FORCE_REBUILD }
+
+    Progress "Checking status."
+    $StatusOutput = (git status DELETE_ME_TO_FORCE_REBUILD --porcelain) | Out-String
+
+    If ($StatusOutput.Length -ne 0) {
+        Write-Host "Forced rebuild, skipping download." -ForegroundColor Yellow
+        Return
+    }
+
     Progress "Downloading R"
     Invoke-WebRequest http://cran.r-project.org/bin/windows/base/R-devel-win.exe -OutFile .\DL\R-devel-win.exe
 
@@ -70,9 +81,6 @@ Function DownloadAndUnpack {
     # Don't seem to need those to build packages -- only to build R
     rm ".\Image\{code_rhome}" -Recurse
     rm ".\Image\{code_rhome64}" -Recurse
-
-    # Force-rebuild flag
-    Exec { touch DELETE_ME_TO_FORCE_REBUILD }
 }
 
 Function CreateImage {

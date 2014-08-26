@@ -99,7 +99,7 @@ Function CreateImage {
     Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
 
     Progress "Mounting VHD file."
-    cp R-empty.vhd R.vhd
+    Exec { gunzip -k R.vhd.gz }
     $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
     $ImageFullPath
     Mount-DiskImage -ImagePath $ImageFullPath

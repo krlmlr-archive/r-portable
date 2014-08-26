@@ -98,6 +98,19 @@ Function CreateImage {
     Progress "Creating TAR-GZ file."
     Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
 
+    Progress "Mounting VHD file."
+    cp R-empty.vhd R.vhd
+    $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
+    $ImageFullPath
+    Mount-DiskImage -ImagePath $ImageFullPath
+
+    Progress "Copying to VHD file."
+    $VHDPath = "E:"
+    cp -Recurse "Image\*" ($VHDPath + "\")
+
+    Progress "Compressing VHD file."
+    Exec { bash -c 'gzip -c R.vhd > R.vhd.gz' }
+
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."
         Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }

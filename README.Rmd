@@ -1,8 +1,6 @@
 ```{r echo = FALSE, results = "hide"}
 BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
 REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
-MD5_iso <- tools::md5sum("R.iso")
-size_mb_iso <- round(file.info("R.iso")$size / (2 ** 20), 1)
 MD5_iso_gz <- tools::md5sum("R.iso.gz")
 size_mb_iso_gz <- round(file.info("R.iso.gz")$size / (2 ** 20), 1)
 ```
@@ -16,9 +14,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 ## Download
 
-Most recent versions:
+Most recent version:
 
-- [R.iso](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso) (`r size_mb_iso` MB, MD5 hash: ``r MD5_iso``)
 - [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`r size_mb_iso_gz` MB, MD5 hash: ``r MD5_iso_gz``)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)

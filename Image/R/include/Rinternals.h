@@ -795,6 +795,7 @@ int Rf_GetOptionWidth(void);
 SEXP Rf_GetRowNames(SEXP);
 void Rf_gsetVar(SEXP, SEXP, SEXP);
 SEXP Rf_install(const char *);
+SEXP Rf_installChar(SEXP);
 SEXP Rf_installDDVAL(int i);
 SEXP Rf_installS3Signature(const char *, const char *);
 Rboolean Rf_isFree(SEXP);
@@ -1128,6 +1129,7 @@ void R_orderVector(int *indx, int n, SEXP arglist, Rboolean nalast, Rboolean dec
 #define gsetVar			Rf_gsetVar
 #define inherits		Rf_inherits
 #define install			Rf_install
+#define installChar		Rf_installChar
 #define installDDVAL		Rf_installDDVAL
 #define installS3Signature	Rf_installS3Signature
 #define isArray			Rf_isArray
@@ -1217,6 +1219,7 @@ void R_orderVector(int *indx, int n, SEXP arglist, Rboolean nalast, Rboolean dec
 #define shallow_duplicate	Rf_shallow_duplicate
 #define str2type		Rf_str2type
 #define stringSuffix		Rf_stringSuffix
+#define stringPositionTr	Rf_stringPositionTr
 #define StringBlank		Rf_StringBlank
 #define substitute		Rf_substitute
 #define translateChar		Rf_translateChar
@@ -1289,6 +1292,7 @@ SEXP	 Rf_listAppend(SEXP, SEXP);
 SEXP	 Rf_mkNamed(SEXPTYPE, const char **);
 SEXP	 Rf_mkString(const char *);
 int	 Rf_nlevels(SEXP);
+int	 Rf_stringPositionTr(SEXP, const char *);
 SEXP	 Rf_ScalarComplex(Rcomplex);
 SEXP	 Rf_ScalarInteger(int);
 SEXP	 Rf_ScalarLogical(int);

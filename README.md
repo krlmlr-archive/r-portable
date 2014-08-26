@@ -1,7 +1,7 @@
 
-r-portable 
+r-portable (branch: just-rebuild)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/just-rebuild)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/just-rebuild)
 
 Archives and ISO images that contain everything necessary to build R packages on Windows.
 
@@ -11,8 +11,8 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129 MB, MD5 hash: `403a46400292cd031ed0c0c11fd68132`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `f488599c0866f11c43a1bd0796d2c855`)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/just-rebuild/R.tar.gz) (129 MB, MD5 hash: `8c98e333e4b3f827a2f1aaa3186246c4`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/just-rebuild/R.iso.gz) (129.2 MB, MD5 hash: `4d6fc6a63eaff4c789b658117f54476e`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 

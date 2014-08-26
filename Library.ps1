@@ -32,11 +32,17 @@ Function DownloadAndUnpack {
     [CmdletBinding()]
     Param()
 
+    Progress "Downloading R"
     Invoke-WebRequest http://cran.r-project.org/bin/windows/base/R-devel-win.exe -OutFile .\DL\R-devel-win.exe
+
+    Progress "Determining Rtools version"
     $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
     $rtoolsurl = "http://cran.r-project.org/bin/windows/Rtools/Rtools$rtoolsver.exe"
+
+    Progress "Downloading Rtools"
     Invoke-WebRequest $rtoolsurl -OutFile "DL\Rtools-current.exe"
 
+    Progress "Preparing image"
     rm -Recurse -Force .\Image
     md .\Image
 

@@ -37,5 +37,5 @@ Author: Martin Maechler [aut, cre],
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-03-31 10:15:48
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-25 02:28:49 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-26 02:28:54 UTC; windows
 Archs: i386, x64

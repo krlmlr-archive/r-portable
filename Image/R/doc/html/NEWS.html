@@ -148,7 +148,7 @@ external pointer, a weak reference or byte code; the first enables
 <code>as.list.environment()</code> gain a new argument <code>sorted</code>.
 </p>
 </li>
-<li><p> The <code>"source"</code> attribute (which has not been added 
+<li><p> The <code>"source"</code> attribute (which has not been added
 to functions by <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span>
 since before <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> version 2.14.0) is no longer treated as special.
 </p>
@@ -353,7 +353,7 @@ correctly for some numeric <code>x</code>, e.g., <code>c(NA, 1)</code> or
 no variables to drop.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15935">PR#15935</a>)
 </p>
 </li>
-<li> <p><code>edit()</code> (and hence <code>fix()</code>) failed if 
+<li> <p><code>edit()</code> (and hence <code>fix()</code>) failed if
 an object had a non-character attribute named <code>"source"</code>
 (an attribute that had been used in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> prior to version 2.14.0).
 </p>
@@ -368,6 +368,9 @@ have been called), and could flush <code>stdin</code> of the main <span style="f
 process (seen most often on Solaris).
 </p>
 <p>For good practice, <code>stdout</code> is flushed before forking a child.
+</p>
+</li>
+<li> <p><span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> objects such as <code>list(`a\b` = 1)</code> now print correctly.
 </p>
 </li></ul>
 

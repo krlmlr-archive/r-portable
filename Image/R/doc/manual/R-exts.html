@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 Under development (2014-08-24).
+<!-- This manual is for R, version 3.2.0 Under development (2014-08-25).
 
 Copyright (C) 1999-2014 R Core Team
 
@@ -429,7 +429,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a>,
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.2.0 Under development (2014-08-24).
+<p>This manual is for R, version 3.2.0 Under development (2014-08-25).
 </p>
 <p>Copyright &copy; 1999&ndash;2014 R Core Team
 </p>
@@ -4286,6 +4286,10 @@ compile in or link to.
 and Fortran I/O should not be used.  As with the previous item such
 calls may come from external software and may never be called, but
 package authors are often mistaken about that.
+
+</li><li> Compiled code should not call the system random number generators such
+as <code>rand</code>, <code>drand48</code> and <code>random</code>, but rather use the
+interfaces to R&rsquo;s RNGs described in <a href="#Random-numbers">Random numbers</a>.
 
 </li><li> Errors in memory allocation and reading/writing outside arrays are very
 common causes of crashes (e.g., segfaults) on some machines.

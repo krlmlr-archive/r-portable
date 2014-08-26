@@ -238,6 +238,8 @@ CHANGES IN R 3.1.1 patched:
 
       For good practice, stdout is flushed before forking a child.
 
+    * R objects such as list(`a\b` = 1) now print correctly.
+
 CHANGES IN R 3.1.1:
 
   NEW FEATURES:

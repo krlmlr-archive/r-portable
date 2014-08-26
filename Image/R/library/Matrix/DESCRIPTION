@@ -27,5 +27,5 @@ Packaged: 2014-06-14 16:22:31 UTC; maechler
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-06-15 20:26:23
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-25 02:25:16 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-26 02:25:27 UTC; windows
 Archs: i386, x64

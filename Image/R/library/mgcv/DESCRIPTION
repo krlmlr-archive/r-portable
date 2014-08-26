@@ -18,5 +18,5 @@ Packaged: 2014-07-21 08:56:24 UTC; sw283
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-07-21 12:09:55
-Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-25 02:29:29 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2014-08-26 02:29:34 UTC; windows
 Archs: i386, x64

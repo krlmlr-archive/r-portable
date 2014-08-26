@@ -95,6 +95,9 @@ Function CreateImage {
     Progress "Compressing ISO file."
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 
+    Progress "Creating TAR-GZ file."
+    Exec { tar -cvf R.tar.gz Image/* }
+
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."
         Exec { .\Image\R\bin\i386\Rscript.exe -e "knitr::knit('README.Rmd')" }

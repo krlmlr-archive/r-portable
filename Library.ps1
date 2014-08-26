@@ -96,7 +96,7 @@ Function CreateImage {
     Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
 
     Progress "Creating TAR-GZ file."
-    Exec { tar -cvf R.tar.gz Image/* }
+    Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
 
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         Progress "Knitting."

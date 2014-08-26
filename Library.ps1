@@ -28,7 +28,7 @@ Function Progress
     Write-Host $ProgressMessage -ForegroundColor Magenta
 }
 
-Function Download {
+Function DownloadAndUnpack {
     [CmdletBinding()]
     Param()
 
@@ -36,11 +36,6 @@ Function Download {
     $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
     $rtoolsurl = "http://cran.r-project.org/bin/windows/Rtools/Rtools$rtoolsver.exe"
     Invoke-WebRequest $rtoolsurl -OutFile "DL\Rtools-current.exe"
-}
-
-Function Unpack {
-    [CmdletBinding()]
-    Param()
 
     rm -Recurse -Force .\Image
     md .\Image

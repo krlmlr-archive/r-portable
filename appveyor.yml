@@ -11,10 +11,9 @@ init:
 install:
   - ps: |
         Import-Module '.\Library.ps1'
-        Download
 
 build_script:
-  - ps: Unpack
+  - ps: DownloadAndUnpack
 
 test_script:
   - ps: CreateImage

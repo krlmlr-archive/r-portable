@@ -1,7 +1,7 @@
 
-r-portable 
+r-portable (branch: 16-orig-size)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/16-orig-size)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/16-orig-size)
 
 Archives and disk images that contain everything necessary to build R packages on Windows.
 
@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (129 MB, MD5 hash: `d8a32056dd49b9d880d3a8e887998e60`)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (129.2 MB, MD5 hash: `101004f9dee0841ea34af95078f73e64`)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (130.7 MB, MD5 hash: `ff918711acf51740ef0ebd82776c380d`)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/16-orig-size/R.tar.gz) (129 MB, MD5 hash: `29aa6ed2c635ceeabb0a7a979ef19650`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/16-orig-size/R.iso.gz) (129.2 MB, MD5 hash: `e6e75f403afebec3f17bf43efc3d22f9`)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/16-orig-size/R.vhd.gz) (130.7 MB, MD5 hash: `22c6ff84994b99386e1d8ce1cb1d7856`)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 

@@ -186,6 +186,9 @@ CHANGES IN R 3.2.0 patched:
     * slotNames(.) is now correct for "signature" objects (mostly used
       internally in methods).
 
+    * On some systems, the first string comparison after a locale
+      change would result in NA.
+
 CHANGES IN R 3.2.0:
 
   NEW FEATURES:

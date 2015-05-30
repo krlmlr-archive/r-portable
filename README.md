@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.4 MB, MD5 hash: `4014bca47e88b16aff4bc43d70cab62f`, uncompressed 734.1 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264 MB, MD5 hash: `e615c6d863569c5aa5fe8efaccd8b439`, uncompressed 752.7 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `07c528f91d00112be6f9e2f0b2e2554e`, uncompressed 803.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.4 MB, MD5 hash: `5830730f78f35c7d09de32446b33a2ad`, uncompressed 734.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264 MB, MD5 hash: `d821ecba73872ca71463fe4b5fd1d524`, uncompressed 752.8 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `85096c4d9e708546f22e433f3d604a3f`, uncompressed 803.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-05 r68478)
+R Under development (unstable) (2015-06-06 r68484)
 
 ### Package versions
 
@@ -61,7 +61,7 @@ R Under development (unstable) (2015-06-05 r68478)
 [`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
 [`brew`](http://cran.r-project.org/package=brew) (1.0-6),
 [`crayon`](http://cran.r-project.org/package=crayon) (1.3.0),
-[`curl`](http://cran.r-project.org/package=curl) (0.7),
+[`curl`](http://cran.r-project.org/package=curl) (0.8),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.8.0),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.7),

@@ -1,3 +1,6 @@
+0.8
+ - Fix for curl() character reader to invert byte-order on big endian architectures.
+
 0.7
  - Rename the C function 'fetch' to 'fetchdata' because of Solaris conflict.
  - Move warning about missing CA bundle on Windows to onAttach.

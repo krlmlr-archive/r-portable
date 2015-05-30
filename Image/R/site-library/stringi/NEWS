@@ -9,7 +9,60 @@ http://bugs.icu-project.org/trac/ticket/11554]
 
 -------------------------------------------------------------------------------
 
+## 0.5-4 (2015-06-28) **CRAN**
+
+* [BACKWARD INCOMPATIBILITY] `stri_install_check` and `stri_install_icudt`
+are now deprecated. From now on they are supposed to be used only
+by the `stringi` installer.
+
+* [BUGFIX] #176: a patch for `sys/feature_tests.h` no longer included
+(the original file was copyrighted by Sun Microsystems); fixed the *Compiler
+or options invalid for pre-UNIX 03 X/Open applications and pre-2001 POSIX
+applications* error by forcing (conditionally) `_XPG6` conformance.
+
+* [BUGFIX] #174: `stri_paste()` did not generate any warning when
+the recycling rule is violated and `sep==""`.
+
+* [BUGFIX] #170: `setDataDirectory` no longer called if our ICU src bundle
+is not used (this used to cause build problems on openSUSE).
+
+* [BUILD TIME] #169: `./configure` now tries to switch to the "standard"
+C++ compiler if a C++11 one is not properly configured.
+
+* [BUILD TIME] `configure.win` (`Biarch: TRUE`) now mimics `autoconf`'s
+`AC_SUBST` and `AC_CONFIG_FILES` so that the build process is now
+more similar across different platforms.
+
+* [NEW FEATURE] `stri_info()` now also gives information on which ICU4C is
+used (system or bundle).
+
+-------------------------------------------------------------------------------
+
 ## 0.5-2 (2015-06-21) **CRAN**
+
+* [BACKWARD INCOMPATIBILITY] The second argument to `stri_pad_*()` has
+been renamed `width`.
+
+* [GENERAL] #69: `stringi` is now bundled with ICU4C 55.1.
+
+* [NEW FUNCTIONS] `stri_extract_*_boundaries()` extract text between text
+boundaries.
+
+* [NEW FUNCTION] #46: `stri_trans_char()` is a `stringi`-flavoured
+`chartr()` equivalent.
+
+* [NEW FUNCTION] #8: `stri_width()` approximates the *width* of a string
+in a more Unicodish fashion than `nchar(..., "width")`
+
+* [NEW FEATURE] #149: `stri_pad()` and `stri_wrap()` now by default bases on
+code point widths instead of the number of code points. Moreover, the default
+behavior of `stri_wrap()` is now such that it does not get rid
+of non-breaking, zero width, etc. spaces
+
+* [NEW FEATURE] #133: `stri_wrap()` silently allows for `width <= 0`
+(for compatibility with `strwrap()`).
+
+* [NEW FEATURE] #139: `stri_wrap()` gained a new argument: `whitespace_only`.
 
 * [NEW FUNCTIONS] #137: date-time formatting/parsing:
      * `stri_timezone_list()` - lists all known time zone identifiers
@@ -27,36 +80,6 @@ http://bugs.icu-project.org/trac/ticket/11554]
      * `stri_datetime_add()` - add specific number of date-time units
             to a date-time object
 
-* [BUGFIX] #168: Build now fails if `icudt` is not available.
-
--------------------------------------------------------------------------------
-
-## 0.5-1 (2015-06-19) **devel**
-
-* [BACKWARD INCOMPABILITY] The second argument to `stri_pad_*()` has
-been renamed `width`.
-
-* [GENERAL] #69: `stringi` is now bundled with ICU4C 55.1.
-
-* [NEW FUNCTIONS] `stri_extract_*_boundaries()` extract text between text
-boundaries.
-
-* [NEW FUNCTION] #46: `stri_trans_char()` is a `stringi`-flavoured
-`chartr()` equivalent.
-
-* [NEW FUNCTION] #8: `stri_width()` approximates the *width* of a string
-in a more Unicodish fashion than `nchar(..., "width")`
-
-* [NEW FEATURE] #149: `stri_pad()` and `stri_wrap()` now by default bases on 
-code point widths instead of the number of code points. Moreover, the default
-behavior of `stri_wrap()` is now such that it does not get rid
-of non-breaking, zero width, etc. spaces
-
-* [NEW FEATURE] #133: `stri_wrap()` silently allows for `width <= 0`
-(for compatibility with `strwrap()`).
-
-* [NEW FEATURE] #139: `stri_wrap()` gained a new argument: `whitespace_only`.
-
 * [GENERAL] #144: Performance improvements in handling ASCII strings
 (these affect `stri_sub()`, `stri_locate()` and other string index-based
  operations)
@@ -65,10 +88,10 @@ of non-breaking, zero width, etc. spaces
 relies on the current `libC`'s implementation of `strchr()` and `strstr()`.
 This is very fast e.g. on `glibc` utilizing the `SSE2/3/4` instruction set.
 
-* [GENERAL] #141: a local copy of `icudt*.zip` may be used on package
+* [BUILD TIME] #141: a local copy of `icudt*.zip` may be used on package
 install; see the `INSTALL` file for more information.
 
-* [GENERAL] #165: the `./configure` option `--disable-icu-bundle`
+* [BUILD TIME] #165: the `./configure` option `--disable-icu-bundle`
 forces the use of system ICU when building the package.
 
 * [BUGFIX] locale specifiers are now normalized in a more intelligent way:
@@ -82,16 +105,19 @@ of zero lengths
 * [BUGFIX] stringr/#73: `stri_wrap()` returned `CHARSXP` instead of `STRSXP`
 on empty string input with `simplify=FALSE` argument.
 
-* [BUGFIX] #164: libicu-dev usage used to fail on Ubuntu.
+* [BUGFIX] #164: `libicu-dev` usage used to fail on Ubuntu
+(`LIBS` shall be passed after `LDFLAGS` and the list of `.o` files).
+
+* [BUGFIX] #168: Build now fails if `icudt` is not available.
 
 * [BUGFIX] #135: C++11 is now used by default (see the `INSTALL` file,
-however) to build stringi from sources. This is because ICU4C uses the
+however) to build `stringi` from sources. This is because ICU4C uses the
 `long long` type which is not part of the C++98 standard.
 
 * [BUGFIX] #154: Dates and other objects with a custom class attribute
 were not coerced to the character type correctly.
 
-* [BUGFIX] Force ICU `u_init()` call on stringi dynlib load.
+* [BUGFIX] Force ICU `u_init()` call on `stringi` dynlib load.
 
 * [BUGFIX] #157: many overfull hboxes in the package PDF manual has been
 corrected.
@@ -227,7 +253,7 @@ being garbage collected, which might have caused spontaneous SEGFAULTS.
 * [BUGFIX] Memory leaks causes as detected by
 `valgrind --tool=memcheck --leak-check=full` have been removed.
 
-* [DOCUMENTATION] Significant extensions/clean ups in the stringi manual.
+* [DOCUMENTATION] Significant extensions/clean ups in the `stringi` manual.
 
 -------------------------------------------------------------------------------
 
@@ -263,10 +289,6 @@ being garbage collected, which might have caused spontaneous SEGFAULTS.
 * [GENERAL] `stri_*_fixed` now use a tweaked Knuth-Morris-Pratt search
  algorithm, which improves the search performance drastically.
 
--------------------------------------------------------------------------------
-
-## 0.2-2 (2014-05-01) **devel**
-
 * [IMPORTANT CHANGE] `stri_enc_nf*()` and `stri_enc_isnf*()` function families
 have been renamed to `stri_trans_nf*()` and `stri_trans_isnf*()`,
 respectively. This is because they deal with text transforming,
@@ -290,10 +312,6 @@ and `stri_pad_both` pad a string with a specific code point.
 
 * [NEW FUNCTION] `stri_wrap()` breaks paragraphs of text into lines.
 Two algorithms (greedy and minimal raggedness) are available.
-
--------------------------------------------------------------------------------
-
-## 0.2-1 (2014-04-18) **devel**
 
 * [IMPORTANT CHANGE] `stri_*_charclass()` search functions now
 rely solely on ICU's UnicodeSet patterns. All previously accepted
@@ -324,7 +342,7 @@ of code points in a string.
 `stri_cmp_gt()`, `stri_cmp_ge()`, `%==%`, `%!=%`, `%<%`, `%<=%`, `%>%`, `%>=%`.
 
 * [NEW FUNCTION] `stri_enc_mark()` reads declared encodings of character
-strings as seen by stringi.
+strings as seen by `stringi`.
 
 * [NEW FUNCTION] `stri_enc_tonative(str)` is an alias to
 `stri_encode(str, NULL, NULL)`.
@@ -371,7 +389,7 @@ for `opts_collator=NA`.
 
 ## 0.1-25 (2014-03-12) **CRAN**
 
-* LICENCE tweaks.
+* LICENSE tweaks.
 
 * Initial CRAN release.
 
@@ -394,7 +412,7 @@ for `opts_collator=NA`.
 
 * License changed to BSD-3-clause, COPYRIGHTS updated.
 
-* icudt is not shipped with stringi anymore;
+* `icudt` is not shipped with `stringi` anymore;
    it is now downloaded in `install.libs.R` from one of our servers.
 
 * New functions: `stri_install_check()`, `stri_install_icudt()`.
@@ -408,14 +426,14 @@ for `opts_collator=NA`.
   Pass `'--disable-pkg-config'` to `./configure` to force building
   ICU from sources.
 
-* icudt52b (custom subset) is now shipped with stringi
+* `icudt52b` (custom subset) is now shipped with `stringi`
   (for big-endian, ASCII systems).
 
 -------------------------------------------------------------------------------
 
 ## 0.1-21 (2014-02-19) **devel**
 
-* Fixed some Solaris-related issues while preparing stringi
+* Fixed some Solaris-related issues while preparing `stringi`
   for CRAN submission.
 
 -------------------------------------------------------------------------------
@@ -425,7 +443,7 @@ for `opts_collator=NA`.
 * ICU4C 52.1 sources included (common, i18n, stubdata + icu52dt.dat
   loaded dynamically). Compilation via Makevars.
 
-* stringi now does not depend on any external libraries.
+* `stringi` now does not depend on any external libraries.
 
 -------------------------------------------------------------------------------
 
@@ -441,7 +459,7 @@ for `opts_collator=NA`.
 
 ## 0.1-10 (2013-11-13) **devel**
 
-* Using pkg-config via ./configure to look for ICU4C libs.
+* Using `pkg-config` via `./configure` to look for ICU4C libs.
 
 -------------------------------------------------------------------------------
 
@@ -458,6 +476,6 @@ for `opts_collator=NA`.
 
 ## 0.1-1 (2013-01-05) **devel**
 
-* The stringi project has been established on GitHub.
+* The `stringi` project has been established on GitHub.
 
 -------------------------------------------------------------------------------

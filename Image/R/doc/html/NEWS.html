@@ -205,6 +205,11 @@ window was closed while it was in use. (<a href="https://bugs.R-project.org/bugz
 <li> <p><code>matrix(x, nr, nc, byrow = TRUE)</code> failed if <code>x</code>
 was an object of type <code>"expression"</code>.
 </p>
+</li>
+<li> <p><code>strptime()</code> could overflow the C stack when the
+timezone had a non-standard format much longer than the
+standard formats. (Part of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16328">PR#16328</a>.)
+</p>
 </li></ul>
 
 

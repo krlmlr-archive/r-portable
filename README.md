@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (264.2 MB, MD5 hash: `788f2354029f5ed764aafe2970e12a1f`, uncompressed 736.4 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.9 MB, MD5 hash: `123604e224b689bc8bb97fe4d0eee725`, uncompressed 755 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (267.3 MB, MD5 hash: `34b50a431ba5aa9de02f35932588b180`, uncompressed 805.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (264.2 MB, MD5 hash: `7b847df59d1c3279eebca738ce5faf2c`, uncompressed 736.5 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.9 MB, MD5 hash: `3931704b4502d4cb1ade73dcd11216d8`, uncompressed 755 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (267.3 MB, MD5 hash: `381595489a32e1238b798af664f89f21`, uncompressed 805.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,9 +21,14 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-28 r68602)
+R Under development (unstable) (2015-06-29 r68604)
 
 ### Package versions
+
+
+```
+## Warning: closing unused connection 5 (gzip -l -q R.tar.gz)
+```
 
 ####  base 
 [`base`](http://cran.r-project.org/package=base) (3.3.0),
@@ -41,20 +46,20 @@ R Under development (unstable) (2015-06-28 r68602)
 [`tools`](http://cran.r-project.org/package=tools) (3.3.0),
 [`utils`](http://cran.r-project.org/package=utils) (3.3.0) 
 ####  recommended 
-[`boot`](http://cran.r-project.org/package=boot) (1.3-16),
-[`class`](http://cran.r-project.org/package=class) (7.3-12),
+[`boot`](http://cran.r-project.org/package=boot) (1.3-17),
+[`class`](http://cran.r-project.org/package=class) (7.3-13),
 [`cluster`](http://cran.r-project.org/package=cluster) (2.0.2),
 [`codetools`](http://cran.r-project.org/package=codetools) (0.2-11),
 [`foreign`](http://cran.r-project.org/package=foreign) (0.8-64),
-[`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-14),
+[`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-15),
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-31),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-41),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-1),
 [`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-6),
-[`nlme`](http://cran.r-project.org/package=nlme) (3.1-120),
-[`nnet`](http://cran.r-project.org/package=nnet) (7.3-9),
-[`rpart`](http://cran.r-project.org/package=rpart) (4.1-9),
-[`spatial`](http://cran.r-project.org/package=spatial) (7.3-9),
+[`nlme`](http://cran.r-project.org/package=nlme) (3.1-121),
+[`nnet`](http://cran.r-project.org/package=nnet) (7.3-10),
+[`rpart`](http://cran.r-project.org/package=rpart) (4.1-10),
+[`spatial`](http://cran.r-project.org/package=spatial) (7.3-10),
 [`survival`](http://cran.r-project.org/package=survival) (2.38-2) 
 ####  other 
 [`BH`](http://cran.r-project.org/package=BH) (1.58.0-1),
@@ -82,7 +87,7 @@ R Under development (unstable) (2015-06-28 r68602)
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (4.1.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),
 [`rversions`](http://cran.r-project.org/package=rversions) (1.0.1),
-[`stringi`](http://cran.r-project.org/package=stringi) (0.5-2),
+[`stringi`](http://cran.r-project.org/package=stringi) (0.5-4),
 [`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.10.0),
 [`translations`](http://cran.r-project.org/package=translations) (3.3.0),

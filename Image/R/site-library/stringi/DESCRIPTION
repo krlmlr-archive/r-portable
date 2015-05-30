@@ -1,6 +1,6 @@
 Package: stringi
-Version: 0.5-2
-Date: 2015-06-21
+Version: 0.5-4
+Date: 2015-06-28
 Title: Character String Processing Facilities
 Description: Allows for fast, correct, consistent, portable,
     as well as convenient character string/text processing in every locale
@@ -17,16 +17,17 @@ BugReports: http://github.com/Rexamine/stringi/issues
 SystemRequirements: ICU4C (>= 50, optional)
 Type: Package
 Depends: R (>= 2.13.1)
-Imports: tools
+Imports: tools, utils, stats
+Biarch: TRUE
 License: file LICENSE
 Author: Marek Gagolewski and Bartek Tartanus (stringi source code);
     IBM and other contributors (ICU4C 55.1 source code);
     Unicode, Inc. (Unicode Character Database)
 Maintainer: Marek Gagolewski <gagolews@rexamine.com>
 NeedsCompilation: yes
-Packaged: 2015-06-21 15:51:33 UTC; gagolews
+Packaged: 2015-06-28 09:31:10 UTC; gagolews
 License_is_FOSS: yes
 Repository: CRAN
-Date/Publication: 2015-06-22 07:37:58
-Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-23 03:20:36 UTC; windows
+Date/Publication: 2015-06-28 12:56:55
+Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-29 03:20:26 UTC; windows
 Archs: i386, x64

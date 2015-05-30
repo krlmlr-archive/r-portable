@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-06-25).
+<!-- This manual is for R, version 3.3.0 Under development (2015-06-26).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-06-25).
+<p>This manual is for R, version 3.3.0 Under development (2015-06-26).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -2815,13 +2815,13 @@ empty. Otherwise, &lsquo;<samp>CXX1X</samp>&rsquo; defaults to the same value as
 compiler &lsquo;<samp>CXX</samp>&rsquo; and the flag &lsquo;<samp>CXX1XSTD</samp>&rsquo; defaults to
 <samp>-std=c++11</samp> or <samp>-std=c++0x</samp> (the latter on Windows).  It
 is possible to specify &lsquo;<samp>CXX1X</samp>&rsquo; to be a distinct compiler just for
-C++11&ndash;using packages, e.g. <code>g++ 4.9.x</code> on Solaris.  Note
-however that different C++ compilers (and even different versions of the
-same compiler) often differ in their ABI so their outputs can rarely be
+C++11&ndash;using packages, e.g. <code>g++</code> on Solaris.  Note however
+that different C++ compilers (and even different versions of the same
+compiler) often differ in their ABI so their outputs can rarely be
 mixed. By setting &lsquo;<samp>CXX1XSTD</samp>&rsquo; it is also possible to choose a
 different dialect of the standard, such as <samp>-std=gnu++11</samp>, or
-enable support for the 2014 revision using something like <samp>-std=c++14</samp>
-or <samp>-std=c++1y</samp>.
+enable support for the 2014 revision using something like
+<samp>-std=c++14</samp> or <samp>-std=c++1y</samp>.
 </p>
 <p>As noted above, support for C++11 varies across platforms.  The default
 compiler on Windows is GCC 4.6.x and supports the <samp>-std=c++0x</samp>
@@ -8400,7 +8400,7 @@ return,shift,signed-integer-overflow,unreachable,vla-bound
 
 <p>See
 <a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a> (or the
-manual for your version of GCC).  GCC 5.0.0 (under development) adds
+manual for your version of GCC).  GCC 5.1 adds
 </p><div class="example">
 <pre class="example">-fsanitize=alignment,bounds,float-cast-overflow,object-size,
 nonnull-attribute,returns-nonnull-attribute,bool,enum,vptr

@@ -8,7 +8,6 @@ PUT                     Send PUT request to server.
 VERB                    VERB a url.
 add_headers             Add additional headers to a request.
 authenticate            Use http authentication.
-brew_dr                 Diagnose common configuration problems
 cache_info              Compute caching information for a response.
 config                  Set curl options.
 content                 Extract content from a request.
@@ -19,6 +18,7 @@ headers                 Extract the headers from a response
 http_error              Take action on http error.
 http_status             Give information on the status of a request.
 httr                    'httr' makes http easy.
+httr_dr                 Diagnose common configuration problems
 httr_options            List available options.
 modify_url              Modify a url.
 oauth1.0_token          Generate an oauth1.0 token.

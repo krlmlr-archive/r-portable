@@ -4,7 +4,6 @@ accept_json	content_type
 accept_xml	content_type
 add_headers	add_headers
 authenticate	authenticate
-brew_dr	brew_dr
 BROWSE	BROWSE
 build_url	parse_url
 cache_info	cache_info
@@ -31,6 +30,7 @@ http_date	parse_http_date
 http_error	http_error
 http_status	http_status
 httr	httr
+httr_dr	httr_dr
 httr_options	httr_options
 init_oauth1.0	init_oauth1.0
 init_oauth2.0	init_oauth2.0
@@ -87,8 +87,5 @@ with_config	with_config
 with_verbose	with_config
 write_disk	write_disk
 write_function	write_function
-write_init	write_function
 write_memory	write_disk
-write_opts	write_function
 write_stream	write_stream
-write_term	write_function

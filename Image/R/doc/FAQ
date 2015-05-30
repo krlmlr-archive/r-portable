@@ -1,6 +1,6 @@
 R FAQ
 Frequently Asked Questions on R
-Version 3.2.2015-06-08
+Version 3.2.2015-06-26
 Kurt Hornik
 
 
@@ -400,8 +400,8 @@ install r-base-dev' to obtain the additional tools required for this.
 So-called "backports" of the current R packages for at least the
 "stable" distribution of Debian are provided by Johannes Ranke, and
 available from CRAN.  See
-<http://CRAN.R-project.org/bin/linux/debian/README> for details on R
-Debian packages and installing the backports, which should also be
+<http://CRAN.R-project.org/bin/linux/debian/README.html> for details on
+R Debian packages and installing the backports, which should also be
 suitable for other Debian derivatives.  Native backports for Ubuntu are
 provided by Michael Rutter.
 
@@ -704,13 +704,13 @@ for more information.
 
 R-Forge (<http://R-Forge.R-project.org/>) offers a central platform for
 the development of R packages, R-related software and further projects.
-It is based on GForge (http://www.gforge.org/) offering easy access to
-the best in SVN, daily built and checked packages, mailing lists, bug
-tracking, message boards/forums, site hosting, permanent file archival,
-full backups, and total web-based administration.  For more information,
-see the R-Forge web page and Stefan Theuﬂl and Achim Zeileis (2009),
-"Collaborative software development using R-Forge", _The R Journal_,
-*1*(1):9-14.
+It is based on GForge (https://en.wikipedia.org/wiki/GForge) offering
+easy access to the best in SVN, daily built and checked packages,
+mailing lists, bug tracking, message boards/forums, site hosting,
+permanent file archival, full backups, and total web-based
+administration.  For more information, see the R-Forge web page and
+Stefan Theuﬂl and Achim Zeileis (2009), "Collaborative software
+development using R-Forge", _The R Journal_, *1*(1):9-14.
 
 3 R and S
 *********
@@ -755,14 +755,14 @@ S.
 
    * John M. Chambers (1998), "Programming with Data," New York:
      Springer, ISBN 0-387-98503-4
-     (<http://cm.bell-labs.com/cm/ms/departments/sia/Sbook/>).
+     (<http://statweb.stanford.edu/~jmc4/Sbook/>).
 
      This "_Green Book_" describes version 4 of S, a major revision of S
      designed by John Chambers to improve its usefulness at every stage
      of the programming process.
 
-   See <http://cm.bell-labs.com/cm/ms/departments/sia/S/history.html>
-for further information on "Stages in the Evolution of S".
+   See <http://statweb.stanford.edu/~jmc4/papers/96.7.ps> for further
+information on the "Evolution of the S Language".
 
    There is a huge amount of user-contributed code for S, available at
 the S Repository (http://lib.stat.cmu.edu/S/) at CMU.
@@ -1254,11 +1254,11 @@ embeds the R interpreter inside Apache 2 (and beyond).  A tutorial and
 presentation are available from the project web page at
 <http://biostat.mc.vanderbilt.edu/twiki/bin/view/Main/RApacheProject>.
 
-   Rserve (http://stats.math.uni-augsburg.de/Rserve/) is a project
-actively developed by Simon Urbanek.  It implements a TCP/IP server
-which allows other programs to use facilities of R. Clients are
-available from the web site for Java and C++ (and could be written for
-other languages that support TCP/IP sockets).
+   Rserve (http://www.rforge.net/Rserve/) is a project actively
+developed by Simon Urbanek.  It implements a TCP/IP server which allows
+other programs to use facilities of R. Clients are available from the
+web site for Java and C++ (and could be written for other languages that
+support TCP/IP sockets).
 
    Two projects use PHP to provide a web interface to R. R_PHP_Online
 (http://steve-chen.net/R_PHP/) by Steve Chen (though it is unclear if
@@ -1305,9 +1305,6 @@ relies on the popular and reliable open-source elements such as MySQL
 server (exchange and storage of the data), Rstudio (http://rstudio.org/)
 (R code designing and testing, file management), CKEditor (HTML Layer
 design), and PHP.
-
-   See <http://rwiki.sciviews.org/doku.php?id=faq-r#web_interfaces> for
-additional information.
 
 5 R Add-On Packages
 *******************
@@ -2550,9 +2547,7 @@ functions 'twoord.plot()' (in the *plotrix*
 (http://CRAN.R-project.org/package=plotrix) package) and
 'doubleYScale()' (in the *latticeExtra*
 (http://CRAN.R-project.org/package=latticeExtra) package) automate the
-process somewhat.  See
-<http://rwiki.sciviews.org/doku.php?id=tips:graphics-base:2yaxes> for
-more information, including strong arguments against this sort of graph.
+process somewhat.
 
 7.40 How do I access the source code for a function?
 ====================================================

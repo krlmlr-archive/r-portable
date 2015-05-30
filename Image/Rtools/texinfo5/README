@@ -1,0 +1,9 @@
+This is a packaged installation of GNU texinfo 5.2's texi2any script,
+the Perl-based replacement for makeinfo.
+
+To use it, unpack it somewhere and
+edit src/gnuwin32/MkRules to have something like
+
+TI5 = /path/to/where/unpacked
+MAKEINFO = /path/to/perl -I$(TI5) $(TI5)/texi2any
+

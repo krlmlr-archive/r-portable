@@ -11,7 +11,7 @@ dc7cd605de74c70c165064b5f5fb672f *CurlSSL/certs.pem
 35f5f8e7159ac8b8f8bf6d383d44102f *CurlSSL/ok.R
 00f28f64cbf9a8d58c9116a2e138eb0f *CurlSSL/server.pem
 4c7269b0f0ccff811fbca84bf86fd3dc *CurlSSL/statEth.pem
-38b71e9262019c4dc68e1e00bed80daa *DESCRIPTION
+57add75dc9bc5f99c0648e8dbd253d1a *DESCRIPTION
 5621c4bbff9afc92b49e7391007ada18 *HTTPErrors/makeErrorClasses.R
 f6a96141035dc02642e76a522b34aba6 *INDEX
 92af9545ee41207d674adae3831bc06a *Meta/Rd.rds
@@ -19,7 +19,7 @@ f6a96141035dc02642e76a522b34aba6 *INDEX
 1c68731c634acd42e04152af08889a4a *Meta/hsearch.rds
 26cc61e22b0b6e68af38172efc0f8282 *Meta/links.rds
 77710b3b662f98453664e7eaa73a2ed9 *Meta/nsInfo.rds
-7d3f04dd27ab9b5526d74ab2f538747b *Meta/package.rds
+7a07f6a442cca7ebaed2951d601d5d3d *Meta/package.rds
 d61a0c56b44bd2c748fbd21aec84eb0d *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/RCurl
 2d66d19455a18d22b0b586c8ee372ebb *R/RCurl.rdb
@@ -72,13 +72,13 @@ cadfc54ed37492f716c13d806c70818d *examples/system.png
 e8bcb61af48e48651d3ee34010b58331 *examples/xmlParse.html
 fba3caa77b865f9b2f05fd301509f053 *examples/xmlParse.xml
 527a86a5abf15f11621940d17198f0d7 *help/AnIndex
-12c2e1463e8aaa138329baced5220fdc *help/RCurl.rdb
-a9d433aea026f6e99a5fdfe029479986 *help/RCurl.rdx
+1e8cc11213b1457ed8e886f081333699 *help/RCurl.rdb
+057691e8ba8e8ef3648e4246b3e6cc7e *help/RCurl.rdx
 a94549fec47e043a5e2ad702551c44e4 *help/aliases.rds
-4cb023de759c96ec728b34d4734d6e76 *help/paths.rds
+bfa020ee95359995640167521eddc1b6 *help/paths.rds
 a62b366de29f634bafe1455efacb41e4 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css
-b1007e55e40a6bd7aaceaff531a70705 *libs/i386/RCurl.dll
+7a187d285d53d9e8cf80a62d14d485cf *libs/i386/RCurl.dll
 bdc99a38c6885c166f867ed75c942685 *libs/i386/symbols.rds
-ae6660562dd055ff544d4c2b4d36c16b *libs/x64/RCurl.dll
+3b41aa65700d1f57a495adb2a282132d *libs/x64/RCurl.dll
 158bcd263c4eab050f3ccc5fab01d135 *libs/x64/symbols.rds

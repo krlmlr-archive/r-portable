@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (254.1 MB, MD5 hash: `a56a9c1ac7be2c28bcde623e53ab4639`, uncompressed 638.8 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (254.4 MB, MD5 hash: `f3466a0d99aa8cd4abd1101c3ccd4e4d`, uncompressed 651.2 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (256.2 MB, MD5 hash: `7d56d9089d67a651edde2935b86caa81`, uncompressed 685.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (254.1 MB, MD5 hash: `145adeee4c1fd45b88706f2eda236734`, uncompressed 638.8 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (254.5 MB, MD5 hash: `5733f9b57e2abebafd7bf5cc4aa0cb53`, uncompressed 651.3 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (256.2 MB, MD5 hash: `6d7d91a9dce7eaeac2510800fb2af440`, uncompressed 685.3 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-05-31 r68444)
+R Under development (unstable) (2015-06-01 r68455)
 
 ### Package versions
 
@@ -49,7 +49,7 @@ R Under development (unstable) (2015-05-31 r68444)
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-14),
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-31),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-40),
-[`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-0),
+[`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-1),
 [`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-6),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-120),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-9),

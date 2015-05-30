@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-05-31).
+<!-- This manual is for R, version 3.3.0 Under development (2015-06-01).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -176,6 +176,7 @@ p {
       <li><a name="toc-Package-subdirectories-1" href="#Package-subdirectories">1.1.5 Package subdirectories</a></li>
       <li><a name="toc-Data-in-packages-1" href="#Data-in-packages">1.1.6 Data in packages</a></li>
       <li><a name="toc-Non_002dR-scripts-in-packages-1" href="#Non_002dR-scripts-in-packages">1.1.7 Non-R scripts in packages</a></li>
+      <li><a name="toc-Specifying-URLs-1" href="#Specifying-URLs">1.1.8 Specifying URLs</a></li>
     </ul></li>
     <li><a name="toc-Configure-and-cleanup-1" href="#Configure-and-cleanup">1.2 Configure and cleanup</a>
     <ul class="no-bullet">
@@ -431,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-05-31).
+<p>This manual is for R, version 3.3.0 Under development (2015-06-01).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -744,6 +745,8 @@ structure for a new package: see its help page for details.
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Non_002dR-scripts-in-packages" accesskey="7">Non-R scripts in packages</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
+<tr><td align="left" valign="top">&bull; <a href="#Specifying-URLs" accesskey="8">Specifying URLs</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+</td></tr>
 </table>
 
 <hr>
@@ -847,7 +850,8 @@ with the package name, &lsquo;This package&rsquo; or similar.  As with the
 (including titles of books and articles), and single quotes for
 non-English usage, including names of other packages and external
 software.  This field should also be used for explaining the package
-name if necessary.
+name if necessary.  URLs should be enclosed in angle brackets, e.g.
+&lsquo;<samp>&lt;http://www.r-project.org&gt;</samp>&rsquo;: see also <a href="#Specifying-URLs">Specifying URLs</a>.
 </p>
 <p>The mandatory &lsquo;<samp>Author</samp>&rsquo; field describes who wrote <em>the
 package</em>.  It is a plain text field intended for human readers, but not
@@ -907,7 +911,7 @@ in a later subsection.
 separated by commas or whitespace, for example the homepage of the
 author or a page where additional material describing the software can
 be found.  These <acronym>URL</acronym>s are converted to active hyperlinks in
-<acronym>CRAN</acronym> package listings.
+<acronym>CRAN</acronym> package listings.  See <a href="#Specifying-URLs">Specifying URLs</a>.
 </p>
 <p>The &lsquo;<samp>BugReports</samp>&rsquo; field may contain a single
 <acronym>URL</acronym> to which bug reports about the package should be
@@ -1319,7 +1323,7 @@ R it would cause the specification to be ignored.)
 headers containing source code or static linking is done at
 installation: the packages do not need to be (and usually should not be)
 listed in the &lsquo;<samp>Depends</samp>&rsquo; or &lsquo;<samp>Imports</samp>&rsquo; fields.  This includes
-CRAN package <a href="http://CRAN.R-project.org/package=BH"><strong>BH</strong></a> and almost all users of
+<acronym>CRAN</acronym> package <a href="http://CRAN.R-project.org/package=BH"><strong>BH</strong></a> and almost all users of
 <a href="http://CRAN.R-project.org/package=RcppArmadillo"><strong>RcppArmadillo</strong></a> and <a href="http://CRAN.R-project.org/package=RcppEigen"><strong>RcppEigen</strong></a>.
 </p>
 <p>For another use of &lsquo;<samp>LinkingTo</samp>&rsquo; see <a href="#Linking-to-native-routines-in-other-packages">Linking to native routines in other packages</a>.
@@ -1744,7 +1748,7 @@ otherwise <code>gzip</code>.
 <a name="Non_002dR-scripts-in-packages"></a>
 <div class="header">
 <p>
-Previous: <a href="#Data-in-packages" accesskey="p" rel="prev">Data in packages</a>, Up: <a href="#Package-structure" accesskey="u" rel="up">Package structure</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Specifying-URLs" accesskey="n" rel="next">Specifying URLs</a>, Previous: <a href="#Data-in-packages" accesskey="p" rel="prev">Data in packages</a>, Up: <a href="#Package-structure" accesskey="u" rel="up">Package structure</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Non_002dR-scripts-in-packages-1"></a>
 <h4 class="subsection">1.1.7 Non-R scripts in packages</h4>
@@ -1810,7 +1814,38 @@ sudo mv bwidget-1.9.6 /usr/local/lib
 <p>substituting a location on the Tcl/Tk search path for <samp>/usr/local/lib</samp> if
 needed.
 </p>
+<hr>
+<a name="Specifying-URLs"></a>
+<div class="header">
+<p>
+Previous: <a href="#Non_002dR-scripts-in-packages" accesskey="p" rel="prev">Non-R scripts in packages</a>, Up: <a href="#Package-structure" accesskey="u" rel="up">Package structure</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+</div>
+<a name="Specifying-URLs-1"></a>
+<h4 class="subsection">1.1.8 Specifying URLs</h4>
 
+<p>URLs in many places in the package documentation will be converted to
+clickable hyperlinks in at least some of their renderings.  So care is
+needed that their forms are correct and portable.
+</p>
+<p>The full URL should be given, including the scheme (often
+&lsquo;<samp>http://</samp>&rsquo;) and a final &lsquo;<samp>/</samp>&rsquo; for references to directories.
+</p>
+<p>Spaces in URLs are not portable and how they are handled does vary by
+HTTP server and by client.  There should be no space in the host part of
+an &lsquo;<samp>http://</samp>&rsquo; URL, and spaces in the remainder should be encoded,
+with each space replaced by &lsquo;<samp>%20</samp>&rsquo;.
+</p>
+<p>Other characters may benefit from being encoded: see the help on
+<code>URLencode()</code>.
+</p>
+<p>The canonical URL for a <acronym>CRAN</acronym> package is
+</p><div class="example">
+<pre class="example">http://cran.r-project.org/package=<var>pkgname</var>
+</pre></div>
+
+<p>and not a version starting
+&lsquo;<samp>http://cran.r-project.org/web/packages/<var>pkgname</var></samp>&rsquo;.
+</p>
 <hr>
 <a name="Configure-and-cleanup"></a>
 <div class="header">
@@ -4528,7 +4563,7 @@ of the <acronym>CRAN</acronym> OS X distribution of R).  <code>R CMD build</code
 has an option to run <code>qpdf</code> over PDF files under <samp>inst/doc</samp>
 and replace them if at least 10Kb and 10% is saved.  The full path to
 the <code>qpdf</code> command can be supplied as environment variable
-<code>R_QPDF</code> (and is on the CRAN binary of R for OS X).  It seems
+<code>R_QPDF</code> (and is on the <acronym>CRAN</acronym> binary of R for OS X).  It seems
 MiKTeX does not use PDF object compression and so <code>qpdf</code> can
 reduce considerably the files it outputs: MiKTeX can be overridden by
 code in the preamble of an Sweave or LaTeX file &mdash; see how this is
@@ -4628,7 +4663,7 @@ be around 2000, but non-Latin alphabets (Greek, Russian, Georgian,
 characters (Chinese, Japanese, Korean) often need specialist fonts to
 render correctly.
 </p>
-<p>Several CRAN packages have messages in their R code in French (and a
+<p>Several <acronym>CRAN</acronym> packages have messages in their R code in French (and a
 few in German).  A better way to tackle this is to use the
 internationalization facilities discussed elsewhere in this manual.
 </p>
@@ -4814,11 +4849,11 @@ external software on Windows or OS X, options include
 <li> To arrange for installation of the package to download the
 additional software from a URL, as e.g. package <a href="http://CRAN.R-project.org/package=Cairo"><strong>Cairo</strong></a> does.
 
-</li><li> (For CRAN.)
+</li><li> (For <acronym>CRAN</acronym>.)
 To negotiate with Uwe Ligges to host the additional components on
 WinBuilder, and write a <samp>configure.win</samp> file to install them.
 There used to be many examples, e.g. package <a href="http://CRAN.R-project.org/package=rgdal"><strong>rgdal</strong></a> (however
-nowadays CRAN prefers to use a uniform cross-compilation approach for
+nowadays <acronym>CRAN</acronym> prefers to use a uniform cross-compilation approach for
 software such as GDAL).
 
 </li></ul>
@@ -5830,9 +5865,9 @@ See <a href="#Lists-and-tables">Lists and tables</a>, for more information.
 </dd>
 <dt><code>\source{&hellip;}</code></dt>
 <dd><a name="index-_005csource"></a>
-<p>Details of the original source (a reference or <acronym>URL</acronym>).  In
-addition, section <code>\references</code> could give secondary sources and
-usages.
+<p>Details of the original source (a reference or <acronym>URL</acronym>,
+See <a href="#Specifying-URLs">Specifying URLs</a>).  In addition, section <code>\references</code> could
+give secondary sources and usages.
 </p></dd>
 </dl>
 
@@ -6102,7 +6137,7 @@ a hyperlink in <acronym>HTML</acronym> and PDF conversion.  Displayed using
 Web.  The argument is handled as &lsquo;verbatim&rsquo; text (with percent and
 braces escaped by backslash), and rendered as a hyperlink in <acronym>HTML</acronym> and
 PDF conversion.  Linefeeds are removed, and as from R 3.2.0 leading
-and trailing whitespace<a name="DOCF78" href="#FOOT78"><sup>78</sup></a> is removed.
+and trailing whitespace<a name="DOCF78" href="#FOOT78"><sup>78</sup></a> is removed. See <a href="#Specifying-URLs">Specifying URLs</a>.
 </p>
 <p>Displayed using <code>typewriter</code> font where possible.
 </p>
@@ -13728,7 +13763,7 @@ programs.  We will assume this has been done for the rest of this
 section.  Also, it can be built as a static library if configured with
 <samp>--enable-R-static-lib</samp>, and that can be used in a very similar
 way (at least on Linux: on other platforms one needs to ensure that all
-the symbols exported by <samp>libR.a</samp> and linked into the front-end).
+the symbols exported by <samp>libR.a</samp> are linked into the front-end).
 </p>
 <p>The command-line R front-end, <samp><var>R_HOME</var>/bin/exec/R</samp>, is one
 such example, and the former <acronym>GNOME</acronym> (see package <strong>gnomeGUI</strong>

@@ -104,6 +104,8 @@ CHANGES IN R 3.2.1 patched:
     * cmdscale() gets new option list. for increased flexibility when a
       list should be returned.
 
+    * configure now supports texinfo version 6.0.  (Wish of PR#16456.)
+
   BUG FIXES:
 
     * The HTML help page links to demo code failed due to a change in R

@@ -69,10 +69,12 @@ This document aims to provide a basic overview of the RCurl package.
 It doesn't try to provide all the details.  The R function help files
 and the libcurl documentation have all the relevant information.
 Since the package is an interface to libcurl, it is important to use
-the documentation for it regarding features, options, etc.  You can
-consult the <a class="ulink" href="http://curl.haxx.se/docs" target="_top">libcurl
-documentation</a> and <a class="ulink" href="http://curl.planetmirror.com/libcurl/c/example.html" target="_top">libcurl
-examples</a> (in C code).
+the documentation for it regarding features, options, etc.  
+
+<!-- You can consult the <a class="ulink" href="http://curl.haxx.se/docs"
+target="_top">libcurl documentation</a> and <a class="ulink"
+href="http://curl.planetmirror.com/libcurl/c/example.html"
+target="_top">libcurl examples</a> (in C code). -->
 
 <p></p>
 The RCurl package provides three primary high-level entry points.
@@ -143,7 +145,7 @@ by the ... in the <pre xmlns="" class="rfunction">getURL</pre>
 this, one can specify name-value pairs governing the actual request.
 There are numerous possible settings that one can specify.  The basic
 idea is that one can set options provided by the
-<i xmlns=""><a href="c:routine(%22curl_easy_setopt%22)">curl_easy_setopt</a></i> routine.  These allow us to
+<i xmlns="">curl_easy_setopt</i> routine.  These allow us to
 set parameters for many different aspects of the request.  For
 example, we can specify additional headers for the HTTP request, or
 include a password for the Web site.
@@ -223,7 +225,7 @@ sort(names(getCurlOptionsConstants()))
 [113] "writeinfo"              
 </pre>
 Each of these and what it controls is described in the libcurl man(ual) page
-for <i xmlns=""><a href="c:routine(%22curl_easy_setopt%22)">curl_easy_setopt</a></i>
+for <i xmlns="">curl_easy_setopt</i>
 and that is the authoritative documentation.
 Anything we provide here is merely repetition or additional
 explanation.
@@ -695,7 +697,7 @@ existing one.  This allows us to quickly reuse
 existing settings without having them affect
 other requests.
 (The data in the option values are not copied).
-See <i xmlns=""><a href="c:routine(%22curl_easy_duphandle%22)">curl_easy_duphandle</a></i>.
+See <i xmlns="">curl_easy_duphandle</i>.
 
 <p></p>
 By reusing libcurl handles, we avoid reallocating
@@ -753,7 +755,7 @@ The names of the resulting elements are
 </pre>
 These provide us the actual name of the URI downloaded after
 redirections, etc.; information about the transfer speed, etc.; etc.
-See the man page for <i xmlns=""><a href="c:routine(%22curl_easy_getinfo%22)">curl_easy_getinfo</a></i>.
+See the man page for <i xmlns="">curl_easy_getinfo</i>.
 
 </div><div class="section" title="libcurl Version Information"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a id="id1170723592415"></a>libcurl Version Information</h2></div></div></div>
 The RCurl package provides a way to obtain
@@ -1002,7 +1004,7 @@ Content-Type: text/xml; charset=utf-8<br></br>
 libcurl should take care of the Content-Length field.
 
 The body is specified for the HTTP request using the <font xmlns="" xmlns:curl="http://curl.haxx.se" color="red" class="curlOpt">postfields</font> option.
-To do this using the <i xmlns=""><a href="http://cran.r-project.org/web/packages/RCurl/index.html">RCurl</a></i> package, we use
+To do this using the <i xmlns=""><a href="http://cran.r-project.org/package=RCurl">RCurl</a></i> package, we use
 the following code.
 <pre xmlns="" class="S">
 
@@ -1124,8 +1126,8 @@ so that I could discover the nuances of HTTP.  It quickly gets
 overwhelming to handle all the details.  It is more tedious than
 technically challenging, especially when others have done it already
 in C libraries and done it well.  The code that I have is in an
-unreleased package named <i xmlns=""><a href="http://cran.r-project.org/web/packages/httpClient/index.html">httpClient</a></i>. If anyone is interested, please
-contact me.  Using R's sockets is also used in the <a class="ulink" href="http://cran.r-project.org/src/contrib/DESCRIPTIONS/httpRequest.html" target="_top">httpRequest</a>
+unreleased package named <i xmlns=""><a href="http://cran.r-project.org/packages=httpClient">httpClient</a></i>. If anyone is interested, please
+contact me.  Using R's sockets is also used in the <a class="ulink" href="http://cran.r-project.org/package=httpRequest" target="_top">httpRequest</a>
 package on CRAN.  This allows submitting forms and retrieving URIs.
 It is useful and, as the authors state, a "basic HTTP request"
 implementation.  It doesn't escape characters, handle chunked

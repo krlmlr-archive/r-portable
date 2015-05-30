@@ -1,5 +1,5 @@
 Package: stringi
-Version: 0.5-4
+Version: 0.5-5
 Date: 2015-06-28
 Title: Character String Processing Facilities
 Description: Allows for fast, correct, consistent, portable,
@@ -25,9 +25,9 @@ Author: Marek Gagolewski and Bartek Tartanus (stringi source code);
     Unicode, Inc. (Unicode Character Database)
 Maintainer: Marek Gagolewski <gagolews@rexamine.com>
 NeedsCompilation: yes
-Packaged: 2015-06-28 09:31:10 UTC; gagolews
+Packaged: 2015-06-28 20:51:37 UTC; gagolews
 License_is_FOSS: yes
 Repository: CRAN
-Date/Publication: 2015-06-28 12:56:55
-Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-29 03:20:26 UTC; windows
+Date/Publication: 2015-06-29 07:40:06
+Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-30 15:07:27 UTC; windows
 Archs: i386, x64

@@ -1,10 +1,11 @@
 Package: RCurl
-Version: 1.95-4.6
-Title: General network (HTTP/FTP/...) client interface for R
-Author: Duncan Temple Lang
-SystemRequirements: GNU make
+Version: 1.95-4.7
+Title: General Network (HTTP/FTP/...) Client Interface for R
+Author: Duncan Temple Lang and the CRAN team
+SystemRequirements: GNU make, libcurl
 Maintainer: Duncan Temple Lang <duncan@r-project.org>
-Description: The package allows one to compose general HTTP requests
+Description: A wrapper for 'libcurl' <http://curl.haxx.se/libcurl/>
+	Provides functions to allow one to compose general HTTP requests
         and provides convenient functions to fetch URIs, get & post
         forms, etc. and process the results returned by the Web server.
         This provides a great deal of control over the HTTP/FTP/...
@@ -34,9 +35,10 @@ Collate: aclassesEnums.R bitClasses.R xbits.R base64.R binary.S
         curlInfo.S dynamic.R form.S getFormParams.R getURLContent.R
         header.R http.R httpError.R httpErrors.R iconv.R info.S mime.R
         multi.S options.S scp.R support.S upload.R urlExists.R zclone.R
-Packaged: 2015-04-24 10:43:32 UTC; ripley
+        zzz.R
 NeedsCompilation: yes
+Packaged: 2015-06-30 10:26:34 UTC; ripley
 Repository: CRAN
-Date/Publication: 2015-04-24 13:35:37
-Built: R 3.2.0; i386-w64-mingw32; 2015-05-31 22:32:02 UTC; windows
+Date/Publication: 2015-06-30 14:32:11
+Built: R 3.2.1; i386-w64-mingw32; 2015-06-30 15:11:32 UTC; windows
 Archs: i386, x64

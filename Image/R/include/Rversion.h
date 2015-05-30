@@ -14,9 +14,9 @@ extern "C" {
 #define R_STATUS "Under development (unstable)"
 #define R_YEAR   "2015"
 #define R_MONTH  "06"
-#define R_DAY    "22"
-#define R_SVN_REVISION 68571
-#define R_FILEVERSION    3,30,68571,0
+#define R_DAY    "23"
+#define R_SVN_REVISION 68577
+#define R_FILEVERSION    3,30,68577,0
 
 #ifdef __cplusplus
 }

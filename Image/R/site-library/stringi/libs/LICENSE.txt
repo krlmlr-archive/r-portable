@@ -10,7 +10,7 @@ ICU License - ICU 1.8.1 and later
 
 COPYRIGHT AND PERMISSION NOTICE
 
-Copyright (C) 1995-2014 IBM and others
+Copyright (C) 1995-2015 IBM and others
 
 All rights reserved.
 
@@ -66,7 +66,7 @@ OR SOFTWARE.
 
     COPYRIGHT AND PERMISSION NOTICE
 
-    Copyright (C) 1991-2014 Unicode, Inc. All rights reserved. Distributed under
+    Copyright (C) 1991-2015 Unicode, Inc. All rights reserved. Distributed under
 the Terms of Use in http://www.unicode.org/copyright.html.
 
     Permission is hereby granted, free of charge, to any person obtaining a copy

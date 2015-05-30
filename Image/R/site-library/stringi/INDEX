@@ -3,6 +3,16 @@
 stri_compare            Compare Strings with or without Collation
 stri_count              Count the Number of Pattern Matches
 stri_count_boundaries   Count the Number of Text Boundaries
+stri_datetime_add       [DRAFT API] Date and Time Arithmetic
+stri_datetime_create    [DRAFT API] Create a Date-Time Object
+stri_datetime_fields    [DRAFT API] Get Values for Date and Time Fields
+stri_datetime_format    [DRAFT API] Date and Time Formatting and
+                        Parsing
+stri_datetime_fstr      [DRAFT API] Convert 'strptime'-style Format
+                        Strings
+stri_datetime_now       [DRAFT API] Get Current Date and Time
+stri_datetime_symbols   [DRAFT API] List Localizable Date-Time
+                        Formatting Data
 stri_detect             Detect a Pattern Match
 stri_dup                Duplicate Strings
 stri_duplicated         Determine Duplicated Elements
@@ -26,14 +36,14 @@ stri_enc_toutf8         Convert Strings To UTF-8
 stri_encode             Convert Strings Between Given Encodings
 stri_escape_unicode     Escape Unicode Code Points
 stri_extract_all        Extract Occurrences of a Pattern
-stri_extract_all_words
-                        Extract Words from a Text
+stri_extract_all_boundaries
+                        Extract Text Between Text Boundaries
 stri_flatten            Flatten a String
 stri_info               Query Default Settings for 'stringi'
 stri_install_check      Installation-Related Utilities
 stri_isempty            Determine if a String is of Length Zero
 stri_join               Concatenate Character Vectors
-stri_length             Count the Number of Characters
+stri_length             Count the Number of Code Points
 stri_list2matrix        Convert a List to a Character Matrix
 stri_locale_info        Query Given Locale
 stri_locale_list        List Available Locales
@@ -70,6 +80,12 @@ stri_stats_latex        Statistics for a Character Vector Containing
 stri_sub                Extract a Substring From or Replace a Substring
                         In a Character Vector
 stri_subset             Select Elements that Match a Given Pattern
+stri_timezone_get       [DRAFT API] Set or Get Default Time Zone in
+                        'stringi'
+stri_timezone_info      [DRAFT API] Query a Given Time Zone
+stri_timezone_list      [DRAFT API] List Available Time Zone
+                        Identifiers
+stri_trans_char         Translate Characters
 stri_trans_general      General Text Transforms, Including
                         Transliteration
 stri_trans_list         List Available Text Transforms and
@@ -80,6 +96,7 @@ stri_trim_both          Trim Characters from the Left and/or Right Side
                         of a String
 stri_unescape_unicode   Unescape All Escape Sequences
 stri_unique             Extract Unique Elements
+stri_width              Determine the Width of Code Points
 stri_wrap               Word Wrap Text to Format Paragraphs
 stri_write_lines        [DRAFT API] Write Text Lines to a Text File
 stringi-arguments       Passing Arguments to Functions in 'stringi'

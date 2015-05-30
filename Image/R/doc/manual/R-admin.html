@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-06-04).
+<!-- This manual is for R, version 3.3.0 Under development (2015-06-05).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -334,7 +334,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-06-04).
+<p>This manual is for R, version 3.3.0 Under development (2015-06-05).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -2592,11 +2592,11 @@ source versions of packages without compiled C/C++/Fortran code and offer
 to do so for those with, if <code>make</code> is available.
 </p>
 <p>Note that most binary packages including compiled code are tied to a
-particular series (e.g. R 3.0.x or 3.1.x) of R.
+particular series (e.g. R 3.2.x or 3.1.x) of R.
 </p>
 <p>Installing source packages which do not contain compiled code should
 work with no additional tools. For others you will need the
-&lsquo;Command-line Tools&rsquo; for <code>Xcode</code> and compilers which match those
+&lsquo;Command Line Tools&rsquo; for <code>Xcode</code> and compilers which match those
 used to build R: see <a href="#OS-X">OS X</a>.
 </p>
 <p>Package <a href="http://CRAN.R-project.org/package=rJava"><strong>rJava</strong></a> and those which depend on it need a Java runtime
@@ -2617,7 +2617,7 @@ appropriate version at the time of writing was
 <p>The default compilers specified in
 <samp>/Library/Frameworks/R.framework/Resources/etc/Makeconf</samp> depend on
 the version of OS X under which R was installed, and are appropriate
-to the latest version of the Xcode command-line tools for that version
+to the latest version of the command-line tools for that version
 of OS X.  The settings can be changed, either by editing that file or in
 a file such as <samp>~/.R/Makevars</samp> (see the next section).  Entries
 which may need to be changed include &lsquo;<samp>CC</samp>&rsquo;, &lsquo;<samp>CXX</samp>&rsquo;, &lsquo;<samp>FC</samp>&rsquo;,
@@ -5341,10 +5341,10 @@ Next: <a href="#Solaris" accesskey="n" rel="next">Solaris</a>, Previous: <a href
 and for PowerPC or 32-bit Intel Macs but these has not been tested
 recently.
 </p>
-<p>You can build R using Apple&rsquo;s &lsquo;Command-line Tools for Xcode&rsquo; and and
-suitable compilers.  You will also need <code>readline</code> (or to configure
-with <samp>--without-readline</samp>), and a Fortran compiler.  Those and
-other binary components are available from
+<p>You can build R using Apple&rsquo;s &lsquo;Command Line Tools&rsquo; and suitable
+compilers.  You will also need <code>readline</code> (or to configure with
+<samp>--without-readline</samp>), and a Fortran compiler.  Those and other
+binary components are available from
 <a href="http://r.research.att.com/libs">http://r.research.att.com/libs</a>: you are likely to need
 <code>pcre</code> and <code>xz</code> (recent OS X provides libs but not headers for
 these).
@@ -5506,9 +5506,8 @@ adding it to the <code>PKG_CONFIG_PATH</code> environment variable, e.g.
 </p>
 
 <p>If you upgrade to Yosemite you should re-install any of XQuartz, the
-&lsquo;Command-line Tools for Xcode&rsquo; and Java which you have installed.
-(Upgrading may partially remove previous versions which can be
-confusing.)
+&lsquo;Command Line Tools&rsquo; and Java which you have installed.  (Upgrading may
+partially remove previous versions which can be confusing.)
 </p>
 <p>There are some problems with the recommended <code>gfortran</code> builds
 under Yosemite.  They give warnings and <code>gfortran-4.8</code> is
@@ -5585,8 +5584,9 @@ you to install it.
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>);
 this is for Lion and later.
 </p>
-<p>You may need to install what Apple calls &lsquo;legacy Java&rsquo;<a name="DOCF51" href="#FOOT51"><sup>51</sup></a> to suppress pop-up messages, at least
-under Yosemite, even if you have a current version installed.
+<p>You may need to install what Apple calls &lsquo;legacy Java&rsquo;<a name="DOCF51" href="#FOOT51"><sup>51</sup></a> to suppress pop-up
+messages, at least under Yosemite, even if you have a current version
+installed.
 </p>
 <p>To see what compatible versions of Java are currently installed, run
 <code>/usr/libexec/java_home -V -a x86_64</code>.  If needed, set the
@@ -7042,7 +7042,8 @@ is a tarball which needs to be unpacked in the Terminal by e.g.
 toolchains <code>CPPFLAGS</code> needed to contain <code>-D__ACCELERATE__</code>.</p>
 <h3><a name="FOOT51" href="#DOCF51">(51)</a></h3>
 <p>e.g.
-<code>Java For OS X 2014-001</code>.</p>
+<code>Java For OS X 2014-001</code> from
+<a href="https://support.apple.com/kb/DL1572">https://support.apple.com/kb/DL1572</a>.</p>
 <h3><a name="FOOT52" href="#DOCF52">(52)</a></h3>
 <p>including <code>gcc</code> for
 Sparc from Oracle.</p>

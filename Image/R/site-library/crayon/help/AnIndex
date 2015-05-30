@@ -23,6 +23,8 @@ concat	concat
 crayon	crayon
 cyan	crayon
 drop_style	drop_style
+finish	start.crayon
+finish.crayon	start.crayon
 green	crayon
 has_color	has_color
 has_style	has_style
@@ -36,6 +38,8 @@ red	crayon
 reset	crayon
 show_ansi_colors	show_ansi_colors
 silver	crayon
+start	start.crayon
+start.crayon	start.crayon
 strikethrough	crayon
 strip_style	strip_style
 style	style

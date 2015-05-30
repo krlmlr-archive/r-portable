@@ -1,3 +1,11 @@
+# 1.3.0
+
+* Colors are turned on by default in Emacs ESS 23.x and above.
+
+* Functions to turn on and off a style: `start`, `finish`.
+
+* Really fix `tput` corner cases (@jimhester, #21)
+
 # 1.2.1
 
 * Fix detecting number of colors when `tput` exists, but

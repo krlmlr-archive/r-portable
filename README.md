@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `bb114554693634cc867d87d67defefe4`, uncompressed 734.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `66c65ce6627e1606e43828bbb23d8007`, uncompressed 752.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `6b5fa5240c085ae69d5bb6bc0aa90846`, uncompressed 803.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `d5384340acb0ffcb7d06ca95f5365a81`, uncompressed 734.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `9ce997eea9f8badf75a2f92fd3921dd6`, uncompressed 752.9 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.5 MB, MD5 hash: `ad6d8a05ee8de121615c143c9c2f864e`, uncompressed 803.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-18 r68542)
+R Under development (unstable) (2015-06-19 r68559)
 
 ### Package versions
 
@@ -43,7 +43,7 @@ R Under development (unstable) (2015-06-18 r68542)
 ####  recommended 
 [`boot`](http://cran.r-project.org/package=boot) (1.3-16),
 [`class`](http://cran.r-project.org/package=class) (7.3-12),
-[`cluster`](http://cran.r-project.org/package=cluster) (2.0.1),
+[`cluster`](http://cran.r-project.org/package=cluster) (2.0.2),
 [`codetools`](http://cran.r-project.org/package=codetools) (0.2-11),
 [`foreign`](http://cran.r-project.org/package=foreign) (0.8-63),
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-14),

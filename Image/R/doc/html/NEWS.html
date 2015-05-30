@@ -142,6 +142,12 @@ are correct.
 <li><p> A <code>coef.maov()</code> method has been added to allow
 <code>vcov()</code> to work with multivariate results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
 </p>
+</li>
+<li> <p><code>options(OutDec = s)</code> now signals a warning (which will
+become an error in the future) when <code>s</code> is not a string with
+exactly one character, as that has been a documented requirement.
+
+</p>
 </li></ul>
 
 

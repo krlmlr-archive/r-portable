@@ -80,6 +80,10 @@ CHANGES IN R-devel:
     * A coef.maov() method has been added to allow vcov() to work with
       multivariate results. (PR#16380)
 
+    * options(OutDec = s) now signals a warning (which will become an
+      error in the future) when s is not a string with exactly one
+      character, as that has been a documented requirement.
+
 CHANGES IN R 3.2.1 patched:
 
   NEW FEATURES:

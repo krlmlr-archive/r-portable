@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-06-18).
+<!-- This manual is for R, version 3.3.0 Under development (2015-06-19).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -294,7 +294,7 @@ p {
     </ul></li>
     <li><a name="toc-OS-X-2" href="#OS-X">C.3 OS X</a>
     <ul class="no-bullet">
-      <li><a name="toc-Mavericks-and-Yosemite-1" href="#Mavericks-and-Yosemite">C.3.1 Mavericks and Yosemite</a></li>
+      <li><a name="toc-Mavericks-and-later-1" href="#Mavericks-and-later">C.3.1 Mavericks and later</a></li>
       <li><a name="toc-Tcl_002fTk-headers-and-libraries-1" href="#Tcl_002fTk-headers-and-libraries">C.3.2 Tcl/Tk headers and libraries</a></li>
       <li><a name="toc-Java" href="#Java-_0028OS-X_0029">C.3.3 Java</a></li>
       <li><a name="toc-Frameworks-1" href="#Frameworks">C.3.4 Frameworks</a></li>
@@ -334,7 +334,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-06-18).
+<p>This manual is for R, version 3.3.0 Under development (2015-06-19).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -2041,9 +2041,9 @@ Next: <a href="#Running-R" accesskey="n" rel="next">Running R</a>, Previous: <a 
 
 
 <p>The front page of a <acronym>CRAN</acronym> site has a link &lsquo;Download R for OS
-X&rsquo;. Click on that, then download the file
-<samp>R-3.3.0-mavericks.pkg</samp> and install it. This runs on OS
-X 10.9 and later (Mavericks and Yosemite).
+X&rsquo;. Click on that, then download the file <samp>R-3.3.0.pkg</samp>
+and install it. This runs on OS X 10.9 and later (Mavericks, Yosemite,
+El Capitan, &hellip;).
 </p>
 <p>Installers for R-patched and R-devel are usually available from
 <a href="http://r.research.att.com">http://r.research.att.com</a>.
@@ -5440,7 +5440,7 @@ installed under <samp>/usr/local</samp> and not supersede the system
 versions.
 </p>
 <table summary="" class="menu" border="0" cellspacing="0">
-<tr><td align="left" valign="top">&bull; <a href="#Mavericks-and-Yosemite" accesskey="1">Mavericks and Yosemite</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
+<tr><td align="left" valign="top">&bull; <a href="#Mavericks-and-later" accesskey="1">Mavericks and later</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Tcl_002fTk-headers-and-libraries" accesskey="2">Tcl/Tk headers and libraries</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
@@ -5453,13 +5453,13 @@ versions.
 </table>
 
 <hr>
-<a name="Mavericks-and-Yosemite"></a>
+<a name="Mavericks-and-later"></a>
 <div class="header">
 <p>
 Next: <a href="#Tcl_002fTk-headers-and-libraries" accesskey="n" rel="next">Tcl/Tk headers and libraries</a>, Previous: <a href="#OS-X" accesskey="p" rel="prev">OS X</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
-<a name="Mavericks-and-Yosemite-1"></a>
-<h4 class="subsection">C.3.1 Mavericks and Yosemite</h4>
+<a name="Mavericks-and-later-1"></a>
+<h4 class="subsection">C.3.1 Mavericks and later</h4>
 
 <p>For these versions Apple makes available compilers based on
 <code>clang</code>, and C++ headers and runtime are from LLVM&rsquo;s
@@ -5467,10 +5467,10 @@ Next: <a href="#Tcl_002fTk-headers-and-libraries" accesskey="n" rel="next">Tcl/T
 called &lsquo;Command Line Developer Tools&rsquo;).
 </p>
 <p>These tools can be (re-)installed by <code>xcode-select --install</code>.
-(If you have a fresh installation of Mavericks/Yosemite, running e.g.
-<code>make</code> in a terminal will offer the installation of the
-command-line tools, or perhaps use the versions from Xcode.  However,
-after an OS update, you are advised to re-install them.)
+(If you have a fresh installation, running e.g. <code>make</code> in a
+terminal will offer the installation of the command-line tools, or
+perhaps use the versions from Xcode.  However, after an OS update, you
+are advised to re-install them.)
 </p>
 <p>To use the compilers from the command-line tools with the recommended
 Fortran compiler, have in <samp>config.site</samp> something like
@@ -5506,7 +5506,7 @@ adding it to the <code>PKG_CONFIG_PATH</code> environment variable, e.g.
 <samp>/opt/X11/include</samp> may need to be added to the include paths.
 </p>
 
-<p>If you upgrade to Yosemite you should re-install any of XQuartz, the
+<p>If you upgrade your OS you should re-install any of XQuartz, the
 &lsquo;Command Line Tools&rsquo; and Java which you have installed.  (Upgrading may
 partially remove previous versions which can be confusing.)
 </p>
@@ -5519,7 +5519,7 @@ solution is to use a compiler built under Yosemite.)
 <a name="Tcl_002fTk-headers-and-libraries"></a>
 <div class="header">
 <p>
-Next: <a href="#Java-_0028OS-X_0029" accesskey="n" rel="next">Java (OS X)</a>, Previous: <a href="#Mavericks-and-Yosemite" accesskey="p" rel="prev">Mavericks and Yosemite</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Java-_0028OS-X_0029" accesskey="n" rel="next">Java (OS X)</a>, Previous: <a href="#Mavericks-and-later" accesskey="p" rel="prev">Mavericks and later</a>, Up: <a href="#OS-X" accesskey="u" rel="up">OS X</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="Tcl_002fTk-headers-and-libraries-1"></a>
 <h4 class="subsection">C.3.2 Tcl/Tk headers and libraries</h4>

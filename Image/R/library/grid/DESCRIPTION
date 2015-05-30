@@ -9,4 +9,4 @@ Description: A rewrite of the graphics layout capabilities, plus some
 Imports: grDevices
 Suggests: lattice
 License: Part of R 3.3.0
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-12 02:21:34 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-13 02:21:25 UTC; windows

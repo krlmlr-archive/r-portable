@@ -6,4 +6,5 @@ Author: R Core Team and contributors worldwide
 Maintainer: R Core Team <R-core@r-project.org>
 Description: R utility functions.
 License: Part of R 3.3.0
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-12 02:18:58 UTC; windows
+Suggests: methods
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-13 02:18:50 UTC; windows

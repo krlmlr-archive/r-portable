@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.4 MB, MD5 hash: `a6f4ba7f24ba5b8cc862b7e67dea04e0`, uncompressed 734.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264 MB, MD5 hash: `83f03723f4a5423650a118cab72e1112`, uncompressed 752.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `1f59cbba1f5856ab1825ae113228857b`, uncompressed 803.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `691747d1d3ac1bfd84118c23d8036811`, uncompressed 734.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `c31eba75c94aaa2081f58711170963dd`, uncompressed 752.8 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `90b90f2a7ec0b319a2038f7af34ef8de`, uncompressed 803.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-11 r68505)
+R Under development (unstable) (2015-06-12 r68509)
 
 ### Package versions
 
@@ -55,7 +55,7 @@ R Under development (unstable) (2015-06-11 r68505)
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-9),
 [`rpart`](http://cran.r-project.org/package=rpart) (4.1-9),
 [`spatial`](http://cran.r-project.org/package=spatial) (7.3-9),
-[`survival`](http://cran.r-project.org/package=survival) (2.38-1) 
+[`survival`](http://cran.r-project.org/package=survival) (2.38-2) 
 ####  other 
 [`BH`](http://cran.r-project.org/package=BH) (1.58.0-1),
 [`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
@@ -75,7 +75,7 @@ R Under development (unstable) (2015-06-11 r68505)
 [`markdown`](http://cran.r-project.org/package=markdown) (0.7.7),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
 [`mime`](http://cran.r-project.org/package=mime) (0.3),
-[`plyr`](http://cran.r-project.org/package=plyr) (1.8.2),
+[`plyr`](http://cran.r-project.org/package=plyr) (1.8.3),
 [`R6`](http://cran.r-project.org/package=R6) (2.0.1),
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.6),
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.6),

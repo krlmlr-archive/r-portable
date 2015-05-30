@@ -101,6 +101,9 @@ CHANGES IN R 3.2.1 patched:
     * The HTML help page links to demo code failed due to a change in R
       3.2.0.  (PR#16432)
 
+    * If na.action was used in model.frame, the original data could be
+      modified. (PR#16436)
+
 CHANGES IN R 3.2.1:
 
   NEW FEATURES:

@@ -1,0 +1,65 @@
+```{r echo = FALSE, results = "hide"}
+format_mb <- function(x) paste(round(x / (2 ** 20), 1), "MB")
+
+BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
+REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
+MD5_tar_gz <- tools::md5sum("R.tar.gz")
+size_tar_gz <- file.info("R.tar.gz")$size
+size_tar <- as.numeric(scan(pipe("gzip -l -q R.tar.gz"), character())[[2]])
+MD5_iso_gz <- tools::md5sum("R.iso.gz")
+size_iso_gz <- file.info("R.iso.gz")$size
+size_iso <- file.info("R.iso")$size
+MD5_vhd_gz <- tools::md5sum("R.vhd.gz")
+size_vhd_gz <- file.info("R.vhd.gz")$size
+size_vhd <- file.info("R.vhd")$size
+```
+r-portable `r if (BRANCH != "master") sprintf("(branch: %s)", BRANCH)`
+==========
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/`r BRANCH`)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/`r BRANCH`)
+
+Archives and disk images that contain everything necessary to build R packages on Windows.
+
+Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sourceforge.net/) and [the cygwin port of cdrtools](http://www.student.tugraz.at/thomas.plank/index_en.html).
+
+## Download
+
+Most recent version:
+
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.tar.gz) (`r format_mb(size_tar_gz)`, MD5 hash: ``r MD5_tar_gz``, uncompressed `r format_mb(size_tar)`)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`r format_mb(size_iso_gz)`, MD5 hash: ``r MD5_iso_gz``, uncompressed `r format_mb(size_iso)`)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.vhd.gz) (`r format_mb(size_vhd_gz)`, MD5 hash: ``r MD5_vhd_gz``, uncompressed `r format_mb(size_vhd)`)
+
+Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
+
+## Contents
+
+### R version
+
+```{r echo = FALSE, results = "asis"}
+cat(R.Version()$version.string)
+```
+
+### Package versions
+
+```{r echo = FALSE, results = "asis"}
+pkgs <- as.data.frame(installed.packages(), stringsAsFactors = FALSE)[c("Package", "Version", "Priority")]
+pkgs <- plyr::arrange(pkgs, Priority, Package)
+pkgs$Priority[is.na(pkgs$Priority)] <- "other"
+pkgs$Priority <- factor(pkgs$Priority, levels = c("base", "recommended", "other"))
+plyr::d_ply(
+  plyr::unrowname(pkgs),
+  "Priority",
+  function (sub_pkgs) {
+    cat("#### ", as.character(sub_pkgs$Priority[1]), "\n")
+    s <- plyr::dlply(
+      sub_pkgs,
+      "Package",
+      function(pkg) {
+        sprintf("[`%s`](http://cran.r-project.org/package=%s) (%s)", pkg$Package, pkg$Package, pkg$Version)
+      }
+    )
+    cat(paste(unlist(s), collapse = ",\n"), "\n")
+    NULL
+  }
+)
+```

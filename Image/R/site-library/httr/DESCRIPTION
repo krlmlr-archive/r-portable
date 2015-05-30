@@ -23,5 +23,5 @@ Maintainer: Hadley Wickham <hadley@rstudio.com>
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2015-01-01 05:49:55
-Built: R 3.2.0; x86_64-w64-mingw32; 2015-06-05 23:16:17 UTC; windows
+Built: R 3.2.0; x86_64-w64-mingw32; 2015-06-06 23:06:36 UTC; windows
 Archs: i386, x64

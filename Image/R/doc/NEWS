@@ -104,6 +104,9 @@ CHANGES IN R 3.2.1 patched:
     * If na.action was used in model.frame, the original data could be
       modified. (PR#16436)
 
+    * getGraphicsEvent could cause a crash if a graphics window was
+      closed while it was in use. (PR#16438)
+
 CHANGES IN R 3.2.1:
 
   NEW FEATURES:

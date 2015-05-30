@@ -179,6 +179,7 @@ print.hsearch	help.search
 print.Latex	toLatex
 print.ls_str	ls_str
 print.MethodsFunction	methods
+print.news_db	news
 print.object_size	object.size
 print.packageDescription	packageDescription
 print.packageIQR	data

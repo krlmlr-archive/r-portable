@@ -77,7 +77,7 @@ CHANGES IN R-devel:
     * A coef.maov() method has been added to allow vcov() to work with
       multivariate results. (PR#16380)
 
-CHANGES IN R 3.2.0 patched:
+CHANGES IN R 3.2.1:
 
   NEW FEATURES:
 
@@ -161,7 +161,7 @@ CHANGES IN R 3.2.0 patched:
       from .getRequiredPackages2().
 
     * Under some circumstances using the internal PCRE when building R
-      fron source would cause external libs such as -llzma to be
+      from source would cause external libs such as -llzma to be
       omitted from the main link.
 
     * The .Primitive default methods of the logic operators, i.e., !, &

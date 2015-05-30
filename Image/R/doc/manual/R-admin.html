@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-06-08).
+<!-- This manual is for R, version 3.3.0 Under development (2015-06-09).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -334,7 +334,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-06-08).
+<p>This manual is for R, version 3.3.0 Under development (2015-06-09).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -2134,7 +2134,8 @@ indicator at the top right corner is visible).
 <p>Using the <code>X11</code> device or the X11-based versions of <code>View()</code>
 and <code>edit()</code> for data frames and matrices (the latter are the
 default for command-line R but not <small>R.APP</small>) requires an X sub-system
-to be installed: see <a href="#OS-X">OS X</a>.  (So do some third-party packages.)
+to be installed: see <a href="#OS-X">OS X</a>.  (As do the <strong>tcltk</strong> package and
+some third-party packages.)
 </p>
 <hr>
 <a name="Uninstalling-under-OS-X"></a>
@@ -2511,10 +2512,10 @@ containing either or both architectures (32- and 64-bit).
 </p>
 <p>A few of the binary packages need other software to be installed on your
 system: see for example
-<a href="http://CRAN.R-project.org/bin/windows/contrib/3.1/@ReadMe">http://CRAN.R-project.org/bin/windows/contrib/3.1/@ReadMe</a>.
+<a href="http://CRAN.R-project.org/bin/windows/contrib/3.2/@ReadMe">http://CRAN.R-project.org/bin/windows/contrib/3.2/@ReadMe</a>.
 Packages using Gtk+ (<a href="http://CRAN.R-project.org/package=Cairo"><strong>Cairo</strong></a>, <a href="http://CRAN.R-project.org/package=RGtk2"><strong>RGtk2</strong></a>,
 <a href="http://CRAN.R-project.org/package=cairoDevice"><strong>cairoDevice</strong></a> and those that depend on them) need the <samp>bin</samp>
-directory of a bundled distribution from
+directory of a bundled distribution of Gtk2 from
 <a href="http://www.gtk.org/download/win32.php">http://www.gtk.org/download/win32.php</a> or
 <a href="http://www.gtk.org/download/win64.php">http://www.gtk.org/download/win64.php</a> in the path: it should
 work to have both 32- and 64-bit Gtk+ <samp>bin</samp> directories in the path
@@ -2524,9 +2525,9 @@ on a 64-bit version of R.
 additional tools are needed if the package does not contain compiled
 code, and <code>install.packages(type=&quot;source&quot;)</code> will work for such
 packages (and for those with compiled code if the tools (see <a href="#The-Windows-toolset">The Windows toolset</a>) are in the path).  We have seen occasional permission
-problems after unpacking source packages on some Windows 7 and Server
-2008 systems: these have been circumvented by setting the environment
-variable <code>R_INSTALL_TAR</code> to &lsquo;<samp>tar.exe</samp>&rsquo;.
+problems after unpacking source packages on some systems: these have
+been circumvented by setting the environment variable
+<code>R_INSTALL_TAR</code> to &lsquo;<samp>tar.exe</samp>&rsquo;.
 <a name="index-R_005fINSTALL_005fTAR"></a>
 </p>
 <p>If you have only a source package that is known to work with current
@@ -2561,7 +2562,7 @@ Unix-alike.  This can be set in <samp>src/gnuwin/MkRules.local</samp> when
 R is built from sources (see the comments in
 <samp>src/gnuwin/MkRules.dist</samp>), or in file<a name="DOCF16" href="#FOOT16"><sup>16</sup></a>  <samp>etc/i386/Makeconf</samp> or <samp>etc/x64/Makeconf</samp> for an
 installed version of R.  The version used by <acronym>CRAN</acronym> can be
-installed as described in See <a href="#Building-from-source">Building from source</a>.
+installed as described in <a href="#Building-from-source">Building from source</a>.
 </p>
 
 <hr>

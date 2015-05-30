@@ -6,7 +6,7 @@ Author: Paul Murrell <paul@stat.auckland.ac.nz>
 Maintainer: R Core Team <R-core@r-project.org>
 Description: A rewrite of the graphics layout capabilities, plus some
   support for interaction.
-Imports: grDevices
+Imports: grDevices, utils
 Suggests: lattice
 License: Part of R 3.3.0
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-15 02:21:00 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-17 02:21:26 UTC; windows

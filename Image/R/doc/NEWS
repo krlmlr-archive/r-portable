@@ -84,12 +84,22 @@ CHANGES IN R-devel:
       error in the future) when s is not a string with exactly one
       character, as that has been a documented requirement.
 
+    * prettyNum() gains a new option input.d.mark which together with
+      other changes, e.g., the default for decimal.mark, fixes some
+      format()ting variants with non-default getOption("OutDec") such
+      as in PR#16411.
+
 CHANGES IN R 3.2.1 patched:
 
   NEW FEATURES:
 
     * cmdscale() gets new option list. for increased flexibility when a
       list should be returned.
+
+  BUG FIXES:
+
+    * The HTML help page links to demo code failed due to a change in R
+      3.2.0.  (PR#16432)
 
 CHANGES IN R 3.2.1:
 

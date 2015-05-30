@@ -1,4 +1,7 @@
 
+```
+## Warning: closing unused connection 5 (gzip -l -q R.tar.gz)
+```
 r-portable 
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
@@ -11,9 +14,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `d5384340acb0ffcb7d06ca95f5365a81`, uncompressed 734.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `9ce997eea9f8badf75a2f92fd3921dd6`, uncompressed 752.9 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.5 MB, MD5 hash: `ad6d8a05ee8de121615c143c9c2f864e`, uncompressed 803.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `c601991026bbc26617037ff378c4c917`, uncompressed 734.3 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `e3f9c5ef3ba88700423877da12183204`, uncompressed 752.9 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `4855f15b86429bfa966566f45a84473a`, uncompressed 803.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +24,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-19 r68559)
+R Under development (unstable) (2015-06-20 r68563)
 
 ### Package versions
 
@@ -61,7 +64,7 @@ R Under development (unstable) (2015-06-19 r68559)
 [`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
 [`brew`](http://cran.r-project.org/package=brew) (1.0-6),
 [`crayon`](http://cran.r-project.org/package=crayon) (1.3.0),
-[`curl`](http://cran.r-project.org/package=curl) (0.8),
+[`curl`](http://cran.r-project.org/package=curl) (0.9),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.8.0),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.7),

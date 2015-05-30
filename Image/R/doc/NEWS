@@ -66,6 +66,11 @@ CHANGES IN R-devel:
       non-Sweave vignettes whose VignetteBuilder package is not
       available.
 
+    * R CMD check --as-cran now checks code usage (via codetools) with
+      only the base package attached, so that functions from default
+      packages other than base which are used in the package code but
+      not imported are reported as undefined globals.
+
   DEPRECATED AND DEFUNCT:
 
     * The included versions of zlib, bzip2, xz and PCRE have been

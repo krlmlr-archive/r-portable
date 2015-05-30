@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-06-26).
+<!-- This manual is for R, version 3.3.0 Under development (2015-06-28).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -288,7 +288,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-06-26).
+<p>This manual is for R, version 3.3.0 Under development (2015-06-28).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4835,6 +4835,14 @@ suggests and enhances.
 Default: true (and true for CRAN submission checks).
 </p>
 </dd>
+<dt><code>_R_CHECK_CODE_USAGE_WITH_ONLY_BASE_ATTACHED_</code>
+<a name="index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fWITH_005fONLY_005fBASE_005fATTACHED_005f"></a>
+</dt>
+<dd><p>If set, check code usage (via <a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>) with only the base
+package attached.
+Default: false (but true for CRAN submission checks).
+</p>
+</dd>
 <dt><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code>
 <a name="index-_005fR_005fCHECK_005fEXIT_005fON_005fFIRST_005fERROR_005f"></a>
 </dt>
@@ -5346,6 +5354,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fATTACH_005f"><code>_R_CHECK_CODE_ATTACH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fDATA_005fINTO_005fGLOBALENV_005f"><code>_R_CHECK_CODE_DATA_INTO_GLOBALENV_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fVIA_005fNAMESPACES_005f"><code>_R_CHECK_CODE_USAGE_VIA_NAMESPACES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fWITH_005fONLY_005fBASE_005fATTACHED_005f"><code>_R_CHECK_CODE_USAGE_WITH_ONLY_BASE_ATTACHED_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODOC_005fS4_005fMETHODS_005f"><code>_R_CHECK_CODOC_S4_METHODS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCOMPACT_005fDATA_005f"><code>_R_CHECK_COMPACT_DATA_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCRAN_005fINCOMING_005f"><code>_R_CHECK_CRAN_INCOMING_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>

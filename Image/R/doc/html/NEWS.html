@@ -111,6 +111,13 @@ arrays <code>x</code> assuming values in <code>0:255</code>.
 <span class="option">--ignore-vignettes</span> for use with non-Sweave vignettes
 whose <span class="samp">VignetteBuilder</span> package is not available.
 </p>
+</li>
+<li> <p><code>R CMD check --as-cran</code> now checks code usage (via
+<a href="http://CRAN.R-project.org/package=codetools"><span class="pkg">codetools</span></a>) with only the base package attached, so that
+functions from default packages other than base which are used in
+the package code but not imported are reported as undefined
+globals.
+</p>
 </li></ul>
 
 

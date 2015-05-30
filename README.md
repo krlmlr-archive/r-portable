@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (264.2 MB, MD5 hash: `37a47b09b7adf04a8e2f3adc466b741e`, uncompressed 736.4 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.9 MB, MD5 hash: `fc36e9db79a2c018c4fd8d6d8afcc362`, uncompressed 755 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (267.2 MB, MD5 hash: `2d4fd121a47290c6d8ba49a535560f1e`, uncompressed 805.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (264.2 MB, MD5 hash: `788f2354029f5ed764aafe2970e12a1f`, uncompressed 736.4 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.9 MB, MD5 hash: `123604e224b689bc8bb97fe4d0eee725`, uncompressed 755 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (267.3 MB, MD5 hash: `34b50a431ba5aa9de02f35932588b180`, uncompressed 805.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-26 r68594)
+R Under development (unstable) (2015-06-28 r68602)
 
 ### Package versions
 
@@ -45,7 +45,7 @@ R Under development (unstable) (2015-06-26 r68594)
 [`class`](http://cran.r-project.org/package=class) (7.3-12),
 [`cluster`](http://cran.r-project.org/package=cluster) (2.0.2),
 [`codetools`](http://cran.r-project.org/package=codetools) (0.2-11),
-[`foreign`](http://cran.r-project.org/package=foreign) (0.8-63),
+[`foreign`](http://cran.r-project.org/package=foreign) (0.8-64),
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-14),
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-31),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-41),

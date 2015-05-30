@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (254.1 MB, MD5 hash: `8c195d252985fba0c8b4886e978a2274`, uncompressed 638.8 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (254.4 MB, MD5 hash: `973c839ff7d02c2707553ee48ee4f214`, uncompressed 651.2 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (256.2 MB, MD5 hash: `2835c2e2eea2517de8a7c743fa3be548`, uncompressed 685.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (254.1 MB, MD5 hash: `a56a9c1ac7be2c28bcde623e53ab4639`, uncompressed 638.8 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (254.4 MB, MD5 hash: `f3466a0d99aa8cd4abd1101c3ccd4e4d`, uncompressed 651.2 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (256.2 MB, MD5 hash: `7d56d9089d67a651edde2935b86caa81`, uncompressed 685.3 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-05-30 r68442)
+R Under development (unstable) (2015-05-31 r68444)
 
 ### Package versions
 
@@ -85,5 +85,5 @@ R Under development (unstable) (2015-05-30 r68442)
 [`testthat`](http://cran.r-project.org/package=testthat) (0.10.0),
 [`translations`](http://cran.r-project.org/package=translations) (3.3.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2),
-[`XML`](http://cran.r-project.org/package=XML) (3.98-1.1),
+[`XML`](http://cran.r-project.org/package=XML) (3.98-1.2),
 [`yaml`](http://cran.r-project.org/package=yaml) (2.1.13) 

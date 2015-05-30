@@ -509,3 +509,5 @@ export(getHTMLExternalFiles)
 
 export(xmlCleanNamespaces)
 
+S3method(toString, XMLNode)
+

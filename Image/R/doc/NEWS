@@ -54,6 +54,9 @@ CHANGES IN R-devel:
       system if it is available.  If no news file is found, a visible
       NULL is returned to the console.
 
+    * as.raster(x) now also accepts raw arrays x assuming values in
+      0:255.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -76,6 +79,13 @@ CHANGES IN R-devel:
 
     * A coef.maov() method has been added to allow vcov() to work with
       multivariate results. (PR#16380)
+
+CHANGES IN R 3.2.1 patched:
+
+  NEW FEATURES:
+
+    * cmdscale() gets new option list. for increased flexibility when a
+      list should be returned.
 
 CHANGES IN R 3.2.1:
 

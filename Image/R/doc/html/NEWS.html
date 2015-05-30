@@ -90,6 +90,10 @@ standard deviation&rdquo; from a fitted model.
 the HTML help system if it is available.  If no news file is found,
 a visible <code>NULL</code> is returned to the console.
 </p>
+</li>
+<li> <p><code>as.raster(x)</code> now also accepts <code>raw</code>
+arrays <code>x</code> assuming values in <code>0:255</code>.
+</p>
 </li></ul>
 
 
@@ -139,6 +143,26 @@ are correct.
 <code>vcov()</code> to work with multivariate results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
 </p>
 </li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.1 patched</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>cmdscale()</code> gets new option <code>list.</code> for increased
+flexibility when a list should be returned.
+</p>
+</li></ul>
+
+
+
+
 
 
 

@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `8f16c2606e2775a6888e5ea3a2278eb7`, uncompressed 734.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `04cbf1d4e21c530b596bf1b630fa3da8`, uncompressed 752.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `b1ffc4d473603a0ba98844c5451761b4`, uncompressed 803.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (263.5 MB, MD5 hash: `bb114554693634cc867d87d67defefe4`, uncompressed 734.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (264.1 MB, MD5 hash: `66c65ce6627e1606e43828bbb23d8007`, uncompressed 752.8 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (266.4 MB, MD5 hash: `6b5fa5240c085ae69d5bb6bc0aa90846`, uncompressed 803.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,7 +21,7 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-06-17 r68530)
+R Under development (unstable) (2015-06-18 r68542)
 
 ### Package versions
 
@@ -48,7 +48,7 @@ R Under development (unstable) (2015-06-17 r68530)
 [`foreign`](http://cran.r-project.org/package=foreign) (0.8-63),
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-14),
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-31),
-[`MASS`](http://cran.r-project.org/package=MASS) (7.3-40),
+[`MASS`](http://cran.r-project.org/package=MASS) (7.3-41),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-1),
 [`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-6),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-120),

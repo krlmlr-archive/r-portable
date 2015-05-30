@@ -46,6 +46,10 @@ CHANGES IN R-devel:
 
     * rapply preserves attributes on the list when how="replace".
 
+    * New S3 generic function sigma() with methods for extracting the
+      estimated standard deviation aka "residual standard deviation"
+      from a fitted model.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

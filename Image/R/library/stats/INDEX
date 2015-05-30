@@ -286,6 +286,7 @@ se.contrast             Standard Errors for Contrasts in Model Terms
 selfStart               Construct Self-starting Nonlinear Models
 setNames                Set the Names in an Object
 shapiro.test            Shapiro-Wilk Normality Test
+sigma                   Extract Residual Standard Deviation 'Sigma'
 simulate                Simulate Responses
 smooth                  Tukey's (Running Median) Smoothing
 smooth.spline           Fit a Smoothing Spline

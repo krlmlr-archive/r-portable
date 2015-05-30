@@ -643,6 +643,9 @@ selfStart.default	selfStart
 selfStart.formula	selfStart
 setNames	setNames
 shapiro.test	shapiro.test
+sigma	sigma
+sigma.default	sigma
+sigma.mlm	sigma
 SignRank	SignRank
 simulate	simulate
 smooth	smooth

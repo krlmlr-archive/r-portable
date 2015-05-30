@@ -9,5 +9,6 @@ Description: Support for parallel computation, including by forking
    and random-number generation.
 License: Part of R 3.3.0
 Imports: tools
+Suggests: methods
 Enhances: snow, nws, Rmpi
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-13 02:21:52 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-06-15 02:21:20 UTC; windows

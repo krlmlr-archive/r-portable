@@ -94,6 +94,10 @@ a visible <code>NULL</code> is returned to the console.
 <li> <p><code>as.raster(x)</code> now also accepts <code>raw</code>
 arrays <code>x</code> assuming values in <code>0:255</code>.
 </p>
+</li>
+<li><p> Subscripting of matrix/array objects of type
+<code>"expression"</code> is now supported.
+</p>
 </li></ul>
 
 
@@ -183,12 +187,16 @@ flexibility when a list should be returned.
 in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16432">PR#16432</a>)
 </p>
 </li>
-<li><p> If <code>na.action</code> was used in <code>model.frame</code>, the 
+<li><p> If <code>na.action</code> was used in <code>model.frame()</code>, the 
 original data could be modified. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16436">PR#16436</a>)
 </p>
 </li>
-<li> <p><code>getGraphicsEvent</code> could cause a crash if a graphics
+<li> <p><code>getGraphicsEvent()</code> could cause a crash if a graphics
 window was closed while it was in use. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16438">PR#16438</a>)
+</p>
+</li>
+<li> <p><code>matrix(x, nr, nc, byrow = TRUE)</code> failed if <code>x</code>
+was an object of type <code>"expression"</code>.
 </p>
 </li></ul>
 

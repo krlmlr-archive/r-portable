@@ -57,6 +57,9 @@ CHANGES IN R-devel:
     * as.raster(x) now also accepts raw arrays x assuming values in
       0:255.
 
+    * Subscripting of matrix/array objects of type "expression" is now
+      supported.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -101,11 +104,14 @@ CHANGES IN R 3.2.1 patched:
     * The HTML help page links to demo code failed due to a change in R
       3.2.0.  (PR#16432)
 
-    * If na.action was used in model.frame, the original data could be
-      modified. (PR#16436)
+    * If na.action was used in model.frame(), the original data could
+      be modified. (PR#16436)
 
-    * getGraphicsEvent could cause a crash if a graphics window was
+    * getGraphicsEvent() could cause a crash if a graphics window was
       closed while it was in use. (PR#16438)
+
+    * matrix(x, nr, nc, byrow = TRUE) failed if x was an object of type
+      "expression".
 
 CHANGES IN R 3.2.1:
 

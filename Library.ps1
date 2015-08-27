@@ -48,7 +48,7 @@ Function DownloadAndUnpack {
     Progress "Downloading R (devel)"
     Invoke-WebRequest $rurl -OutFile .\DL\R-devel-win.exe
 
-    $rurl_stable = "http://cran.r-project.org/bin/windows/base/R-3.2.0-win.exe"
+    $rurl_stable = "http://cran.r-project.org/bin/windows/base/R-3.2.2-win.exe"
 
     Progress "Downloading R (stable)"
     Invoke-WebRequest $rurl_stable -OutFile .\DL\R-stable-win.exe

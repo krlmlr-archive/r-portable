@@ -32,3 +32,13 @@ deploy:
     secure: 58T9IWbnnWbEPR77jBqYSrXfTP3glkvVoWQ2i2wEFa7EJzU2KYLjdjsoNTPnlzxR0dX2Ao4of8jsZAxSJEm5VjQP4wnRBwV6gwY2DilgLF8zkhUHxAz5s9ZA5HgdYeDK
   folder: $(APPVEYOR_REPO_BRANCH)/$(APPVEYOR_PULL_REQUEST_NUMBER)
   artifact: ISO
+
+notifications:
+ - provider: Email
+   to:
+     - krlmlr+appveyor@mailbox.org
+   subject: 'r-portable build {{status}}'                  # optional
+   message: "https://ci.appveyor.com/project/krlmlr/r-portable"    # optional
+   on_build_success: false
+   on_build_failure: true
+   on_build_status_changed: true

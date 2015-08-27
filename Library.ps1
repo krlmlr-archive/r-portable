@@ -45,13 +45,8 @@ Function DownloadAndUnpack {
 
     $rurl = "http://cran.r-project.org/bin/windows/base/R-devel-win.exe"
 
-    Progress "Downloading R (devel)"
+    Progress "Downloading R"
     Invoke-WebRequest $rurl -OutFile .\DL\R-devel-win.exe
-
-    $rurl_stable = "http://cran.r-project.org/bin/windows/base/R-3.2.2-win.exe"
-
-    Progress "Downloading R (stable)"
-    Invoke-WebRequest $rurl_stable -OutFile .\DL\R-stable-win.exe
 
     Progress "Determining Rtools version"
     $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
@@ -64,16 +59,10 @@ Function DownloadAndUnpack {
     rm -Recurse -Force .\Image
     md .\Image
 
-    # R (devel)
+    # R
     Progress "Extracting R (devel)"
     .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe > .\R-devel-win.log
     mv ".\Image\{app}" .\Image\R
-    rm .\Image\install_script.iss
-
-    # R (stable)
-    Progress "Extracting R (stable)"
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-stable-win.exe > .\R-stable-win.log
-    mv ".\Image\{app}" .\Image\R-stable
     rm .\Image\install_script.iss
 
     # R site library

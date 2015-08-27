@@ -8,6 +8,9 @@ init:
         git config core.autocrlf
         $ErrorActionPreference = "Stop"
 
+# fetch repository as zip archive
+shallow_clone: true
+
 install:
   - ps: |
         Import-Module '.\Library.ps1'

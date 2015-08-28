@@ -111,52 +111,51 @@ Function CreateImage {
     Exec { git add -A Image DELETE_ME_TO_FORCE_REBUILD README.md }
 
     Progress "Checking status."
-    $StatusOutput = (git status Image DELETE_ME_TO_FORCE_REBUILD README.md --porcelain) | Out-String
+    $StatusOutput = (git status Image DELETE_ME_TO_FORCE_REBUILD --porcelain) | Out-String
 
-    If ($StatusOutput.Length -eq 0) {
-        # We don't want to build the images
-        # if the contents haven't changed.
-        Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
-        Return
+    $StatusOutputReadme = (git status README.md --porcelain) | Out-String
+
+    If ($StatusOutput.Length -ne 0) {
+        Progress "Mounting VHD file."
+        Exec { bash -c 'gunzip -c R-empty.vhd.gz > R.vhd' }
+        $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
+        $ImageFullPath
+
+        $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-Volume).DriveLetter + ":"
+        $VHDPath
+
+        Progress "Copying to VHD file."
+        cp -Recurse "Image\*" ($VHDPath + "\")
+
+        Progress "Creating ISO file."
+        Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
+
+        Progress "Compressing ISO file."
+        Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
+
+        Progress "Creating TAR-GZ file."
+        Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
+
+        Progress "Unmounting VHD file."
+        Dismount-DiskImage -ImagePath $ImageFullPath
+
+        Progress "Compressing VHD file."
+        Exec { bash -c 'gzip -c R.vhd > R.vhd.gz' }
+
+        If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
+            # The image sizes are part of the knitted document,
+            # therefore knitting must happen after the images are built.
+            Progress "Knitting hash."
+            Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('hash.Rmd')" }
+
+            Progress "Also adding hash to Git."
+            Exec { git add hash.md }
+            Exec { git status hash.md }
+        }
     }
 
-    Progress "Mounting VHD file."
-    Exec { bash -c 'gunzip -c R-empty.vhd.gz > R.vhd' }
-    $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
-    $ImageFullPath
-
-    $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-Volume).DriveLetter + ":"
-    $VHDPath
-
-    Progress "Copying to VHD file."
-    cp -Recurse "Image\*" ($VHDPath + "\")
-
-    Progress "Creating ISO file."
-    Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
-
-    Progress "Compressing ISO file."
-    Exec { bash -c 'gzip -c R.iso > R.iso.gz' }
-
-    Progress "Creating TAR-GZ file."
-    Exec { bash -c 'cd Image && tar -c * | gzip -c > ../R.tar.gz' }
-
-    Progress "Unmounting VHD file."
-    Dismount-DiskImage -ImagePath $ImageFullPath
-
-    Progress "Compressing VHD file."
-    Exec { bash -c 'gzip -c R.vhd > R.vhd.gz' }
-
-    If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
-        # The image sizes are part of the knitted document,
-        # therefore knitting must happen after the images are built.
-        Progress "Knitting hash."
-        Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('hash.Rmd')" }
-
+    If (($StatusOutput.Length + $StatusOutputReadme.Length) -ne 0) {
         SetupGit
-
-        Progress "Adding also hash to Git."
-        Exec { git add hash.md }
-        Exec { git status hash.md }
 
         Progress "Committing to Git."
         Exec { git commit -C HEAD }

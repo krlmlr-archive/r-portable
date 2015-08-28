@@ -34,7 +34,7 @@ my_theme <- theme_bw(base_size = 10) +
     )
 
 ## ------------------------------------------------------------------------
-RC <- setRefClass("RC", 
+RC <- setRefClass("RC",
   fields = list(x = "numeric"),
   methods = list(
     initialize = function(x = 1) .self$x <- x,
@@ -82,9 +82,21 @@ R6NonPortable <- R6Class("R6NonPortable",
 )
 
 ## ------------------------------------------------------------------------
-R6NoClassNonPortable <- R6Class("R6NoClassNonPortable",
+R6NonCloneable <- R6Class("R6NonCloneable",
+  cloneable = FALSE,
+  public = list(
+    x = NULL,
+    initialize = function(x = 1) self$x <- x,
+    getx = function() self$x,
+    inc = function(n = 1) self$x <- self$x + n
+  )
+)
+
+## ------------------------------------------------------------------------
+R6Bare <- R6Class("R6Bare",
   portable = FALSE,
   class = FALSE,
+  cloneable = FALSE,
   public = list(
     x = NULL,
     initialize = function(value = 1) x <<- value,
@@ -107,9 +119,10 @@ R6Private <- R6Class("R6Private",
 R6Private$new()
 
 ## ------------------------------------------------------------------------
-R6PrivateNcNp <- R6Class("R6PrivateNcNp",
+R6PrivateBare <- R6Class("R6PrivateBare",
   portable = FALSE,
   class = FALSE,
+  cloneable = FALSE,
   private = list(x = NULL),
   public = list(
     initialize = function(x = 1) private$x <- x,
@@ -119,26 +132,26 @@ R6PrivateNcNp <- R6Class("R6PrivateNcNp",
 )
 
 ## ------------------------------------------------------------------------
-ClosureEnvClass <- function(x = 1) {
+FunctionEnvClass <- function(x = 1) {
   inc <- function(n = 1) x <<- x + n
   getx <- function() x
   self <- environment()
-  class(self) <- "ClosureEnvClass"
+  class(self) <- "FunctionEnvClass"
   self
 }
 
 ## ------------------------------------------------------------------------
-ls(ClosureEnvClass())
+ls(FunctionEnvClass())
 
 ## ------------------------------------------------------------------------
-ClosureEnvNoClass <- function(x = 1) {
+FunctionEnvNoClass <- function(x = 1) {
   inc <- function(n = 1) x <<- x + n
   getx <- function() x
   environment()
 }
 
 ## ------------------------------------------------------------------------
-ls(ClosureEnvNoClass())
+ls(FunctionEnvNoClass())
 
 ## ----echo = FALSE--------------------------------------------------------
 # Utility functions for calculating sizes
@@ -170,18 +183,24 @@ sizes <- obj_sizes(
   R6$new(),
   R6NoClass$new(),
   R6NonPortable$new(),
-  R6NoClassNonPortable$new(),
+  R6NonCloneable$new(),
+  R6Bare$new(),
   R6Private$new(),
-  R6PrivateNcNp$new(),
-  ClosureEnvClass(),
-  ClosureEnvNoClass()
+  R6PrivateBare$new(),
+  FunctionEnvClass(),
+  FunctionEnvNoClass()
 )
 sizes
 
 ## ----echo = FALSE, results = 'hold'--------------------------------------
-objnames <- c("RC", "R6", "R6NoClass", "R6NonPortable",
-              "R6NoClassNonPortable", "R6Private", "R6PrivateNcNp",
-              "ClosureEnvClass", "ClosureEnvNoClass")
+objnames <- c(
+  "RC", "R6", "R6NoClass", "R6NonPortable", "R6NonCloneable",
+  "R6Bare", "R6Private", "R6PrivateBare", "FunctionEnvClass",
+  "FunctionEnvNoClass"
+)
+
+obj_labels <- objnames
+obj_labels[1] <- "RC (off chart)"
 
 sizes$name <- factor(objnames, levels = rev(objnames))
 
@@ -192,9 +211,7 @@ ggplot(sizes, aes(y = name, x = one)) +
                      expand = c(0, 0), oob = rescale_none) +
   scale_y_discrete(
     breaks = sizes$name,
-    labels = c("RC (off chart)", "R6", "R6NoClass", "R6NonPortable",
-               "R6NoClassNonPortable", "R6Private", "R6PrivateNcNp",
-               "ClosureEnvClass", "ClosureEnvNoClass")) +
+    labels = obj_labels) +
   my_theme +
   ggtitle("First object")
 
@@ -230,11 +247,12 @@ speed <- microbenchmark(
   R6$new(),
   R6NoClass$new(),
   R6NonPortable$new(),
-  R6NoClassNonPortable$new(),
+  R6NonCloneable$new(),
+  R6Bare$new(),
   R6Private$new(),
-  R6PrivateNcNp$new(),
-  ClosureEnvClass(),
-  ClosureEnvNoClass()
+  R6PrivateBare$new(),
+  FunctionEnvClass(),
+  FunctionEnvNoClass()
 )
 speed <- mb_summary(speed)
 speed
@@ -254,25 +272,27 @@ p
 ## ------------------------------------------------------------------------
 rc           <- RC$new()
 r6           <- R6$new()
-r6nc         <- R6NoClass$new()
-r6np         <- R6NonPortable$new()
-r6nc_np      <- R6NoClassNonPortable$new()
+r6noclass    <- R6NoClass$new()
+r6noport     <- R6NonPortable$new()
+r6noclone    <- R6NonCloneable$new()
+r6bare       <- R6Bare$new()
 r6priv       <- R6Private$new()
-r6priv_nc_np <- R6PrivateNcNp$new()
-closure      <- ClosureEnvClass()
-closure_nc   <- ClosureEnvNoClass()
+r6priv_bare  <- R6PrivateBare$new()
+fun_env      <- FunctionEnvClass()
+fun_env_nc   <- FunctionEnvNoClass()
 
 ## ------------------------------------------------------------------------
 speed <- microbenchmark(
   rc$x,
   r6$x,
-  r6nc$x,
-  r6np$x,
-  r6nc_np$x,
+  r6noclass$x,
+  r6noport$x,
+  r6noclone$x,
+  r6bare$x,
   r6priv$x,
-  r6priv_nc_np$x,
-  closure$x,
-  closure_nc$x
+  r6priv_bare$x,
+  fun_env$x,
+  fun_env_nc$x
 )
 speed <- mb_summary(speed)
 speed
@@ -293,13 +313,14 @@ p
 speed <- microbenchmark(
   rc$x <- 4,
   r6$x <- 4,
-  r6nc$x <- 4,
-  r6np$x <- 4,
-  r6nc_np$x <- 4,
+  r6noclass$x <- 4,
+  r6noport$x <- 4,
+  r6noclone$x <- 4,
+  r6bare$x <- 4,
   # r6priv$x <- 4,         # Can't set private field directly,
   # r6priv_nc_np$x <- 4,   # so we'll skip these two
-  closure$x <- 4,
-  closure_nc$x <- 4
+  fun_env$x <- 4,
+  fun_env_nc$x <- 4
 )
 speed <- mb_summary(speed)
 speed
@@ -320,13 +341,14 @@ p
 speed <- microbenchmark(
   rc$getx(),
   r6$getx(),
-  r6nc$getx(),
-  r6np$getx(),
-  r6nc_np$getx(),
+  r6noclass$getx(),
+  r6noport$getx(),
+  r6noclone$getx(),
+  r6bare$getx(),
   r6priv$getx(),
-  r6priv_nc_np$getx(),
-  closure$getx(),
-  closure_nc$getx()
+  r6priv_bare$getx(),
+  fun_env$getx(),
+  fun_env_nc$getx()
 )
 speed <- mb_summary(speed)
 speed

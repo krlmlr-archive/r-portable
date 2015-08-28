@@ -1,6 +1,7 @@
 git2r-package	git2r
 add	add-methods
 add,git_repository,character-method	add-methods
+add_session_info	add_session_info
 ahead_behind	ahead_behind-methods
 ahead_behind,git_commit,git_commit-method	ahead_behind-methods
 blame	blame-methods
@@ -9,6 +10,7 @@ blob_create	blob_create-methods
 blob_create,git_repository,character-method	blob_create-methods
 branches	branches-methods
 branches,git_repository-method	branches-methods
+branches,missing-method	branches-methods
 branch_create	branch_create-methods
 branch_create,git_commit-method	branch_create-methods
 branch_delete	branch_delete-methods
@@ -53,6 +55,9 @@ contributions	contributions-methods
 contributions,character-method	contributions-methods
 contributions,git_repository-method	contributions-methods
 contributions,missing-method	contributions-methods
+cred_env	cred_env-methods
+cred_env,character,character-method	cred_env-methods
+cred_env-class	cred_env-class
 cred_ssh_key	cred_ssh_key-methods
 cred_ssh_key,character,character,character-method	cred_ssh_key-methods
 cred_ssh_key,character,character,missing-method	cred_ssh_key-methods
@@ -72,6 +77,7 @@ fetch	fetch-methods
 fetch,git_repository-method	fetch-methods
 fetch_heads	fetch_heads-methods
 fetch_heads,git_repository-method	fetch_heads-methods
+get_refspec	get_refspec
 git2r	git2r
 git_blame-class	git_blame-class
 git_blame_hunk-class	git_blame_hunk-class
@@ -134,6 +140,7 @@ libgit2_sha	libgit2_sha
 libgit2_version	libgit2_version
 lookup	lookup-methods
 lookup,git_repository,character-method	lookup-methods
+lookup_repository	lookup_repository
 merge,git_branch,missing-method	merge-methods
 merge,git_repository,character-method	merge-methods
 merge_base	merge_base-methods
@@ -160,15 +167,19 @@ plot	plot-methods
 plot,git_repository-method	plot-methods
 pull	pull-methods
 pull,git_repository-method	pull-methods
+punch_card	punch_card-methods
+punch_card,git_repository-method	punch_card-methods
 push	push-methods
 push,git_branch-method	push-methods
 push,git_repository-method	push-methods
 references	references-methods
 references,git_repository-method	references-methods
+references,missing-method	references-methods
 reflog	reflog-methods
 reflog,git_repository-method	reflog-methods
 remotes	remotes-methods
 remotes,git_repository-method	remotes-methods
+remotes,missing-method	remotes-methods
 remote_add	remote_add-methods
 remote_add,git_repository,character,character-method	remote_add-methods
 remote_remove	remote_remove-methods
@@ -221,6 +232,7 @@ stash_drop,git_repository-method	stash_drop-methods
 stash_drop,git_stash-method	stash_drop-methods
 stash_list	stash_list-methods
 stash_list,git_repository-method	stash_list-methods
+stash_list,missing-method	stash_list-methods
 status	status-methods
 status,git_repository-method	status-methods
 status,missing-method	status-methods
@@ -241,6 +253,7 @@ tag	tag-methods
 tag,git_repository-method	tag-methods
 tags	tags-methods
 tags,git_repository-method	tags-methods
+tags,missing-method	tags-methods
 tree	tree-methods
 tree,git_commit-method	tree-methods
 tree,git_stash-method	tree-methods
@@ -252,6 +265,7 @@ when,git_tag-method	when-methods
 when,git_time-method	when-methods
 workdir	workdir-methods
 workdir,git_repository-method	workdir-methods
+workdir,missing-method	workdir-methods
 [,git_tree,character,missing-method	tree-index-methods
 [,git_tree,integer,missing-method	tree-index-methods
 [,git_tree,logical,missing-method	tree-index-methods

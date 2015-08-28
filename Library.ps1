@@ -117,6 +117,9 @@ Function CreateImage {
     $ImageFullPath
     Mount-DiskImage -ImagePath $ImageFullPath
 
+    Progress "Get-PSDrive"
+    Get-PSDrive -PSProvider 'FileSystem'
+
     Progress "Copying to VHD file."
     $VHDPath = "E:"
     cp -Recurse "Image\*" ($VHDPath + "\")

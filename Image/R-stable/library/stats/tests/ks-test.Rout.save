@@ -1,7 +1,7 @@
 
-R version 3.2.0 beta (2015-04-05 r68147) -- "Full of Ingredients"
+R version 3.2.2 RC (2015-08-08 r68914) -- "Fire Safety"
 Copyright (C) 2015 The R Foundation for Statistical Computing
-Platform: x86_64-unknown-linux-gnu (64-bit)
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -114,4 +114,4 @@ In ks.test(round(ds2, 1), "pnorm", exact = TRUE) :
 > 
 > proc.time()
    user  system elapsed 
-  0.111   0.010   0.111 
+  0.162   0.015   0.165 

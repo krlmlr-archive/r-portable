@@ -61,28 +61,28 @@ inline Rcomplex get_zero<CPLXSXP,Rcomplex>(){
 template<int RTYPE> void r_init_vector(SEXP x){
 	typedef typename ::Rcpp::traits::storage_type<RTYPE>::type CTYPE ;
 	CTYPE* start=r_vector_start<RTYPE>(x) ;
-	std::fill( start, start + Rf_length(x), get_zero<RTYPE,CTYPE>() ) ;
+	std::fill( start, start + Rf_xlength(x), get_zero<RTYPE,CTYPE>() ) ;
 }
 /**
  * Initializes a generic vector (VECSXP). Does nothing since
  * R already initializes all elements to NULL
  */
 template<>
-inline void r_init_vector<VECSXP>(SEXP x){}
+inline void r_init_vector<VECSXP>(SEXP /*x*/){}
 
 /**
  * Initializes an expression vector (EXPRSXP). Does nothing since
  * R already initializes all elements to NULL
  */
 template<>
-inline void r_init_vector<EXPRSXP>(SEXP x){}
+inline void r_init_vector<EXPRSXP>(SEXP /*x*/){}
 
 /**
  * Initializes a character vector (STRSXP). Does nothing since
  * R already initializes all elements to ""
  */
 template<>
-inline void r_init_vector<STRSXP>(SEXP x){}
+inline void r_init_vector<STRSXP>(SEXP /*x*/){}
 
 
 

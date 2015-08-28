@@ -421,6 +421,24 @@ stopifnot(identical(pp[1,], c("0", " ", ".", " ")),
 ## all 4 prettyNum() would error out
 
 
+## checking all.equal() with externalptr
+library(methods) # getClass()'s versionKey is an e.ptr
+cA <- getClass("ANY")
+stopifnot(all.equal(cA, cA),
+          is.character(all.equal(cA, getClass("S4"))))
+# both all.equal() failed in R <= 3.1.1
+
+
+## as.hexmode(x), as.octmode(x)  when x is double
+x <- c(NA, 1)
+stopifnot(identical(x == x,
+		    as.hexmode(x) == as.octmode(x)))
+p <- c(1, pi)
+tools::assertError(as.hexmode(p))
+tools::assertError(as.octmode(p))
+## where all "wrong" in R <= 3.1.1
+
+
 ## PR#15935
 y <- 1:3
 drop1(lm(y ~ 1))
@@ -836,3 +854,63 @@ foo <- as.expression(1:3)
 matrix(foo, 3, 3) # always worked
 matrix(foo, 3, 3, byrow = TRUE)
 ## failed in R <= 3.1.2
+
+
+## labels.dendrogram(), dendrapply(), etc -- see comment #15 of PR#15215 :
+(D <- as.dendrogram(hclust(dist(cbind(setNames(c(0,1,4), LETTERS[1:3]))))))
+stopifnot(
+    identical(labels(D), c("C", "A", "B")),
+    ## has been used in "CRAN package space"
+    identical(suppressWarnings(dendrapply(D, labels)),
+              list("C", list("A", "B"), "C")))
+## dendrapply(D, labels) failed in R-devel for a day or two
+
+
+## poly() / polym() predict()ion
+library(datasets)
+alm <- lm(stack.loss ~ poly(Air.Flow, Water.Temp, degree=3), stackloss)
+f20 <- fitted(alm)[1:20] # "correct" prediction values [1:20]
+stopifnot(all.equal(unname(f20[1:4]), c(39.7703378, 39.7703378, 35.8251359, 21.5661761)),
+	  all.equal(f20, predict(alm, stackloss) [1:20] , tolerance = 1e-14),
+	  all.equal(f20, predict(alm, stackloss[1:20, ]), tolerance = 1e-14))
+## the second prediction went off in  R <= 3.2.1
+
+
+## PR#16478
+kkk <- c("a\tb", "3.14\tx")
+z1 <- read.table(textConnection(kkk), sep = "\t", header = TRUE,
+                 colClasses = c("numeric", "character"))
+z2 <- read.table(textConnection(kkk), sep = "\t", header = TRUE,
+                 colClasses = c(b = "character", a = "numeric"))
+stopifnot(identical(z1, z2))
+z3 <- read.table(textConnection(kkk), sep = "\t", header = TRUE,
+                 colClasses = c(b = "character"))
+stopifnot(identical(z1, z3))
+z4 <- read.table(textConnection(kkk), sep = "\t", header = TRUE,
+                 colClasses = c(c = "integer", b = "character", a = "numeric"))
+stopifnot(identical(z1, z4))
+## z2 and z4 used positional matching (and failed) in R < 3.3.0.
+
+
+## PR#16484
+z <- regexpr("(.)", NA_character_, perl = TRUE)
+stopifnot(is.na(attr(z, "capture.start")), is.na(attr(z, "capture.length")))
+## Result was random integers in R <= 3.2.2.
+
+
+## PR#14861
+if(.Platform$OS.type == "unix") { # no 'ls /'  on Windows
+    con <- pipe("ls /", open = "rt")
+    data <- readLines(con)
+    z <- close(con)
+    print(z)
+    stopifnot(identical(z, 0L))
+}
+## was NULL in R <= 3.2.2
+
+
+## Sam Steingold:  compiler::enableJIT(3) not working in ~/.Rprofile anymore
+stopifnot(identical(topenv(baseenv()),
+                    baseenv()))
+## accidentally globalenv in R 3.2.[12] only
+

@@ -47,6 +47,13 @@ CharacterVector test_sapply_string( CharacterVector text, CharacterVector old , 
 }
 
 // [[Rcpp::export]]
+String test_ctor(String x) {
+    String test = "test";
+    test = x;
+    return test;
+}
+
+// [[Rcpp::export]]
 List test_compare_Strings( String aa, String bb ){
     return List::create(
         _["a  < b" ] = aa < bb,
@@ -60,4 +67,30 @@ List test_compare_Strings( String aa, String bb ){
 String test_push_front(String x) {
     x.push_front("abc");
     return x;
+}
+
+// [[Rcpp::export]]
+String test_String_encoding(String x) {
+    return x.get_encoding();
+}
+
+// [[Rcpp::export]]
+String test_String_set_encoding(String x) {
+    x.set_encoding("UTF-8");
+    return x;
+}
+
+// [[Rcpp::export]]
+String test_String_ctor_encoding(String x) {
+    String y(x);
+    y.set_encoding("UTF-8");
+    return y;
+}
+
+
+// [[Rcpp::export]]
+String test_String_ctor_encoding2() {
+    String y("å");
+    y.set_encoding("UTF-8");
+    return y;
 }

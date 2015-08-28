@@ -141,3 +141,17 @@ p2 <- P2$new()
 p2$sety(20)
 p2$getxy()
 
+## ----eval=FALSE----------------------------------------------------------
+#  ClassB <- R6Class("ClassB",
+#    inherit = pkgA::ClassA,
+#    public = list(x = 1)
+#  )
+#  
+#  # We'll fill this at load time
+#  objB <- NULL
+#  
+#  .onLoad <- function(libname, pkgname) {
+#    # The namespace is locked after loading; we can still modify objB at this time.
+#    objB <<- ClassB$new()
+#  }
+

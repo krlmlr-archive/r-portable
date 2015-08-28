@@ -9,7 +9,7 @@
 <meta name="generator" content="pandoc" />
 
 
-<meta name="date" content="2015-06-05" />
+<meta name="date" content="2015-07-04" />
 
 <title>The curl package: a modern R interface to libcurl</title>
 
@@ -62,7 +62,7 @@ img {
 
 <div id="header">
 <h1 class="title">The curl package: a modern R interface to libcurl</h1>
-<h4 class="date"><em>2015-06-05</em></h4>
+<h4 class="date"><em>2015-07-04</em></h4>
 </div>
 
 
@@ -77,15 +77,15 @@ str(req)</code></pre>
  $ status_code: int 200
  $ headers    : raw [1:220] 48 54 54 50 ...
  $ modified   : POSIXct[1:1], format: NA
- $ times      : Named num [1:6] 0 0.0346 0.1333 0.5024 0.6013 ...
+ $ times      : Named num [1:6] 0 0.00445 0.37531 1.1641 1.59769 ...
   ..- attr(*, &quot;names&quot;)= chr [1:6] &quot;redirect&quot; &quot;namelookup&quot; &quot;connect&quot; &quot;pretransfer&quot; ...
- $ content    : raw [1:230] 7b 0a 20 20 ...</code></pre>
+ $ content    : raw [1:228] 7b 0a 20 20 ...</code></pre>
 <pre class="r"><code>parse_headers(req$headers)</code></pre>
 <pre><code>[1] &quot;HTTP/1.1 200 OK&quot;                       
 [2] &quot;Server: nginx&quot;                         
-[3] &quot;Date: Fri, 05 Jun 2015 09:58:40 GMT&quot;   
+[3] &quot;Date: Sat, 04 Jul 2015 10:13:47 GMT&quot;   
 [4] &quot;Content-Type: application/json&quot;        
-[5] &quot;Content-Length: 230&quot;                   
+[5] &quot;Content-Length: 228&quot;                   
 [6] &quot;Connection: keep-alive&quot;                
 [7] &quot;Access-Control-Allow-Origin: *&quot;        
 [8] &quot;Access-Control-Allow-Credentials: true&quot;</code></pre>
@@ -98,7 +98,7 @@ str(req)</code></pre>
     &quot;Host&quot;: &quot;httpbin.org&quot;, 
     &quot;User-Agent&quot;: &quot;r/curl/jeroen&quot;
   }, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;https://httpbin.org/get&quot;
 }</code></pre>
 <p>The <code>curl_fetch_memory</code> interface is the easiest interface and most powerful for buidling API clients. However because it is fully in-memory, it is not suitable for downloading really large files. If you are expecting 100G of data, you probably need one of the other interfaces.</p>
@@ -117,7 +117,7 @@ cat(readLines(tmp), sep = &quot;\n&quot;)</code></pre>
     &quot;Host&quot;: &quot;httpbin.org&quot;, 
     &quot;User-Agent&quot;: &quot;r/curl/jeroen&quot;
   }, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;https://httpbin.org/get&quot;
 }</code></pre>
 </div>
@@ -145,7 +145,7 @@ close(con)
 cat(out, sep = &quot;\n&quot;)</code></pre>
 <pre><code>    &quot;User-Agent&quot;: &quot;r/curl/jeroen&quot;
   }, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;https://httpbin.org/get&quot;
 }</code></pre>
 <p>The example shows how to use <code>readLines</code> on an opened connection to read <code>n</code> lines at a time. Similarly <code>readBin</code> is used to read <code>n</code> bytes at a time for stream parsing binary data.</p>
@@ -195,7 +195,7 @@ cat(rawToChar(req$content))</code></pre>
     &quot;User-Agent&quot;: &quot;A cow&quot;
   }, 
   &quot;json&quot;: null, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;http://httpbin.org/post&quot;
 }</code></pre>
 <p>Alternatively we can use <code>curl()</code> to read the data of via a connetion interface:</p>
@@ -216,7 +216,7 @@ cat(readLines(con), sep = &quot;\n&quot;)</code></pre>
     &quot;User-Agent&quot;: &quot;A cow&quot;
   }, 
   &quot;json&quot;: null, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;http://httpbin.org/post&quot;
 }</code></pre>
 <p>Or we can use <code>curl_download</code> to write the response to disk:</p>
@@ -238,7 +238,7 @@ cat(readLines(tmp), sep = &quot;\n&quot;)</code></pre>
     &quot;User-Agent&quot;: &quot;A cow&quot;
   }, 
   &quot;json&quot;: null, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;http://httpbin.org/post&quot;
 }</code></pre>
 </div>
@@ -260,7 +260,7 @@ handle_cookies(h)</code></pre>
 req &lt;- curl_fetch_memory(&quot;http://httpbin.org/cookies/delete?foo&quot;, handle = h)
 handle_cookies(h)</code></pre>
 <pre><code>       domain  flag path secure          expiration name value
-1 httpbin.org FALSE    /  FALSE 2015-06-05 11:58:43  foo  &lt;NA&gt;
+1 httpbin.org FALSE    /  FALSE 2015-07-04 12:13:56  foo  &lt;NA&gt;
 2 httpbin.org FALSE    /  FALSE                &lt;NA&gt;  bar   ftw
 3 httpbin.org FALSE    /  FALSE                &lt;NA&gt;  baz moooo</code></pre>
 <p>The <code>handle_cookies</code> function returns a data frame with 7 columns as specified in the <a href="http://www.cookiecentral.com/faq/#3.5">netscape cookie file format</a>.</p>
@@ -275,10 +275,10 @@ req2 &lt;- curl_fetch_memory(&quot;http://www.r-project.org&quot;, handle = new_
 <pre class="r"><code>h &lt;- new_handle()
 system.time(curl_fetch_memory(&quot;https://api.github.com/users/ropensci&quot;, handle = h))</code></pre>
 <pre><code>   user  system elapsed 
-  0.017   0.009   0.618 </code></pre>
+  0.018   0.011   1.668 </code></pre>
 <pre class="r"><code>system.time(curl_fetch_memory(&quot;https://api.github.com/users/rstudio&quot;, handle = h))</code></pre>
 <pre><code>   user  system elapsed 
-  0.001   0.001   0.116 </code></pre>
+  0.001   0.001   0.242 </code></pre>
 <p>The argument against reusing handles is that curl does not cleanup the handle after each request. All of the options and internal fields will linger around for all future request until explicitly reset or overwritten. This can sometimes leads to unexpected behavior.</p>
 <pre class="r"><code>handle_reset(h)</code></pre>
 <p>The <code>handle_reset</code> function will reset all curl options and request headers to the default values. It will <strong>not</strong> erease cookies and it will still keep alive the connections. Therefore it is good practice to call <code>handle_reset</code> after performing a request if you want to reuse the handle for a subsequent request. Still it is always safer to create a new fresh handle when possible, rather than recycling old ones.</p>
@@ -321,7 +321,7 @@ new_handle() %&gt;%
     &quot;User-Agent&quot;: &quot;A cow&quot;
   }, 
   &quot;json&quot;: null, 
-  &quot;origin&quot;: &quot;84.26.118.249&quot;, 
+  &quot;origin&quot;: &quot;91.103.38.8&quot;, 
   &quot;url&quot;: &quot;http://httpbin.org/post&quot;
 }</code></pre>
 </div>

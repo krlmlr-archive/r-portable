@@ -23,9 +23,7 @@ hook_plot_tex	hook_plot
 hook_plot_textile	hook_plot
 hook_purl	chunk_hook
 hook_r2swf	hook_animation
-hook_rgl	chunk_hook
 hook_scianimator	hook_animation
-hook_webgl	chunk_hook
 image_uri	image_uri
 imgur_upload	imgur_upload
 inline_expr	inline_expr
@@ -44,6 +42,7 @@ knit_global	knit_global
 knit_hooks	knit_hooks
 knit_meta	knit_meta
 knit_params	knit_params
+knit_params_yaml	knit_params_yaml
 knit_patterns	knit_patterns
 knit_print	knit_print
 knit_rd	knit_rd

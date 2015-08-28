@@ -142,6 +142,8 @@ expression-class	BasicClasses
 extends	is
 extendsMetaName	RClassUtils
 externalptr-class	BasicClasses
+externalRefMethod	refClass
+externalRefMethod-class	refClass
 factor-class	setOldClass
 finalDefaultMethod	MethodsList
 findClass	findClass
@@ -412,6 +414,7 @@ show	show
 show,ANY-method	show
 show,classRepresentation-method	show
 show,envRefClass-method	refClass
+show,externalRefMethod-method	refClass
 show,genericFunction-method	show
 show,genericFunctionWithTrace-method	TraceClasses
 show,MethodDefinition-method	show

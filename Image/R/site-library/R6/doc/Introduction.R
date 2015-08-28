@@ -1,4 +1,5 @@
 ## ----echo = FALSE--------------------------------------------------------
+library(pryr)
 knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
 
 ## ------------------------------------------------------------------------
@@ -189,7 +190,7 @@ s1$e$x
 NonSharedField <- R6Class("NonSharedField",
   public = list(
     e = NULL,
-    initialize = function() e <<- SimpleClass$new()
+    initialize = function() self$e <- SimpleClass$new()
   )
 )
 
@@ -247,7 +248,7 @@ p$getx()
 Simple <- R6Class("Simple",
   public = list(
     x = 1,
-    getx = function() x
+    getx = function() self$x
   )
 )
 
@@ -259,6 +260,144 @@ Simple$set("public", "x", 10, overwrite = TRUE)
 s <- Simple$new()
 s$x
 s$getx2()
+
+## ------------------------------------------------------------------------
+# Create a locked class
+Simple <- R6Class("Simple",
+  public = list(
+    x = 1,
+    getx = function() self$x
+  ),
+  lock_class = TRUE
+)
+
+# This would result in an error
+# Simple$set("public", "y", 2)
+
+# Unlock the class
+Simple$unlock()
+
+# Now it works
+Simple$set("public", "y", 2)
+
+# Lock the class again
+Simple$lock()
+
+## ------------------------------------------------------------------------
+Simple <- R6Class("Simple",
+  public = list(
+    x = 1,
+    getx = function() self$x
+  )
+)
+
+s <- Simple$new()
+
+# Create a clone
+s1 <- s$clone()
+# Modify it
+s1$x <- 2
+s1$getx()
+
+# Original is unaffected by changes to the clone
+s$getx()
+
+## ----clone-size, echo=FALSE----------------------------------------------
+# Calculate size of clone method in this block.
+Cloneable <- R6Class("Cloneable", cloneable = TRUE)
+NonCloneable <- R6Class("NonCloneable", cloneable = FALSE)
+
+c1 <- Cloneable$new()
+c2 <- Cloneable$new()
+# Bytes for each new cloneable object
+cloneable_delta <- object_size(c1, c2) - object_size(c2)
+
+nc1 <- NonCloneable$new()
+nc2 <- NonCloneable$new()
+# Bytes for each new noncloneable object
+noncloneable_delta <- object_size(nc1, nc2) - object_size(nc2)
+
+# Number of bytes used by each copy of clone method
+additional_clone_method_bytes <- cloneable_delta - noncloneable_delta
+additional_clone_method_bytes_str <- capture.output(print(additional_clone_method_bytes))
+
+# Number of bytes used by first copy of a clone method
+first_clone_method_bytes <- object_size(c1) - object_size(nc1)
+# Need some trickery to get the nice output from pryr::print.bytes
+first_clone_method_bytes_str <- capture.output(print(first_clone_method_bytes))
+
+## ------------------------------------------------------------------------
+Simple <- R6Class("Simple", public = list(x = 1))
+
+Cloneable <- R6Class("Cloneable",
+  public = list(
+    s = NULL,
+    initialize = function() self$s <- Simple$new()
+  )
+)
+
+c1 <- Cloneable$new()
+c2 <- c1$clone()
+
+# Change c1's `s` field
+c1$s$x <- 2
+
+# c2's `s` is the same object, so it reflects the change
+c2$s$x
+
+## ------------------------------------------------------------------------
+c3 <- c1$clone(deep = TRUE)
+
+# Change c1's `s` field
+c1$s$x <- 3
+
+# c2's `s` is different
+c3$s$x
+
+## ------------------------------------------------------------------------
+CloneEnv <- R6Class("CloneEnv",
+  public = list(
+    a = NULL,
+    b = NULL,
+    v = 1,
+    initialize = function() {
+      self$a <- new.env(parent = emptyenv())
+      self$b <- new.env(parent = emptyenv())
+      self$a$x <- 1
+      self$b$x <- 1
+    }
+  ),
+  private = list(
+    deep_clone = function(name, value) {
+      # With x$clone(deep=TRUE) is called, the deep_clone gets invoked once for
+      # each field, with the name and value.
+      if (name == "a") {
+        # `a` is an environment, so use this quick way of copying
+        list2env(as.list.environment(value, all.names = TRUE),
+                 parent = emptyenv())
+      } else {
+        # For all other fields, just return the value
+        value
+      }
+    }
+  )
+)
+
+c1 <- CloneEnv$new()
+c2 <- c1$clone(deep = TRUE)
+
+## ------------------------------------------------------------------------
+# Modifying c1$a doesn't affect c2$a, because they're separate objects
+c1$a$x <- 2
+c2$a$x
+
+# Modifying c1$b does affect c2$b, because they're the same object
+c1$b$x <- 3
+c2$b$x
+
+# Modifying c1$v doesn't affect c2$v, because they're not reference objects
+c1$v <- 4
+c2$v
 
 ## ------------------------------------------------------------------------
 PrettyCountingQueue <- R6Class("PrettyCountingQueue",

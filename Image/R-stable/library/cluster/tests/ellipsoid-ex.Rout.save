@@ -23,7 +23,7 @@ Error in Fortran routine computing the spanning ellipsoid,
 Warning message:
 In ellipsoidhull(cbind(x = 1:4, y = 1:4)) :
   algorithm possibly not converged in 5000 iterations
-> eh
+> eh ## center ok, shape "0 volume" --> Warning
 'ellipsoid' in 2 dimensions:
  center = ( 2.5 2.5 ); squared ave.radius d^2 =  0 
  and shape matrix =

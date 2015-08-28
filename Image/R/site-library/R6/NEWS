@@ -1,9 +1,39 @@
+R6 2.1.1
+-------------------------------------------------------------------------------
+
+* Fixed a bug with printing R6 objects when a `[[` method is defined for the
+  class. (#70)
+
+* Fixed cloning of objects that call a `super` method which accesses `private`.
+  (#72)
+
+R6 2.1.0
+-------------------------------------------------------------------------------
+
+* Added support for making clones of R6 objects with a `clone()` method on R6
+  objects. The `deep=TRUE` option allows for making clones that have copies of
+  fields with reference semantics (like other R6 objects). (#27)
+
+* Allow adding public or private members when there were no public or private
+  members to begin with. (#51)
+
+* Previously, when an R6 object was printed, it accessed (and called) active
+  bindings. Now it simply reports that a field is an active binding. (#37, #38.
+  Thanks to Oscar de Lama)
+
+* Printing private members now works correctly for portable R6 objects. (#26)
+
+* The 'lock' argument has been renamed to 'lock_objects'. Also, there is a new
+  argument, 'lock_class', which can prevent changes to the class. (#52)
+
+* Fixed printing of NULL fields.
+
 R6 2.0.1
 -------------------------------------------------------------------------------
 
-* Superclasses are checked only on object instantiation, not on class creation.
+* A superclass is validated on object instantation, not on class creation.
 
-* Added documentation about debugging and finalizers.
+* Added `debug` and `undebug` methods to generator object.
 
 R6 2.0
 -------------------------------------------------------------------------------

@@ -19,7 +19,6 @@
 # along with Rcpp.  If not, see <http://www.gnu.org/licenses/>.
 
 .runThisTest <- Sys.getenv("RunAllRcppTests") == "yes"
-
 if (.runThisTest) {
 
     .setUp <- Rcpp:::unitTestSetup("String.cpp")
@@ -50,8 +49,25 @@ if (.runThisTest) {
         checkEquals( res, target )
     }
 
+    test.String.ctor <- function() {
+        res <- test_ctor("abc")
+        checkIdentical(res, "abc")
+    }
+
     test.push.front <- function() {
         res <- test_push_front("def")
         checkIdentical(res, "abcdef")
     }
+
+    test.String.encoding <- function() {
+        a <- b <- "å"
+        Encoding(a) <- "unknown"
+        Encoding(b) <- "UTF-8"
+        checkEquals(test_String_encoding(a), "unknown")
+        checkEquals(test_String_encoding(b), "UTF-8")
+        checkEquals(Encoding(test_String_set_encoding(a)), "UTF-8")
+        checkEquals(Encoding(test_String_ctor_encoding(a)), "UTF-8")
+        checkEquals(Encoding(test_String_ctor_encoding2()), "UTF-8")
+    }
+
 }

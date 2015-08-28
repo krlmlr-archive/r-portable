@@ -1,6 +1,6 @@
 Package: cluster
-Version: 2.0.2
-Date: 2015-06-18
+Version: 2.0.3
+Date: 2015-07-20
 Priority: recommended
 Title: "Finding Groups in Data": Cluster Analysis Extended Rousseeuw et
         al.
@@ -18,8 +18,8 @@ Authors@R: c(person("Martin","Maechler", role=c("aut","cre"), email="maechler@st
  ,person("Matthias", "Studer", role="ctb")
  ,person("Pierre", "Roudier", role="ctb")
  )
-Depends: R (>= 2.15.0), stats, utils
-Imports: graphics, grDevices
+Depends: R (>= 2.15.0), utils
+Imports: graphics, grDevices, stats
 Suggests: MASS
 SuggestsNote: two small examples using MASS' cov.rob() and mvrnorm()
 LazyLoad: yes
@@ -28,7 +28,7 @@ ByteCompile: yes
 BuildResaveData: no
 License: GPL (>= 2)
 NeedsCompilation: yes
-Packaged: 2015-06-18 10:07:30 UTC; maechler
+Packaged: 2015-07-20 08:32:32 UTC; maechler
 Author: Martin Maechler [aut, cre],
   Peter Rousseeuw [aut] (Fortran original),
   Anja Struyf [aut] (S original),
@@ -37,6 +37,6 @@ Author: Martin Maechler [aut, cre],
   Matthias Studer [ctb],
   Pierre Roudier [ctb]
 Repository: CRAN
-Date/Publication: 2015-06-19 10:25:28
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-07-02 02:20:23 UTC; windows
+Date/Publication: 2015-07-21 07:53:10
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-08-28 02:30:17 UTC; windows
 Archs: i386, x64

@@ -150,6 +150,7 @@ $<-.data.frame	Extract.data.frame
 .Random.seed	Random
 .readRDS	base-defunct
 .Renviron	Startup
+.rmpkg	search
 .rowMeans	colSums
 .rowSums	colSums
 .row_names_info	base-internal
@@ -841,7 +842,7 @@ levels<-	levels
 levels<-.factor	levels
 lfactorial	Special
 lgamma	Special
-libcurlVersion	curlVersion
+libcurlVersion	libcurlVersion
 library	library
 library.dynam	library.dynam
 library.dynam.unload	library.dynam

@@ -117,7 +117,7 @@ Function CreateImage {
     $ImageFullPath
     Mount-DiskImage -ImagePath $ImageFullPath
 
-    Progress "Get-PSDrive"
+    Progress "Listing all drives."
     Get-PSDrive -PSProvider 'FileSystem'
 
     Progress "Determining drive letter of mounted VHD file."

@@ -115,13 +115,9 @@ Function CreateImage {
     Exec { bash -c 'gunzip -c R-empty.vhd.gz > R.vhd' }
     $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
     $ImageFullPath
-    Mount-DiskImage -ImagePath $ImageFullPath
 
-    Progress "Listing all drives."
-    Get-PSDrive -PSProvider 'FileSystem'
-
-    Progress "Determining drive letter of mounted VHD file."
-    $VHDPath = (Get-Volume | Where-Object {$_.FileSystemLabel -eq 'R-portable'}).DriveLetter + ":"
+    $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-V
+olume).DriveLetter + ":"
     $VHDPath
 
     Progress "Copying to VHD file."

@@ -243,7 +243,7 @@ p {
 that version.  The main R FAQ can be found at
 </p>
 <div class="display">
-<pre class="display"><a href="http://CRAN.R-project.org/doc/FAQ/R-FAQ.html">http://CRAN.R-project.org/doc/FAQ/R-FAQ.html</a>.
+<pre class="display"><a href="https://CRAN.R-project.org/doc/FAQ/R-FAQ.html">https://CRAN.R-project.org/doc/FAQ/R-FAQ.html</a>.
 </pre></div>
 
 <p>The information here applies only to recent versions of R for Windows,
@@ -262,10 +262,10 @@ that version.  The main R FAQ can be found at
 <a name="Where-can-I-find-the-latest-version_003f-1"></a>
 <h3 class="section">2.1 Where can I find the latest version?</h3>
 
-<p>Go to any CRAN site (see <a href="http://cran.r-project.org/mirrors.html">http://cran.r-project.org/mirrors.html</a>
+<p>Go to any CRAN site (see <a href="https://cran.r-project.org/mirrors.html">https://cran.r-project.org/mirrors.html</a>
 for a list), navigate to the <samp>bin/windows/base</samp> directory and
 collect the file(s) you need.  The current release is distributed as an
-installer &lsquo;<samp>R-devel-win.exe</samp>&rsquo; of about 60MB.
+installer &lsquo;<samp>R-devel-win.exe</samp>&rsquo; of about 65MB.
 </p>
 <p>There are also links on that page to the &lsquo;<samp>r-patched</samp>&rsquo; and
 &lsquo;<samp>r-devel</samp>&rsquo; snapshots.  These are frequently updated builds of
@@ -288,8 +288,8 @@ known to run on Windows 2000 was 2.12.2.
 mainly 64-bit Windows 7 and Server 2008.
 </p>
 <p>Your file system must allow case-honouring long file names (as is likely
-except perhaps for some network-mounted systems).  A installation takes
-75&ndash;110MB of disk space (up to 150MB if ICU was included in the build)
+except perhaps for some network-mounted systems).  An installation takes
+up to 150MB of disk space.
 </p>
 <p>If you want to be able to build packages from sources, we recommend that
 you choose an installation path not containing spaces.  (Using a path
@@ -384,7 +384,7 @@ after having checked the command line.
 
 <p>A successful installation has exit code 0: unsuccessful ones may give 1,
 2, 3, 4 or 5.  See the help for Inno Setup
-(<a href="http://jrsoftware.org/ishelp.php">http://jrsoftware.org/ishelp.php</a>) for details.
+(<a href="http://jrsoftware.org/">http://jrsoftware.org/</a>) for details.
 </p>
 <p>We have some facilities for building a customized installer, in
 particular to add packages to the installer.  See the &lsquo;R Installation
@@ -712,32 +712,13 @@ neither sets up nor removes the file associations.
 <p>for example <code>update.packages()</code> and the menu items on the Packages menu.
 </p>
 <p>We have had several reports of this, although they do work for us on
-<em>all</em> of our machines.  There are two known possible fixes.
+<em>all</em> of our machines.  There are two known possible causes.
 </p>
-<p>(a) Use the Windows internet functions by starting R with the flag
-<samp>--internet2</samp> (see <a href="#How-do-I-install-R-for-Windows_003f">How do I install R for Windows?</a>)  or
-calling <code>setInternet2(TRUE)</code> or setting the environment variable
-<code>R_WIN_INTERNET2</code> to a non-empty value when starting R.  These cause
-R to use the OS&rsquo;s functions used by Internet Explorer, which may already
-be configured for use with proxies.  Note that this does <em>not</em> work
-with proxies that need authentication.
+<p>(a) A proxy needs to be set up: see <code>?download.file</code>.
 </p>
-<p>(b) A proxy needs to be set up: see <code>?download.file</code>.  Here are two
-versions of an example (a real one, but from a machine that is only
-available locally) of a command-line in a short cut:
-</p>
-<div class="example">
-<pre class="example">&quot;path_to_R\bin\x64\Rgui.exe&quot; http_proxy=http://user:pass@gannet:80/
-
-&quot;path_to_R\bin\x64\Rgui.exe&quot; http_proxy=http://gannet/ http_proxy_user=ask
-</pre></div>
-
-<p>The second version will prompt the user for the proxy username and
-password when HTTP downloads are first used.
-</p>
-<p>Another possibility is that firewall settings are blocking the R
-executables from contacting the Internet, but this should result in
-informative error messages from the firewall program.
+<p>(b) Firewall settings are blocking the R executables from contacting the
+Internet (but this should result in informative error messages from the
+firewall program).
 </p>
 
 <hr>
@@ -831,14 +812,12 @@ software installation to be done by an account which is in the local
 Administrator group with &lsquo;admin approval mode&rsquo; turned on.  (The
 Administrator account by default has it turned off.)  Unlike (say)
 Windows XP, such accounts do not run programs with full administrator
-privileges, and this is where the issues arise.  (For background
-information consult e.g.
-<a href="http://windowsvistablog.com/blogs/windowsvista/archive/2007/01/23/security-features-vs-convenience.aspx">http://windowsvistablog.com/blogs/windowsvista/archive/2007/01/23/security-features-vs-convenience.aspx</a>.)
-These OSes have the concept of &lsquo;over-the-shoulder&rsquo; credentials: if you
-are running without full administrator privileges and do something which
-needs them you may be prompted with one or more security-check dialog
-boxes, and may be required to provide administrator credentials or
-confirm that you really want to take that action.
+privileges, and this is where the issues arise.  These OSes have the
+concept of &lsquo;over-the-shoulder&rsquo; credentials: if you are running without
+full administrator privileges and do something which needs them you may
+be prompted with one or more security-check dialog boxes, and may be
+required to provide administrator credentials or confirm that you really
+want to take that action.
 </p>
 <p>Vista and later will report that the R installer has an &lsquo;unidentified
 publisher&rsquo; or &lsquo;unknown publisher&rsquo; and ask if it should be run.  System
@@ -962,11 +941,9 @@ Western European locale)
 accessed by pressing AltGr (the right Alt key) plus some other key.
 This is <code>]</code> in Canadian (multilingual), German and Scandinavian
 layouts, <code>1</code> in Eastern Europe, <code>[</code> in Portuguese, <code>4</code> or
-<code>5</code> in Spanish, <code>/</code> in Francophone Belgian, and so on.  For
-some keyboards the uses of AltGr are shown at
-<a href="http://office.microsoft.com/en-us/word/HP052590631033.aspx">http://office.microsoft.com/en-us/word/HP052590631033.aspx</a>:
-you can explore those for your keyboard via the &lsquo;On-Screen Keyboard&rsquo;
-(under Ease of access on Windows 7).
+<code>5</code> in Spanish, <code>/</code> in Francophone Belgian, and so on.  You
+can explore those for your keyboard via the &lsquo;On-Screen Keyboard&rsquo; (under
+Ease of access on Windows 7).
 </p>
 <p>On all Windows versions you should be able to get tilde by holding the
 down the left Alt key and typing 0126 on the numeric keypad (if you have
@@ -1166,7 +1143,8 @@ language characters always being available, which is the case for
 so-called &lsquo;Unicode&rsquo; Windows applications.  However, R is primarily
 written for Unix-alikes and is not therefore &lsquo;Unicode&rsquo; in the Windows
 sense.)  You can find suitable locale names from
-<a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vccore98/html/_crt_language_and_country_strings.asp">http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vccore98/html/_crt_language_and_country_strings.asp</a>:
+<a href="https://msdn.microsoft.com/en-us/library/39cwe7zf%28v=vs.80%29.aspx">https://msdn.microsoft.com/en-us/library/39cwe7zf%28v=vs.80%29.aspx</a>
+and <a href="https://msdn.microsoft.com/en-us/library/cdax410z%28v=vs.80%29.aspx">https://msdn.microsoft.com/en-us/library/cdax410z%28v=vs.80%29.aspx</a>
 beware that <code>&quot;Chinese&quot;</code> is Traditional Chinese (code page 950,
 Big5) and <code>&quot;chs&quot;</code> is needed for Simplified Chinese (code page 936,
 GB2312).
@@ -1276,7 +1254,7 @@ packages for each minor (3.x.?) version will be stored in a separate area,
 so for R 3.1.? the files are in <samp>bin/windows/contrib/3.1</samp>.
 </p>
 <p>Note that the binary versions on CRAN are unsupported: see
-<a href="http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe">http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe</a>,
+<a href="https://cran.r-project.org/bin/windows/contrib/3.1/ReadMe">https://cran.r-project.org/bin/windows/contrib/3.1/ReadMe</a>,
 which also gives the locations of a few other binary packages.
 </p>
 <p>If there is no binary package or that is not up-to-date or you prefer
@@ -1381,7 +1359,7 @@ for R 2.12.0 or later.
 <p>For a small number of binary packages you need to install additional
 software and have its DLLs in your <code>PATH</code>.  Windows will normally
 give an informative message about a certain DLL not being found.  See
-<a href="http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe">http://cran.r-project.org/bin/windows/contrib/3.1/ReadMe</a> for a
+<a href="https://cran.r-project.org/bin/windows/contrib/3.1/ReadMe">https://cran.r-project.org/bin/windows/contrib/3.1/ReadMe</a> for a
 listing of some of these packages (notably <code>RGtk2</code>,
 <code>cairoDevice</code>, <code>rggobi</code>, <code>rJava</code>, <code>rjags</code> and some
 of the packages connecting to databases).
@@ -1407,7 +1385,7 @@ no guarantee that a 64-bit build will work: it depends on the layout it
 uses.)
 </p>
 <p>In the past several package authors have suggested using ActiveTcl
-(<a href="http://www.activestate.com/Products/activetcl/">http://www.activestate.com/Products/activetcl/</a>) as a way to
+(<a href="https://www.activestate.com/Products/activetcl/">https://www.activestate.com/Products/activetcl/</a>) as a way to
 get Tcl/Tk extensions (but the support files do contain the most
 commonly used <code>TkTable</code> and <code>BWidget</code> extensions).  This could
 be used by setting (for a default install)
@@ -1540,7 +1518,7 @@ been built and propagated to the CRAN mirror you are using.  This
 normally (but not always) happens within 24 hours.  Sometimes mirrors
 do get behind (especially unofficial ones), so you could try another
 mirror.  (Mirror statistics are linked near the top of the CRAN mirror
-page at <a href="http://cran.r-project.org/mirrors.html">http://cran.r-project.org/mirrors.html</a>.)
+page at <a href="https://cran.r-project.org/mirrors.html">https://cran.r-project.org/mirrors.html</a>.)
 </p>
 <p>The latest version of the package might require a later version of R
 than the one you are using.  You can check on the package&rsquo;s HTML page on
@@ -1869,7 +1847,7 @@ less successful when tried for the common current chips such as Intel&rsquo;s
 Core 2.
 </p>
 <p>Versions of Dr Kazushige Goto&rsquo;s BLAS (see
-<a href="http://en.wikipedia.org/wiki/Kazushige_Goto">http://en.wikipedia.org/wiki/Kazushige_Goto</a>) for 64-bit Windows
+<a href="https://en.wikipedia.org/wiki/Kazushige_Goto">https://en.wikipedia.org/wiki/Kazushige_Goto</a>) for 64-bit Windows
 by Ei-Ji Nakama can be found at
 <a href="http://prs.ism.ac.jp/~nakama/SurviveGotoBLAS2/binary/windows/x64/">http://prs.ism.ac.jp/~nakama/SurviveGotoBLAS2/binary/windows/x64/</a>.
 Just download the file <samp>Rblas.dll</samp> appropriate to your CPU and
@@ -2061,7 +2039,7 @@ If you want output to be updated on the console, call
 </p>
 <hr WIDTH="100%">
 <address>
-Last edited 2015-01-27: comments to
+Last edited 2015-08-13: comments to
 <code><a href="mailto:R-windows@R-project.org">R-windows@r-project.org</a></code>
 </address>
 <div class="footnote">

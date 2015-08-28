@@ -1,7 +1,7 @@
 library(cluster)
 
 eh <- ellipsoidhull(cbind(x=1:4, y = 1:4)) #singular
-eh
+eh ## center ok, shape "0 volume" --> Warning
 
 set.seed(157)
 for(n in 4:10) { ## n=2 and 3 still differ -- platform dependently!

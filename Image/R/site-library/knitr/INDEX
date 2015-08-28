@@ -14,8 +14,8 @@ fig_chunk               Obtain the figure filenames for a chunk
 fig_path                Path for figure files
 hook_ffmpeg_html        Hooks to create animations in HTML output
 hook_movecode           Some potentially useful document hooks
+hook_pdfcrop            Built-in chunk hooks to extend knitr
 hook_plot_asciidoc      Default plot hooks for different output formats
-hook_rgl                Built-in chunk hooks to extend knitr
 image_uri               Encode an image file to a data URI
 imgur_upload            Upload an image to imgur.com
 inline_expr             Wrap code using the inline R expression syntax
@@ -40,6 +40,7 @@ knit_hooks              Hooks for R code chunks, inline R code and
                         output
 knit_meta               Metadata about objects to be printed
 knit_params             Extract knit parameters from a document
+knit_params_yaml        Extract knit parameters from YAML text
 knit_patterns           Patterns to match and extract R code in a
                         document
 knit_print              A custom printing function

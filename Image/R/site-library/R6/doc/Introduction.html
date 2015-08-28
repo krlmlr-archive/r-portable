@@ -56,6 +56,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </ul></li>
 <li><a href="#other-topics">Other topics</a><ul>
 <li><a href="#adding-members-to-an-existing-class">Adding members to an existing class</a></li>
+<li><a href="#cloning-objects">Cloning objects</a></li>
 <li><a href="#printing-r6-objects-to-the-screen">Printing R6 objects to the screen</a></li>
 <li><a href="#finalizers">Finalizers</a></li>
 </ul></li>
@@ -67,9 +68,6 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 %\VignetteEngine{knitr::rmarkdown}
 %\VignetteIndexEntry{Introduction to R6 classes}
 -->
-
-
-
 <p>The R6 package provides a type of class which is similar to R’s standard reference classes, but it is more efficient and doesn’t depend on S4 classes and the methods package.</p>
 <div id="r6-classes" class="section level2">
 <h2>R6 classes</h2>
@@ -110,6 +108,7 @@ Person &lt;- R6Class(&quot;Person&quot;,
 ann
 #&gt; &lt;Person&gt;
 #&gt;   Public:
+#&gt;     clone: function
 #&gt;     greet: function
 #&gt;     hair: black
 #&gt;     initialize: function
@@ -125,7 +124,7 @@ ann$greet()
 ann$set_hair(&quot;red&quot;)
 ann$hair
 #&gt; [1] &quot;red&quot;</code></pre>
-<p>Implementation note: The R6 object is basically an environment with the public members in it. The <code>self</code> object is bound in that environment, and is simply a reference back to that environment.</p>
+<p>Implementation note: The external face of an R6 object is basically an environment with the public members in it. This is also known as the <em>public environment</em>. An R6 object’s methods have a separate <em>enclosing environment</em> which, roughly speaking, is the environment they “run in”. This is where <code>self</code> binding is found, and it is simply a reference back to public environment.</p>
 </div>
 <div id="private-members" class="section level3">
 <h3>Private members</h3>
@@ -171,7 +170,7 @@ q$remove()
 #&gt; NULL
 q$length()
 #&gt; Error: attempt to apply non-function</code></pre>
-<p>Unless there is a compelling reason otherwise, methods should return <code>self</code> (invisibly) because it makes them chainable. For example, the <code>add()</code> method returns <code>self</code> so you can chain them together:</p>
+<p>A useful design pattern is for methods to return <code>self</code> (invisibly) when possible, because it makes them chainable. For example, the <code>add()</code> method returns <code>self</code> so you can chain them together:</p>
 <pre class="r"><code>q$add(10)$add(11)$add(12)</code></pre>
 <p>On the other hand, <code>remove()</code> returns the value removed, so it’s not chainable:</p>
 <pre class="r"><code>q$remove()
@@ -182,7 +181,6 @@ q$remove()
 #&gt; [1] &quot;another thing&quot;
 q$remove()
 #&gt; [1] 17</code></pre>
-<p>Implementation note: When private members are used, the public environment is a child of the private environment, and the <code>private</code> object points to the private environment. Although public and private methods are bound (that is, they can be found) in their respective environments, the <em>enclosing</em> environment for all of those methods is the public environment. This means that private methods “run in” the public environment, so they will find public objects without needing an explicit <code>self$xx</code>.</p>
 </div>
 <div id="active-bindings" class="section level3">
 <h3>Active bindings</h3>
@@ -311,7 +309,7 @@ s1$e$x
 <pre class="r"><code>NonSharedField &lt;- R6Class(&quot;NonSharedField&quot;,
   public = list(
     e = NULL,
-    initialize = function() e &lt;&lt;- SimpleClass$new()
+    initialize = function() self$e &lt;- SimpleClass$new()
   )
 )
 
@@ -388,7 +386,7 @@ p$getx()
 <pre class="r"><code>Simple &lt;- R6Class(&quot;Simple&quot;,
   public = list(
     x = 1,
-    getx = function() x
+    getx = function() self$x
   )
 )
 
@@ -403,6 +401,132 @@ s$x
 s$getx2()
 #&gt; [1] 20</code></pre>
 <p>The new members will be present only in instances that are created after <code>$set()</code> has been called.</p>
+<p>To prevent modification of a class, you can use <code>lock_class=TRUE</code> when creating the class. You can also lock and unlock a class as follows:</p>
+<pre class="r"><code># Create a locked class
+Simple &lt;- R6Class(&quot;Simple&quot;,
+  public = list(
+    x = 1,
+    getx = function() self$x
+  ),
+  lock_class = TRUE
+)
+
+# This would result in an error
+# Simple$set(&quot;public&quot;, &quot;y&quot;, 2)
+
+# Unlock the class
+Simple$unlock()
+
+# Now it works
+Simple$set(&quot;public&quot;, &quot;y&quot;, 2)
+
+# Lock the class again
+Simple$lock()</code></pre>
+</div>
+<div id="cloning-objects" class="section level3">
+<h3>Cloning objects</h3>
+<p>By default, R6 objects have method named <code>clone</code> for making a copy of the object.</p>
+<pre class="r"><code>Simple &lt;- R6Class(&quot;Simple&quot;,
+  public = list(
+    x = 1,
+    getx = function() self$x
+  )
+)
+
+s &lt;- Simple$new()
+
+# Create a clone
+s1 &lt;- s$clone()
+# Modify it
+s1$x &lt;- 2
+s1$getx()
+#&gt; [1] 2
+
+# Original is unaffected by changes to the clone
+s$getx()
+#&gt; [1] 1</code></pre>
+<p>If you don’t want a <code>clone</code> method to be added, you can use <code>cloneable=FALSE</code> when creating the class. If any loaded R6 object has a <code>clone</code> method, that function uses 43.2 kB, but for each additional object, the <code>clone</code> method costs a trivial amount of space (112 bytes).</p>
+<div id="deep-cloning" class="section level4">
+<h4>Deep cloning</h4>
+<p>If there are any fields which are objects with reference sematics (environments, R6 objects, reference class objects), the copy will get a reference to the same object. This is sometimes desirable, but often it is not.</p>
+<p>For example, we’ll create an object <code>c1</code> which contains another R6 object, <code>s</code>, and then clone it. Because the original’s and the clone’s <code>s</code> fields both refer to the same object, modifying it from one results in a change that is reflect in the other.</p>
+<pre class="r"><code>Simple &lt;- R6Class(&quot;Simple&quot;, public = list(x = 1))
+
+Cloneable &lt;- R6Class(&quot;Cloneable&quot;,
+  public = list(
+    s = NULL,
+    initialize = function() self$s &lt;- Simple$new()
+  )
+)
+
+c1 &lt;- Cloneable$new()
+c2 &lt;- c1$clone()
+
+# Change c1's `s` field
+c1$s$x &lt;- 2
+
+# c2's `s` is the same object, so it reflects the change
+c2$s$x
+#&gt; [1] 2</code></pre>
+<p>To make it so the clone receives a <em>copy</em> of <code>s</code>, we can use the <code>deep=TRUE</code> option:</p>
+<pre class="r"><code>c3 &lt;- c1$clone(deep = TRUE)
+
+# Change c1's `s` field
+c1$s$x &lt;- 3
+
+# c2's `s` is different
+c3$s$x
+#&gt; [1] 2</code></pre>
+<p>The default behavior of <code>clone(deep=TRUE)</code> is to copy fields which are R6 objects, but not copy fields which are environments, reference class objects, or other data structures which contain other reference-type objects (for example, a list with an R6 object).</p>
+<p>If your R6 object contains these types of objects and you want to make a deep clone of them, you must provide your own function for deep cloning, in a private method named <code>deep_clone</code>. Below is an example of an R6 object with two fields, <code>a</code> and <code>b</code>, both of which which are environments, and both of which contain a value <code>x</code>. It also has a field <code>v</code> which is a regular (non-reference) value, and a private <code>deep_clone</code> method.</p>
+<p>The <code>deep_clone</code> method is be called once for each field. It is passed the name and value of the field, and the value it returns is be used in the clone.</p>
+<pre class="r"><code>CloneEnv &lt;- R6Class(&quot;CloneEnv&quot;,
+  public = list(
+    a = NULL,
+    b = NULL,
+    v = 1,
+    initialize = function() {
+      self$a &lt;- new.env(parent = emptyenv())
+      self$b &lt;- new.env(parent = emptyenv())
+      self$a$x &lt;- 1
+      self$b$x &lt;- 1
+    }
+  ),
+  private = list(
+    deep_clone = function(name, value) {
+      # With x$clone(deep=TRUE) is called, the deep_clone gets invoked once for
+      # each field, with the name and value.
+      if (name == &quot;a&quot;) {
+        # `a` is an environment, so use this quick way of copying
+        list2env(as.list.environment(value, all.names = TRUE),
+                 parent = emptyenv())
+      } else {
+        # For all other fields, just return the value
+        value
+      }
+    }
+  )
+)
+
+c1 &lt;- CloneEnv$new()
+c2 &lt;- c1$clone(deep = TRUE)</code></pre>
+<p>When <code>c1$clone(deep=TRUE)</code> is called, the <code>deep_clone</code> method is called for each field in <code>c1</code>, and is passed the name of the field and value. In our version, the <code>a</code> environment gets copied, but <code>b</code> does not, nor does <code>v</code> (but that doesn’t matter since <code>v</code> is not a reference object). We can test out the clone:</p>
+<pre class="r"><code># Modifying c1$a doesn't affect c2$a, because they're separate objects
+c1$a$x &lt;- 2
+c2$a$x
+#&gt; [1] 1
+
+# Modifying c1$b does affect c2$b, because they're the same object
+c1$b$x &lt;- 3
+c2$b$x
+#&gt; [1] 3
+
+# Modifying c1$v doesn't affect c2$v, because they're not reference objects
+c1$v &lt;- 4
+c2$v
+#&gt; [1] 1</code></pre>
+<p>In the example <code>deep_clone</code> method above, we checked the name of each field to determine what to do with it, but we could also check the value, by using <code>inherits(value, &quot;R6&quot;)</code>, or <code>is.environment()</code>, and so on.</p>
+</div>
 </div>
 <div id="printing-r6-objects-to-the-screen" class="section level3">
 <h3>Printing R6 objects to the screen</h3>
@@ -436,6 +560,7 @@ pq
 A$new()
 #&gt; &lt;A&gt;
 #&gt;   Public:
+#&gt;     clone: function
 #&gt;     initialize: function
 
 # Run something else to get rid of any references to the object, because the
@@ -446,9 +571,10 @@ A$new()
 # Force immediate garbage collection (normally this will happen automatically
 # from time to time)
 gc()
+#&gt; [1] &quot;Finalizer has been called!&quot;
 #&gt;          used (Mb) gc trigger (Mb) max used (Mb)
-#&gt; Ncells 336745 18.0     531268 28.4   467875 25.0
-#&gt; Vcells 591747  4.6    1162592  8.9   858809  6.6</code></pre>
+#&gt; Ncells 398548 21.3     750400 40.1   592000 31.7
+#&gt; Vcells 617228  4.8    1308461 10.0   911867  7.0</code></pre>
 <p>In the example above, we used <code>onexit=TRUE</code>, so that the finalizer will alsobe called when R exits. This is useful in some cases, like database connections, but it isn’t necessary for others, like open files, since they will be closed anyway when the R process exits.</p>
 </div>
 </div>

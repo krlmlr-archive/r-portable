@@ -69,7 +69,7 @@ dgTMatrix-class         Sparse matrices in triplet form
 dgeMatrix-class         Class "dgeMatrix" of Dense Numeric (S4 Class)
                         Matrices
 diagU2N                 Transform Triangular Matrices from Unit
-                        Triangular to General and back
+                        Triangular to General Triangular and Back
 diagonalMatrix-class    Class "diagonalMatrix" of Diagonal Matrices
 dpoMatrix-class         Positive Semi-definite Dense Numeric Matrices
 drop0                   Drop "Explicit Zeroes" from a Sparse Matrix

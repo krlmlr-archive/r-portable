@@ -137,7 +137,8 @@ comment                 Query or Set a '"comment"' Attribute
 complex                 Complex Vectors
 conditions              Condition Handling and Recovery
 conflicts               Search for Masked Objects on the Search Path
-connections             Functions to Manipulate Connections
+connections             Functions to Manipulate Connections (Files,
+                        URLs, ...)
 contributors            R Project Contributors
 copyright               Copyrights of Files Used to Build R
 cosh                    Hyperbolic Functions

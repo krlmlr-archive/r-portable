@@ -1,7 +1,7 @@
 
-R version 3.2.0 beta (2015-04-05 r68147) -- "Full of Ingredients"
+R version 3.2.2 RC (2015-08-08 r68914) -- "Fire Safety"
 Copyright (C) 2015 The R Foundation for Statistical Computing
-Platform: x86_64-unknown-linux-gnu (64-bit)
+Platform: x86_64-pc-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -76,10 +76,16 @@ lm2  6 336.3417
 0.085937500 0.048828125 0.027343750 0.015136719 0.008300781 
 > 
 > ## Example from Brockwell & Davis (1991, pp.92-4)
-> ## answer 2^(-n) * (32/3 + 8 * n) /(32/3)
-> n <- 1:10; 2^(-n) * (32/3 + 8 * n) /(32/3)
- [1] 0.875000000 0.625000000 0.406250000 0.250000000 0.148437500 0.085937500
- [7] 0.048828125 0.027343750 0.015136719 0.008300781
+> ## answer: 2^(-n) * (32/3 + 8 * n) /(32/3)
+> n <- 1:10
+> a.n <- 2^(-n) * (32/3 + 8 * n) /(32/3)
+> (A.n <- ARMAacf(c(1.0, -0.25), 1.0, lag.max = 10))
+          0           1           2           3           4           5 
+1.000000000 0.875000000 0.625000000 0.406250000 0.250000000 0.148437500 
+          6           7           8           9          10 
+0.085937500 0.048828125 0.027343750 0.015136719 0.008300781 
+> stopifnot(all.equal(unname(A.n), c(1, a.n)))
+> 
 > ARMAacf(c(1.0, -0.25), 1.0, lag.max = 10, pacf = TRUE)
  [1]  0.8750000 -0.6000000  0.3750000 -0.2727273  0.2142857 -0.1764706
  [7]  0.1500000 -0.1304348  0.1153846 -0.1034483
@@ -3786,7 +3792,7 @@ sigma^2 estimated as 0.4566:  log likelihood = -101.2,  aic = 212.4
 > 
 > asOneSidedFormula("age")
 ~age
-<environment: 0x2963ee8>
+<environment: 0x2996930>
 > asOneSidedFormula(~ age)
 ~age
 > 
@@ -4749,7 +4755,7 @@ function (V)
     r[cbind(1L:p, 1L:p)] <- 1
     r
 }
-<bytecode: 0x4b2b688>
+<bytecode: 0x3e16f08>
 <environment: namespace:stats>
 > stopifnot(all.equal(Cl, cov2cor(cov(longley))),
 +           all.equal(cor(longley, method = "kendall"),
@@ -7273,7 +7279,7 @@ attr(,".Environment")
 > environment(as.formula("y ~ x"))
 <environment: R_GlobalEnv>
 > environment(as.formula("y ~ x", env = new.env()))
-<environment: 0x29eefe8>
+<environment: 0x2a5cd08>
 > 
 > 
 > ## Create a formula for a model with a large number of variables:
@@ -11642,8 +11648,6 @@ rate ratio
  [8,]  0.275 -0.087 -0.378
  [9,]  0.385  0.174 -0.151
 [10,]  0.495  0.522  0.453
-attr(,"degree")
-[1] 1 2 3
 attr(,"coefs")
 attr(,"coefs")$alpha
 [1] 5.5 5.5 5.5
@@ -11651,6 +11655,8 @@ attr(,"coefs")$alpha
 attr(,"coefs")$norm2
 [1]    1.0   10.0   82.5  528.0 3088.8
 
+attr(,"degree")
+[1] 1 2 3
 attr(,"class")
 [1] "poly"   "matrix"
 > predict(z, seq(2, 4, 0.5))
@@ -11660,17 +11666,6 @@ attr(,"class")
 [3,] -0.275 -0.0870 0.378
 [4,] -0.220 -0.1850 0.383
 [5,] -0.165 -0.2611 0.335
-attr(,"degree")
-[1] 1 2 3
-attr(,"coefs")
-attr(,"coefs")$alpha
-[1] 5.5 5.5 5.5
-
-attr(,"coefs")$norm2
-[1]    1.0   10.0   82.5  528.0 3088.8
-
-attr(,"class")
-[1] "poly"   "matrix"
 > zapsmall(poly(seq(4, 6, 0.5), 3, coefs = attr(z, "coefs")))
           1      2      3
 [1,] -0.165 -0.261  0.335
@@ -11678,8 +11673,6 @@ attr(,"class")
 [3,] -0.055 -0.348  0.130
 [4,]  0.000 -0.359  0.000
 [5,]  0.055 -0.348 -0.130
-attr(,"degree")
-[1] 1 2 3
 attr(,"coefs")
 attr(,"coefs")$alpha
 [1] 5.5 5.5 5.5
@@ -11687,10 +11680,13 @@ attr(,"coefs")$alpha
 attr(,"coefs")$norm2
 [1]    1.0   10.0   82.5  528.0 3088.8
 
+attr(,"degree")
+[1] 1 2 3
 attr(,"class")
 [1] "poly"   "matrix"
 > 
-> zapsmall(polym(1:4, c(1, 4:6), degree = 3)) # or just poly()
+>  zm <- zapsmall(polym (    1:4, c(1, 4:6),  degree = 3)) # or just poly():
+> (z1 <- zapsmall(poly(cbind(1:4, c(1, 4:6)), degree = 3)))
         1.0  2.0    3.0    0.1   1.1    2.1    0.2    1.2    0.3
 [1,] -0.671  0.5 -0.224 -0.802 0.538 -0.401  0.323 -0.217 -0.053
 [2,] -0.224 -0.5  0.671  0.000 0.000  0.000 -0.688  0.154  0.526
@@ -11698,14 +11694,27 @@ attr(,"class")
 [4,]  0.671  0.5  0.224  0.535 0.359  0.267  0.604  0.405  0.315
 attr(,"degree")
 [1] 1 2 3 1 2 3 2 3 3
-> zapsmall(poly(cbind(1:4, c(1, 4:6)), degree = 3))
-        1.0  2.0    3.0    0.1   1.1    2.1    0.2    1.2    0.3
-[1,] -0.671  0.5 -0.224 -0.802 0.538 -0.401  0.323 -0.217 -0.053
-[2,] -0.224 -0.5  0.671  0.000 0.000  0.000 -0.688  0.154  0.526
-[3,]  0.224 -0.5 -0.671  0.267 0.060 -0.134 -0.239 -0.053 -0.788
-[4,]  0.671  0.5  0.224  0.535 0.359  0.267  0.604  0.405  0.315
-attr(,"degree")
-[1] 1 2 3 1 2 3 2 3 3
+attr(,"coefs")
+attr(,"coefs")[[1]]
+attr(,"coefs")[[1]]$alpha
+[1] 2.5 2.5 2.5
+
+attr(,"coefs")[[1]]$norm2
+[1] 1.0 4.0 5.0 4.0 1.8
+
+
+attr(,"coefs")[[2]]
+attr(,"coefs")[[2]]$alpha
+[1] 4.00 2.71 4.47
+
+attr(,"coefs")[[2]]$norm2
+[1]  1.00  4.00 14.00 25.86  9.94
+
+
+attr(,"class")
+[1] "poly"   "matrix"
+> ## they are the same :
+> stopifnot(all.equal(zm, z1, tol = 1e-15))
 > options(od)
 > 
 > 
@@ -11753,14 +11762,14 @@ attr(,"class")
 $linkfun
 function (mu) 
 mu^lambda
-<bytecode: 0x4c20918>
-<environment: 0x4c126b8>
+<bytecode: 0x4353790>
+<environment: 0x43ba1d8>
 
 $linkinv
 function (eta) 
 pmax(eta^(1/lambda), .Machine$double.eps)
-<bytecode: 0x4c20a30>
-<environment: 0x4c126b8>
+<bytecode: 0x43538a8>
+<environment: 0x43ba1d8>
 
 > 
 > 
@@ -15633,8 +15642,8 @@ Step function with continuity 'f'= 0.2 ,  3 knots at
 > unclass(sfun0)
 function (v) 
 .approxfun(x, y, v, method, yleft, yright, f)
-<bytecode: 0x48c07b8>
-<environment: 0x4b34010>
+<bytecode: 0x35dd068>
+<environment: 0x49770e8>
 attr(,"call")
 stepfun(1:3, y0, f = 0)
 > ls(envir = environment(sfun0))
@@ -17911,7 +17920,7 @@ Number of Fisher Scoring iterations: 6
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  4.366 0.124 4.49 0 0 
+Time elapsed:  4.38 0.113 4.495 0 0 
 > grDevices::dev.off()
 null device 
           1 

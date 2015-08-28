@@ -29,6 +29,7 @@ heart                   Stanford Heart Transplant data
 is.ratetable            Verify that an object is of class ratetable.
 kidney                  Kidney catheter data
 lines.survfit           Add Lines or Points to a Survival Plot
+logLik.coxph            logLik method for a Cox model
 logan                   Data from the 1972-78 GSS data used by Logan
 lung                    NCCTG Lung Cancer Data
 mgus                    Monoclonal gammapothy data

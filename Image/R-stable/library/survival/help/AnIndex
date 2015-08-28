@@ -61,6 +61,8 @@ levels.tcut	tcut
 lines.survexp	lines.survfit
 lines.survfit	lines.survfit
 logan	logan
+logLik.coxph	logLik.coxph
+logLik.survreg	logLik.coxph
 lung	lung
 match.ratetable	survival-internal
 Math.ratetable	is.ratetable

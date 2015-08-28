@@ -10,7 +10,7 @@
 
 <meta name="author" content="Yihui Xie" />
 
-<meta name="date" content="2015-05-05" />
+<meta name="date" content="2015-08-13" />
 
 <title>Custom Print Methods</title>
 
@@ -54,7 +54,7 @@ code > span.er { color: #ff0000; font-weight: bold; }
 <div id="header">
 <h1 class="title">Custom Print Methods</h1>
 <h4 class="author"><em>Yihui Xie</em></h4>
-<h4 class="date"><em>2015-05-05</em></h4>
+<h4 class="date"><em>2015-08-13</em></h4>
 </div>
 
 <div id="TOC">
@@ -103,7 +103,7 @@ knit_print  <span class="co"># an S3 generic function</span></code></pre>
 ## &lt;environment: namespace:knitr&gt;</code></pre>
 <pre class="sourceCode r"><code class="sourceCode r">normal_print</code></pre>
 <pre><code>## function (x, ...) 
-## if (isS4(x)) show(x) else print(x)
+## if (isS4(x)) methods::show(x) else print(x)
 ## &lt;environment: namespace:evaluate&gt;</code></pre>
 <p>As we can see, <code>knit_print()</code> has a <code>default</code> method, which is basically <code>print()</code> or <code>show()</code>, depending on whether the object is an S4 object. This means it does nothing special when printing R objects:</p>
 <pre class="sourceCode r"><code class="sourceCode r"><span class="kw">knit_print</span>(<span class="dv">1</span>:<span class="dv">10</span>)

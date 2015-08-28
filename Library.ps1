@@ -116,8 +116,7 @@ Function CreateImage {
     $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
     $ImageFullPath
 
-    $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-V
-olume).DriveLetter + ":"
+    $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-Volume).DriveLetter + ":"
     $VHDPath
 
     Progress "Copying to VHD file."

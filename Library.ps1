@@ -106,8 +106,14 @@ Function CreateImage {
     $ImageFullPath
     Mount-DiskImage -ImagePath $ImageFullPath
 
+    Progress "Listing all drives."
+    Get-PSDrive -PSProvider 'FileSystem'
+
+    Progress "Determining drive letter of mounted VHD file."
+    $VHDPath = (Get-Volume | Where-Object {$_.FileSystemLabel -eq 'R-portable'}).DriveLetter + ":"
+    $VHDPath
+
     Progress "Copying to VHD file."
-    $VHDPath = "E:"
     cp -Recurse "Image\*" ($VHDPath + "\")
 
     Progress "Creating ISO file."

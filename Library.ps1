@@ -104,13 +104,8 @@ Function CreateImage {
     Exec { bash -c 'gunzip -c R-empty.vhd.gz > R.vhd' }
     $ImageFullPath = Get-ChildItem "R.vhd" | % { $_.FullName }
     $ImageFullPath
-    Mount-DiskImage -ImagePath $ImageFullPath
 
-    Progress "Listing all drives."
-    Get-PSDrive -PSProvider 'FileSystem'
-
-    Progress "Determining drive letter of mounted VHD file."
-    $VHDPath = (Get-Volume | Where-Object {$_.FileSystemLabel -eq 'R-portable'}).DriveLetter + ":"
+    $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-Volume).DriveLetter + ":"
     $VHDPath
 
     Progress "Copying to VHD file."
@@ -132,6 +127,11 @@ Function CreateImage {
     Exec { bash -c 'gzip -c R.vhd > R.vhd.gz' }
 
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
+        # The image sizes are part of the knitted document,
+        # therefore knitting must happen after the images are built.
+        # On the other hand, we don't want to build the images
+        # if the contents haven't changed.
+        # Consider removing image sizes from README.
         Progress "Knitting."
         Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('README.Rmd')" }
 

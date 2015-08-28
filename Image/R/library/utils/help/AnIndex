@@ -243,7 +243,6 @@ RweaveLatexSetup	RweaveLatex
 RweaveLatexWritedoc	SweaveUtils
 RweaveTryStop	SweaveUtils
 R_INSTALL_TAR	INSTALL
-R_WIN_INTERNET2	setInternet2
 savehistory	savehistory
 select.list	select.list
 sessionInfo	sessionInfo

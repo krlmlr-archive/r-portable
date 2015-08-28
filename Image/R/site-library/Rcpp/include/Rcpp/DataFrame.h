@@ -2,7 +2,7 @@
 //
 // DataFrame.h: Rcpp R/C++ interface class library -- data frames
 //
-// Copyright (C) 2010 - 2014  Dirk Eddelbuettel and Romain Francois
+// Copyright (C) 2010 - 2015  Dirk Eddelbuettel and Romain Francois
 //
 // This file is part of Rcpp.
 //
@@ -40,7 +40,7 @@ namespace Rcpp{
         typedef Vector<VECSXP, StoragePolicy> Parent ;
 
         DataFrame_Impl() : Parent( internal::empty_data_frame() ){}
-        DataFrame_Impl(SEXP x) {
+        DataFrame_Impl(SEXP x) : Parent(x) {
             set__(x);
         }
         DataFrame_Impl( const DataFrame_Impl& other){
@@ -103,7 +103,7 @@ namespace Rcpp{
             bool use_default_strings_as_factors = true ;
             bool strings_as_factors = true ;
             int strings_as_factors_index = -1 ;
-            int n = obj.size() ;
+            R_xlen_t n = obj.size() ;
             CharacterVector names = obj.attr( "names" ) ;
             if( !names.isNULL() ){
                 for( int i=0; i<n; i++){

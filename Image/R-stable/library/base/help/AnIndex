@@ -80,6 +80,7 @@ $<-.data.frame	Extract.data.frame
 .First.lib	base-defunct
 .First.sys	Startup
 .Firstlib_as_onLoad	base-internal
+.format.zeros	formatc
 .Fortran	Foreign
 .F_dchdc	base-internal
 .F_dqrcf	base-internal

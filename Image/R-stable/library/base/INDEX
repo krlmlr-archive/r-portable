@@ -135,7 +135,8 @@ comment                 Query or Set a '"comment"' Attribute
 complex                 Complex Vectors
 conditions              Condition Handling and Recovery
 conflicts               Search for Masked Objects on the Search Path
-connections             Functions to Manipulate Connections
+connections             Functions to Manipulate Connections (Files,
+                        URLs, ...)
 contributors            R Project Contributors
 copyright               Copyrights of Files Used to Build R
 cosh                    Hyperbolic Functions
@@ -247,7 +248,7 @@ l10n_info               Localization Information
 labels                  Find Labels from Object
 lapply                  Apply a Function over a List or Vector
 length                  Length of an Object
-lengths                 Lengths of List Elements
+lengths                 Lengths of List or Vector Elements
 levels                  Levels Attributes
 libcurlVersion          Report Version of libcurl
 library                 Loading/Attaching and Listing of Packages
@@ -427,8 +428,8 @@ unique                  Extract Unique Elements
 unlink                  Delete Files and Directories
 unlist                  Flatten Lists
 unname                  Remove 'names' or 'dimnames'
-utf8ToInt               Convert to or from UTF-8-encoded Character
-                        Vectors
+utf8ToInt               Convert Integer Vectors to or from
+                        UTF-8-encoded Character Vectors
 vector                  Vectors
 warning                 Warning Messages
 warnings                Print Warning Messages

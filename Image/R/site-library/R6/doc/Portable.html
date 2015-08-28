@@ -47,6 +47,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <li><a href="#the-problem">The problem</a></li>
 <li><a href="#portable-r6">Portable R6</a></li>
 <li><a href="#using-self">Using <code>self</code></a></li>
+<li><a href="#potential-pitfalls-with-cross-package-inheritance">Potential pitfalls with cross-package inheritance</a></li>
 <li><a href="#wrap-up">Wrap-up</a></li>
 </ul>
 </div>
@@ -55,13 +56,10 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 %\VignetteEngine{knitr::rmarkdown}
 %\VignetteIndexEntry{Portable R6 classes}
 -->
-
-
-
 <p>One limitation to R’s reference classes is that class inheritance across package namespaces is limited. R6 avoids this problem when the <code>portable</code> option is enabled.</p>
 <div id="the-problem" class="section level2">
 <h2>The problem</h2>
-<p>Here is an example of the cross-pacakge inheritance problem with reference classes: Suppose you have ClassA in pkgA, and ClassB in pkgB, which inherits from ClassA. ClassA has a method <code>foo</code> which calls a non-exported function <code>fun</code> in pkgA.</p>
+<p>Here is an example of the cross-package inheritance problem with reference classes: Suppose you have ClassA in pkgA, and ClassB in pkgB, which inherits from ClassA. ClassA has a method <code>foo</code> which calls a non-exported function <code>fun</code> in pkgA.</p>
 <p>If ClassB inherits <code>foo</code>, it will try to call <code>fun</code> – but since ClassB objects are created in pkgB namespace (which is an environment) instead of the pkgA namespace, it won’t be able to find <code>fun</code>.</p>
 <p>Something similar happens with R6 when the <code>portable=FALSE</code> option is used. For example:</p>
 <pre class="r"><code>library(R6)
@@ -210,6 +208,29 @@ p2$sety(20)
 p2$getxy()
 #&gt; [1]  1 20</code></pre>
 <p>There is a small performance penalty for using <code>self$x</code> as opposed to <code>x</code>. In most cases, this is negligible, but it can be noticeable in some situations where there are tens of thousands or more accesses per second. For more information, see the Performance vignette.</p>
+</div>
+<div id="potential-pitfalls-with-cross-package-inheritance" class="section level2">
+<h2>Potential pitfalls with cross-package inheritance</h2>
+<p>Inheritance happens when an object is instantiated with <code>MyClass$new()</code>. At that time, members from the superclass get copied to the new object. This means that when you instantiate R6 object, it will essentially save some pieces of the superclass in the object.</p>
+<p>Because of the way that packages are built in R, R6’s inheritance behavior could potentially lead to surprising, hard-to-diagnose problems when packages change versions.</p>
+<p>Suppose you have two packages, pkgA, containing <code>ClassA</code>, and pkgB, containing <code>ClassB</code>, and there is code in pkgB that instantiates <code>ClassB</code> in an object, <code>objB</code>, at build time. This is in contrast to instantiating <code>ClassB</code> at run-time, by calling a function. All of the code in the package is run when a <em>binary</em> package is built, and the resulting objects are saved in the package. (Generally, if the object can be accessed with <code>pkgB:::objB</code>, this means it was created at build time.)</p>
+<p>When <code>objB</code> is created at package build time, pieces from the superclass, <code>pkgA::ClassA</code>, are saved inside of it. This is fine in and of itself. But imagine that pkgB was built and installed against pkgA 1.0, and then you upgrade to pkgA 2.0 without subsequently building and installing pkgB. Then <code>pkgB::objB</code> will contain some code from <code>pkgA::ClassA</code> 1.0, but the version of <code>pkgA::ClassA</code> that’s installed will be 2.0. This can cause problems if <code>objB</code> inherited code which uses parts of <code>pkgA</code> that have changed – but the problems may not be entirely obvious.</p>
+<p>This scenario is entirely possible when installing packages from CRAN. It is very common for a package to be upgraded without upgrading all of its downstream dependencies. As far as I know, R does not have any mechanism to force downstream dependencies to be rebuilt when a package is upgraded on a user’s computer.</p>
+<p>If this problem happens, the remedy is to rebuild pkgB against pkgA 2.0. I don’t know if CRAN rebuilds all downstream dependencies when a package is updated. If it doesn’t, then it’s possible for CRAN to have incompatible binary builds of pkgA and pkgB, and users would then have to install pkgB from source, with <code>install.packages(&quot;pkgB&quot;, type = &quot;source&quot;)</code>.</p>
+<p>To avoid this problem entirely, objects of <code>ClassB</code> must not be instantiated at build time. You can either instantiate them only in functions, or at package load time, by adding an <code>.onLoad</code> function to your package. For example:</p>
+<pre class="r"><code>ClassB &lt;- R6Class(&quot;ClassB&quot;,
+  inherit = pkgA::ClassA,
+  public = list(x = 1)
+)
+
+# We'll fill this at load time
+objB &lt;- NULL
+
+.onLoad &lt;- function(libname, pkgname) {
+  # The namespace is locked after loading; we can still modify objB at this time.
+  objB &lt;&lt;- ClassB$new()
+}</code></pre>
+<p>You might be wondering why <code>ClassB</code> (the class, not the instance of the class <code>objB</code>) doesn’t save a copy of <code>pkgA::ClassA</code> inside of it when the package is built. This is because, for the <code>inherit</code> argument, <code>R6Class</code> saves the unevaluated expression, (<code>pkgA::ClassA</code>), and evaluates it when <code>$new()</code> is called.</p>
 </div>
 <div id="wrap-up" class="section level2">
 <h2>Wrap-up</h2>

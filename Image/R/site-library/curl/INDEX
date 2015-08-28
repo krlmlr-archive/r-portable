@@ -6,6 +6,6 @@ curl_version            List curl version and options.
 form_file               Upload files with form
 handle                  Create and configure a curl handle
 handle_cookies          Extract cookies from a handle
-ie_proxy_info           Internet Explorer proxy settings
+ie_proxy                Internet Explorer proxy settings
 parse_date              Parse date/time
 parse_headers           Parse response headers

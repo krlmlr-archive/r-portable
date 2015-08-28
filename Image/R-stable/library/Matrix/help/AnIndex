@@ -1034,6 +1034,7 @@ crossprod,Matrix,ANY-method	matrix-products
 crossprod,matrix,CsparseMatrix-method	matrix-products
 crossprod,matrix,dgeMatrix-method	matrix-products
 crossprod,matrix,diagonalMatrix-method	matrix-products
+crossprod,matrix,dtrMatrix-method	matrix-products
 crossprod,Matrix,Matrix-method	matrix-products
 crossprod,Matrix,matrix-method	matrix-products
 crossprod,matrix,Matrix-method	matrix-products
@@ -1163,6 +1164,8 @@ dim<-,sparseVector-method	sparseVector-class
 dimnames,dgeMatrix-method	dgeMatrix-class
 dimnames,Matrix-method	Matrix-class
 dimnames,symmetricMatrix-method	symmetricMatrix-class
+dimnames<-,compMatrix,list-method	compMatrix-class
+dimnames<-,compMatrix,NULL-method	compMatrix-class
 dimnames<-,Matrix,list-method	Matrix-class
 dimnames<-,Matrix,NULL-method	Matrix-class
 dMatrix-class	dMatrix-class
@@ -2009,7 +2012,6 @@ tcrossprod,TsparseMatrix,Matrix-method	matrix-products
 tcrossprod,TsparseMatrix,missing-method	matrix-products
 tcrossprod,TsparseMatrix,TsparseMatrix-method	matrix-products
 tcrossprod-methods	matrix-products
-toeplitz	sparseVector-class
 toeplitz,sparseVector-method	sparseVector-class
 triangularMatrix-class	triangularMatrix-class
 tril	band

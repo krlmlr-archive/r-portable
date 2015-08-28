@@ -1,7 +1,7 @@
 
-r-portable 
+r-portable (branch: bugfix)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/bugfix)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/bugfix)
 
 Archives and disk images that contain everything necessary to build R packages on Windows.
 
@@ -11,9 +11,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version:
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (264.4 MB, MD5 hash: `5cff8fbfd6b9b64f9f4bc14ddfa28cb1`, uncompressed 736.7 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (265 MB, MD5 hash: `a0a4d6e5d54ff9e0c747235896d1c84a`, uncompressed 755.3 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (267.4 MB, MD5 hash: `c78db4f55846703338f54004d266fd72`, uncompressed 805.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/bugfix/R.tar.gz) (268 MB, MD5 hash: `158d09c3a9c2253b60b8a0e6bd8b3541`, uncompressed 743.1 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/bugfix/R.iso.gz) (268.6 MB, MD5 hash: `f2a7ccce0fdff489761f4eadfeda2905`, uncompressed 761.7 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/bugfix/R.vhd.gz) (271 MB, MD5 hash: `f425a0ecbfe4bb992811848f2d814245`, uncompressed 811.6 MB)
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -21,14 +21,9 @@ Earlier versions are available through the [AppVeyor build history](https://ci.a
 
 ### R version
 
-R Under development (unstable) (2015-07-01 r68620)
+R Under development (unstable) (2015-08-28 r69202)
 
 ### Package versions
-
-
-```
-## Warning: closing unused connection 5 (gzip -l -q R.tar.gz)
-```
 
 ####  base 
 [`base`](http://cran.r-project.org/package=base) (3.3.0),
@@ -48,45 +43,45 @@ R Under development (unstable) (2015-07-01 r68620)
 ####  recommended 
 [`boot`](http://cran.r-project.org/package=boot) (1.3-17),
 [`class`](http://cran.r-project.org/package=class) (7.3-13),
-[`cluster`](http://cran.r-project.org/package=cluster) (2.0.2),
-[`codetools`](http://cran.r-project.org/package=codetools) (0.2-11),
-[`foreign`](http://cran.r-project.org/package=foreign) (0.8-64),
+[`cluster`](http://cran.r-project.org/package=cluster) (2.0.3),
+[`codetools`](http://cran.r-project.org/package=codetools) (0.2-14),
+[`foreign`](http://cran.r-project.org/package=foreign) (0.8-66),
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-15),
-[`lattice`](http://cran.r-project.org/package=lattice) (0.20-31),
-[`MASS`](http://cran.r-project.org/package=MASS) (7.3-41),
-[`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-1),
-[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-6),
-[`nlme`](http://cran.r-project.org/package=nlme) (3.1-121),
+[`lattice`](http://cran.r-project.org/package=lattice) (0.20-33),
+[`MASS`](http://cran.r-project.org/package=MASS) (7.3-43),
+[`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-2),
+[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-7),
+[`nlme`](http://cran.r-project.org/package=nlme) (3.1-122),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-10),
 [`rpart`](http://cran.r-project.org/package=rpart) (4.1-10),
 [`spatial`](http://cran.r-project.org/package=spatial) (7.3-10),
-[`survival`](http://cran.r-project.org/package=survival) (2.38-2) 
+[`survival`](http://cran.r-project.org/package=survival) (2.38-3) 
 ####  other 
 [`BH`](http://cran.r-project.org/package=BH) (1.58.0-1),
 [`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
 [`brew`](http://cran.r-project.org/package=brew) (1.0-6),
-[`crayon`](http://cran.r-project.org/package=crayon) (1.3.0),
-[`curl`](http://cran.r-project.org/package=curl) (0.9),
+[`crayon`](http://cran.r-project.org/package=crayon) (1.3.1),
+[`curl`](http://cran.r-project.org/package=curl) (0.9.3),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.8.0),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
-[`evaluate`](http://cran.r-project.org/package=evaluate) (0.7),
+[`evaluate`](http://cran.r-project.org/package=evaluate) (0.7.2),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.2),
-[`git2r`](http://cran.r-project.org/package=git2r) (0.10.1),
+[`git2r`](http://cran.r-project.org/package=git2r) (0.11.0),
 [`highr`](http://cran.r-project.org/package=highr) (0.5),
 [`httr`](http://cran.r-project.org/package=httr) (1.0.0),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.16),
-[`knitr`](http://cran.r-project.org/package=knitr) (1.10.5),
+[`knitr`](http://cran.r-project.org/package=knitr) (1.11),
 [`magrittr`](http://cran.r-project.org/package=magrittr) (1.5),
 [`markdown`](http://cran.r-project.org/package=markdown) (0.7.7),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
 [`mime`](http://cran.r-project.org/package=mime) (0.3),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.3),
-[`R6`](http://cran.r-project.org/package=R6) (2.0.1),
-[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.11.6),
+[`R6`](http://cran.r-project.org/package=R6) (2.1.1),
+[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.0),
 [`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.7),
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (4.1.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),
-[`rversions`](http://cran.r-project.org/package=rversions) (1.0.1),
+[`rversions`](http://cran.r-project.org/package=rversions) (1.0.2),
 [`stringi`](http://cran.r-project.org/package=stringi) (0.5-5),
 [`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.10.0),

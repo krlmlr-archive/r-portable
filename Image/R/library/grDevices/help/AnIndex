@@ -9,6 +9,7 @@ as.raster.character	as.raster
 as.raster.logical	as.raster
 as.raster.matrix	as.raster
 as.raster.numeric	as.raster
+as.raster.raw	as.raster
 atop	plotmath
 axisTicks	axisTicks
 bar	plotmath

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 (2015-04-16).
+<!-- This manual is for R, version 3.2.2 (2015-08-14).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -288,7 +288,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 (2015-04-16).
+<p>This manual is for R, version 3.2.2 (2015-08-14).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -1510,8 +1510,8 @@ functions are defined and also in file <samp>size.c</samp> which needs access
 to the sizes of the internal structures.)
 </p>
 <p>For background papers see
-<a href="http://www.stat.uiowa.edu/~luke/R/barrier.html">http://www.stat.uiowa.edu/~luke/R/barrier.html</a> and
-<a href="http://www.stat.uiowa.edu/~luke/R/gengcnotes.html">http://www.stat.uiowa.edu/~luke/R/gengcnotes.html</a>.
+<a href="http://homepage.stat.uiowa.edu/~luke/R/barrier.html">http://homepage.stat.uiowa.edu/~luke/R/barrier.html</a> and
+<a href="http://homepage.stat.uiowa.edu/~luke/R/gengcnotes.html">http://homepage.stat.uiowa.edu/~luke/R/gengcnotes.html</a>.
 </p>
 <hr>
 <a name="Serialization-Formats"></a>
@@ -1925,7 +1925,7 @@ Previous: <a href="#S4-methods" accesskey="p" rel="prev">S4 methods</a>, Up: <a 
 <h4 class="subsection">1.12.4 Mechanics of S4 dispatch</h4>
 
 <p>This subsection does not discuss how S4 methods are chosen: see
-<a href="http://developer.r-project.org/howMethodsWork.pdf">http://developer.r-project.org/howMethodsWork.pdf</a>.
+<a href="https://developer.r-project.org/howMethodsWork.pdf">https://developer.r-project.org/howMethodsWork.pdf</a>.
 </p>
 <p>For all but primitive functions, setting a method on an existing
 function that is not itself S4 generic creates a new object in the
@@ -2955,7 +2955,7 @@ Next: <a href="#Updating" accesskey="n" rel="next">Updating</a>, Previous: <a hr
 <h3 class="section">3.4 OS X GUI</h3>
 
 <p>This is handled separately: see
-<a href="http://developer.r-project.org/Translations.html">http://developer.r-project.org/Translations.html</a>.
+<a href="https://developer.r-project.org/Translations30.html">https://developer.r-project.org/Translations30.html</a>.
 </p>
 
 <hr>
@@ -3220,8 +3220,8 @@ that in S and whose R code<a name="DOCF15" href="#FOOT15"><sup>15</sup></a> is i
 <strong>graphics</strong>) and one implemented in package <strong>grid</strong>.
 </p>
 <p>Some notes on the historical changes can be found at
-<a href="http://www.stat.auckland.ac.nz/~paul/R/basegraph.html">http://www.stat.auckland.ac.nz/~paul/R/basegraph.html</a> and
-<a href="http://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html">http://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html</a>.
+<a href="https://www.stat.auckland.ac.nz/~paul/R/basegraph.html">https://www.stat.auckland.ac.nz/~paul/R/basegraph.html</a> and
+<a href="https://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html">https://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html</a>.
 </p>
 <p>At the lowest level is a graphics device, which manages a plotting
 surface (a screen window or a representation to be written to a file).
@@ -3795,7 +3795,7 @@ returned.  C functions <code>doMouseEvent</code> and <code>doKeybd</code> are
 provided to call the R event handlers <code>onMouseDown</code>,
 <code>onMouseMove</code>, <code>onMouseUp</code>, and <code>onKeybd</code> and set
 <code>eventEnv$result</code> during this step.  Finally, <code>initEvent</code> is
-called again with <code>init=false</code> to inform the the devices that the
+called again with <code>init=false</code> to inform the devices that the
 loop is done, and the result is returned to the user.
 </p>
 <hr>
@@ -4433,8 +4433,8 @@ Default: true.
 <a name="index-_005fR_005fCHECK_005fVIGNETTES_005fNLINES_005f"></a>
 </dt>
 <dd><p>Maximum number of lines to show at the bottom of the output when reporting
-errors in running vignettes.
-Default: 10.
+errors in running or re-building vignettes.
+Default: 10 for running, 25 for re-building.
 </p></dd>
 <dt><code>_R_CHECK_CODOC_S4_METHODS_</code>
 <a name="index-_005fR_005fCHECK_005fCODOC_005fS4_005fMETHODS_005f"></a>
@@ -5235,7 +5235,7 @@ introduce &lsquo;long&rsquo; versions <code>xlength</code> and <code>XLENGTH</co
 <code>R_xlen_t</code> values.
 </p>
 
-<p>See also <a href="http://www.cs.uiowa.edu/~luke/talks/useR10.pdf">http://www.cs.uiowa.edu/~luke/talks/useR10.pdf</a>.
+<p>See also <a href="http://homepage.cs.uiowa.edu/~luke/talks/useR10.pdf">http://homepage.cs.uiowa.edu/~luke/talks/useR10.pdf</a>.
 </p>
 <hr>
 <a name="Large-matrices"></a>

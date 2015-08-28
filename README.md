@@ -1,7 +1,8 @@
 
-r-portable (branch: bugfix)
+
+r-portable (branch: hash)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/bugfix)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/bugfix)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/hash)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/hash)
 
 Archives and disk images that contain everything necessary to build R packages on Windows.
 
@@ -9,11 +10,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 ## Download
 
-Most recent version:
+Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/hash/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/hash/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/hash/R.vhd.gz)
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/bugfix/R.tar.gz) (268 MB, MD5 hash: `283187c2575963630dfb4379a3640225`, uncompressed 743.1 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/bugfix/R.iso.gz) (268.6 MB, MD5 hash: `bd4b47c62b052cbf004f3e05ac19e64a`, uncompressed 761.7 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/bugfix/R.vhd.gz) (271 MB, MD5 hash: `1961c80cf772709698e0941c9485bfc7`, uncompressed 811.6 MB)
+Hashes and file sizes are listed in a [separate file](hash.md).
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 

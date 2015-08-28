@@ -7,6 +7,7 @@ init:
         Get-Date
         git config core.autocrlf
         $ErrorActionPreference = "Stop"
+        iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 install:
   - ps: |
@@ -17,6 +18,9 @@ build_script:
 
 test_script:
   - ps: CreateImage
+
+on_finish:
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
 artifacts:
   - path: R.tar.gz R.iso.gz R.vhd.gz

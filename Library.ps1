@@ -100,13 +100,22 @@ Function CreateImage {
     [CmdletBinding()]
     Param()
 
+    If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
+        # Image sizes have been removed from README,
+        # so that README can be built before the images are available.
+        Progress "Knitting README."
+        Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('README.Rmd')" }
+    }
+
     Progress "Adding files from image."
-    Exec { git add -A Image DELETE_ME_TO_FORCE_REBUILD }
+    Exec { git add -A Image DELETE_ME_TO_FORCE_REBUILD README.md }
 
     Progress "Checking status."
-    $StatusOutput = (git status Image DELETE_ME_TO_FORCE_REBUILD --porcelain) | Out-String
+    $StatusOutput = (git status Image DELETE_ME_TO_FORCE_REBUILD README.md --porcelain) | Out-String
 
     If ($StatusOutput.Length -eq 0) {
+        # We don't want to build the images
+        # if the contents haven't changed.
         Write-Host "Image does not appear to have changed, exiting." -ForegroundColor Yellow
         Return
     }
@@ -140,17 +149,14 @@ Function CreateImage {
     If ($env:APPVEYOR_REPO_NAME -eq "krlmlr/r-portable") {
         # The image sizes are part of the knitted document,
         # therefore knitting must happen after the images are built.
-        # On the other hand, we don't want to build the images
-        # if the contents haven't changed.
-        # Consider removing image sizes from README.
-        Progress "Knitting."
-        Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('README.Rmd')" }
+        Progress "Knitting hash."
+        Exec { .\Image\R\bin\x64\Rscript.exe -e "knitr::knit('hash.Rmd')" }
 
         SetupGit
 
-        Progress "Adding also README to Git."
-        Exec { git add README.md }
-        Exec { git status README.md }
+        Progress "Adding also hash to Git."
+        Exec { git add hash.md }
+        Exec { git status hash.md }
 
         Progress "Committing to Git."
         Exec { git commit -C HEAD }

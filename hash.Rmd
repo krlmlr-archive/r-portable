@@ -20,3 +20,42 @@ r-portable image information `r if (BRANCH != "master") sprintf("(branch: %s)", 
 - [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) (`r format_mb(size_iso_gz)`, MD5 hash: ``r MD5_iso_gz``, uncompressed `r format_mb(size_iso)`)
 - [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.vhd.gz) (`r format_mb(size_vhd_gz)`, MD5 hash: ``r MD5_vhd_gz``, uncompressed `r format_mb(size_vhd)`)
 
+```{r echo = FALSE, results = "hide"}
+format_mb <- function(x) paste(round(x / (2 ** 20), 1), "MB")
+
+BRANCH <- Sys.getenv("APPVEYOR_REPO_BRANCH")
+REF <- Sys.getenv("APPVEYOR_REPO_COMMIT")
+```
+
+## Contents
+
+### R version
+
+```{r echo = FALSE, results = "asis"}
+cat(R.Version()$version.string)
+```
+
+### Package versions
+
+```{r echo = FALSE, results = "asis"}
+pkgs <- as.data.frame(installed.packages(), stringsAsFactors = FALSE)[c("Package", "Version", "Priority")]
+pkgs <- plyr::arrange(pkgs, Priority, Package)
+pkgs$Priority[is.na(pkgs$Priority)] <- "other"
+pkgs$Priority <- factor(pkgs$Priority, levels = c("base", "recommended", "other"))
+plyr::d_ply(
+  plyr::unrowname(pkgs),
+  "Priority",
+  function (sub_pkgs) {
+    cat("#### ", as.character(sub_pkgs$Priority[1]), "\n")
+    s <- plyr::dlply(
+      sub_pkgs,
+      "Package",
+      function(pkg) {
+        sprintf("[`%s`](http://cran.r-project.org/package=%s) (%s)", pkg$Package, pkg$Package, pkg$Version)
+      }
+    )
+    cat(paste(unlist(s), collapse = ",\n"), "\n")
+    NULL
+  }
+)
+```

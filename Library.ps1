@@ -46,7 +46,7 @@ Function DownloadAndUnpack {
     $rurl = "http://cran.r-project.org/bin/windows/base/R-devel-win.exe"
 
     Progress "Downloading R"
-    Invoke-WebRequest $rurl -OutFile .\DL\R-devel-win.exe
+    Invoke-WebRequest $rurl -OutFile .\DL\R-win.exe
 
     Progress "Determining Rtools version"
     $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
@@ -61,7 +61,7 @@ Function DownloadAndUnpack {
 
     # R
     Progress "Extracting R (devel)"
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-devel-win.exe > .\R-devel-win.log
+    .\Tools\innounp\innounp.exe -x -dImage .\DL\R-win.exe > .\R-win.log
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
 

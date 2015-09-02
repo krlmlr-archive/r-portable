@@ -21,7 +21,7 @@ test_script:
 artifacts:
   - path: R.tar.gz R.iso.gz R.vhd.gz
     name: ISO
-  - path: R-devel-win.log R-stable-win.log R-packages.log Rtools-current.log
+  - path: R-win.log R-packages.log Rtools-current.log
     name: Logs
 
 deploy:

@@ -1,4 +1,5 @@
 
+
 r-portable 
 ==========
 [![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master)
@@ -9,11 +10,9 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 ## Download
 
-Most recent version:
+Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz)
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (268 MB, MD5 hash: `275b6aed90c939820b8ed6ddd6ac1d63`, uncompressed 743.1 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (268.6 MB, MD5 hash: `a88d873b5286e4a752208cf242b20789`, uncompressed 761.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (271 MB, MD5 hash: `3cb02b407c7c014b6154c6deb8f45e82`, uncompressed 811.6 MB)
+Hashes and file sizes are listed in a [separate file](hash.md).
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
@@ -87,5 +86,5 @@ R Under development (unstable) (2015-08-28 r69202)
 [`testthat`](http://cran.r-project.org/package=testthat) (0.10.0),
 [`translations`](http://cran.r-project.org/package=translations) (3.3.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2),
-[`xml2`](http://cran.r-project.org/package=xml2) (0.1.1),
+[`xml2`](http://cran.r-project.org/package=xml2) (0.1.2),
 [`yaml`](http://cran.r-project.org/package=yaml) (2.1.13) 

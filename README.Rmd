@@ -17,39 +17,6 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/`r BRANCH`/R.vhd.gz)
 
-Hashes and file sizes are listed in a [separate file](hash.md).
+Hashes, file sizes, and image contents are listed in a [separate file](hash.md).
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
-
-## Contents
-
-### R version
-
-```{r echo = FALSE, results = "asis"}
-cat(R.Version()$version.string)
-```
-
-### Package versions
-
-```{r echo = FALSE, results = "asis"}
-pkgs <- as.data.frame(installed.packages(), stringsAsFactors = FALSE)[c("Package", "Version", "Priority")]
-pkgs <- plyr::arrange(pkgs, Priority, Package)
-pkgs$Priority[is.na(pkgs$Priority)] <- "other"
-pkgs$Priority <- factor(pkgs$Priority, levels = c("base", "recommended", "other"))
-plyr::d_ply(
-  plyr::unrowname(pkgs),
-  "Priority",
-  function (sub_pkgs) {
-    cat("#### ", as.character(sub_pkgs$Priority[1]), "\n")
-    s <- plyr::dlply(
-      sub_pkgs,
-      "Package",
-      function(pkg) {
-        sprintf("[`%s`](http://cran.r-project.org/package=%s) (%s)", pkg$Package, pkg$Package, pkg$Version)
-      }
-    )
-    cat(paste(unlist(s), collapse = ",\n"), "\n")
-    NULL
-  }
-)
-```

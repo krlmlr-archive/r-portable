@@ -43,7 +43,7 @@ Function DownloadAndUnpack {
         Return
     }
 
-    $rurl = "https://cran.r-project.org/bin/windows/base/old/3.2.1/R-3.2.1-win.exe"
+    $rurl = "https://cran.r-project.org/bin/windows/base/old/3.2.0/R-3.2.0-win.exe"
 
     Progress "Downloading R"
     Invoke-WebRequest $rurl -OutFile .\DL\R-win.exe

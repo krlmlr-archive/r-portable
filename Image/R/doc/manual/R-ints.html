@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-08-28).
+<!-- This manual is for R, version 3.2.1 (2015-06-18).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -288,7 +288,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-08-28).
+<p>This manual is for R, version 3.2.1 (2015-06-18).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -1510,8 +1510,8 @@ functions are defined and also in file <samp>size.c</samp> which needs access
 to the sizes of the internal structures.)
 </p>
 <p>For background papers see
-<a href="http://homepage.stat.uiowa.edu/~luke/R/barrier.html">http://homepage.stat.uiowa.edu/~luke/R/barrier.html</a> and
-<a href="http://homepage.stat.uiowa.edu/~luke/R/gengcnotes.html">http://homepage.stat.uiowa.edu/~luke/R/gengcnotes.html</a>.
+<a href="http://www.stat.uiowa.edu/~luke/R/barrier.html">http://www.stat.uiowa.edu/~luke/R/barrier.html</a> and
+<a href="http://www.stat.uiowa.edu/~luke/R/gengcnotes.html">http://www.stat.uiowa.edu/~luke/R/gengcnotes.html</a>.
 </p>
 <hr>
 <a name="Serialization-Formats"></a>
@@ -1925,7 +1925,7 @@ Previous: <a href="#S4-methods" accesskey="p" rel="prev">S4 methods</a>, Up: <a 
 <h4 class="subsection">1.12.4 Mechanics of S4 dispatch</h4>
 
 <p>This subsection does not discuss how S4 methods are chosen: see
-<a href="https://developer.r-project.org/howMethodsWork.pdf">https://developer.r-project.org/howMethodsWork.pdf</a>.
+<a href="http://developer.r-project.org/howMethodsWork.pdf">http://developer.r-project.org/howMethodsWork.pdf</a>.
 </p>
 <p>For all but primitive functions, setting a method on an existing
 function that is not itself S4 generic creates a new object in the
@@ -2717,7 +2717,7 @@ Next: <a href="#Adding-a-primitive" accesskey="n" rel="next">Adding a primitive<
 
 <p>Prototypes are available for the primitive functions and operators, and
 these are used for printing, <code>args</code> and package checking (e.g. by
-<code>tools::checkS3methods</code> and by package <a href="https://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>).  There are
+<code>tools::checkS3methods</code> and by package <a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>).  There are
 two environments in the <strong>base</strong> package (and namespace),
 &lsquo;<samp>.GenericArgsEnv</samp>&rsquo; for those primitives which are internal S3
 generics, and &lsquo;<samp>.ArgsEnv</samp>&rsquo; for the rest.  Those environments contain
@@ -2955,7 +2955,7 @@ Next: <a href="#Updating" accesskey="n" rel="next">Updating</a>, Previous: <a hr
 <h3 class="section">3.4 OS X GUI</h3>
 
 <p>This is handled separately: see
-<a href="https://developer.r-project.org/Translations30.html">https://developer.r-project.org/Translations30.html</a>.
+<a href="http://developer.r-project.org/Translations30.html">http://developer.r-project.org/Translations30.html</a>.
 </p>
 
 <hr>
@@ -3220,8 +3220,8 @@ that in S and whose R code<a name="DOCF15" href="#FOOT15"><sup>15</sup></a> is i
 <strong>graphics</strong>) and one implemented in package <strong>grid</strong>.
 </p>
 <p>Some notes on the historical changes can be found at
-<a href="https://www.stat.auckland.ac.nz/~paul/R/basegraph.html">https://www.stat.auckland.ac.nz/~paul/R/basegraph.html</a> and
-<a href="https://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html">https://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html</a>.
+<a href="http://www.stat.auckland.ac.nz/~paul/R/basegraph.html">http://www.stat.auckland.ac.nz/~paul/R/basegraph.html</a> and
+<a href="http://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html">http://www.stat.auckland.ac.nz/~paul/R/graphicsChanges.html</a>.
 </p>
 <p>At the lowest level is a graphics device, which manages a plotting
 surface (a screen window or a representation to be written to a file).
@@ -3795,7 +3795,7 @@ returned.  C functions <code>doMouseEvent</code> and <code>doKeybd</code> are
 provided to call the R event handlers <code>onMouseDown</code>,
 <code>onMouseMove</code>, <code>onMouseUp</code>, and <code>onKeybd</code> and set
 <code>eventEnv$result</code> during this step.  Finally, <code>initEvent</code> is
-called again with <code>init=false</code> to inform the devices that the
+called again with <code>init=false</code> to inform the the devices that the
 loop is done, and the result is returned to the user.
 </p>
 <hr>
@@ -3993,9 +3993,9 @@ palette of size 8, colour &lsquo;<samp>10</samp>&rsquo; is colour &lsquo;<samp>2
 </p>
 <p>Integer colours have been used more widely than the base graphics
 sub-system, as they are supported by package <strong>grid</strong> and hence by
-<a href="https://CRAN.R-project.org/package=lattice"><strong>lattice</strong></a> and <a href="https://CRAN.R-project.org/package=ggplot2"><strong>ggplot2</strong></a>.  (They are also used by package
-<a href="https://CRAN.R-project.org/package=rgl"><strong>rgl</strong></a>.)  <strong>grid</strong> did re-define colour &lsquo;<samp>0</samp>&rsquo; to be
-transparent white, but <a href="https://CRAN.R-project.org/package=rgl"><strong>rgl</strong></a> used <code>col2rgb</code> and hence the
+<a href="http://CRAN.R-project.org/package=lattice"><strong>lattice</strong></a> and <a href="http://CRAN.R-project.org/package=ggplot2"><strong>ggplot2</strong></a>.  (They are also used by package
+<a href="http://CRAN.R-project.org/package=rgl"><strong>rgl</strong></a>.)  <strong>grid</strong> did re-define colour &lsquo;<samp>0</samp>&rsquo; to be
+transparent white, but <a href="http://CRAN.R-project.org/package=rgl"><strong>rgl</strong></a> used <code>col2rgb</code> and hence the
 background colour of base graphics.
 </p>
 <p>Note that positive integer colours refer to the current palette and
@@ -4175,7 +4175,7 @@ there are several ways to provide a GUI console.
 </p>
 <p>This can be done by a package which is loaded from terminal-based R
 and launches a console as part of its startup code or by the user
-running a specific function: package <a href="https://CRAN.R-project.org/package=Rcmdr"><strong>Rcmdr</strong></a> is a well-known
+running a specific function: package <a href="http://CRAN.R-project.org/package=Rcmdr"><strong>Rcmdr</strong></a> is a well-known
 example with a Tk-based GUI.
 </p>
 <p>There used to be a Gtk-based console invoked by <code>R --gui=GNOME</code>:
@@ -4416,7 +4416,7 @@ Default: &lsquo;<samp>default</samp>&rsquo; (which checks only tarballs, and che
 <dt><code>_R_CHECK_USE_CODETOOLS_</code>
 <a name="index-_005fR_005fCHECK_005fUSE_005fCODETOOLS_005f"></a>
 </dt>
-<dd><p>If true, make use of the <a href="https://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a> package, which provides a
+<dd><p>If true, make use of the <a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a> package, which provides a
 detailed analysis of visibility of objects (but may give false
 positives).
 Default: true (if recommended packages are installed).
@@ -4433,8 +4433,8 @@ Default: true.
 <a name="index-_005fR_005fCHECK_005fVIGNETTES_005fNLINES_005f"></a>
 </dt>
 <dd><p>Maximum number of lines to show at the bottom of the output when reporting
-errors in running or re-building vignettes.
-Default: 10 for running, 25 for re-building.
+errors in running vignettes.
+Default: 10.
 </p></dd>
 <dt><code>_R_CHECK_CODOC_S4_METHODS_</code>
 <a name="index-_005fR_005fCHECK_005fCODOC_005fS4_005fMETHODS_005f"></a>
@@ -4700,7 +4700,7 @@ Default: false (but true for CRAN submission checks).
 </p>
 <p>This may give false positives on code which uses
 <code>grDevices::densCols</code> and <code>stats:::asSparse</code> as these invoke
-<a href="https://CRAN.R-project.org/package=KernSmooth"><strong>KernSmooth</strong></a> and <a href="https://CRAN.R-project.org/package=Matrix"><strong>Matrix</strong></a> respectively.
+<a href="http://CRAN.R-project.org/package=KernSmooth"><strong>KernSmooth</strong></a> and <a href="http://CRAN.R-project.org/package=Matrix"><strong>Matrix</strong></a> respectively.
 </p>
 </dd>
 <dt><code>_R_CHECK_CODETOOLS_PROFILE_</code>
@@ -4708,7 +4708,7 @@ Default: false (but true for CRAN submission checks).
 </dt>
 <dd><p>A string with comma-separated <code><var>name</var>=<var>value</var></code> pairs (with
 <var>value</var> a logical constant) giving additional arguments for the
-<a href="https://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a> functions used for analyzing package code.  E.g.,
+<a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a> functions used for analyzing package code.  E.g.,
 use <code>_R_CHECK_CODETOOLS_PROFILE_=&quot;suppressLocalUnused=FALSE&quot;</code> to
 turn off suppressing warnings about unused local variables.  Default: no
 additional arguments, corresponding to using <code>skipWith = TRUE</code>,
@@ -4829,18 +4829,10 @@ Default: unset (but &lsquo;<samp>TRUE</samp>&rsquo; for CRAN submission checks).
 <dt><code>_R_CHECK_CODE_USAGE_VIA_NAMESPACES_</code>
 <a name="index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fVIA_005fNAMESPACES_005f"></a>
 </dt>
-<dd><p>If set, check code usage (via <a href="https://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>) directly on the
+<dd><p>If set, check code usage (via <a href="http://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>) directly on the
 package namespace without loading and attaching the package and its
 suggests and enhances.
 Default: true (and true for CRAN submission checks).
-</p>
-</dd>
-<dt><code>_R_CHECK_CODE_USAGE_WITH_ONLY_BASE_ATTACHED_</code>
-<a name="index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fWITH_005fONLY_005fBASE_005fATTACHED_005f"></a>
-</dt>
-<dd><p>If set, check code usage (via <a href="https://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>) with only the base
-package attached.
-Default: false (but true for CRAN submission checks).
 </p>
 </dd>
 <dt><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code>
@@ -5243,7 +5235,7 @@ introduce &lsquo;long&rsquo; versions <code>xlength</code> and <code>XLENGTH</co
 <code>R_xlen_t</code> values.
 </p>
 
-<p>See also <a href="http://homepage.cs.uiowa.edu/~luke/talks/useR10.pdf">http://homepage.cs.uiowa.edu/~luke/talks/useR10.pdf</a>.
+<p>See also <a href="http://www.cs.uiowa.edu/~luke/talks/useR10.pdf">http://www.cs.uiowa.edu/~luke/talks/useR10.pdf</a>.
 </p>
 <hr>
 <a name="Large-matrices"></a>
@@ -5354,7 +5346,6 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fATTACH_005f"><code>_R_CHECK_CODE_ATTACH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fDATA_005fINTO_005fGLOBALENV_005f"><code>_R_CHECK_CODE_DATA_INTO_GLOBALENV_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fVIA_005fNAMESPACES_005f"><code>_R_CHECK_CODE_USAGE_VIA_NAMESPACES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODE_005fUSAGE_005fWITH_005fONLY_005fBASE_005fATTACHED_005f"><code>_R_CHECK_CODE_USAGE_WITH_ONLY_BASE_ATTACHED_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCODOC_005fS4_005fMETHODS_005f"><code>_R_CHECK_CODOC_S4_METHODS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCOMPACT_005fDATA_005f"><code>_R_CHECK_COMPACT_DATA_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fCRAN_005fINCOMING_005f"><code>_R_CHECK_CRAN_INCOMING_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>

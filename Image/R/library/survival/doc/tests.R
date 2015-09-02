@@ -259,7 +259,8 @@ summary(cfit3)
 # Wald test
 signif(summary(cfit2)$coefficients, 3)
 #
-anova(cfit1, cfit2)
+anova(cfit1)
+anova(cfit2)
 
 
 ###################################################
@@ -284,7 +285,7 @@ signif(coxp,3)
 
 
 ###################################################
-### code chunk number 19: tests.Rnw:1167-1183
+### code chunk number 19: tests.Rnw:1168-1184
 ###################################################
 cfit4 <- coxph(Surv(futime, death) ~ sex * age2, flchain)
 # Uniform population contrast
@@ -333,7 +334,7 @@ data3 <- data1[as.numeric(data1$x1) != as.numeric(data1$x2),]
 
 
 ###################################################
-### code chunk number 22: tests.Rnw:1359-1362
+### code chunk number 22: tests.Rnw:1360-1363
 ###################################################
 options(contrasts=c("contr.sum", "contr.poly"))
 fit1 <- lm(y ~ x1*x2, data1)
@@ -341,7 +342,7 @@ drop1(fit1, .~.)
 
 
 ###################################################
-### code chunk number 23: tests.Rnw:1369-1375
+### code chunk number 23: tests.Rnw:1370-1376
 ###################################################
 options(contrasts=c("contr.SAS", "contr.poly"))
 fit2 <- lm(y ~ x1*x2, data1)
@@ -365,7 +366,7 @@ yates
 
 
 ###################################################
-### code chunk number 25: tests.Rnw:1415-1418
+### code chunk number 25: tests.Rnw:1416-1419
 ###################################################
 wt <- solve(t(X) %*% X, t(X)) # twelve rows (one per coef), n columns
 casewt <- t(effects) %*% wt   # case weights for the three "row efffects"
@@ -373,7 +374,7 @@ for (i in 1:3) print(tapply(casewt[i,], data1$x2, sum))
 
 
 ###################################################
-### code chunk number 26: tests.Rnw:1455-1456
+### code chunk number 26: tests.Rnw:1456-1457
 ###################################################
 fit4 <- lm(y ~ x1*x2 + x3, data=data1)
 

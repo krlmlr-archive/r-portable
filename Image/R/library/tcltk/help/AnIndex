@@ -136,14 +136,10 @@ tkgrid.size	TkCommands
 tkgrid.slaves	TkCommands
 tkicursor	TkWidgetcmds
 tkidentify	TkWidgetcmds
+tkimage.cget	TkCommands
+tkimage.configure	TkCommands
 tkimage.create	TkCommands
-tkimage.delete	TkCommands
-tkimage.height	TkCommands
-tkimage.inuse	TkCommands
 tkimage.names	TkCommands
-tkimage.type	TkCommands
-tkimage.types	TkCommands
-tkimage.width	TkCommands
 tkindex	TkWidgetcmds
 tkinsert	TkWidgetcmds
 tkinvoke	TkWidgetcmds
@@ -287,6 +283,7 @@ ttkcheckbutton	TkWidgets
 ttkcombobox	TkWidgets
 ttkentry	TkWidgets
 ttkframe	TkWidgets
+ttkimage	TkWidgets
 ttklabel	TkWidgets
 ttklabelframe	TkWidgets
 ttkmenubutton	TkWidgets
@@ -294,11 +291,9 @@ ttknotebook	TkWidgets
 ttkpanedwindow	TkWidgets
 ttkprogressbar	TkWidgets
 ttkradiobutton	TkWidgets
-ttkscale	TkWidgets
 ttkscrollbar	TkWidgets
 ttkseparator	TkWidgets
 ttksizegrip	TkWidgets
-ttkspinbox	TkWidgets
 ttktreeview	TkWidgets
 [[.tclArray	TclInterface
 [[<-.tclArray	TclInterface

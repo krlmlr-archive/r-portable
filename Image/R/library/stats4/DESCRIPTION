@@ -1,10 +1,10 @@
 Package: stats4
 Title: Statistical Functions using S4 Classes
-Version: 3.3.0
+Version: 3.2.1
 Priority: base
 Author: R Core Team and contributors worldwide
 Description: Statistical Functions using S4 classes.
 Maintainer: R Core Team <R-core@r-project.org>
 Imports: graphics, methods, stats
-License: Part of R 3.3.0
-Built: R 3.3.0; ; 2015-09-02 02:22:42 UTC; windows
+License: Part of R 3.2.1
+Built: R 3.2.1; ; 2015-06-18 17:25:20 UTC; windows

@@ -1,7 +1,7 @@
 Package: methods
-Version: 3.3.0
+Version: 3.2.1
 Priority: base
-Imports: utils, stats
+Imports: utils
 Title: Formal Methods and Classes
 Author: R Core Team
 Maintainer: R Core Team <R-core@r-project.org>
@@ -9,6 +9,5 @@ Description: Formally defined methods and classes for R objects,
   plus other programming tools, as described in the reference.
 References: John M. Chambers (2008) ``Software for Data Analysis:
         Programming with R''; Springer NY.
-License: Part of R 3.3.0
-Suggests: codetools
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-02 02:21:50 UTC; windows
+License: Part of R 3.2.1
+Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-18 17:24:34 UTC; windows

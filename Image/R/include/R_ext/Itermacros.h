@@ -14,7 +14,7 @@
  *
  *  You should have received a copy of the GNU Lesser General Public License
  *  along with this program; if not, a copy is available at
- *  https://www.R-project.org/Licenses/
+ *  http://www.r-project.org/Licenses/
  */
 
 /*
@@ -51,27 +51,7 @@
 	LOOP_WITH_INTERRUPT_CHECK(R_ITERATE_CORE, ncheck, n, i, loop_body); \
     } while (0)
 
-
-#define MOD_ITERATE1_CORE(n, n1, i, i1, loop_body) do {	\
-	for (; i < n;							\
-	     i1 = (++i1 == n1) ? 0 : i1,				\
-		 ++i) {							\
-	    loop_body							\
-		}							\
-    } while (0)
-
-#define MOD_ITERATE1(n, n1, i, i1, loop_body) do {	\
-	i = i1 = 0;					\
-	MOD_ITERATE1_CORE(n, n1, i, i1, loop_body);	\
-    } while (0)
-
-#define MOD_ITERATE1_CHECK(ncheck, n, n1, i, i1, loop_body) do {	\
-	i = i1 = 0;							\
-	LOOP_WITH_INTERRUPT_CHECK(MOD_ITERATE1_CORE, ncheck, n,		\
-				  n1, i, i1, loop_body);		\
-    } while (0)
-
-#define MOD_ITERATE2_CORE(n, n1, n2, i, i1, i2, loop_body) do {	\
+#define MOD_ITERATE_CORE(n, n1, n2, i, i1, i2, loop_body) do {	\
 	for (; i < n;							\
 	     i1 = (++i1 == n1) ? 0 : i1,				\
 		 i2 = (++i2 == n2) ? 0 : i2,				\
@@ -80,20 +60,16 @@
 		}							\
     } while (0)
 
-#define MOD_ITERATE2(n, n1, n2, i, i1, i2, loop_body) do {	\
+#define MOD_ITERATE(n, n1, n2, i, i1, i2, loop_body) do {	\
 	i = i1 = i2 = 0;					\
-	MOD_ITERATE2_CORE(n, n1, n2, i, i1, i2, loop_body);	\
+	MOD_ITERATE_CORE(n, n1, n2, i, i1, i2, loop_body);	\
     } while (0)
 
-#define MOD_ITERATE2_CHECK(ncheck, n, n1, n2, i, i1, i2, loop_body) do {	\
+#define MOD_ITERATE_CHECK(ncheck, n, n1, n2, i, i1, i2, loop_body) do {	\
 	i = i1 = i2 = 0;						\
-	LOOP_WITH_INTERRUPT_CHECK(MOD_ITERATE2_CORE, ncheck, n,		\
+	LOOP_WITH_INTERRUPT_CHECK(MOD_ITERATE_CORE, ncheck, n,		\
 				  n1, n2, i, i1, i2, loop_body);	\
     } while (0)
-
-#define MOD_ITERATE MOD_ITERATE2
-#define MOD_ITERATE_CORE MOD_ITERATE2_CORE
-#define MOD_ITERATE_CHECK MOD_ITERATE2_CHECK
 
 #define MOD_ITERATE3_CORE(n, n1, n2, n3, i, i1, i2, i3, loop_body) do {	\
 	for (; i < n;							\

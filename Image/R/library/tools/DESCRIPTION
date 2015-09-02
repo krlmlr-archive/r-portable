@@ -1,10 +1,10 @@
 Package: tools
-Version: 3.3.0
+Version: 3.2.1
 Priority: base
 Title: Tools for Package Development
 Author: R Core Team
 Maintainer: R Core Team <R-core@r-project.org>
 Description: Tools for package development, administration and documentation.
-License: Part of R 3.3.0
-Suggests: XML, codetools, methods
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-02 02:18:24 UTC; windows
+License: Part of R 3.2.1
+Suggests: XML
+Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-18 17:21:31 UTC; windows

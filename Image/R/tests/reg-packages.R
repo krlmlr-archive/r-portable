@@ -1,5 +1,5 @@
 ## PR 1271  detach("package:base") crashes R.
-tools::assertError(detach("package:base"))
+try(detach("package:base"))
 
 
 ## invalid 'lib.loc'
@@ -109,19 +109,6 @@ if(dir.exists(file.path("myLib", "pkgA"))) {
   ## R-devel (pre 3.2.0) wrongly errored for NULL lazy data
   ## ::: does not apply to data sets:
   tools::assertError(is.null(pkgA:::nilData))
-}
-
-if(dir.exists(file.path("myLib", "exNSS4"))) {
-    for(ns in c("pkgB", "pkgA", "Matrix", "exNSS4")) unloadNamespace(ns)
-    ## Both exNSS4 and Matrix define "atomicVector" *the same*,
-    ## but  'exNSS4'  has it extended - and hence *both* are registered in cache -> "conflicts"
-    requireNamespace("exNSS4", lib= "myLib")
-    requireNamespace("Matrix", lib= .Library)
-    tools::assertCondition( ## condition, because this *still* uses message():
-        acl <- getClass("atomicVector")
-    ) ## gave an Error: “atomicVector” is not a defined class
-    ##   ... because it was found non-uniquely
-    stopifnot(is(acl, "classRepresentation"), isVirtualClass(acl))
 }
 
 ## clean up

@@ -2,9 +2,9 @@ Title: Survival Analysis
 Maintainer: Terry M Therneau <therneau.terry@mayo.edu>
 Priority: recommended
 Package: survival
-Version: 2.38-3
+Version: 2.38-1
 Depends: R (>= 2.13.0), graphics, stats
-Imports: splines, methods
+Imports: splines
 Suggests: cmprsk
 LazyData: Yes
 LazyLoad: Yes
@@ -20,10 +20,10 @@ Description: Contains the core survival analysis routines, including
 	     and parametric accelerated failure time models.
 License: LGPL (>= 2)
 NeedsCompilation: yes
-Packaged: 2015-07-01 21:33:35 UTC; therneau
+Packaged: 2015-02-23 21:07:23 UTC; therneau
 Author: Terry M Therneau [aut, cre],
   Thomas Lumley [ctb, trl] (original S->R port and maintainer until 2009)
 Repository: CRAN
-Date/Publication: 2015-07-02 08:40:39
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-02 02:29:36 UTC; windows
+Date/Publication: 2015-02-24 11:09:02
+Built: R 3.2.1; x86_64-w64-mingw32; 2015-06-18 17:31:32 UTC; windows
 Archs: i386, x64

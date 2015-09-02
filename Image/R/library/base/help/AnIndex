@@ -80,7 +80,6 @@ $<-.data.frame	Extract.data.frame
 .First.lib	base-defunct
 .First.sys	Startup
 .Firstlib_as_onLoad	base-internal
-.format.zeros	formatc
 .Fortran	Foreign
 .F_dchdc	base-internal
 .F_dqrcf	base-internal
@@ -150,7 +149,6 @@ $<-.data.frame	Extract.data.frame
 .Random.seed	Random
 .readRDS	base-defunct
 .Renviron	Startup
-.rmpkg	search
 .rowMeans	colSums
 .rowSums	colSums
 .row_names_info	base-internal
@@ -409,7 +407,6 @@ by.default	by
 bzfile	connections
 c	c
 c.Date	Dates
-c.difftime	difftime
 c.noquote	noquote
 c.numeric_version	numeric_version
 c.POSIXct	DateTimeClasses
@@ -430,7 +427,6 @@ charmatch	charmatch
 charToRaw	rawConversion
 chartr	chartr
 check_tzones	DateTimeClasses
-chkDots	chkDots
 chol	chol
 chol.default	chol
 chol2inv	chol2inv
@@ -842,7 +838,7 @@ levels<-	levels
 levels<-.factor	levels
 lfactorial	Special
 lgamma	Special
-libcurlVersion	libcurlVersion
+libcurlVersion	curlVersion
 library	library
 library.dynam	library.dynam
 library.dynam.unload	library.dynam
@@ -1333,7 +1329,6 @@ storage.mode<-	mode
 str.POSIXt	DateTimeClasses
 strftime	strptime
 strptime	strptime
-strrep	strrep
 strsplit	strsplit
 strtoi	strtoi
 strtrim	strtrim
@@ -1506,8 +1501,6 @@ upper.tri	lower.tri
 url	connections
 UseMethod	UseMethod
 utf8ToInt	utf8Conversion
-validEnc	validUTF8
-validUTF8	validUTF8
 vapply	lapply
 vector	vector
 Vectorize	Vectorize
@@ -1567,7 +1560,6 @@ zapsmall	zapsmall
 [.POSIXct	DateTimeClasses
 [.POSIXlt	DateTimeClasses
 [.simple.list	Extract
-[.table	table
 [.warnings	warnings
 [<-	Extract
 [<-.data.frame	Extract.data.frame

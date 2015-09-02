@@ -7,610 +7,6 @@
 
 <h2>R News</h2>
 
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R-devel</h3>
-
-
-
-<h4>SIGNIFICANT USER-VISIBLE CHANGES</h4>
-
-
-<ul>
-<li> <p><code>nchar(x, *)</code> gains a new argument <code>keepNA</code> which
-governs how the result for <code>NA</code>s in <code>x</code> is determined.
-The new default <code>keepNA = NA</code> returns <code>NA</code> where
-<code>x</code> is <code>NA</code>, except for <code>type = "width"</code> which still
-returns <code>2</code>, the formatting / printing width of <code>NA</code>.
-</p>
-<p><code>nzchar(x)</code> gets the same new argument, but with default
-<code>keepNA = FALSE</code>.  Hence <code>nzchar(x)</code> still returns a
-non-<code>NA</code> logical vector, back compatibly.
-</p>
-</li>
-<li><p> All builds have support for <span class="samp">https:</span> URLs in the
-default methods for <code>download.file()</code>, <code>url()</code> and code
-making use of them.
-</p>
-<p>Unfortunately that cannot guarantee that any particular
-<span class="samp">https:</span> URL can be accessed.  For example, server and client
-have to successfully negotiate a cryptographic protocol (TLS/SSL,
-...) and the server's identity has to be verifiable <em>via</em>
-the available certificates.  Different access methods may allow
-different protocols or use certificate bundles: we have experienced a
-<span class="samp">https:</span> CRAN mirror which can be accessed by one browser but
-not another nor by <code>download.file()</code> on the same Linux machine.
-</p>
-</li></ul>
-
-
-
-
-<h4>NEW FEATURES</h4>
-
-
-<ul>
-<li><p> The <code>print</code> method for <code>methods()</code> gains a
-<code>byclass</code> argument.
-</p>
-</li>
-<li><p> New functions <code>validEnc()</code> and <code>validUTF8()</code> to
-give access to the validity checks for inputs used by
-<code>grep()</code> and friends.
-</p>
-</li>
-<li><p> Experimental new functionality for S3 method checking, notably
-<code>isS3method()</code>.  Also, the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> &lsquo;language element&rsquo; names
-are exported as <code>tools::langElts</code>.
-</p>
-</li>
-<li> <p><code>str(x)</code> now displays <code>"Time-Series"</code> also for
-matrix (multivariate) time-series, i.e. when <code>is.ts(x)</code> is true.
-</p>
-</li>
-<li><p> (Windows only)  The GUI menu item to install local packages
-now accepts &lsquo;<span class="file">*.tar.gz</span>&rsquo; files as well as &lsquo;<span class="file">*.zip</span>&rsquo; files
-(but defaults to the latter).
-</p>
-</li>
-<li><p> New programmeR's utility function <code>chkDots()</code>.
-</p>
-</li>
-<li> <p><code>D()</code> now signals an error when given invalid input,
-rather than silently returning <code>NA</code>.  (Request of John Nash.)
-</p>
-</li>
-<li> <p><code>formula</code> objects are slightly more &ldquo;first class&rdquo;:
-e.g., <code>formula()</code> or <code>new("formula", y ~ x)</code> are now
-valid.  Similarly, for <code>"table"</code>, <code>"ordered"</code> and
-<code>"summary.table"</code>.  Packages defining S4 classes with the above
-S3/S4 classes as slots should be reinstalled.
-
-
-</p>
-</li>
-<li><p> New function <code>strrep()</code> for repeating the elements of a
-character vector.
-</p>
-</li>
-<li> <p><code>rapply</code> preserves attributes on the list when
-<code>how="replace"</code>.
-</p>
-</li>
-<li><p> New S3 generic function <code>sigma()</code> with methods for
-extracting the estimated standard deviation aka &ldquo;residual
-standard deviation&rdquo; from a fitted model.
-</p>
-</li>
-<li> <p><code>news()</code> now displays <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> and package news files within
-the HTML help system if it is available.  If no news file is found,
-a visible <code>NULL</code> is returned to the console.
-</p>
-</li>
-<li> <p><code>as.raster(x)</code> now also accepts <code>raw</code>
-arrays <code>x</code> assuming values in <code>0:255</code>.
-</p>
-</li>
-<li><p> Subscripting of matrix/array objects of type
-<code>"expression"</code> is now supported.
-</p>
-</li>
-<li> <p><code>type.convert("i")</code> now returns a factor instead of a
-complex value with zero real part and missing imaginary part.
-</p>
-</li>
-<li><p> Graphics devices <code>cairo_pdf()</code> and <code>cairo_ps()</code>
-now allow non-default values of the cairographics &lsquo;fallback
-resolution&rsquo; to be set.
-</p>
-</li>
-<li> <p><code>file()</code> gets an explicit <code>method</code> argument
-instead of implicitly using
-<code>getOption("url.method", "default")</code>.
-</p>
-</li>
-<li><p> Thanks to a patch from Tomas Kalibera, <code>x[x != 0]</code> is
-now typically <em>faster</em> than <code>x[which(x != 0)]</code> (in the
-case where <code>x</code> has no NAs, the two are equivalent).
-</p>
-</li>
-<li> <p><code>read.table()</code> now always uses the names for a named
-<code>colClasses</code> argument (previously names were only used when
-<code>colClasses</code> was too short). (In part, wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16478">PR#16478</a>.)
-</p>
-</li>
-<li><p> (Windows only) <code>download.file()</code> with default
-<code>method = "auto"</code> and a <span class="samp">ftps://</span> URL chooses
-<code>"libcurl"</code> if that is available.
-</p>
-</li>
-<li><p> The out-of-the box Bioconductor mirror has been changed to
-one using <span class="samp">https://</span>: use <code>chooseBioCmirror()</code> to choose
-a <span class="samp">http://</span> mirror if required.
-</p>
-</li>
-<li><p> The data frame and formula methods for <code>aggregate()</code>
-gain a <code>drop</code> argument.
-</p>
-</li>
-<li> <p><code>available.packages()</code> gains a <code>repos</code> argument.
-</p>
-</li>
-<li><p> The undocumented switching of methods for <code>url()</code> on
-<span class="samp">https:</span> and <span class="samp">ftps:</span> URLs is confined to <code>method =
-	"default"</code> (and documented).
-</p>
-</li>
-<li> <p><code>smoothScatter()</code> gains a <code>ret.selection</code> argument.
-</p>
-</li>
-<li> <p><code>qr()</code> no longer has a <code>...</code> argument to pass
-addiitonal arguments to methods.
-</p>
-</li>
-<li> <p><code>[</code> has a method for class <code>"table"</code>.
-</p>
-</li></ul>
-
-
-
-
-<h4>UTILITIES</h4>
-
-
-<ul>
-<li> <p><code>R CMD check</code> has a new option
-<span class="option">--ignore-vignettes</span> for use with non-Sweave vignettes
-whose <span class="samp">VignetteBuilder</span> package is not available.
-</p>
-</li>
-<li> <p><code>R CMD check --as-cran</code> now checks code usage (via
-<a href="https://CRAN.R-project.org/package=codetools"><span class="pkg">codetools</span></a>) with only the base package attached, so that
-functions from default packages other than base which are used in
-the package code but not imported are reported as undefined
-globals.
-</p>
-</li></ul>
-
-
-
-
-<h4>DEPRECATED AND DEFUNCT</h4>
-
-
-<ul>
-<li><p> The previously included versions of <code>zlib</code>, <code>bzip2</code>,
-<code>xz</code> and PCRE have been removed, so system versions are
-required (see the &lsquo;R Installation and Administration&rsquo;
-manual).
-</p>
-</li>
-<li><p> The unexported and undocumented Windows-only devices
-<code>cairo_bmp()</code>, <code>cairo_png()</code> and <code>cairo_tiff()</code>
-have been removed.  (The devices should be used as e.g.
-<code>bmp(type = "cairo")</code>.)
-</p>
-</li>
-<li><p> (Windows only)  Function <code>setInternet2()</code> has no effect
-and will be removed in due course.  The choice between methods
-<code>"internal"</code> and <code>"wininet"</code> is now made by the
-<code>method</code> arguments of <code>url()</code> and <code>download.file()</code>
-and their defaults can be set <em>via</em> options.  The
-out-of-the-box default remains <code>"wininet"</code> (as it has been
-since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.2).
-</p>
-</li></ul>
-
-
-
-
-<h4>INSTALLATION and INCLUDED SOFTWARE</h4>
-
-
-<ul>
-<li><p> Support for very old versions of <code>valgrind</code>
-(e.g. 3.3.0) has been removed.
-</p>
-</li>
-<li><p> The included <code>libtool</code> script (generated by
-<code>configure</code>) has been updated to version 2.4.6 (from 2.2.6a).
-</p>
-</li>
-<li> <p><code>libcurl</code> version 7.28.0 or later with support for the
-<code>https</code> protocol is required for installation (except on
-Windows).
-</p>
-</li>
-<li><p> BSD networking is now required (except on Windows) and so
-<code>capabilities("http/ftp")</code> is always true.
-</p>
-</li>
-<li> <p><code>configure</code> uses <code>pkg-config</code> for PNG, TIFF
-and JPEG where this is available.  This should work better with
-multiple installs and static libs.
-</p>
-</li></ul>
-
-
-
-
-<h4>C-LEVEL FACILITIES</h4>
-
-
-<ul>
-<li><p> The API call <code>logspace_sum</code> introduced in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0 is
-now remapped as an entry point to <code>Rf_logspace_sum</code>, and its
-first argument has gained a <code>const</code> qualifier.
-</p>
-<p>Code using it will need to be reinstalled. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16470">PR#16470</a>)
-
-</p>
-</li></ul>
-
-
-
-
-<h4>BUG FIXES</h4>
-
-
-<ul>
-<li><p> C-level <code>asChar(x)</code> is fixed for when <code>x</code> is not a
-vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
-&ldquo;T&rdquo;/&ldquo;F&rdquo; for logical vectors.
-</p>
-</li>
-<li> <p><code>.colSums()</code> etc (with an initial dot) first argument
-name <code>x</code> matches <code>colSums()</code> such that error messages
-are correct.
-</p>
-</li>
-<li><p> A <code>coef()</code> method for class <code>"maov"</code> has been
-added to allow <code>vcov()</code> to work with multivariate
-results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
-</p>
-</li></ul>
-
-
-
-
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.2 patched</h3>
-
-
-
-<h4>NEW FEATURES</h4>
-
-
-<ul>
-<li><p> Some recently-added Windows time zone names have been added
-to the conversion table used to convert these to Olson names.
-(Including those relating to changes for Russia in Oct 2014, as in
-<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16503">PR#16503</a>.)
-</p>
-</li>
-<li><p> (Windows) Compatibility information has been added to the
-manifests for &lsquo;<span class="file">Rgui.exe</span>&rsquo;, &lsquo;<span class="file">Rterm.exe</span>&rsquo; and
-&lsquo;<span class="file">Rscript.exe</span>&rsquo;.  This should allow <code>win.version()</code> and
-<code>Sys.info()</code> to report the actual Windows version up to
-Windows 10.
-</p>
-</li>
-<li><p> Windows <code>"wininet"</code> FTP first tries EPSV / PASV mode
-rather than only using active mode (reported by Dan Tenenbaum).
-
-</p>
-</li></ul>
-
-
-
-
-<h4>INSTALLATION and INCLUDED SOFTWARE</h4>
-
-
-<ul>
-<li><p> The included configuration code for <code>libintl</code> has been
-updated to that from <code>gettext</code> version 0.19.5.1 &mdash; this
-should only affect how an external library is detected. 
-(Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16464">PR#16464</a>.)
-</p>
-</li>
-<li> <p><code>configure</code> has a new argument
-<span class="option">--disable-java</span> to disable the checks for Java.
-</p>
-</li></ul>
-
-
-
-
-<h4>BUG FIXES</h4>
-
-
-<ul>
-<li> <p><code>regexpr(pat, x, perl = TRUE)</code> with Python-style named
-capture did not work correctly when <code>x</code> contained <code>NA</code>
-strings.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16484">PR#16484</a>)
-</p>
-</li>
-<li><p> The description of dataset <code>ToothGrowth</code> has been
-improved/corrected.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15953">PR#15953</a>)
-</p>
-</li>
-<li> <p><code>model.tables(type = "means")</code> and hence
-<code>TukeyHSD()</code> now support <code>"aov"</code> fits without an
-intercept term.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16437">PR#16437</a>)
-</p>
-</li>
-<li> <p><code>close()</code> now reports the status of a <code>pipe()</code>
-connection opened with an explicit <code>open</code> argument.
-(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16481">PR#16481</a>)
-</p>
-</li>
-<li><p> Coercing a list without names to a data frame is faster if
-the elements are very long. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16467">PR#16467</a>)
-</p>
-</li>
-<li><p> (Unix-only) Under some circumstances piping the output from
-<code>Rscript</code> or <code>R -f</code> could result in attempting to
-close the input file twice, possibly crashing the process.
-(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16500">PR#16500</a>)
-</p>
-</li>
-<li><p> (Windows) <code>Sys.info()</code> was out of step with
-<code>win.version()</code> and did not report Windows 8.
-</p>
-</li>
-<li> <p><code>topenv(baseenv())</code> returns <code>baseenv()</code> again as
-in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.1.0 and earlier.  This also fixes <code>compilerJIT(3)</code>
-when used in &lsquo;<span class="file">.Rprofile</span>&rsquo;.
-</p>
-</li>
-<li> <p><code>detach()</code>ing the <span class="pkg">methods</span> package keeps
-<code>.isMethodsDispatchOn()</code> true, as long as the methods
-namespace is not unloaded.
-</p>
-</li>
-<li><p> Removed some spurious warnings from <code>configure</code> about the
-preprocessor not finding header files.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15989">PR#15989</a>)
-</p>
-</li></ul>
-
-
-
-
-<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.2</h3>
-
-
-
-<h4>SIGNIFICANT USER-VISIBLE CHANGES</h4>
-
-
-<ul>
-<li><p> It is now easier to use secure downloads from
-<span class="samp">https://</span> URLs on builds which support them: no longer do
-non-default options need to be selected to do so.  In particular,
-packages can be installed from repositories which offer
-<span class="samp">https://</span> URLs, and those listed by <code>setRepositories()</code>
-now do so (for some of their mirrors).
-</p>
-<p>Support for <span class="samp">https://</span> URLs is available on Windows, and on
-other platforms if support for <code>libcurl</code> was compiled in and
-if that supports the <code>https</code> protocol (system installations
-can be expected to do).  So <span class="samp">https://</span> support can be
-expected except on rather old OSes (an example being OS X
-&lsquo;Snow Leopard&rsquo;, where a non-system version of
-<code>libcurl</code> can be used).
-</p>
-<p>(Windows only) The default method for accessing URLs <em>via</em>
-<code>download.file()</code> and <code>url()</code> has been changed to be
-<code>"wininet"</code> using Windows API calls.  This changes the way
-proxies need to be set and security settings made: there have been
-some reports of <span class="samp">ftp:</span> sites being inaccessible under the new default
-method (but the previous methods remain available).
-</p>
-</li></ul>
-
-
-
-
-<h4>NEW FEATURES</h4>
-
-
-<ul>
-<li> <p><code>cmdscale()</code> gets new option <code>list.</code> for increased
-flexibility when a list should be returned.
-</p>
-</li>
-<li> <p><code>configure</code> now supports <code>texinfo</code> version 6.0,
-which (unlike the change from 4.x to 5.0) is a minor update.
-(Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16456">PR#16456</a>.)
-</p>
-</li>
-<li><p> (Non-Windows only) <code>download.file()</code> with default
-<code>method = "auto"</code> now chooses <code>"libcurl"</code> if that is
-available and a <span class="samp">https://</span> or <span class="samp">ftps://</span> URL is used.
-</p>
-</li>
-<li><p> (Windows only) <code>setInternet2(TRUE)</code> is now the default.
-The command-line option <code>--internet2</code> and environment
-variable <span class="env">R_WIN_INTERNET2</span> are now ignored.
-</p>
-<p>Thus by default the <code>"internal"</code> method for
-<code>download.file()</code> and <code>url()</code> uses the <code>"wininet"</code>
-method: to revert to the previous default use
-<code>setInternet2(FALSE)</code>.
-</p>
-<p>This means that <span class="samp">https://</span> URLs can be read by default by
-<code>download.file()</code> (they have been readable by <code>file()</code>
-and <code>url()</code> since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0).
-</p>
-<p>There are implications for how proxies need to be set (see
-<code>?download.file</code>).
-</p>
-</li>
-<li> <p><code>chooseCRANmirror()</code> and <code>chooseBioCmirror()</code> now
-offer HTTPS mirrors in preference to HTTP mirrors.  This changes
-the interpretation of their <code>ind</code> arguments: see their help
-pages.
-</p>
-</li>
-<li> <p><code>capture.output()</code> gets optional arguments <code>type</code>
-and <code>split</code> to pass to <code>sink()</code>, and hence can be used to
-capture messages.
-</p>
-</li></ul>
-
-
-
-
-<h4>C-LEVEL FACILITIES</h4>
-
-
-<ul>
-<li><p> Header &lsquo;<span class="file">Rconfig.h</span>&rsquo; now defines <code>HAVE_ALLOCA_H</code> if
-the platform has the &lsquo;<span class="file">alloca.h</span>&rsquo; header (it is needed to
-define <code>alloca</code> on Solaris and AIX, at least: see
-&lsquo;Writing R Extensions&rsquo; for how to use it).
-</p>
-</li></ul>
-
-
-
-
-<h4>INSTALLATION and INCLUDED SOFTWARE</h4>
-
-
-<ul>
-<li><p> The <code>libtool</code> script generated by
-<code>configure</code> has been modified to support FreeBSD &gt;= 10
-(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16410">PR#16410</a>).
-</p>
-</li></ul>
-
-
-
-
-<h4>BUG FIXES</h4>
-
-
-<ul>
-<li><p> The HTML help page links to demo code failed due to a change
-in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.0.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16432">PR#16432</a>)
-</p>
-</li>
-<li><p> If the <code>na.action</code> argument was used in
-<code>model.frame()</code>, the original data could be
-modified. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16436">PR#16436</a>)
-</p>
-</li>
-<li> <p><code>getGraphicsEvent()</code> could cause a crash if a graphics
-window was closed while it was in use. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16438">PR#16438</a>)
-</p>
-</li>
-<li> <p><code>matrix(x, nr, nc, byrow = TRUE)</code> failed if <code>x</code>
-was an object of type <code>"expression"</code>.
-</p>
-</li>
-<li> <p><code>strptime()</code> could overflow the allocated storage on
-the C stack when the timezone had a non-standard format much
-longer than the standard formats. (Part of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16328">PR#16328</a>.)
-</p>
-</li>
-<li> <p><code>options(OutDec = s)</code> now signals a warning (which will
-become an error in the future) when <code>s</code> is not a string with
-exactly one character, as that has been a documented requirement.
-</p>
-</li>
-<li> <p><code>prettyNum()</code> gains a new option <code>input.d.mark</code>
-which together with other changes, e.g., the default for
-<code>decimal.mark</code>, fixes some <code>format()</code>ting variants with
-non-default <code>getOption("OutDec")</code> such as in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16411">PR#16411</a>.
-</p>
-</li>
-<li> <p><code>download.packages()</code> failed for <code>type</code> equal to
-either <code>"both"</code> or <code>"binary"</code>.  (Reported by Dan
-Tenenbaum.)
-</p>
-</li>
-<li><p> The <code>dendrogram</code> method of <code>labels()</code> is much more
-efficient for large dendrograms, now using <code>rapply()</code>.
-(Comment #15 of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15215">PR#15215</a>)
-</p>
-</li>
-<li><p> The <code>"port"</code> algorithm of <code>nls()</code> could give
-spurious errors.  (Reported by Radford Neal.)
-</p>
-</li>
-<li><p> Reference classes that inherited from reference classes in
-another package could invalidate methods of the inherited
-class. Fixing this requires adding the ability for methods to be
-&ldquo;external&rdquo;, with the object supplied explicitly as the first
-argument, named <code>.self</code>. See &quot;Inter-Package Superclasses&quot;
-in the documentation.
-</p>
-</li>
-<li> <p><code>readBin()</code> could fail on the SPARC architecture
-due to alignment issues.  (Reported by Radford Neal.)
-</p>
-</li>
-<li> <p><code>qt(*, df=Inf, ncp=.)</code> now uses the natural
-<code>qnorm()</code> limit instead of returning <code>NaN</code>. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16475">PR#16475</a>)
-</p>
-</li>
-<li><p> Auto-printing of S3 and S4 values now searches for
-<code>print()</code> in the base namespace and <code>show()</code> in the
-<span class="pkg">methods</span> namespace instead of searching the global
-environment.
-</p>
-</li>
-<li> <p><code>polym()</code> gains a <code>coefs = NULL</code> argument and
-returns class <code>"poly"</code> just like <code>poly()</code> which gets a
-new <code>simple=FALSE</code> option.  They now lead to correct
-<code>predict()</code>ions, e.g., on subsets of the original data.
-
-</p>
-</li>
-<li> <p><code>rhyper(nn, &lt;large&gt;)</code> now works correctly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16489">PR#16489</a>)
-</p>
-</li>
-<li> <p><code>ttkimage()</code> did not (and could not) work so was
-removed. Ditto for <code>tkimage.cget()</code> and
-<code>tkimage.configure()</code>. Added two Ttk widgets and missing
-subcommands for Tk's <code>image</code> command:
-<code>ttkscale()</code>,
-<code>ttkspinbox()</code>,
-<code>tkimage.delete()</code>,
-<code>tkimage.height()</code>,
-<code>tkimage.inuse()</code>,
-<code>tkimage.type()</code>,
-<code>tkimage.types()</code>,
-<code>tkimage.width()</code>. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15372">PR#15372</a>, <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16450">PR#16450</a>)
-</p>
-</li>
-<li> <p><code>getClass("foo")</code> now also returns a class definition when it is
-found in the cache more than once.
-</p>
-</li></ul>
-
-
-
-
 <h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.1</h3>
 
 
@@ -730,7 +126,7 @@ correctly propagated from <code>.getRequiredPackages2()</code>.
 </p>
 </li>
 <li><p> Under some circumstances using the internal PCRE when
-building <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> from source would cause external libs such as
+building <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> fron source would cause external libs such as
 <code>-llzma</code> to be omitted from the main link.
 </p>
 </li>
@@ -1043,8 +439,8 @@ schemes it supports.
 </p>
 </li>
 <li> <p><code>curlGetHeaders()</code> retrieves the headers for
-<span class="samp">http://</span>, <span class="samp">https://</span>, <span class="samp">ftp://</span> and
-<span class="samp">ftps://</span> URLs: analysis of these headers can provide
+<code>http://</code>, <code>https://</code>, <code>ftp://</code> and
+<code>ftps://</code> URLs: analysis of these headers can provide
 insights into the &lsquo;existence&rsquo; of a URL (it might for example be
 permanently redirected) and is so used in <code>R CMD
 	  check --as-cran</code>.
@@ -2199,7 +1595,7 @@ an error instead of a warning.
 </p>
 </li>
 <li> <p><code>install.packages(repos = NULL)</code> now accepts
-<span class="samp">http://</span> or <span class="samp">ftp://</span> URLs of package archives as well
+<code>http://</code> or <code>ftp://</code> URLs of package archives as well
 as file paths, and will download as required.  In most cases
 <code>repos = NULL</code> can be deduced from the extension of the URL.
 </p>
@@ -3723,7 +3119,7 @@ the result, to avoid misuse creating invalid objects as in
 <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15303">PR#15303</a>.  A warning is given if a class is discarded.
 </p>
 </li>
-<li><p> Dataset <code>npk</code> has been copied from <a href="https://CRAN.R-project.org/package=MASS"><span class="pkg">MASS</span></a> to
+<li><p> Dataset <code>npk</code> has been copied from <a href="http://CRAN.R-project.org/package=MASS"><span class="pkg">MASS</span></a> to
 allow more tests to be run without recommended packages being
 installed.
 </p>
@@ -4435,7 +3831,7 @@ and not a character vector (as documented) for the internal method.
 </li>
 <li> <p><code>contourLines()</code> now checks more comprehensively for
 conformance of its <code>x</code>, <code>y</code> and <code>z</code> arguments (it
-was used incorrectly in package <a href="https://CRAN.R-project.org/package=R2G2"><span class="pkg">R2G2</span></a>).
+was used incorrectly in package <a href="http://CRAN.R-project.org/package=R2G2"><span class="pkg">R2G2</span></a>).
 </p>
 </li>
 <li><p> Saved graphics display lists are <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> version-specific.
@@ -4459,7 +3855,7 @@ it segfaulted).
 </p>
 </li>
 <li> <p><code>supsmu()</code> could read/write outside its input vectors
-for very short inputs (seen in package <a href="https://CRAN.R-project.org/package=rms"><span class="pkg">rms</span></a> for <code>n = 4</code>).
+for very short inputs (seen in package <a href="http://CRAN.R-project.org/package=rms"><span class="pkg">rms</span></a> for <code>n = 4</code>).
 </p>
 </li>
 <li> <p><code>as.dendrogram()</code>'s <code>hclust</code> method uses less
@@ -4592,7 +3988,7 @@ raised (again).
 </li>
 <li><p> Where methods for <code>length()</code> return a double value
 which is representable as an integer (as often happens for package
-<a href="https://CRAN.R-project.org/package=Matrix"><span class="pkg">Matrix</span></a>), this is converted to an integer.
+<a href="http://CRAN.R-project.org/package=Matrix"><span class="pkg">Matrix</span></a>), this is converted to an integer.
 </p>
 </li>
 <li><p> Matrix indexing of dataframes by two-column numeric indices
@@ -4675,7 +4071,7 @@ interactions (and no longer attempts to plot interaction terms).
 </p>
 </li>
 <li><p> The parser now incorporates code from Romain Francois'
-<a href="https://CRAN.R-project.org/package=parser"><span class="pkg">parser</span></a> package, to support more detailed computation on
+<a href="http://CRAN.R-project.org/package=parser"><span class="pkg">parser</span></a> package, to support more detailed computation on
 the code, such as syntax highlighting, comment-based
 documentation, etc.  Functions <code>getParseData()</code> and
 <code>getParseText()</code> access the data.
@@ -5050,10 +4446,10 @@ been restored: they can be overridden by the command-line options
 <li><p> On Windows, the device name for bitmap devices as reported
 by <code>.Device</code> and <code>.Devices</code> no longer includes the file
 name.   This is for consistency with other platforms and was
-requested by the <a href="https://CRAN.R-project.org/package=lattice"><span class="pkg">lattice</span></a> maintainer.
+requested by the <a href="http://CRAN.R-project.org/package=lattice"><span class="pkg">lattice</span></a> maintainer.
 </p>
 <p><code>win.metafile()</code> still uses the file name: the exact form is
-used by package <a href="https://CRAN.R-project.org/package=tkrplot"><span class="pkg">tkrplot</span></a>.
+used by package <a href="http://CRAN.R-project.org/package=tkrplot"><span class="pkg">tkrplot</span></a>.
 </p>
 </li>
 <li> <p><code>set.seed(NULL)</code> re-initializes <code>.Random.seed</code> as

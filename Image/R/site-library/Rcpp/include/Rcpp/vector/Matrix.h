@@ -58,7 +58,7 @@ public:
 
     template <typename Iterator>
     Matrix( const int& nrows_, const int& ncols, Iterator start ) :
-        VECTOR( start, start + (nrows_*ncols) ),
+        VECTOR( start, start + (static_cast<R_xlen_t>(nrows_)*ncols) ),
         nrows(nrows_)
     {
         VECTOR::attr( "dim" ) = Dimension( nrows, ncols ) ;
@@ -135,6 +135,13 @@ public:
        return static_cast< const Vector<RTYPE>* >( this )->operator[]( offset( i, j ) ) ;
     }
 
+    inline Proxy at( const size_t& i, const size_t& j) {
+        return static_cast< Vector<RTYPE>* >( this )->operator()( i, j ) ;
+    }
+    inline const_Proxy at( const size_t& i, const size_t& j) const {
+        return static_cast< const Vector<RTYPE>* >( this )->operator()( i, j ) ;
+    }
+
     inline Row operator()( int i, internal::NamedPlaceHolder ) {
       return Row( *this, i ) ;
     }
@@ -156,8 +163,7 @@ public:
 
 
 private:
-
-    inline R_xlen_t offset( int i, int j) const { return i + nrows * j ; }
+    inline R_xlen_t offset(const int i, const int j) const { return i + static_cast<R_xlen_t>(nrows) * j ; }
 
     template <typename U>
     void fill_diag__dispatch( traits::false_type, const U& u) {
@@ -201,6 +207,158 @@ inline internal::DimNameProxy rownames(SEXP x) {
 
 inline internal::DimNameProxy colnames(SEXP x) {
     return internal::DimNameProxy(x, 1);
+}
+
+template<template <class> class StoragePolicy >
+inline std::ostream &operator<<(std::ostream & s, const Matrix<REALSXP, StoragePolicy> & rhs) {
+    typedef Matrix<REALSXP, StoragePolicy> MATRIX;
+
+    std::ios::fmtflags flags = s.flags();
+    s.unsetf(std::ios::floatfield);
+    std::streamsize precision = s.precision();
+
+    const int rows = rhs.rows();
+
+    for (int i = 0; i < rows; ++i) {
+        typename MATRIX::Row row = const_cast<MATRIX &>(rhs).row(i);
+
+        typename MATRIX::Row::iterator j = row.begin();
+        typename MATRIX::Row::iterator jend = row.end();
+
+        if (j != jend) {
+            s << std::setw(precision + 1) << (*j);
+            j++;
+
+            for ( ; j != jend; j++) {
+                s << " " << std::setw(precision + 1) << (*j);
+            }
+        }
+
+        s << std::endl;
+    }
+
+    s.flags(flags);
+    return s;
+}
+
+template<template <class> class StoragePolicy >
+inline std::ostream &operator<<(std::ostream & s, const Matrix<INTSXP, StoragePolicy> & rhs) {
+    typedef Matrix<INTSXP, StoragePolicy> MATRIX;
+    typedef Vector<INTSXP, StoragePolicy> VECTOR;
+
+    std::ios::fmtflags flags = s.flags();
+
+    s << std::dec;
+
+    int min = std::numeric_limits<int>::max();
+    int max = std::numeric_limits<int>::min();
+
+    typename VECTOR::iterator j = static_cast<VECTOR &>(const_cast<MATRIX &>(rhs)).begin();
+    typename VECTOR::iterator jend = static_cast<VECTOR &>(const_cast<MATRIX &>(rhs)).end();
+
+    for ( ; j != jend; ++j) {
+        if (*j < min) {
+            min = *j;
+        }
+
+        if (*j > max) {
+            max = *j;
+        }
+    }
+
+    int digitsMax = (max >= 0) ? 0 : 1;
+    int digitsMin = (min >= 0) ? 0 : 1;
+
+    while (min != 0)
+    {
+        ++digitsMin;
+        min /= 10;
+    }
+
+    while (max != 0)
+    {
+        ++digitsMax;
+        max /= 10;
+    }
+
+    int digits = std::max(digitsMin, digitsMax);
+
+    const int rows = rhs.rows();
+
+    for (int i = 0; i < rows; ++i) {
+        typename MATRIX::Row row = const_cast<MATRIX &>(rhs).row(i);
+
+        typename MATRIX::Row::iterator j = row.begin();
+        typename MATRIX::Row::iterator jend = row.end();
+
+        if (j != jend) {
+            s << std::setw(digits) << (*j);
+            ++j;
+
+            for ( ; j != jend; ++j) {
+                s << " " << std::setw(digits) << (*j);
+            }
+        }
+
+        s << std::endl;
+    }
+
+    s.flags(flags);
+    return s;
+}
+
+template<template <class> class StoragePolicy >
+inline std::ostream &operator<<(std::ostream & s, const Matrix<STRSXP, StoragePolicy> & rhs) {
+    typedef Matrix<STRSXP, StoragePolicy> MATRIX;
+
+    const int rows = rhs.rows();
+
+    for (int i = 0; i < rows; ++i) {
+        typename MATRIX::Row row = const_cast<MATRIX &>(rhs).row(i);
+
+        typename MATRIX::Row::iterator j = row.begin();
+        typename MATRIX::Row::iterator jend = row.end();
+
+        if (j != jend) {
+            s << "\"" << (*j) << "\"";
+            j++;
+
+            for ( ; j != jend; j++) {
+                s << " \"" << (*j) << "\"";
+            }
+        }
+
+        s << std::endl;
+    }
+
+    return s;
+}
+
+template<int RTYPE, template <class> class StoragePolicy >
+inline std::ostream &operator<<(std::ostream & s, const Matrix<RTYPE, StoragePolicy> & rhs) {
+    typedef Matrix<RTYPE, StoragePolicy> MATRIX;
+
+    const int rows = rhs.rows();
+
+    for (int i = 0; i < rows; ++i) {
+        typename MATRIX::Row row = const_cast<MATRIX &>(rhs).row(i);
+
+        typename MATRIX::Row::iterator j = row.begin();
+        typename MATRIX::Row::iterator jend = row.end();
+
+        if (j != jend) {
+            s << (*j);
+            j++;
+
+            for ( ; j != jend; j++) {
+                s << (*j);
+            }
+        }
+
+        s << std::endl;
+    }
+
+    return s;
 }
 
 }

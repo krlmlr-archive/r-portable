@@ -4,14 +4,13 @@ CHANGES IN R-devel:
 
   SIGNIFICANT USER-VISIBLE CHANGES:
 
-    * nchar(x, *) gains a new argument keepNA which governs how the
-      result for NAs in x is determined.  The new default keepNA = NA
-      returns NA where x is NA, except for type = "width" which still
-      returns 2, the formatting / printing width of NA.
+    * nchar(x) gains a new argument keepNA which governs how the result
+      for NAs in x is determined.  The new default keepNA = NA returns
+      NA where x is NA, except for type = "width" which still returns
+      2, the formatting / printing width of NA.
 
       nzchar(x) gets the same new argument, but with default keepNA =
-      FALSE.  Hence nzchar(x) still returns a non-NA logical vector,
-      back compatibly.
+      FALSE.  Hence nzchar(x) still returns a non-NA logical vector.
 
     * All builds have support for https: URLs in the default methods
       for download.file(), url() and code making use of them.
@@ -107,7 +106,7 @@ CHANGES IN R-devel:
 
     * smoothScatter() gains a ret.selection argument.
 
-    * qr() no longer has a ... argument to pass addiitonal arguments to
+    * qr() no longer has a ... argument to pass additional arguments to
       methods.
 
     * [ has a method for class "table".
@@ -129,7 +128,17 @@ CHANGES IN R-devel:
       JJ Allaire.
 
       Some testing code is available at <URL:
-      https://github.com/pmur002/R-display-list>
+      https://github.com/pmur002/R-display-list> .
+
+    * tools::undoc(dir = D) and codoc(dir = D) now also work when D is
+      a directory whose normalizePath()ed version no longer ends in the
+      package name, e.g. from a symlink.
+
+    * abbreviate() has more support for multi-byte character sets - it
+      no longer removes bytes within characters and it knows about
+      (English) vowels with accents.  It is still only really suitable
+      for (most) European languages, and still warns on non-ASCII
+      input.
 
   UTILITIES:
 
@@ -145,8 +154,8 @@ CHANGES IN R-devel:
   DEPRECATED AND DEFUNCT:
 
     * The previously included versions of zlib, bzip2, xz and PCRE have
-      been removed, so system versions are required (see the 'R
-      Installation and Administration' manual).
+      been removed, so suitable external (usuallly system) versions are
+      required (see the 'R Installation and Administration' manual).
 
     * The unexported and undocumented Windows-only devices cairo_bmp(),
       cairo_png() and cairo_tiff() have been removed.  (The devices
@@ -175,7 +184,7 @@ CHANGES IN R-devel:
 
     * configure uses pkg-config for PNG, TIFF and JPEG where this is
       available.  This should work better with multiple installs and
-      static libs.
+      with static libs.
 
     * The minimum supported version of OS X is 10.6 ('Snow Leopard'):
       even that has been unsupported by Apple since 2012.
@@ -234,12 +243,9 @@ CHANGES IN R 3.2.2 patched:
     * configure has a new argument --disable-java to disable the checks
       for Java.
 
-    * The configure default for MAIN_LDFLAGS has been changed for
+    * The configure default for MAIN_LDFLAGS has been changed for the
       FreeBSD, NetBSD and Hurd OSes to one more likely to work with
       compilers other than gcc (FreeBSD 10 defaults to clang).
-
-    * The macros SHLIB_OPENMP_CFLAGS etc can be set in e.g.
-      config.site.
 
     * configure now supports the OpenMP flags -fopenmp=libomp (clang)
       and -qopenmp (Intel C).
@@ -264,7 +270,7 @@ CHANGES IN R 3.2.2 patched:
     * Coercing a list without names to a data frame is faster if the
       elements are very long. (PR#16467)
 
-    * (Unix-only) Under some circumstances piping the output from
+    * (Unix-only) Under some rare circumstances piping the output from
       Rscript or R -f could result in attempting to close the input
       file twice, possibly crashing the process.  (PR#16500)
 
@@ -287,7 +293,7 @@ CHANGES IN R 3.2.2 patched:
     * pchisq(*, df=0, ncp > 0, log.p=TRUE) no longer underflows (for
       ncp > ~60).
 
-    * libcurl connections signal errors rather than retrieving http
+    * libcurl connections signal errors rather than retrieving HTTP
       error pages.
 
     * nchar(x, "w") returned -1 for characters it did not know about

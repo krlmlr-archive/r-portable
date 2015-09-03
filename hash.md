@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (268.1 MB, MD5 hash: `4a6e9fab90b0306f206c4a293402de35`, uncompressed 743.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (268.7 MB, MD5 hash: `dad7842ed64281e9a9c9d5d9b9f82e87`, uncompressed 761.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (271 MB, MD5 hash: `2a62269da0c46e1b04d4d89611d7b1fd`, uncompressed 811.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (265.4 MB, MD5 hash: `578c11940074f0348c4be1c48f0da336`, uncompressed 737.1 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (266 MB, MD5 hash: `383395ccd92244cdf811b4743990cbf2`, uncompressed 755.6 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (268.3 MB, MD5 hash: `7518d00ad652094a5571ee26693adcc9`, uncompressed 805.6 MB)
 
 
 
@@ -12,7 +12,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2015-09-10 r69352)
+R Under development (unstable) (2015-09-11 r69363)
 
 ### Package versions
 
@@ -49,7 +49,6 @@ R Under development (unstable) (2015-09-10 r69352)
 [`survival`](http://cran.r-project.org/package=survival) (2.38-3) 
 ####  other 
 [`BH`](http://cran.r-project.org/package=BH) (1.58.0-1),
-[`bitops`](http://cran.r-project.org/package=bitops) (1.0-6),
 [`brew`](http://cran.r-project.org/package=brew) (1.0-6),
 [`crayon`](http://cran.r-project.org/package=crayon) (1.3.1),
 [`curl`](http://cran.r-project.org/package=curl) (0.9.3),
@@ -68,8 +67,7 @@ R Under development (unstable) (2015-09-10 r69352)
 [`mime`](http://cran.r-project.org/package=mime) (0.4),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.3),
 [`R6`](http://cran.r-project.org/package=R6) (2.1.1),
-[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.0),
-[`RCurl`](http://cran.r-project.org/package=RCurl) (1.95-4.7),
+[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.1),
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (4.1.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),
 [`rversions`](http://cran.r-project.org/package=rversions) (1.0.2),

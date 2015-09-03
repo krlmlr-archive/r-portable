@@ -15,7 +15,7 @@
 
 
 <ul>
-<li> <p><code>nchar(x, *)</code> gains a new argument <code>keepNA</code> which
+<li> <p><code>nchar(x)</code> gains a new argument <code>keepNA</code> which
 governs how the result for <code>NA</code>s in <code>x</code> is determined.
 The new default <code>keepNA = NA</code> returns <code>NA</code> where
 <code>x</code> is <code>NA</code>, except for <code>type = "width"</code> which still
@@ -23,7 +23,7 @@ returns <code>2</code>, the formatting / printing width of <code>NA</code>.
 </p>
 <p><code>nzchar(x)</code> gets the same new argument, but with default
 <code>keepNA = FALSE</code>.  Hence <code>nzchar(x)</code> still returns a
-non-<code>NA</code> logical vector, back compatibly.
+non-<code>NA</code> logical vector.
 </p>
 </li>
 <li><p> All builds have support for <span class="samp">https:</span> URLs in the
@@ -163,7 +163,7 @@ gain a <code>drop</code> argument.
 </p>
 </li>
 <li> <p><code>qr()</code> no longer has a <code>...</code> argument to pass
-addiitonal arguments to methods.
+additional arguments to methods.
 </p>
 </li>
 <li> <p><code>[</code> has a method for class <code>"table"</code>.
@@ -171,10 +171,10 @@ addiitonal arguments to methods.
 </li>
 <li><p> It is now possible (again) to <code>replayPlot()</code> a
 display list snapshot that was created by <code>recordPlot()</code>
-in a different R session.
+in a different <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> session.
 </p>
 <p>It is still not a good idea to use snapshots as a persistent
-storage format for R plots, but it is now not completely silly to
+storage format for <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> plots, but it is now not completely silly to
 use a snapshot as a format for transferring an R plot between two
 R sessions.
 </p>
@@ -187,7 +187,19 @@ reinstalled.
 and JJ Allaire.
 </p>
 <p>Some testing code is available at
-<a href="https://github.com/pmur002/R-display-list">https://github.com/pmur002/R-display-list</a>
+<a href="https://github.com/pmur002/R-display-list">https://github.com/pmur002/R-display-list</a> .
+</p>
+</li>
+<li> <p><code>tools::undoc(dir = D)</code> and <code>codoc(dir = D)</code> now
+also work when <code>D</code> is a directory whose <code>normalizePath()</code>ed
+version no longer ends in the package name, e.g. from a symlink.
+</p>
+</li>
+<li> <p><code>abbreviate()</code> has more support for multi-byte
+character sets &ndash; it no longer removes bytes within characters and
+it knows about (English) vowels with accents.  It is still only
+really suitable for (most) European languages, and still warns on
+non-ASCII input.
 </p>
 </li></ul>
 
@@ -218,10 +230,10 @@ globals.
 
 
 <ul>
-<li><p> The previously included versions of <code>zlib</code>, <code>bzip2</code>,
-<code>xz</code> and PCRE have been removed, so system versions are
-required (see the &lsquo;R Installation and Administration&rsquo;
-manual).
+<li><p> The previously included versions of <code>zlib</code>,
+<code>bzip2</code>, <code>xz</code> and PCRE have been removed, so suitable
+external (usuallly system) versions are required (see the
+&lsquo;R Installation and Administration&rsquo; manual).
 </p>
 </li>
 <li><p> The unexported and undocumented Windows-only devices
@@ -266,7 +278,7 @@ Windows).
 </li>
 <li> <p><code>configure</code> uses <code>pkg-config</code> for PNG, TIFF
 and JPEG where this is available.  This should work better with
-multiple installs and static libs.
+multiple installs and with static libs.
 </p>
 </li>
 <li><p> The minimum supported version of OS X is 10.6 (&lsquo;Snow
@@ -305,8 +317,8 @@ deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</s
 
 <ul>
 <li><p> C-level <code>asChar(x)</code> is fixed for when <code>x</code> is not a
-vector, and it returns &ldquo;TRUE&rdquo;/&ldquo;FALSE&rdquo; instead of
-&ldquo;T&rdquo;/&ldquo;F&rdquo; for logical vectors.
+vector, and it returns <code>"TRUE"</code>/<code>"FALSE"</code> instead of
+<code>"T"</code>/<code>"F"</code> for logical vectors.
 </p>
 </li>
 <li> <p><code>.colSums()</code> etc (with an initial dot) first argument
@@ -372,13 +384,9 @@ only known instance is under OpenBSD).  (Wish of <a href="https://bugs.R-project
 </p>
 </li>
 <li><p> The <code>configure</code> default for <code>MAIN_LDFLAGS</code> has
-been changed for FreeBSD, NetBSD and Hurd OSes to one more likely
-to work with compilers other than <code>gcc</code> (FreeBSD 10
+been changed for the FreeBSD, NetBSD and Hurd OSes to one more
+likely to work with compilers other than <code>gcc</code> (FreeBSD 10
 defaults to <code>clang</code>).
-</p>
-</li>
-<li><p> The macros <span class="samp">SHLIB_OPENMP_CFLAGS</span> etc can be set in
-e.g.  &lsquo;<span class="file">config.site</span>&rsquo;.
 </p>
 </li>
 <li> <p><code>configure</code> now supports the OpenMP flags
@@ -420,10 +428,10 @@ connection opened with an explicit <code>open</code> argument.
 the elements are very long. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16467">PR#16467</a>)
 </p>
 </li>
-<li><p> (Unix-only) Under some circumstances piping the output from
-<code>Rscript</code> or <code>R -f</code> could result in attempting to
-close the input file twice, possibly crashing the process.
-(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16500">PR#16500</a>)
+<li><p> (Unix-only) Under some rare circumstances piping the output
+from <code>Rscript</code> or <code>R -f</code> could result in
+attempting to close the input file twice, possibly crashing the
+process.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16500">PR#16500</a>)
 </p>
 </li>
 <li><p> (Windows) <code>Sys.info()</code> was out of step with
@@ -455,7 +463,7 @@ underflows (for ncp &gt; ~60).
 </p>
 </li>
 <li> <p><code>libcurl</code> connections signal errors rather than
-retrieving http error pages.
+retrieving HTTP error pages.
 </p>
 </li>
 <li> <p><code>nchar(x, "w")</code> returned -1 for characters it did not

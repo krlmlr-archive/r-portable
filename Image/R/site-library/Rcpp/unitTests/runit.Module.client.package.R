@@ -1,7 +1,7 @@
 #!/usr/bin/r -t
 #       hey emacs, please make this use  -*- tab-width: 4 -*-
 #
-# Copyright (C) 2010 - 2013	 John Chambers, Dirk Eddelbuettel and Romain Francois
+# Copyright (C) 2010 - 2015	 John Chambers, Dirk Eddelbuettel and Romain Francois
 #
 # This file is part of Rcpp.
 #

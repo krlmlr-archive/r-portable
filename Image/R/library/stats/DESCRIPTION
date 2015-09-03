@@ -8,4 +8,4 @@ Description: R statistical functions.
 License: Part of R 3.3.0
 Imports: utils, grDevices, graphics
 Suggests: MASS, Matrix, SuppDists, methods, stats4
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-11 02:18:36 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-12 02:17:27 UTC; windows

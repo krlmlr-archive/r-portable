@@ -417,9 +417,33 @@ namespace Rcpp {
         bool operator!=( const Rcpp::String& other) const {
             return get_sexp() != other.get_sexp() ;
         }
+        
+        bool operator==( const StringProxy& other) const {
+            return get_sexp() == other.get();
+        }
+        
+        bool operator!=( const StringProxy& other) const {
+            return get_sexp() != other.get();
+        }
+        
+        bool operator==( const const_StringProxy& other) const {
+            return get_sexp() == other.get();
+        }
+        
+        bool operator!=( const const_StringProxy& other) const {
+            return get_sexp() != other.get();
+        }
 
         bool operator>( const Rcpp::String& other ) const {
             return strcmp( get_cstring(), other.get_cstring() ) > 0;
+        }
+
+        bool operator==( SEXP other ) const {
+            return get_sexp() == other;
+        }
+
+        bool operator!=( SEXP other ) const {
+            return get_sexp() != other;
         }
 
     private:
@@ -501,7 +525,22 @@ namespace Rcpp {
         SET_STRING_ELT( res, 0, data ) ;
         return res ;
     }
-
+    
+    inline bool operator==(const String::StringProxy& lhs, const String& rhs) {
+        return rhs == lhs;
+    }
+    
+    inline bool operator!=(const String::StringProxy& lhs, const String& rhs) {
+        return rhs != lhs;
+    }
+    
+    inline bool operator==(const String::const_StringProxy& lhs, const String& rhs) {
+        return rhs == lhs;
+    }
+    
+    inline bool operator!=(const String::const_StringProxy& lhs, const String& rhs) {
+        return rhs != lhs;
+    }
 
 } // Rcpp
 

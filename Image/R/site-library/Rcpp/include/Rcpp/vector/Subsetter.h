@@ -52,9 +52,9 @@ public:
     template <int OtherRTYPE, template <class> class OtherStoragePolicy>
     SubsetProxy& operator=(const Vector<OtherRTYPE, OtherStoragePolicy>& other) {
         int n = other.size();
-        if (indices_n != n) stop("index error");
+
         if (n == 1) {
-            for (int i=0; i < n; ++i) {
+            for (int i=0; i < indices_n; ++i) {
                 lhs[ indices[i] ] = other[0];
             }
         } else if (n == indices_n) {
@@ -65,7 +65,7 @@ public:
             stop("index error");
         }
         return *this;
-    }
+    }  
 
     // Enable e.g. x[y] = 1;
     // TODO: std::enable_if<primitive> with C++11
@@ -93,6 +93,30 @@ public:
     SubsetProxy& operator=(bool other) {
         for (int i=0; i < indices_n; ++i) {
             lhs[ indices[i] ] = other;
+        }
+        return *this;
+    }
+
+    template <int RTYPE_OTHER, template <class> class StoragePolicyOther,int RHS_RTYPE_OTHER, bool RHS_NA_OTHER, typename RHS_T_OTHER>
+    SubsetProxy& operator=(const SubsetProxy<RTYPE_OTHER, StoragePolicyOther, RHS_RTYPE_OTHER, RHS_NA_OTHER, RHS_T_OTHER>& other) {
+
+        Vector<RTYPE_OTHER, StoragePolicyOther> other_vec = other;
+        *this = other_vec;
+        return *this;
+    }
+
+    SubsetProxy& operator=(const SubsetProxy& other) {
+        if (other.indices_n == 1) {
+            for (int i=0; i < indices_n; ++i) {
+                lhs[ indices[i] ] = other.lhs[other.indices[0]];
+            }
+        }
+        else if (indices_n == other.indices_n) {
+            for (int i=0; i < indices_n; ++i)
+                lhs[ indices[i] ] = other.lhs[other.indices[i]];
+            }
+        else {
+            stop("index error");
         }
         return *this;
     }

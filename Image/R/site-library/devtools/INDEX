@@ -8,6 +8,8 @@ build_win               Build windows binary package.
 check                   Build and check a package, cleaning up
                         automatically on success.
 check_doc               Check documentation, as 'R CMD check' does.
+check_failures          Parses R CMD check log file for ERRORs,
+                        WARNINGs and NOTEs
 clean_dll               Remove compiled objects from /src/ directory
 clean_source            Sources an R file in a clean environment.
 clean_vignettes         Clean built vignettes.
@@ -24,7 +26,7 @@ dev_mode                Activate and deactivate development mode.
 devtools                Package development tools for R.
 document                Use roxygen to document a package.
 dr_devtools             Diagnose potential devtools issues
-dr_github               Diagnose potential github issues
+dr_github               Diagnose potential GitHub issues
 eval_clean              Evaluate code in a clean R session.
 github_pull             GitHub references
 has_devel               Check if you have a development environment
@@ -37,9 +39,7 @@ install_bitbucket       Install a package directly from bitbucket
 install_deps            Install package dependencies if needed.
 install_git             Install a package from a git repository
 install_github          Attempts to install a package directly from
-                        github.
-install_gitorious       Attempts to install a package directly from
-                        gitorious.
+                        GitHub.
 install_local           Install a package from a local file
 install_svn             Install a package from a SVN repository
 install_url             Install a package from a url
@@ -66,6 +66,7 @@ source_url              Run a script through some protocols such as
 system.file             Replacement version of system.file
 system_check            Run a system command and check if it succeeds.
 test                    Execute all 'test_that' tests in a package.
+uninstall               Uninstall a local development package.
 unload                  Unload a package
 update_packages         Update packages that are missing or
                         out-of-date.

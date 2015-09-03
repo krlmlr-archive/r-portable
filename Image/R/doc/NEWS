@@ -304,6 +304,9 @@ CHANGES IN R 3.2.2 patched:
     * Help for which.min is now more precise about behavior with
       logical arguments.  (PR#16532)
 
+    * The print width of character strings marked as "latin1" or
+      "bytes" was in some cases computed incorrectly.
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

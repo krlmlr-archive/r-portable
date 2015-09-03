@@ -495,6 +495,11 @@ if <code>minlength</code> was zero, unlike when it was positive.
 <li><p> (Windows only) <code>dir.create()</code> did not always warn
 when it failed to create a directory.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16537">PR#16537</a>)
 </p>
+</li>
+<li><p> When operating in a multibyte locale, <code>grep()</code>
+and related functions did not handle UTF-8 strings properly.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16264">PR#16264</a>)
+</p>
 </li></ul>
 
 

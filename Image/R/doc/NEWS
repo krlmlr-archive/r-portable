@@ -318,6 +318,9 @@ CHANGES IN R 3.2.2 patched:
     * (Windows only) dir.create() did not always warn when it failed to
       create a directory.  (PR#16537)
 
+    * When operating in a multibyte locale, grep() and related
+      functions did not handle UTF-8 strings properly.  (PR#16264)
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

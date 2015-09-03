@@ -112,6 +112,21 @@ CHANGES IN R-devel:
 
     * [ has a method for class "table".
 
+    * It is now possible (again) to replayPlot() a display list
+      snapshot that was created by recordPlot() in a different R
+      session.
+
+      It is still not a good idea to use snapshots as a persistent
+      storage format for R plots, but it is now not completely silly to
+      use a snapshot as a format for transferring an R plot between two
+      R sessions.
+
+      Code for restoring snapshots was contributed by from Jeroen Ooms
+      and JJ Allaire.
+
+      Some testing code is available at <URL:
+      https://github.com/pmur002/R-display-list>
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -158,6 +173,15 @@ CHANGES IN R-devel:
       available.  This should work better with multiple installs and
       static libs.
 
+    * The minimum supported version of OS X is 10.6 ('Snow Leopard'):
+      even that has been unsupported by Apple since 2012.
+
+    * configure now supports the OpenMP flags -fopenmp=libomp (clang)
+      and -qopenmp (Intel C).
+
+    * Various OpenMP macros can be set to override the default
+      behaviour of configure: see file config.site.
+
   C-LEVEL FACILITIES:
 
     * The API call logspace_sum introduced in R 3.2.0 is now remapped
@@ -165,6 +189,9 @@ CHANGES IN R-devel:
       gained a const qualifier.
 
       Code using it will need to be reinstalled. (PR#16470)
+
+    * Use of SUPPORT_OPENMP from header Rconfig.h is deprecated in
+      favour of the standard OpenMP define _OPENMP.
 
   BUG FIXES:
 
@@ -198,10 +225,20 @@ CHANGES IN R 3.2.2 patched:
 
     * The included configuration code for libintl has been updated to
       that from gettext version 0.19.5.1 - this should only affect how
-      an external library is detected.  (Wish of PR#16464.)
+      an external library is detected (and the only known instance is
+      under OpenBSD).  (Wish of PR#16464.)
 
     * configure has a new argument --disable-java to disable the checks
       for Java.
+
+    * The configure default for MAIN_LDFLAGS has been changed for
+      FreeBSD, NetBSD and Hurd OSes to one more likely to work with
+      compilers other than gcc (FreeBSD 10 defaults to clang).
+
+    * The macros SHLIB_OPENMP_CFLAGS etc can be set in e.g.
+      config.site.  This is needed for clang 3.7.0 which needs a
+      compiler option for OpenMP not known to the standard autoconf
+      macro used.
 
   BUG FIXES:
 
@@ -235,6 +272,16 @@ CHANGES IN R 3.2.2 patched:
 
     * Removed some spurious warnings from configure about the
       preprocessor not finding header files.  (PR#15989)
+
+    * rchisq(*, df=0, ncp=0) now returns 0 instead of NaN, and
+      dchisq(*, df=0, ncp=*) also no longer returns NaN in limit cases
+      (where the limit is unique).  (PR#16521)
+
+    * pchisq(*, df=0, ncp > 0, log.p=TRUE) no longer underflows (for
+      ncp > ~60).
+
+    * libcurl connections signal errors rather than retrieving http
+      error pages.
 
 CHANGES IN R 3.2.2:
 

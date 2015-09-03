@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-08-28).
+<!-- This manual is for R, version 3.3.0 Under development (2015-09-07).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-08-28).
+<p>This manual is for R, version 3.3.0 Under development (2015-09-07).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -2365,10 +2365,8 @@ SHLIB_OPENMP_FFLAGS
 Include the appropriate macro in <code>PKG_CFLAGS</code>, <code>PKG_CPPFLAGS</code>
 and so on, and also in <code>PKG_LIBS</code>.  C/C++ code that needs to be
 conditioned on the use of OpenMP can be used inside <code>#ifdef
-SUPPORT_OPENMP</code>, a macro defined in the header <samp>Rconfig.h</samp>
-(see <a href="#Platform-and-version-information">Platform and version information</a>) or <code>_OPENMP</code>: note that
-some toolchains used for R (including most of those using
-<code>clang</code><a name="DOCF27" href="#FOOT27"><sup>27</sup></a>) have no OpenMP support at all, not even
+_OPENMP</code>: note that some toolchains used for R (including most of
+those using <code>clang</code><a name="DOCF27" href="#FOOT27"><sup>27</sup></a>) have no OpenMP support at all, not even
 <samp>omp.h</samp>.
 </p>
 <p>For example, a package with C code written for OpenMP should have in
@@ -2383,6 +2381,20 @@ PKG_LIBS = $(SHLIB_OPENMP_CFLAGS)
 compiler and not necessarily to the C++11 compiler: users of the latter
 should do their own <code>configure</code> checks.
 </p>
+<p>Some care is needed when compilers are from different families which may
+use different OpenMP runtimes (e.g. <code>clang</code> and GCC, including
+<code>gfortran</code> do).  For a package with Fortran 77 code using OpenMP
+the approproate lines are
+</p>
+<div class="example">
+<pre class="example">PKG_FFLAGS = $(SHLIB_OPENMP_FFLAGS)
+PKG_LIBS = $(SHLIB_OPENMP_CFLAGS)
+</pre></div>
+
+<p>as the C compiler is used to link the package code (and there is no
+guarantee that this will work everywhere).
+</p>
+
 <p>There is nothing to say what version of OpenMP is supported: version 3.0
 (May 2008) is supported by recent versions of the Linux, Windows and
 Solaris platforms, but portable packages cannot assume that end users
@@ -8417,14 +8429,15 @@ like
 <pre class="example">-fsanitize=undefined -fno-sanitize=float-divide-by-zero
 </pre></div>
 
-<p>(<code>return</code> and <code>vptr</code> apply to C++).  In addition,
+<p>(<code>function</code>, <code>return</code> and <code>vptr</code> apply only to C++).  In
+addition,
 </p><div class="example">
 <pre class="example">-fsanitize=unsigned-integer-overflow
 </pre></div>
 <p>is available as a separate option in some versions of <code>clang</code>
 (not enabled by <samp>-fsanitize=undefined</samp>).
 </p>
-<p><code>clang</code> 3.5 and later need
+<p><code>clang</code> 3.5 and later may need
 </p>
 <div class="example">
 <pre class="example">-fsanitize=undefined -fno-sanitize=float-divide-by-zero,vptr
@@ -8433,11 +8446,12 @@ like
 <p>for C++ code (in <code>CXX</code> and <code>CXX1X</code>) as the run-time library
 for <code>vptr</code> needs to be linked into the main R executable (and
 that would need to be linked by <code>clang++</code>, not <code>clang</code>: you
-could try building R with
+could try building R with something like
 </p><div class="example">
 <pre class="example">MAIN_LD=&quot;clang++ -fsanitize=undefined&quot;
+R_OPENMP_CFLAGS=&quot;-fopenmp=libomp&quot;
 </pre></div>
-<p>or add <code>-lclang_rt.asan_cxx-x86_64</code><a name="DOCF95" href="#FOOT95"><sup>95</sup></a> to <code>LD_FLAGS</code> or similar).
+<p>or add <code>-lclang_rt.asan_cxx-x86_64</code><a name="DOCF95" href="#FOOT95"><sup>95</sup></a> or similar to <code>LD_FLAGS</code>).
 </p>
 <p>See <a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a> (or
 the manual for your version of GCC, installed or <em>via</em>
@@ -15579,10 +15593,8 @@ resolves such dependencies to a static FORTRAN library when
 <a href="https://en.wikipedia.org/wiki/OpenMP">https://en.wikipedia.org/wiki/OpenMP</a>,
 <a href="https://computing.llnl.gov/tutorials/openMP/">https://computing.llnl.gov/tutorials/openMP/</a></p>
 <h3><a name="FOOT27" href="#DOCF27">(27)</a></h3>
-<p>Some builds of <code>clang</code> 3.7 have support
-for OpenMP 3.1. However, this needs the compiler/linker flag
-<samp>-fopenmp=libomp</samp> which is not currently added by
-<code>configure</code>.</p>
+<p>Some builds of <code>clang</code> 3.7
+have support for OpenMP 3.1</p>
 <h3><a name="FOOT28" href="#DOCF28">(28)</a></h3>
 <p>Windows, not MinGW-w64 default.</p>
 <h3><a name="FOOT29" href="#DOCF29">(29)</a></h3>

@@ -1,5 +1,6 @@
 flatten	flatten
 fromJSON	fromJSON
+jsonlite	fromJSON
 minify	prettify
 prettify	prettify
 prettify, minify	prettify

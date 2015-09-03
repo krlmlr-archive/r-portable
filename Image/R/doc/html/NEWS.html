@@ -168,6 +168,22 @@ addiitonal arguments to methods.
 </li>
 <li> <p><code>[</code> has a method for class <code>"table"</code>.
 </p>
+</li>
+<li><p> It is now possible (again) to <code>replayPlot()</code> a
+display list snapshot that was created by <code>recordPlot()</code>
+in a different R session.
+</p>
+<p>It is still not a good idea to use snapshots as a persistent
+storage format for R plots, but it is now not completely silly to
+use a snapshot as a format for transferring an R plot between two
+R sessions.
+</p>
+<p>Code for restoring snapshots was contributed by from Jeroen Ooms
+and JJ Allaire.
+</p>
+<p>Some testing code is available at
+<a href="https://github.com/pmur002/R-display-list">https://github.com/pmur002/R-display-list</a>
+</p>
 </li></ul>
 
 
@@ -247,6 +263,18 @@ Windows).
 and JPEG where this is available.  This should work better with
 multiple installs and static libs.
 </p>
+</li>
+<li><p> The minimum supported version of OS X is 10.6 (&lsquo;Snow
+Leopard&rsquo;): even that has been unsupported by Apple since 2012.
+</p>
+</li>
+<li> <p><code>configure</code> now supports the OpenMP flags
+<span class="option">-fopenmp=libomp</span> (clang) and <span class="option">-qopenmp</span> (Intel C).
+</p>
+</li>
+<li><p> Various OpenMP macros can be set to override the default
+behaviour of <code>configure</code>: see file &lsquo;<span class="file">config.site</span>&rsquo;.
+</p>
 </li></ul>
 
 
@@ -262,6 +290,10 @@ first argument has gained a <code>const</code> qualifier.
 </p>
 <p>Code using it will need to be reinstalled. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16470">PR#16470</a>)
 
+</p>
+</li>
+<li><p> Use of <span class="samp">SUPPORT_OPENMP</span> from header &lsquo;<span class="file">Rconfig.h</span>&rsquo; is
+deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</span>.
 </p>
 </li></ul>
 
@@ -327,12 +359,24 @@ rather than only using active mode (reported by Dan Tenenbaum).
 <ul>
 <li><p> The included configuration code for <code>libintl</code> has been
 updated to that from <code>gettext</code> version 0.19.5.1 &mdash; this
-should only affect how an external library is detected. 
-(Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16464">PR#16464</a>.)
+should only affect how an external library is detected (and the
+only known instance is under OpenBSD).  (Wish of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16464">PR#16464</a>.)
 </p>
 </li>
 <li> <p><code>configure</code> has a new argument
 <span class="option">--disable-java</span> to disable the checks for Java.
+</p>
+</li>
+<li><p> The <code>configure</code> default for <code>MAIN_LDFLAGS</code> has
+been changed for FreeBSD, NetBSD and Hurd OSes to one more likely
+to work with compilers other than <code>gcc</code> (FreeBSD 10
+defaults to <code>clang</code>).
+</p>
+</li>
+<li><p> The macros <span class="samp">SHLIB_OPENMP_CFLAGS</span> etc can be set in
+e.g.  &lsquo;<span class="file">config.site</span>&rsquo;.  This is needed for
+<code>clang</code> 3.7.0 which needs a compiler option for OpenMP not
+known to the standard <code>autoconf</code> macro used.
 </p>
 </li></ul>
 
@@ -388,6 +432,20 @@ namespace is not unloaded.
 </li>
 <li><p> Removed some spurious warnings from <code>configure</code> about the
 preprocessor not finding header files.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15989">PR#15989</a>)
+</p>
+</li>
+<li> <p><code>rchisq(*, df=0, ncp=0)</code> now returns <code>0</code> instead
+of <code>NaN</code>, and <code>dchisq(*, df=0, ncp=*)</code> also no longer
+returns <code>NaN</code> in limit cases (where the limit is unique).
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16521">PR#16521</a>)
+</p>
+</li>
+<li> <p><code>pchisq(*, df=0, ncp &gt; 0, log.p=TRUE)</code> no longer
+underflows (for ncp &gt; ~60).
+</p>
+</li>
+<li> <p><code>libcurl</code> connections signal errors rather than
+retrieving http error pages.
 </p>
 </li></ul>
 

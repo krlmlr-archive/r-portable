@@ -333,6 +333,10 @@ are correct.
 added to allow <code>vcov()</code> to work with multivariate
 results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
 </p>
+</li>
+<li> <p><code>libcurl</code> connections signal errors rather than
+retrieving HTTP error pages.
+</p>
 </li></ul>
 
 
@@ -463,10 +467,6 @@ returns <code>NaN</code> in limit cases (where the limit is unique).
 </li>
 <li> <p><code>pchisq(*, df=0, ncp &gt; 0, log.p=TRUE)</code> no longer
 underflows (for ncp &gt; ~60).
-</p>
-</li>
-<li> <p><code>libcurl</code> connections signal errors rather than
-retrieving HTTP error pages.
 </p>
 </li>
 <li> <p><code>nchar(x, "w")</code> returned -1 for characters it did not

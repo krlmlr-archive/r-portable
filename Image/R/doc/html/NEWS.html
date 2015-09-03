@@ -204,6 +204,10 @@ non-ASCII input.
 <p><code>abbreviate(use.classes = FALSE)</code> is now implemented, and
 that is more suitable for non-European languages.
 </p>
+<p><code>match(x, table)</code> is faster, sometimes by an order of magnitude,
+when <code>x</code> is of length one, 
+thanks to Haverty's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>.
+</p>
 </li></ul>
 
 

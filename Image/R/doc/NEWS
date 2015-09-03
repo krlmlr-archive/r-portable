@@ -142,6 +142,9 @@ CHANGES IN R-devel:
       abbreviate(use.classes = FALSE) is now implemented, and that is
       more suitable for non-European languages.
 
+      match(x, table) is faster, sometimes by an order of magnitude,
+      when x is of length one, thanks to Haverty's PR#16491.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

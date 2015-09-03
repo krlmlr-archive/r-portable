@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (268 MB, MD5 hash: `ddb66a78199eda12c9cd374eedad4f40`, uncompressed 743.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (268.6 MB, MD5 hash: `f2495546fb4bf16feff782cf046f53a4`, uncompressed 761.8 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (271 MB, MD5 hash: `188c37b3a91f7d1c1fc5867b1210d187`, uncompressed 811.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (268 MB, MD5 hash: `db9aabde3652d81427b81a484fdcdee2`, uncompressed 743.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (268.6 MB, MD5 hash: `cd3ccd8c8734267318b9868860854478`, uncompressed 761.7 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (270.9 MB, MD5 hash: `19e6a225c9f510643732ddf720b2529f`, uncompressed 811.6 MB)
 
 
 
@@ -65,7 +65,7 @@ R Under development (unstable) (2015-08-28 r69202)
 [`magrittr`](http://cran.r-project.org/package=magrittr) (1.5),
 [`markdown`](http://cran.r-project.org/package=markdown) (0.7.7),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
-[`mime`](http://cran.r-project.org/package=mime) (0.3),
+[`mime`](http://cran.r-project.org/package=mime) (0.4),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.3),
 [`R6`](http://cran.r-project.org/package=R6) (2.1.1),
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.0),

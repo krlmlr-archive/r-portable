@@ -178,12 +178,12 @@ storage format for R plots, but it is now not completely silly to
 use a snapshot as a format for transferring an R plot between two
 R sessions.
 </p>
-<p>The underlying changes mean that
-packages providing graphics devices (e.g., <code>Cairo</code>,
-<code>RSvgDevice</code>, <code>cairoDevice</code>) will need to be
+<p>The underlying changes mean that packages providing graphics
+devices (e.g., <a href="https://CRAN.R-project.org/package=Cairo"><span class="pkg">Cairo</span></a>, <a href="https://CRAN.R-project.org/package=RSvgDevice"><span class="pkg">RSvgDevice</span></a>,
+<a href="https://CRAN.R-project.org/package=cairoDevice"><span class="pkg">cairoDevice</span></a>, <a href="https://CRAN.R-project.org/package=tikzDevice"><span class="pkg">tikzDevice</span></a>) will need to be
 reinstalled.
 </p>
-<p>Code for restoring snapshots was contributed by from Jeroen Ooms
+<p>Code for restoring snapshots was contributed by Jeroen Ooms
 and JJ Allaire.
 </p>
 <p>Some testing code is available at
@@ -348,6 +348,10 @@ Windows 10.
 rather than only using active mode (reported by Dan Tenenbaum).
 
 </p>
+</li>
+<li> <p><code>which.min(x)</code> and <code>which.max(x)</code> may be much
+faster for logical and integer <code>x</code> and now also work for long vectors.
+</p>
 </li></ul>
 
 
@@ -454,10 +458,14 @@ underflows (for ncp &gt; ~60).
 retrieving http error pages.
 </p>
 </li>
-<li> <p><code>nchar(x, "w")</code> assumed -1 for characters it did not
+<li> <p><code>nchar(x, "w")</code> returned -1 for characters it did not
 know about (e.g. zero-width spaces): it now assumes 1.
-It now  knows about zero-width characters and a few extra
+It now knows about most zero-width characters and a few more
 double-width characters.
+</p>
+</li>
+<li><p> Help for <code>which.min</code> is now more precise about behavior
+with logical arguments.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16532">PR#16532</a>)
 </p>
 </li></ul>
 

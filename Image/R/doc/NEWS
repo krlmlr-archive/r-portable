@@ -122,11 +122,11 @@ CHANGES IN R-devel:
       R sessions.
 
       The underlying changes mean that packages providing graphics
-      devices (e.g., Cairo, RSvgDevice, cairoDevice) will need to be
-      reinstalled.
+      devices (e.g., Cairo, RSvgDevice, cairoDevice, tikzDevice) will
+      need to be reinstalled.
 
-      Code for restoring snapshots was contributed by from Jeroen Ooms
-      and JJ Allaire.
+      Code for restoring snapshots was contributed by Jeroen Ooms and
+      JJ Allaire.
 
       Some testing code is available at <URL:
       https://github.com/pmur002/R-display-list>
@@ -221,6 +221,9 @@ CHANGES IN R 3.2.2 patched:
     * Windows "wininet" FTP first tries EPSV / PASV mode rather than
       only using active mode (reported by Dan Tenenbaum).
 
+    * which.min(x) and which.max(x) may be much faster for logical and
+      integer x and now also work for long vectors.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The included configuration code for libintl has been updated to
@@ -287,9 +290,13 @@ CHANGES IN R 3.2.2 patched:
     * libcurl connections signal errors rather than retrieving http
       error pages.
 
-    * nchar(x, "w") assumed -1 for characters it did not know about
+    * nchar(x, "w") returned -1 for characters it did not know about
       (e.g. zero-width spaces): it now assumes 1.  It now knows about
-      zero-width characters and a few extra double-width characters.
+      most zero-width characters and a few more double-width
+      characters.
+
+    * Help for which.min is now more precise about behavior with
+      logical arguments.  (PR#16532)
 
 CHANGES IN R 3.2.2:
 

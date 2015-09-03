@@ -1,8 +1,8 @@
 Package: highr
 Type: Package
 Title: Syntax Highlighting for R Source Code
-Version: 0.5
-Date: 2015-04-21
+Version: 0.5.1
+Date: 2015-09-18
 Authors@R: c(person("Christopher", "Gandrud", role = "ctb"),
     person("Qiang", "Li", role = "ctb"),
     person("Yixuan", "Qiu", role = "aut"),
@@ -18,11 +18,11 @@ URL: https://github.com/yihui/highr
 BugReports: https://github.com/yihui/highr/issues
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2015-04-21 03:29:22 UTC; yihui
+Packaged: 2015-09-18 01:50:34 UTC; yihui
 Author: Christopher Gandrud [ctb],
   Qiang Li [ctb],
   Yixuan Qiu [aut],
   Yihui Xie [aut, cre]
 Repository: CRAN
-Date/Publication: 2015-04-21 08:55:29
-Built: R 3.2.2; ; 2015-09-17 02:35:58 UTC; windows
+Date/Publication: 2015-09-18 08:58:39
+Built: R 3.3.0; ; 2015-09-19 04:08:23 UTC; windows

@@ -1,10 +1,13 @@
 
+```
+## Warning: closing unused connection 5 (gzip -l -q R.tar.gz)
+```
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (265.4 MB, MD5 hash: `fcb7c2ee3dec10f9e196175f2477a733`, uncompressed 737.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (266 MB, MD5 hash: `5a15ab03e2e69a6a132b8e5e0321aa0b`, uncompressed 755.6 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (268.3 MB, MD5 hash: `aa448d44df239bfbb6b2b1b427a60cbe`, uncompressed 805.6 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (265.4 MB, MD5 hash: `f8d17dbd5c0bd72b992fd590da84e912`, uncompressed 737.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (266 MB, MD5 hash: `e365b79bf85a832bf099ca9dca5a3bde`, uncompressed 755.6 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (268.3 MB, MD5 hash: `4267967a4e5d7eb0a7989d6ade9a23cf`, uncompressed 805.6 MB)
 
 
 
@@ -12,7 +15,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2015-09-17 r69394)
+R Under development (unstable) (2015-09-18 r69397)
 
 ### Package versions
 
@@ -54,10 +57,10 @@ R Under development (unstable) (2015-09-17 r69394)
 [`curl`](http://cran.r-project.org/package=curl) (0.9.3),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.9.1),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
-[`evaluate`](http://cran.r-project.org/package=evaluate) (0.7.2),
-[`formatR`](http://cran.r-project.org/package=formatR) (1.2),
+[`evaluate`](http://cran.r-project.org/package=evaluate) (0.8),
+[`formatR`](http://cran.r-project.org/package=formatR) (1.2.1),
 [`git2r`](http://cran.r-project.org/package=git2r) (0.11.0),
-[`highr`](http://cran.r-project.org/package=highr) (0.5),
+[`highr`](http://cran.r-project.org/package=highr) (0.5.1),
 [`httr`](http://cran.r-project.org/package=httr) (1.0.0),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.17),
 [`knitr`](http://cran.r-project.org/package=knitr) (1.11),

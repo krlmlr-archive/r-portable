@@ -1,7 +1,7 @@
 ## ----eval=FALSE----------------------------------------------------------
 #  install.packages('formatR', repos = 'http://cran.rstudio.com')
 #  #' to install the development version, run
-#  #' install.packages('formatR', repos = 'http://rforge.net')
+#  #' install.packages('formatR', repos = 'http://yihui.name/xran')
 
 ## ------------------------------------------------------------------------
 library(formatR)

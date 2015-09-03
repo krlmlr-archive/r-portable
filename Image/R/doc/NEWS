@@ -315,6 +315,9 @@ CHANGES IN R 3.2.2 patched:
     * abbreviate() did not give names to the return value if minlength
       was zero, unlike when it was positive.
 
+    * (Windows only) dir.create() did not always warn when it failed to
+      create a directory.  (PR#16537)
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

@@ -267,14 +267,6 @@ multiple installs and static libs.
 <li><p> The minimum supported version of OS X is 10.6 (&lsquo;Snow
 Leopard&rsquo;): even that has been unsupported by Apple since 2012.
 </p>
-</li>
-<li> <p><code>configure</code> now supports the OpenMP flags
-<span class="option">-fopenmp=libomp</span> (clang) and <span class="option">-qopenmp</span> (Intel C).
-</p>
-</li>
-<li><p> Various OpenMP macros can be set to override the default
-behaviour of <code>configure</code>: see file &lsquo;<span class="file">config.site</span>&rsquo;.
-</p>
 </li></ul>
 
 
@@ -374,9 +366,15 @@ defaults to <code>clang</code>).
 </p>
 </li>
 <li><p> The macros <span class="samp">SHLIB_OPENMP_CFLAGS</span> etc can be set in
-e.g.  &lsquo;<span class="file">config.site</span>&rsquo;.  This is needed for
-<code>clang</code> 3.7.0 which needs a compiler option for OpenMP not
-known to the standard <code>autoconf</code> macro used.
+e.g.  &lsquo;<span class="file">config.site</span>&rsquo;.
+</p>
+</li>
+<li> <p><code>configure</code> now supports the OpenMP flags
+<span class="option">-fopenmp=libomp</span> (clang) and <span class="option">-qopenmp</span> (Intel C).
+</p>
+</li>
+<li><p> Various OpenMP macros can be set to override the default
+behaviour of <code>configure</code>: see file &lsquo;<span class="file">config.site</span>&rsquo;.
 </p>
 </li></ul>
 
@@ -446,6 +444,11 @@ underflows (for ncp &gt; ~60).
 </li>
 <li> <p><code>libcurl</code> connections signal errors rather than
 retrieving http error pages.
+</p>
+</li>
+<li> <p><code>nchar(x, "w")</code> assumed -1 for characters it did not
+know about (e.g. zero-width spaces): it now assumes 1 (and
+knows about zero-width characters).
 </p>
 </li></ul>
 

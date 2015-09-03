@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-09-07).
+<!-- This manual is for R, version 3.3.0 Under development (2015-09-09).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-09-07).
+<p>This manual is for R, version 3.3.0 Under development (2015-09-09).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -2382,16 +2382,17 @@ compiler and not necessarily to the C++11 compiler: users of the latter
 should do their own <code>configure</code> checks.
 </p>
 <p>Some care is needed when compilers are from different families which may
-use different OpenMP runtimes (e.g. <code>clang</code> and GCC, including
-<code>gfortran</code> do).  For a package with Fortran 77 code using OpenMP
-the approproate lines are
+use different OpenMP runtimes (e.g. <code>clang</code> <em>vs</em> GCC
+including <code>gfortran</code>, although it is currently possible to use
+the <code>clang</code> runtime with GCC but not <em>vice versa</em>).  For a
+package with Fortran 77 code using OpenMP the approproate lines are
 </p>
 <div class="example">
 <pre class="example">PKG_FFLAGS = $(SHLIB_OPENMP_FFLAGS)
 PKG_LIBS = $(SHLIB_OPENMP_CFLAGS)
 </pre></div>
 
-<p>as the C compiler is used to link the package code (and there is no
+<p>as the C compiler will be used to link the package code (and there is no
 guarantee that this will work everywhere).
 </p>
 
@@ -2405,8 +2406,8 @@ have recent versions.  OS X currently uses Apple builds of
 the Windows and earlier Apple OS X implementations have substantial
 overheads and are only beneficial if quite substantial tasks are run in
 parallel.  Also, on Windows new threads are started with the
-default<a name="DOCF28" href="#FOOT28"><sup>28</sup></a> FPU control word, so
-computations done on OpenMP threads will not make use of
+default<a name="DOCF28" href="#FOOT28"><sup>28</sup></a> FPU control
+word, so computations done on OpenMP threads will not make use of
 extended-precision arithmetic which is the default for the main process.
 </p>
 <p>Calling any of the R API from threaded code is &lsquo;for experts only&rsquo;:
@@ -2426,8 +2427,8 @@ assumption that the R process is entitled to use them all are both
 dubious assumptions.  The best way to limit resources is to limit the
 overall number of threads available to OpenMP in the R process: this
 can be done via environment variable <code>OMP_THREAD_LIMIT</code>, where
-implemented.<a name="DOCF29" href="#FOOT29"><sup>29</sup></a>  Alternatively, the number of
-threads per region can be limited by the environment variable
+implemented.<a name="DOCF29" href="#FOOT29"><sup>29</sup></a>  Alternatively, the
+number of threads per region can be limited by the environment variable
 <code>OMP_NUM_THREADS</code> or API call <code>omp_set_num_threads</code>, or,
 better, for the regions in your code as part of their
 specification. E.g. R uses
@@ -15596,10 +15597,10 @@ resolves such dependencies to a static FORTRAN library when
 <p>Some builds of <code>clang</code> 3.7
 have support for OpenMP 3.1</p>
 <h3><a name="FOOT28" href="#DOCF28">(28)</a></h3>
-<p>Windows, not MinGW-w64 default.</p>
+<p>Windows default, not MinGW-w64 default.</p>
 <h3><a name="FOOT29" href="#DOCF29">(29)</a></h3>
 <p>Which it was at the time of writing with GCC,
-Solaris Studio and Intel compilers.</p>
+Solaris Studio, Intel and Clang 3.7.x compilers.</p>
 <h3><a name="FOOT30" href="#DOCF30">(30)</a></h3>
 <p>some Windows toolchains have the
 typo &lsquo;<samp>_REENTRANCE</samp>&rsquo; instead.</p>

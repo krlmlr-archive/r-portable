@@ -7,4 +7,4 @@ Maintainer: R Core Team <R-core@r-project.org>
 Description: R functions for base graphics.
 Imports: grDevices
 License: Part of R 3.3.0
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-08 02:17:54 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-09 02:20:06 UTC; windows

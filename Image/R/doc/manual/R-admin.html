@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-09-07).
+<!-- This manual is for R, version 3.3.0 Under development (2015-09-09).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-09-07).
+<p>This manual is for R, version 3.3.0 Under development (2015-09-09).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -4167,53 +4167,38 @@ Next: <a href="#Shared-BLAS" accesskey="n" rel="next">Shared BLAS</a>, Previous:
 <p>For Intel processors (and perhaps others) and some distributions of
 Linux, there is Intel&rsquo;s Math Kernel Library.  You are strongly
 encouraged to read the MKL User&rsquo;s Guide, which is installed with the
-library, before attempting to link to MKL.  There are also versions of
-MKL for OS X and Windows, but they did not work with the standard
-compilers used for R on those platforms.
+library, before attempting to link to MKL.  This includes a &lsquo;link line
+advisor&rsquo; which will suggest appropriate incantations: its use is
+recommended.  Or see
+<a href="https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor">https://software.intel.com/en-us/articles/intel-mkl-link-line-advisor</a>.
 </p>
-<p>The MKL interface has changed several times, and may change again: the
-following notes apply exactly only to version 10.3 but have been used
-with version 11.1.
+<p>There are also versions of MKL for OS X and Windows, but at the time
+these were tried they did not work with the standard compilers used for
+R on those platforms.
 </p>
-<p>Versions 10 and later of MKL support two linking models.  Only the
-layered model is described here as it gives the user fine-grained
-control over four different library layers: interface, threading,
-computation, and run-time library support.  The choice of interface
-layer is important on &lsquo;<samp>x86_64</samp>&rsquo; since the Intel Fortran compiler
-returns complex values in different registers from the <acronym>GNU</acronym>
-Fortran compiler: you must therefore use the interface layer that
-matches your compiler (<code>mkl_intel*</code> or <code>mkl_gf*</code>).
+<p>The MKL interface has changed several times and may change again: the
+following examples have been used with versions 10.3 to 11.3, for GCC
+compilers on &lsquo;<samp>x86_64</samp>&rsquo;.
 </p>
-<p>These examples are for GCC compilers on &lsquo;<samp>x86_64</samp>&rsquo;.
-</p>
-<p>R can be linked to a sequential version of MKL by something like
+<p>To a sequential version of MKL we used
 </p>
 <div class="example">
-<pre class="example">MKL_LIB_PATH=/opt/intel/mkl/10.311.339/lib/intel64/
+<pre class="example">MKL_LIB_PATH=/path/to/intel_mkl/lib/intel64
 export LD_LIBRARY_PATH=$MKL_LIB_PATH
-MKL=&quot;-L${MKL_LIB_PATH} -lmkl_gf_lp64 -lmkl_sequential -lmkl_core&quot;
+MKL=&quot;-L${MKL_LIB_PATH} -lmkl_gf_lp64 -lmkl_core -lmkl_sequential&quot;
 ./configure --with-blas=&quot;$MKL&quot; --with-lapack
 </pre></div>
 
-<p>where some versions may need <code>-lmkl_lapack</code> before
-<code>-lmkl_core</code>.  The order of the libraries is important.  The option
-<samp>--with-lapack</samp> is used since MKL contains a tuned copy of LAPACK
-as well as <acronym>BLAS</acronym> (see <a href="#LAPACK">LAPACK</a>), although this can be
-omitted.
+<p>The option <samp>--with-lapack</samp> is used since MKL contains a tuned
+copy of LAPACK as well as <acronym>BLAS</acronym> (see <a href="#LAPACK">LAPACK</a>), although this
+can be omitted.
 </p>
-<p>Threaded MKL may be used (according to Zhang Zhang of Intel) by
-replacing the line defining the variable <code>MKL</code> with (Intel OMP)
+<p>Threaded MKL may be used by replacing the line defining the variable
+<code>MKL</code> by
 </p>
 <div class="example">
-<pre class="example">MKL=&quot;-L${MKL_LIB_PATH} -lmkl_gf_lp64 -lmkl_intel_thread \
-     -lmkl_core -liomp5 -lpthread&quot;
-</pre></div>
-
-<p>or (GNU OMP)
-</p>
-<div class="example">
-<pre class="example">MKL=&quot;-L${MKL_LIB_PATH} -lmkl_gf_lp64 -lmkl_gnu_thread \
-     -lmkl_core -fopenmp -lpthread&quot;
+<pre class="example">MKL=&quot;-L${MKL_LIB_PATH} -lmkl_gf_lp64 -lmkl_core \
+     -lmkl_gnu_thread -dl -lpthread&quot;
 </pre></div>
 
 <p>The default number of threads will be chosen by the OpenMP software, but
@@ -4221,32 +4206,13 @@ can be controlled by setting <code>OMP_NUM_THREADS</code> or
 <code>MKL_NUM_THREADS</code>, and in recent versions seems to default to a
 sensible value for sole use of the machine.
 </p>
-<p>Static threaded MKL may be used (GNU OpenMP) with something like
-</p>
-<div class="example">
-<pre class="example">MKL=&quot;   -L${MKL_LIB_PATH}                               \
-        -Wl,--start-group                               \
-                ${MKL_LIB_PATH}/libmkl_gf_lp64.a        \
-                ${MKL_LIB_PATH}/libmkl_gnu_thread.a     \
-                ${MKL_LIB_PATH}/libmkl_core.a           \
-        -Wl,--end-group                                 \
-        -lgomp -ldl -lpthread&quot;
-</pre></div>
-
-<p>(Thanks to Ei-ji Nakama.  The <code>-ldl</code> was needed on a Centos 5
-system and may not be needed everywhere.)
-</p>
-<p>% https://stat.ethz.ch/pipermail/r-devel/2015-September/071717.html
-It has been reported that
+<p>It has been reported that
 </p>
 <div class="example">
 <pre class="example">--with-blas='-mkl=parallel' --with-lapack
 </pre></div>
 
 <p>worked with the Intel 2015.3 compilers on Centos 6.
-</p>
-<p>The MKL documentation includes a &lsquo;link line advisor&rsquo; which will suggest
-appropriate incantations.
 </p>
 <hr>
 <a name="Shared-BLAS"></a>

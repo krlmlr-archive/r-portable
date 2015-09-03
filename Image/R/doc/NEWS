@@ -176,12 +176,6 @@ CHANGES IN R-devel:
     * The minimum supported version of OS X is 10.6 ('Snow Leopard'):
       even that has been unsupported by Apple since 2012.
 
-    * configure now supports the OpenMP flags -fopenmp=libomp (clang)
-      and -qopenmp (Intel C).
-
-    * Various OpenMP macros can be set to override the default
-      behaviour of configure: see file config.site.
-
   C-LEVEL FACILITIES:
 
     * The API call logspace_sum introduced in R 3.2.0 is now remapped
@@ -236,9 +230,13 @@ CHANGES IN R 3.2.2 patched:
       compilers other than gcc (FreeBSD 10 defaults to clang).
 
     * The macros SHLIB_OPENMP_CFLAGS etc can be set in e.g.
-      config.site.  This is needed for clang 3.7.0 which needs a
-      compiler option for OpenMP not known to the standard autoconf
-      macro used.
+      config.site.
+
+    * configure now supports the OpenMP flags -fopenmp=libomp (clang)
+      and -qopenmp (Intel C).
+
+    * Various OpenMP macros can be set to override the default
+      behaviour of configure: see file config.site.
 
   BUG FIXES:
 
@@ -282,6 +280,10 @@ CHANGES IN R 3.2.2 patched:
 
     * libcurl connections signal errors rather than retrieving http
       error pages.
+
+    * nchar(x, "w") assumed -1 for characters it did not know about
+      (e.g. zero-width spaces): it now assumes 1 (and knows about
+      zero-width characters).
 
 CHANGES IN R 3.2.2:
 

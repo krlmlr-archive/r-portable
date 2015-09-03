@@ -85,7 +85,6 @@ plot.formula	plot.formula
 plot.function	curve
 plot.histogram	plothistogram
 plot.new	frame
-plot.raster	plot.raster
 plot.table	plot.table
 plot.window	plot.window
 plot.xy	plot.xy

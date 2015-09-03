@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 (2015-04-16).
+<!-- This manual is for R, version 3.1.3 (2015-03-09).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -30,6 +30,7 @@ approved by the R Core Team. -->
 <link href="#Top" rel="start" title="Top">
 <link href="#Function-and-variable-index" rel="index" title="Function and variable index">
 <link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -56,70 +57,51 @@ span.nolinebreak {white-space:nowrap}
 span.roman {font-family:serif; font-weight:normal}
 span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
-body {
-    margin-left: 5%;
-    margin-right: 5%;
-}
+body {margin-left: 5%; margin-right: 5%;}
 
-h1 {             
+H1 {             
     background: white;
     color: rgb(25%, 25%, 25%);
     font-family: monospace;
     font-size: xx-large;
-    text-align: center;
+    text-align: center
 }
 
-h2 {
+H2 {
     background: white;
     color: rgb(40%, 40%, 40%);
     font-family: monospace;
     font-size: x-large;
-    text-align: center;
+    text-align: center
 }
 
-h3 {
+H3 {
     background: white;
     color: rgb(40%, 40%, 40%);
     font-family: monospace;
-    font-size: large;
+    font-size: large
 }
 
-h4 {
+H4 {
     background: white;
     color: rgb(40%, 40%, 40%);
-    font-family: monospace;
+    font-family: monospace
 }
 
-span.samp {
-    font-family: monospace;
-}
-
-span.command {
-    font-family: monospace;
-}
-
-span.option {
-    font-family: monospace;
-}
-
-span.file {
-    font-family: monospace;
-}
-
-span.env {
-    font-family: monospace;
-}
+span.samp{font-family: monospace}
+span.command{font-family: monospace}
+span.option{font-family: monospace}
+span.file{font-family: monospace}
+span.env{font-family: monospace}
 
 ul {
     margin-top: 0.25ex;
     margin-bottom: 0.25ex;
 }
-
 li {
     margin-top: 0.25ex;
     margin-bottom: 0.25ex;
 }
-
 p {
     margin-top: 0.6ex;
     margin-bottom: 1.2ex;
@@ -280,7 +262,7 @@ p {
 <a name="Top"></a>
 <div class="header">
 <p>
-Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Structures</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Structures</a>, Previous: <a href="dir.html#Top" accesskey="p" rel="prev">(dir)</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-variable-index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="R-Internals"></a>
 <h1 class="top">R Internals</h1>
@@ -288,7 +270,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.2.0 (2015-04-16).
+<p>This manual is for R, version 3.1.3 (2015-03-09).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -310,7 +292,7 @@ approved by the R Core Team.
 
 
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#R-Internal-Structures" accesskey="1">R Internal Structures</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#g_t_002eInternal-vs-_002ePrimitive" accesskey="2">.Internal vs .Primitive</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -359,7 +341,7 @@ version of the source code.  Versions for R 2.x.y contain historical
 comments about when features were introduced: this version is for the
 3.x.y series.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#SEXPs" accesskey="1">SEXPs</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Environments-and-variable-lookup" accesskey="2">Environments and variable lookup</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -429,7 +411,7 @@ bytes (depending on alignment constraints).
 <p>The first five bits of the <code>sxpinfo</code> header specify one of up to 32
 <code>SEXPTYPE</code>s.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#SEXPTYPEs" accesskey="1">SEXPTYPEs</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Rest-of-header" accesskey="2">Rest of header</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -458,7 +440,7 @@ gap cannot easily be reused.
 </p>
 <a name="index-SEXPTYPE-table"></a>
 <blockquote>
-<table summary="">
+<table>
 <thead><tr><th>no</th><th>SEXPTYPE</th><th>Description</th></tr></thead>
 <tr><td><code>0</code></td><td><code>NILSXP</code></td><td><code>NULL</code></td></tr>
 <tr><td><code>1</code></td><td><code>SYMSXP</code></td><td>symbols</td></tr>
@@ -905,7 +887,7 @@ environment plus environments<a name="DOCF4" href="#FOOT4"><sup>4</sup></a> whic
 from the cache.  The cache is used whenever searching for variables from
 the global environment (possibly as part of a recursive search).
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Search-paths" accesskey="1">Search paths</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Namespaces" accesskey="2">Namespaces</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1310,7 +1292,7 @@ allowing only one argument, some having two (with a default for the
 second) and <code>trunc</code> allows one or more but the default method only
 accepts one.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Missingness" accesskey="1">Missingness</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Dot_002ddot_002ddot-arguments" accesskey="2">Dot-dot-dot arguments</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1798,7 +1780,7 @@ Next: <a href="#Memory-allocators" accesskey="n" rel="next">Memory allocators</a
 as definitive.  The description assumes that <code>R_NO_METHODS_TABLES</code>
 has not been set.]
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Representation-of-S4-objects" accesskey="1">Representation of S4 objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#S4-classes" accesskey="2">S4 classes</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2114,7 +2096,7 @@ R ever allows concurrent evaluation threads.  So the idiom is
 </pre></div>
 
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Internals-of-R_005falloc" accesskey="1">Internals of R_alloc</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
@@ -2158,7 +2140,7 @@ Next: <a href="#Modules" accesskey="n" rel="next">Modules</a>, Previous: <a href
 <p>This section notes known use by the system of these environments: the
 intention is to minimize or eliminate such uses.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Base-environment" accesskey="1">Base environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Global-environment" accesskey="2">Global environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2238,15 +2220,17 @@ Next: <a href="#Visibility" accesskey="n" rel="next">Visibility</a>, Previous: <
 chosen to be loaded &lsquo;on demand&rsquo; rather than linked as dynamic libraries
 or incorporated into the main executable/dynamic library.
 </p>
-<p>For the remaining modules the motivation has been the amount of (often
-optional) code they will bring in <em>via</em> libraries to which they are
-linked.
+<p>For a few of these (e.g. <code>vfonts</code>) the issue is size: the
+database for the Hershey fonts is included in the C code of the module
+and was at one time an appreciable part of the codebase for a rarely
+used feature.  However, for most of the modules the motivation has been
+the amount of (often optional) code they will bring in via libraries to
+which they are linked.
 </p>
 <dl compact="compact">
 <dt><code>internet</code></dt>
 <dd><p>The internal HTTP and FTP clients and socket support, which link to
-system-specific support libraries.  This may load <code>libcurl</code> and on
-Windows will load <samp>wininet.dll</samp> and <samp>ws2_32.dll</samp>.
+system-specific support libraries.
 </p>
 </dd>
 <dt><code>lapack</code></dt>
@@ -2254,11 +2238,21 @@ Windows will load <samp>wininet.dll</samp> and <samp>ws2_32.dll</samp>.
 <samp>libRlapack</samp> or an external LAPACK library.
 </p>
 </dd>
+<dt><code>vfonts</code></dt>
+<dd><p>The Hershey font databases and the code to draw with them.
+</p>
+</dd>
 <dt><code>X11</code></dt>
 <dd><p>(Unix-alikes only.)  The <code>X11()</code>, <code>jpeg()</code>, <code>png()</code> and
 <code>tiff()</code> devices. These are optional, and links to some or all of
 the <code>X11</code>, <code>pango</code>, <code>cairo</code>, <code>jpeg</code>, <code>libpng</code>
 and <code>libtiff</code> libraries.
+</p>
+</dd>
+<dt><samp>internet2.dll</samp></dt>
+<dd><p>(Windows only.)  An alternative version of the internet access routines,
+compiled against Internet Explorer internals (and so loads
+<samp>wininet.dll</samp> and <samp>wsock32.dll</samp>).
 </p></dd>
 </dl>
 
@@ -2272,7 +2266,7 @@ Next: <a href="#Lazy-loading" accesskey="n" rel="next">Lazy loading</a>, Previou
 <h3 class="section">1.16 Visibility</h3>
 <a name="index-visibility"></a>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Hiding-C-entry-points" accesskey="1">Hiding C entry points</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Variables-in-Windows-DLLs" accesskey="2">Variables in Windows DLLs</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2649,7 +2643,7 @@ end-user use <em>as functions</em> is done in the same way as for
 interpreted functions except for the six exceptions where positional
 matching is required.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Special-primitives" accesskey="1">Special primitives</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Special-internals" accesskey="2">Special internals</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2825,7 +2819,7 @@ and the standard packages included with R have (with an exception in
 <strong>grDevices</strong> for the menus of the <code>windows()</code> device) been
 internationalized in the same way as other packages.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#R-code" accesskey="1">R code</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Main-C-code" accesskey="2">Main C code</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2978,7 +2972,7 @@ Next: <a href="#Files" accesskey="n" rel="next">Files</a>, Previous: <a href="#I
 <a name="Structure-of-an-Installed-Package"></a>
 <h2 class="chapter">4 Structure of an Installed Package</h2>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Metadata" accesskey="1">Metadata</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Help" accesskey="2">Help</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -3318,7 +3312,7 @@ for use with <strong>grid</strong>, and hence has been transferred from package
 <strong>graphics</strong> to <strong>grDevices</strong>.  This is principally concerned with
 the handling of colours and recording and replaying plots.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Graphics-devices" accesskey="1">Graphics devices</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Colours" accesskey="2">Colours</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -3343,7 +3337,7 @@ third-party packages to provide additional devices&mdash;several packages
 now do.  This section describes the device internals from the viewpoint
 of a would-be writer of a graphics device.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Device-structures" accesskey="1">Device structures</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Device-capabilities" accesskey="2">Device capabilities</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -3812,7 +3806,7 @@ although for devices of many years&rsquo; standing those comments can be in
 need of updating.  This subsection is a repository of notes on design
 decisions.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#X11_0028_0029" accesskey="1">X11()</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#windows_0028_0029" accesskey="2">windows()</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -4099,7 +4093,7 @@ high-level graphics calls (handled by <code>ProcessInlinePars</code>).
 <p>Snapshots of the base subsystem record the &lsquo;saved device copy&rsquo; of the
 <code>GPar</code> structure.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Arguments-and-parameters" accesskey="1">Arguments and parameters</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
@@ -4189,7 +4183,7 @@ program which runs embedded R: this is done by <code>Rgui.exe</code> on
 Windows and <code>R.app</code> on OS X.  The first is an integral part
 of R and the code for the console is currently in <samp>R.dll</samp>.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#R_002eapp" accesskey="1">R.app</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
@@ -4833,30 +4827,6 @@ Default: unset (but &lsquo;<samp>TRUE</samp>&rsquo; for CRAN submission checks).
 package namespace without loading and attaching the package and its
 suggests and enhances.
 Default: true (and true for CRAN submission checks).
-</p>
-</dd>
-<dt><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code>
-<a name="index-_005fR_005fCHECK_005fEXIT_005fON_005fFIRST_005fERROR_005f"></a>
-</dt>
-<dd><p>If set to a true value, the check will exit on the first error.
-Default: false.
-</p>
-</dd>
-<dt><code>_R_CHECK_S3_METHODS_NOT_REGISTERED_</code>
-<a name="index-_005fR_005fCHECK_005fS3_005fMETHODS_005fNOT_005fREGISTERED_005f"></a>
-</dt>
-<dd><p>If set to a true value, report (apparent) S3 methods exported but not
-registered.
-Default: false (but true for CRAN submission checks).
-</p>
-</dd>
-<dt><code>_R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_</code>
-<a name="index-_005fR_005fCHECK_005fOVERWRITE_005fREGISTERED_005fS3_005fMETHODS_005f"></a>
-</dt>
-<dd><p>If set to a true value, report already registered S3 methods in
-base/recommended packages which are overwritten when this package&rsquo;s
-namespace is loaded. 
-Default: false (but true for CRAN submission checks).
 </p></dd>
 </dl>
 
@@ -4880,8 +4850,6 @@ _R_CHECK_DEPRECATED_DEFUNCT_=TRUE
 _R_CHECK_REPLACING_IMPORTS_=TRUE
 _R_CHECK_SCREEN_DEVICE_=stop
 _R_CHECK_TOPLEVEL_FILES_=TRUE
-_R_CHECK_S3_METHODS_NOT_REGISTERED_=TRUE
-_R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_=TRUE
 </pre></div>
 
 <p>These are turned on by <code>R CMD check --as-cran</code>: the incoming
@@ -5103,7 +5071,7 @@ Next: <a href="#Function-and-variable-index" accesskey="n" rel="next">Function a
 to R: there is no commitment to release such changes, let alone to a
 timescale.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Long-vectors" accesskey="1">Long vectors</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#g_t64_002dbit-types" accesskey="2">64-bit types</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -5281,7 +5249,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <a name="Function-and-variable-index-1"></a>
 <h2 class="unnumbered">Function and variable index</h2>
 
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-variable-index_vr_symbol-1"><b>.</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-variable-index_vr_symbol-1"><b>.</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-and-variable-index_vr_symbol-2"><b>_</b></a>
  &nbsp; 
@@ -5321,7 +5289,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <a class="summary-letter" href="#Function-and-variable-index_vr_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
-<table summary="" class="index-vr" border="0">
+<table class="index-vr" border="0">
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Function-and-variable-index_vr_symbol-1">.</a></th><td></td><td></td></tr>
@@ -5357,7 +5325,6 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fDOT_005fINTERNAL_005f"><code>_R_CHECK_DOT_INTERNAL_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fEXECUTABLES_005f"><code>_R_CHECK_EXECUTABLES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fEXECUTABLES_005fEXCLUSIONS_005f"><code>_R_CHECK_EXECUTABLES_EXCLUSIONS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fEXIT_005fON_005fFIRST_005fERROR_005f"><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fFF_005fCALLS_005f"><code>_R_CHECK_FF_CALLS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fFF_005fDUP_005f"><code>_R_CHECK_FF_DUP_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fFORCE_005fSUGGESTS_005f"><code>_R_CHECK_FORCE_SUGGESTS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
@@ -5366,7 +5333,6 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fLICENSE_005f"><code>_R_CHECK_LICENSE_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fLIMIT_005fCORES_005f"><code>_R_CHECK_LIMIT_CORES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fNO_005fRECOMMENDED_005f"><code>_R_CHECK_NO_RECOMMENDED_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fOVERWRITE_005fREGISTERED_005fS3_005fMETHODS_005f"><code>_R_CHECK_OVERWRITE_REGISTERED_S3_METHODS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fPERMISSIONS_005f"><code>_R_CHECK_PERMISSIONS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fPKG_005fSIZES_005f"><code>_R_CHECK_PKG_SIZES_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fRD_005fCHECKRD_005fMINLEVEL_005f"><code>_R_CHECK_RD_CHECKRD_MINLEVEL_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
@@ -5376,7 +5342,6 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fRD_005fSTYLE_005f"><code>_R_CHECK_RD_STYLE_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fRD_005fXREFS_005f"><code>_R_CHECK_RD_XREFS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fREPLACING_005fIMPORTS_005f"><code>_R_CHECK_REPLACING_IMPORTS_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fS3_005fMETHODS_005fNOT_005fREGISTERED_005f"><code>_R_CHECK_S3_METHODS_NOT_REGISTERED_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fSCREEN_005fDEVICE_005f"><code>_R_CHECK_SCREEN_DEVICE_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fSKIP_005fARCH_005f"><code>_R_CHECK_SKIP_ARCH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_005fR_005fCHECK_005fSKIP_005fEXAMPLES_005fARCH_005f"><code>_R_CHECK_SKIP_EXAMPLES_ARCH_</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Tools">Tools</a></td></tr>
@@ -5491,7 +5456,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-warningcall"><code>warningcall</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Warnings-and-errors">Warnings and errors</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-variable-index_vr_symbol-1"><b>.</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-variable-index_vr_symbol-1"><b>.</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-and-variable-index_vr_symbol-2"><b>_</b></a>
  &nbsp; 
@@ -5541,7 +5506,7 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
 <a name="Concept-index-1"></a>
 <h2 class="unnumbered">Concept index</h2>
 
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_symbol-1"><b>.</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_symbol-1"><b>.</b></a>
  &nbsp; 
 <br>
 <a class="summary-letter" href="#Concept-index_cp_letter-A"><b>A</b></a>
@@ -5573,7 +5538,7 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
 <a class="summary-letter" href="#Concept-index_cp_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
-<table summary="" class="index-cp" border="0">
+<table class="index-cp" border="0">
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Concept-index_cp_symbol-1">.</a></th><td></td><td></td></tr>
@@ -5658,7 +5623,7 @@ Previous: <a href="#Function-and-variable-index" accesskey="p" rel="prev">Functi
 <tr><td></td><td valign="top"><a href="#index-write-barrier">write barrier</a>:</td><td>&nbsp;</td><td valign="top"><a href="#The-write-barrier">The write barrier</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_symbol-1"><b>.</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-index_cp_symbol-1"><b>.</b></a>
  &nbsp; 
 <br>
 <a class="summary-letter" href="#Concept-index_cp_letter-A"><b>A</b></a>

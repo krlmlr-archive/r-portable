@@ -131,7 +131,7 @@ factor.scope            Compute Allowed Changes in Adding to or
 family                  Family Objects for Models
 family.glm              Accessing Generalized Linear Model Fits
 family.lm               Accessing Linear Model Fits
-fft                     Fast Discrete Fourier Transform (FFT)
+fft                     Fast Discrete Fourier Transform
 filter                  Linear Filtering on a Time Series
 fisher.test             Fisher's Exact Test for Count Data
 fitted                  Extract Model Fitted Values
@@ -255,8 +255,7 @@ predict.nls             Predicting from Nonlinear Least Squares Fits
 predict.smooth.spline   Predict from Smoothing Spline Fit
 preplot                 Pre-computations for a Plotting Object
 princomp                Principal Components Analysis
-print.power.htest       Print Methods for Hypothesis Tests and Power
-                        Calculation Objects
+print.power.htest       Print method for power calculation object
 print.ts                Printing and Formatting of Time-Series Objects
 printCoefmat            Print Coefficient Matrices
 profile                 Generic Function for Profiling Models

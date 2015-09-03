@@ -18,6 +18,6 @@ Author: Brian Ripley [aut, cre, cph],
   William Venables [cph]
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 Repository: CRAN
-Date/Publication: 2015-02-11 09:28:59
-Built: R 3.2.0; x86_64-w64-mingw32; 2015-04-17 11:49:56 UTC; windows
+Date/Publication: 2015-02-11 09:29:39
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-03-09 14:18:30 UTC; windows
 Archs: i386, x64

@@ -508,7 +508,6 @@ print.formula	formula
 print.ftable	read.ftable
 print.hclust	hclust
 print.HoltWinters	HoltWinters
-print.htest	print.power.htest
 print.integrate	integrate
 print.kmeans	kmeans
 print.loadings	loadings

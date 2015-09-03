@@ -111,10 +111,8 @@ rTweedie                Generate Tweedie random deviates
 random.effects          Random effects in GAMs
 residuals.gam           Generalized Additive Model residuals
 rig                     Generate inverse Gaussian random deviates
-rmvn                    Generate multivariate normal deviates
 s                       Defining smooths in GAM formulae
 scat                    GAM scaled t family for heavy tailed data
-single.index            Single index models with mgcv
 slanczos                Compute truncated eigen decomposition of a
                         symmetric matrix
 smooth.construct        Constructor functions for smooth terms in a GAM

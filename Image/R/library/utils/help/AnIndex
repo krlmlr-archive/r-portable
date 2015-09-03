@@ -4,7 +4,6 @@ $.person	person
 .DollarNames.default	rcompgen
 .DollarNames.environment	rcompgen
 .DollarNames.list	rcompgen
-.S3methods	methods
 ?	Question
 ??	help.search
 adist	adist
@@ -130,9 +129,6 @@ help.request	help.request
 help.search	help.search
 help.start	help.start
 history	savehistory
-hsearch_db	hsearch-utils
-hsearch_db_concepts	hsearch-utils
-hsearch_db_keywords	hsearch-utils
 INSTALL	INSTALL
 install.packages	install.packages
 installed.packages	installed.packages

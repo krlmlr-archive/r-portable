@@ -36,7 +36,6 @@ find_gs_cmd             Find a GhostScript Executable
 getDepList              Functions to Retrieve Dependency Information
 getVignetteInfo         Get information on installed vignettes.
 installFoundDepends     A function to install unresolved dependencies
-loadRdMacros            Load user-defined Rd help system macros.
 make_translations_pkg   Package the Current Translations in the R
                         sources
 md5sum                  Compute MD5 Checksums
@@ -56,7 +55,6 @@ texi2dvi                Compile LaTeX Files
 toHTML                  Display an object in HTML.
 toRd                    Generic function to convert object to a
                         fragment of Rd code.
-toTitleCase             Convert Titles to Title Case
 tools-deprecated        Deprecated Objects in Package 'tools'
 tools-package           Tools for Package Development
 undoc                   Find Undocumented Objects

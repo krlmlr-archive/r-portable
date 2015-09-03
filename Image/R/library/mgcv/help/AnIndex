@@ -131,14 +131,12 @@ qq.gam	qq.gam
 random.effects	random.effects
 residuals.gam	residuals.gam
 rig	rig
-rmvn	rmvn
 Rrank	Rrank
 rTweedie	rTweedie
 s	s
 scat	scat
 signal.regression	linear.functional.terms
 sim2jam	jagam
-single.index	single.index
 slanczos	slanczos
 smooth.construct	smooth.construct
 smooth.construct.ad.smooth.spec	smooth.construct.ad.smooth.spec

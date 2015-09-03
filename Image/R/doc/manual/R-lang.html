@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.0 (2015-04-16).
+<!-- This manual is for R, version 3.1.3 (2015-03-09).
 
 Copyright (C) 2000-2015 R Core Team
 
@@ -30,6 +30,7 @@ approved by the R Core Team. -->
 <link href="#Top" rel="start" title="Top">
 <link href="#Function-and-Variable-Index" rel="index" title="Function and Variable Index">
 <link href="#SEC_Contents" rel="contents" title="Table of Contents">
+<link href="dir.html#Top" rel="up" title="(dir)">
 <style type="text/css">
 <!--
 a.summary-letter {text-decoration: none}
@@ -56,70 +57,51 @@ span.nolinebreak {white-space:nowrap}
 span.roman {font-family:serif; font-weight:normal}
 span.sansserif {font-family:sans-serif; font-weight:normal}
 ul.no-bullet {list-style: none}
-body {
-    margin-left: 5%;
-    margin-right: 5%;
-}
+body {margin-left: 5%; margin-right: 5%;}
 
-h1 {             
+H1 {             
     background: white;
     color: rgb(25%, 25%, 25%);
     font-family: monospace;
     font-size: xx-large;
-    text-align: center;
+    text-align: center
 }
 
-h2 {
+H2 {
     background: white;
     color: rgb(40%, 40%, 40%);
     font-family: monospace;
     font-size: x-large;
-    text-align: center;
+    text-align: center
 }
 
-h3 {
+H3 {
     background: white;
     color: rgb(40%, 40%, 40%);
     font-family: monospace;
-    font-size: large;
+    font-size: large
 }
 
-h4 {
+H4 {
     background: white;
     color: rgb(40%, 40%, 40%);
-    font-family: monospace;
+    font-family: monospace
 }
 
-span.samp {
-    font-family: monospace;
-}
-
-span.command {
-    font-family: monospace;
-}
-
-span.option {
-    font-family: monospace;
-}
-
-span.file {
-    font-family: monospace;
-}
-
-span.env {
-    font-family: monospace;
-}
+span.samp{font-family: monospace}
+span.command{font-family: monospace}
+span.option{font-family: monospace}
+span.file{font-family: monospace}
+span.env{font-family: monospace}
 
 ul {
     margin-top: 0.25ex;
     margin-bottom: 0.25ex;
 }
-
 li {
     margin-top: 0.25ex;
     margin-bottom: 0.25ex;
 }
-
 p {
     margin-top: 0.6ex;
     margin-bottom: 1.2ex;
@@ -333,7 +315,7 @@ p {
 <a name="Top"></a>
 <div class="header">
 <p>
-Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-Variable-Index" title="Index" rel="index">Index</a>]</p>
+Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a>, Previous: <a href="dir.html#Top" accesskey="p" rel="prev">(dir)</a>, Up: <a href="dir.html#Top" accesskey="u" rel="up">(dir)</a> &nbsp; [<a href="#SEC_Contents" title="Table of contents" rel="contents">Contents</a>][<a href="#Function-and-Variable-Index" title="Index" rel="index">Index</a>]</p>
 </div>
 <a name="R-Language-Definition"></a>
 <h1 class="top">R Language Definition</h1>
@@ -342,7 +324,7 @@ Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a> &nbsp; [
 parsing, object oriented programming, computing on the language, and so
 forth.
 </p>
-<p>This manual is for R, version 3.2.0 (2015-04-16).
+<p>This manual is for R, version 3.1.3 (2015-03-09).
 </p>
 <p>Copyright &copy; 2000&ndash;2015 R Core Team
 </p>
@@ -364,7 +346,7 @@ approved by the R Core Team.
 
 
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Introduction" accesskey="1">Introduction</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Objects" accesskey="2">Objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -493,7 +475,7 @@ parts of the structure is used.
 <code>typeof</code> and what they are.
 </p>
 <blockquote>
-<table summary="">
+<table>
 <tr><td width="20%"><code>&quot;NULL&quot;</code></td><td width="70%">NULL</td></tr>
 <tr><td width="20%"><code>&quot;symbol&quot;</code></td><td width="70%">a variable name</td></tr>
 <tr><td width="20%"><code>&quot;pairlist&quot;</code></td><td width="70%">a pairlist object (mainly internal)</td></tr>
@@ -562,7 +544,7 @@ doesn&rsquo;t affect the computations, however, when dealing with foreign
 languages or the operating system it is often necessary to ensure that
 an object is of the correct type.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Basic-types" accesskey="1">Basic types</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Attributes" accesskey="2">Attributes</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -582,7 +564,7 @@ Next: <a href="#Attributes" accesskey="n" rel="next">Attributes</a>, Previous: <
 <h3 class="section">2.1 Basic types</h3>
 
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Vector-objects" accesskey="1">Vector objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#List-objects" accesskey="2">List objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -633,7 +615,7 @@ complex, string (or character) and raw.  The modes and storage modes for
 the different vector types are listed in the following table.
 </p>
 <blockquote>
-<table summary="">
+<table>
 <thead><tr><th>typeof</th><th>mode</th><th>storage.mode</th></tr></thead>
 <tr><td><code>logical</code></td><td><code>logical</code></td><td><code>logical</code></td></tr>
 <tr><td><code>integer</code></td><td><code>numeric</code></td><td><code>integer</code></td></tr>
@@ -707,7 +689,7 @@ Components of the
 parse tree can be extracted using the standard
 indexing operations.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Symbol-objects" accesskey="1">Symbol objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 </table>
@@ -1084,7 +1066,7 @@ during
 evaluation.  The class structure in R is described in detail
 in <a href="#Object_002doriented-programming">Object-oriented programming</a>.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Names" accesskey="1">Names</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Dimensions" accesskey="2">Dimensions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1240,7 +1222,7 @@ Previous: <a href="#Attributes" accesskey="p" rel="prev">Attributes</a>, Up: <a 
 <a name="Special-compound-objects-1"></a>
 <h3 class="section">2.3 Special compound objects</h3>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Factors" accesskey="1">Factors</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Data-frame-objects" accesskey="2">Data frame objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1344,7 +1326,7 @@ be sufficient documentation.
 </p>
 <p>Users can construct expressions and invoke the evaluator on them.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Simple-evaluation" accesskey="1">Simple evaluation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Control-structures" accesskey="2">Control structures</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1366,7 +1348,7 @@ Next: <a href="#Control-structures" accesskey="n" rel="next">Control structures<
 <a name="Simple-evaluation-1"></a>
 <h3 class="section">3.1 Simple evaluation</h3>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Constants" accesskey="1">Constants</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Symbol-lookup" accesskey="2">Symbol lookup</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1544,7 +1526,7 @@ and assigned to variables in a straightforward manner
 below.
 </p>
 <blockquote>
-<table summary="">
+<table>
 <tr><td width="10%"><code>-</code></td><td width="70%">Minus, can be unary or binary</td></tr>
 <tr><td width="10%"><code>+</code></td><td width="70%">Plus, can be unary or binary</td></tr>
 <tr><td width="10%"><code>!</code></td><td width="70%">Unary not</td></tr>
@@ -1675,7 +1657,7 @@ block.
 [1] 5
 </pre></div>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#if" accesskey="1">if</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Looping" accesskey="2">Looping</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -1955,7 +1937,7 @@ Next: <a href="#Indexing" accesskey="n" rel="next">Indexing</a>, Previous: <a hr
 <a name="Elementary-arithmetic-operations-1"></a>
 <h3 class="section">3.3 Elementary arithmetic operations</h3>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Recycling-rules" accesskey="1">Recycling rules</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Propagation-of-names" accesskey="2">Propagation of names</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2134,7 +2116,7 @@ to evaluate an expression to find the index, use <code>x[[expr]]</code>.  When
 <code>$</code> is applied to a non-recursive object the result used to be
 always <code>NULL</code>: as from R 2.6.0 this is an error.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Indexing-by-vectors" accesskey="1">Indexing by vectors</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Indexing-matrices-and-arrays" accesskey="2">Indexing matrices and arrays</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2501,7 +2483,7 @@ Pascal.  However, R is a <em>functional programming language</em> and
 allows dynamic creation and manipulation of functions and language
 objects, and has additional features reflecting this fact.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Global-environment" accesskey="1">Global environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Lexical-environment" accesskey="2">Lexical environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2691,7 +2673,7 @@ Next: <a href="#Object_002doriented-programming" accesskey="n" rel="next">Object
 <a name="Functions-1"></a>
 <h2 class="chapter">4 Functions</h2>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Writing-functions" accesskey="1">Writing functions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Functions-as-objects" accesskey="2">Functions as objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2720,7 +2702,7 @@ they find more appropriate.
 <p>R also provides facilities that make it easy to document any
 functions that you have created.  See <a href="R-exts.html#Writing-R-documentation">Writing R documentation</a> in <cite>Writing R Extensions</cite>.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Syntax-and-examples" accesskey="1">Syntax and examples</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Arguments" accesskey="2">Arguments</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -2838,7 +2820,7 @@ Previous: <a href="#Functions-as-objects" accesskey="p" rel="prev">Functions as 
 <a name="Evaluation-1"></a>
 <h3 class="section">4.3 Evaluation</h3>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Evaluation-environment" accesskey="1">Evaluation environment</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Argument-matching" accesskey="2">Argument matching</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -3209,7 +3191,7 @@ example as a density, when it exists or as a moment generating function
 when it exists.
 </p>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Definition" accesskey="1">Definition</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Inheritance" accesskey="2">Inheritance</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -3709,7 +3691,7 @@ mathematical expressions.
 <p>In this chapter, we give an introduction to the set of facilities that
 are available for computing on the language.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Direct-manipulation-of-language-objects" accesskey="1">Direct manipulation of language objects</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Substitutions" accesskey="2">Substitutions</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -4366,7 +4348,7 @@ Next: <a href="#Exception-handling" accesskey="n" rel="next">Exception handling<
 <a name="System-and-foreign-language-interfaces-1"></a>
 <h2 class="chapter">7 System and foreign language interfaces</h2>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Operating-system-access" accesskey="1">Operating system access</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Foreign-language-interfaces" accesskey="2">Foreign language interfaces</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -4405,7 +4387,7 @@ limited on non-Unix-like platforms).
 <a name="index-environment-17"></a>
 environment can be accessed and manipulated with
 </p><blockquote>
-<table summary="">
+<table>
 <tr><td width="30%"><code>Sys.getenv</code></td><td width="70%">OS environment variables
 <a name="index-Sys_002egetenv"></a></td></tr>
 <tr><td width="30%"><code>Sys.putenv</code>                               
@@ -4426,7 +4408,7 @@ environment can be accessed and manipulated with
 
 <p>A uniform set of file access functions is provided on all platforms:
 </p><blockquote>
-<table summary="">
+<table>
 <tr><td width="30%"><code>file.access</code></td><td width="70%">Ascertain File Accessibility 
 <a name="index-file_002eaccess"></a></td></tr>
 <tr><td width="30%"><code>file.append</code></td><td width="70%">Concatenate files            
@@ -4455,7 +4437,7 @@ environment can be accessed and manipulated with
 <p>There are also functions for manipulating file names and paths in a
 platform-independent way.
 </p><blockquote>
-<table summary="">
+<table>
 <tr><td width="30%"><code>basename</code></td><td width="70%">File name without directory     
 <a name="index-basename"></a></td></tr>
 <tr><td width="30%"><code>dirname</code></td><td width="70%">Directory name                   
@@ -4523,7 +4505,7 @@ mechanisms.  Functions such as <code>stop</code> or <code>warning</code> can be
 called directly or options such as <code>&quot;warn&quot;</code> can be used to control
 the handling of problems.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#stop" accesskey="1">stop</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#warning" accesskey="2">warning</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -4700,7 +4682,7 @@ statements in that language is provided.  Execution will halt on the
 next statement that is evaluated in R. A symbolic debugger such as
 <code>gdb</code> can be used to debug compiled code.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#browser" accesskey="1">browser</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#debug_002fundebug" accesskey="2">debug/undebug</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -4851,7 +4833,7 @@ causes the specified instructions to be carried out.  The internal form
 is itself an R object and can be saved and otherwise manipulated
 within the R system.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#The-parsing-process" accesskey="1">The parsing process</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Comments" accesskey="2">Comments</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -4873,7 +4855,7 @@ Next: <a href="#Comments" accesskey="n" rel="next">Comments</a>, Previous: <a hr
 <a name="The-parsing-process-1"></a>
 <h3 class="section">10.1 The parsing process</h3>
 
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Modes-of-parsing" accesskey="1">Modes of parsing</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Internal-representation" accesskey="2">Internal representation</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -5002,7 +4984,7 @@ They are recognised during <em>lexical analysis</em> which (conceptually,
 at least) takes place prior to the syntactic analysis performed by the
 parser itself.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Literal-constants" accesskey="1">Literal constants</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Identifiers" accesskey="2">Identifiers</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -5194,7 +5176,7 @@ following pairs are <em>not</em> equivalent
 <a name="index-assign"></a>
 </p>
 <blockquote>
-<table summary="">
+<table>
 <tr><td><code>x$a&lt;-1</code></td><td><code>assign(&quot;x$a&quot;,1)</code></td></tr>
 <tr><td><code>x[[1]]</code></td><td><code>get(&quot;x[[1]]&quot;)</code></td></tr>
 <tr><td><code>names(x)&lt;-nm</code></td><td><code>assign(&quot;names(x)&quot;,nm)</code></td></tr>
@@ -5289,7 +5271,7 @@ Next: <a href="#Grouping" accesskey="n" rel="next">Grouping</a>, Previous: <a hr
 <p>R uses the following operator tokens
 </p>
 <blockquote>
-<table summary="">
+<table>
 <tr><td width="30%"><code>+ - * / %% ^</code></td><td width="60%">arithmetic</td></tr>
 <tr><td width="30%"><code>&gt; &gt;= &lt; &lt;= == !=</code></td><td width="60%">relational</td></tr>
 <tr><td width="30%"><code>! &amp; |</code></td><td width="60%">logical</td></tr>
@@ -5349,7 +5331,7 @@ parts (which may themselves be expressions).
 <p>The following sections detail the various syntactical constructs that
 are available.
 </p>
-<table summary="" class="menu" border="0" cellspacing="0">
+<table class="menu" border="0" cellspacing="0">
 <tr><td align="left" valign="top">&bull; <a href="#Function-calls-_0028expressions_0029" accesskey="1">Function calls (expressions)</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
 </td></tr>
 <tr><td align="left" valign="top">&bull; <a href="#Infix-and-prefix-operators" accesskey="2">Infix and prefix operators</a>:</td><td>&nbsp;&nbsp;</td><td align="left" valign="top">
@@ -5646,7 +5628,7 @@ Next: <a href="#Concept-Index" accesskey="n" rel="next">Concept Index</a>, Previ
 <a name="Function-and-Variable-Index-1"></a>
 <h2 class="unnumbered">Function and Variable Index</h2>
 
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-Variable-Index_vr_symbol-1"><b>#</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-Variable-Index_vr_symbol-1"><b>#</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-and-Variable-Index_vr_symbol-2"><b>$</b></a>
  &nbsp; 
@@ -5690,11 +5672,11 @@ Next: <a href="#Concept-Index" accesskey="n" rel="next">Concept Index</a>, Previ
 <a class="summary-letter" href="#Function-and-Variable-Index_vr_letter-W"><b>W</b></a>
  &nbsp; 
 </td></tr></table>
-<table summary="" class="index-vr" border="0">
+<table class="index-vr" border="0">
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Function-and-Variable-Index_vr_symbol-1">#</a></th><td></td><td></td></tr>
-<tr><td></td><td valign="top"><a href="#index-_0023"><code>#</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Comments">Comments</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-_0023"><code><code>#</code></code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Comments">Comments</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Function-and-Variable-Index_vr_symbol-2">$</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-_0024"><code>$</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Indexing">Indexing</a></td></tr>
@@ -5836,7 +5818,7 @@ Next: <a href="#Concept-Index" accesskey="n" rel="next">Concept Index</a>, Previ
 <tr><td></td><td valign="top"><a href="#index-while"><code>while</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#while">while</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-Variable-Index_vr_symbol-1"><b>#</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Function-and-Variable-Index_vr_symbol-1"><b>#</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Function-and-Variable-Index_vr_symbol-2"><b>$</b></a>
  &nbsp; 
@@ -5890,7 +5872,7 @@ Next: <a href="#References" accesskey="n" rel="next">References</a>, Previous: <
 <a name="Concept-Index-1"></a>
 <h2 class="unnumbered">Concept Index</h2>
 
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-Index_cp_symbol-1"><b>#</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-Index_cp_symbol-1"><b>#</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Concept-Index_cp_symbol-2"><b>.</b></a>
  &nbsp; 
@@ -5922,7 +5904,7 @@ Next: <a href="#References" accesskey="n" rel="next">References</a>, Previous: <
 <a class="summary-letter" href="#Concept-Index_cp_letter-V"><b>V</b></a>
  &nbsp; 
 </td></tr></table>
-<table summary="" class="index-cp" border="0">
+<table class="index-cp" border="0">
 <tr><td></td><th align="left">Index Entry</th><td>&nbsp;</td><th align="left"> Section</th></tr>
 <tr><td colspan="4"> <hr></td></tr>
 <tr><th><a name="Concept-Index_cp_symbol-1">#</a></th><td></td><td></td></tr>
@@ -6153,7 +6135,7 @@ Next: <a href="#References" accesskey="n" rel="next">References</a>, Previous: <
 <tr><td></td><td valign="top"><a href="#index-vector-2">vector</a>:</td><td>&nbsp;</td><td valign="top"><a href="#Operators">Operators</a></td></tr>
 <tr><td colspan="4"> <hr></td></tr>
 </table>
-<table summary=""><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-Index_cp_symbol-1"><b>#</b></a>
+<table><tr><th valign="top">Jump to: &nbsp; </th><td><a class="summary-letter" href="#Concept-Index_cp_symbol-1"><b>#</b></a>
  &nbsp; 
 <a class="summary-letter" href="#Concept-Index_cp_symbol-2"><b>.</b></a>
  &nbsp; 

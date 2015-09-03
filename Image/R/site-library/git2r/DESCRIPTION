@@ -32,5 +32,5 @@ Collate: 'S4_classes.r' 'blame.r' 'blob.r' 'branch.r'
 Packaged: 2015-08-12 18:13:52 UTC; stefan
 Repository: CRAN
 Date/Publication: 2015-08-12 22:59:37
-Built: R 3.2.2; x86_64-w64-mingw32; 2015-08-15 15:48:01 UTC; windows
+Built: R 3.1.3; x86_64-w64-mingw32; 2015-08-13 18:20:46 UTC; windows
 Archs: i386, x64

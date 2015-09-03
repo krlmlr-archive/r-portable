@@ -10,7 +10,7 @@ MethodDefinition-class
                         Classes to Represent Method Definitions
 MethodWithNext-class    Class MethodWithNext
 Methods                 General Information on Methods
-MethodsList-class       Class MethodsList, Defunct Representation of
+MethodsList-class       Class MethodsList, Deprecated Representation of
                         Methods
 ObjectsWithPackage-class
                         A Vector of Object Names, with associated
@@ -75,7 +75,7 @@ setMethod               Create and Save a Method
 setOldClass             Register Old-Style (S3) Classes and Inheritance
 show                    Show an Object
 showMethods             Show all the methods for the specified
-                        function(s) or class
+                        function(s)
 signature-class         Class '"signature"' For Method Definitions
 slot                    The Slots in an Object from a Formal Class
 structure-class         Classes Corresponding to Basic Structures

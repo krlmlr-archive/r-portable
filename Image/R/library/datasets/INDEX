@@ -56,8 +56,7 @@ datasets-package        The R Datasets Package
 discoveries             Yearly Numbers of Important Discoveries
 esoph                   Smoking, Alcohol and (O)esophageal Cancer
 euro                    Conversion Rates of Euro Currencies
-eurodist                Distances Between European Cities and Between
-                        US Cities
+eurodist                Distances Between European Cities
 faithful                Old Faithful Geyser Data
 freeny                  Freeny's Revenue Data
 infert                  Infertility after Spontaneous and Induced

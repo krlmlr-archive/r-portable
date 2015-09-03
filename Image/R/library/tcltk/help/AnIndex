@@ -56,7 +56,6 @@ tclvalue<-.default	TclInterface
 tclvalue<-.tclVar	TclInterface
 tclVar	TclInterface
 tclvar	TclInterface
-tclVersion	TclInterface
 tkactivate	TkWidgetcmds
 tkadd	TkWidgetcmds
 tkaddtag	TkWidgetcmds

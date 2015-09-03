@@ -30,7 +30,7 @@ available.packages      List Available Packages at CRAN-like
                         Repositories
 bibentry                Bibliography Entries
 browseEnv               Browse Objects in Environment
-browseURL               Load URL into an HTML Browser
+browseURL               Load URL into a WWW Browser
 browseVignettes         List Vignettes in an HTML Browser
 bug.report              Send a Bug Report
 build                   Utilities for Building and Checking Add-on
@@ -86,7 +86,6 @@ help                    Documentation
 help.request            Send a Post to R-help
 help.search             Search the Help System
 help.start              Hypertext Documentation
-hsearch_db              Help Search Utilities
 install.packages        Install Packages from Repositories or Local
                         Files
 installed.packages      Find Installed Packages

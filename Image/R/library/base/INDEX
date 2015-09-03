@@ -34,7 +34,7 @@ Foreign                 Foreign Function Interface
 ISOdatetime             Date-time Conversion Functions from Numeric
                         Representations
 InternalMethods         Internal Generic Functions
-La_version              LAPACK Version
+La_version              LAPACK version
 Logic                   Logical Operators
 Memory                  Memory Available for Data Storage
 Memory-limits           Memory Limits in R
@@ -141,7 +141,6 @@ copyright               Copyrights of Files Used to Build R
 cosh                    Hyperbolic Functions
 crossprod               Matrix Crossproduct
 cumsum                  Cumulative Sums, Products, and Extremes
-curlGetHeaders          Retrieve Headers from URLs
 cut                     Convert Numeric to Factor
 cut.POSIXt              Convert a Date or Date-Time Object to a Factor
 data.class              Object Classes
@@ -178,7 +177,6 @@ exists                  Is an Object Defined?
 expand.grid             Create a Data Frame from All Combinations of
                         Factors
 expression              Unevaluated Expressions
-extSoftVersion          Report Versions of Third-Party Software
 factor                  Factors
 file.access             Ascertain File Accessibility
 file.choose             Choose a File Interactively
@@ -189,7 +187,6 @@ files                   File Manipulation
 find.package            Find Packages
 findInterval            Find Interval Numbers or Indices
 force                   Force Evaluation of an Argument
-forceAndCall            Call a function with Some Arguments Forced
 formals                 Access to and Manipulation of the Formal
                         Arguments
 format                  Encode in a Common Format
@@ -247,9 +244,7 @@ l10n_info               Localization Information
 labels                  Find Labels from Object
 lapply                  Apply a Function over a List or Vector
 length                  Length of an Object
-lengths                 Lengths of List Elements
 levels                  Levels Attributes
-libcurlVersion          Report Version of libcurl
 library                 Loading/Attaching and Listing of Packages
 library.dynam           Loading DLLs from Packages
 license                 The R License Terms
@@ -419,7 +414,6 @@ trace                   Interactive Tracing and Debugging of Calls to a
 traceback               Print Call Stacks
 tracemem                Trace Copying of Objects
 transform               Transform an Object, for Example a Data Frame
-trimws                  Remove Leading/Trailing Whitespace
 try                     Try an Expression Allowing Error Recovery
 typeof                  The Type of an Object
 union                   Set Operations

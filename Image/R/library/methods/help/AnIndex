@@ -20,7 +20,6 @@ $<-,localRefClass-method	localRefClass
 .NULL-class	Classes
 .OldClassesList	setOldClass
 .Other-class	testInheritedMethods
-.S4methods	showMethods
 .saveImage	RMethodUtils
 .selectSuperClasses	selectSuperClasses
 .setCoerceGeneric	RClassUtils

@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2015-02-23 r67886) -- "Unsuffered Consequences"
+R version 3.1.2 Patched (2015-02-23 r67886) -- "Pumpkin Helmet"
 Copyright (C) 2015 The R Foundation for Statistical Computing
-Platform: x86_64-apple-darwin14.1.0 (64-bit)
+Platform: x86_64-unknown-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -93,7 +93,7 @@ Type 'q()' to quit R.
 > 
 > ## Don't show: 
 > op <- options(digits = 5)
-> ## End(Don't show)
+> ## End Don't show
 > # 90% and 95% confidence intervals for the correlation 
 > # coefficient between the columns of the bigcity data
 > 
@@ -113,7 +113,7 @@ Type 'q()' to quit R.
 [1]  0.95000 -6.70758 -0.39394
 > ## Don't show: 
 > options(op)
-> ## End(Don't show)
+> ## End Don't show
 > 
 > 
 > 
@@ -132,7 +132,7 @@ Type 'q()' to quit R.
 > 
 > ## Don't show: 
 > op <- options(digits = 5)
-> ## End(Don't show)
+> ## End Don't show
 > # Usual bootstrap of the ratio of means using the city data
 > ratio <- function(d, w) sum(d$x * w)/sum(d$u * w)
 > boot(city, ratio, R = 999, stype = "w")
@@ -246,7 +246,7 @@ t2*  16.8462 -1.457663      6.7591
 [1] 0.461
 > ## Don't show: 
 > options(op)
-> ## End(Don't show)
+> ## End Don't show
 > 
 > 
 > 
@@ -2028,7 +2028,7 @@ t3* 0.000000 -0.8862944    2.208945
 > ###
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  29.074 0.258 29.474 0 0 
+Time elapsed:  16.731 0.018 16.753 0 0 
 > grDevices::dev.off()
 null device 
           1 

@@ -24,7 +24,6 @@ checkS3methods	QC
 checkTnF	checkTnF
 checkVignettes	checkVignettes
 check_packages_in_dir	check_packages_in_dir
-check_packages_in_dir_changes	check_packages_in_dir
 codoc	codoc
 codocClasses	codoc
 codocData	codoc
@@ -49,8 +48,6 @@ installFoundDepends	installFoundDepends
 latexToUtf8	parseLatex
 list_files_with_exts	fileutils
 list_files_with_type	fileutils
-loadPkgRdMacros	loadRdMacros
-loadRdMacros	loadRdMacros
 makeLazyLoading	makeLazyLoading
 make_translations_pkg	make_translations_pkg
 md5sum	md5sum
@@ -123,7 +120,6 @@ tools-deprecated	tools-deprecated
 toRd	toRd
 toRd.bibentry	toRd
 toRd.default	toRd
-toTitleCase	toTitleCase
 undoc	undoc
 update_pkg_po	update_pkg_po
 vignetteDepends	vignetteDepends

@@ -1,5 +1,3 @@
-%&%-methods             Boolean Arithmetic Matrix Products: '%&%' and
-                        Methods
 %*%-methods             Matrix (Cross) Products (of Transpose)
 BunchKaufman-methods    Bunch-Kaufman Decomposition Methods
 CAex                    Albers' example Matrix with "Difficult" Eigen
@@ -94,7 +92,7 @@ graph2T                 Conversions "graph" <-> (sparse) Matrix
 iMatrix-class           Virtual Classes Not Yet Really Implemented and
                         Used
 image-methods           Methods for image() in Package 'Matrix'
-indMatrix-class         Index Matrices
+indMatrix-class         Index matrices
 index-class             Virtual Class "index" - Simple Class for Matrix
                         Indices
 invPerm                 Inverse Permutation Vector
@@ -152,14 +150,13 @@ sparseMatrix-class      Virtual Class "sparseMatrix" - Mother of Sparse
 sparseQR-class          Sparse QR decomposition of a sparse matrix
 sparseVector            Sparse Vector Construction from Nonzero Entries
 sparseVector-class      Sparse Vector Classes
-symmetricMatrix-class   Virtual Class of Symmetric Matrices in Package
-                        Matrix
+symmetricMatrix-class   Virtual Class of Symmetric Matrices in
+                        package:Matrix
 symmpart                Symmetric Part and Skew(symmetric) Part of a
                         Matrix
 triangularMatrix-class
-                        Virtual Class of Triangular Matrices in Package
-                        Matrix
-uniqTsparse             Unique TsparseMatrix Representations
+                        Virtual Class of Triangular Matrices in
+                        package:Matrix
 unpack                  Representation of Packed and Unpacked (Dense)
                         Matrices
 updown                  Up- and Down-Dating a Cholesky Decomposition

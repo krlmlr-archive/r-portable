@@ -27,8 +27,7 @@ DT_ARCH = -m i386:x86-64 --as-flags --64
 RC_ARCH = -F pe-x86-64
 # Used by packages tcltk and tkrplot
 TCL_HOME = $(R_HOME)/Tcl
-LOCAL_SOFT = d:/RCompile/r-compiling/local/local320
-NM_FILTER = | sed -e '/.refptr./d'
+LOCAL_SOFT = d:/RCompile/CRANpkg/extralibs64/local
 
 ifneq ($(strip $(LOCAL_SOFT)),)
 LOCAL_CPPFLAGS = -I"$(LOCAL_SOFT)/include"
@@ -58,8 +57,7 @@ SORT = sort
 ## For use in packages
 GRAPHAPP_LIB = -lRgraphapp
 TCL_VERSION = 85
-# was a reference to Rzlib.dll in R < 3.2.0
-ZLIB_LIBS = -lz
+ZLIB_LIBS = -lRzlib
 
 AR = $(BINPREF)ar
 ## Used by packages 'maps' and 'mapdata'

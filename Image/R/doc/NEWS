@@ -57,7 +57,7 @@ CHANGES IN R-devel:
     * New function strrep() for repeating the elements of a character
       vector.
 
-    * rapply preserves attributes on the list when how="replace".
+    * rapply() preserves attributes on the list when how = "replace".
 
     * New S3 generic function sigma() with methods for extracting the
       estimated standard deviation aka "residual standard deviation"
@@ -120,6 +120,10 @@ CHANGES IN R-devel:
       storage format for R plots, but it is now not completely silly to
       use a snapshot as a format for transferring an R plot between two
       R sessions.
+
+      The underlying changes mean that packages providing graphics
+      devices (e.g., Cairo, RSvgDevice, cairoDevice) will need to be
+      reinstalled.
 
       Code for restoring snapshots was contributed by from Jeroen Ooms
       and JJ Allaire.
@@ -186,6 +190,8 @@ CHANGES IN R-devel:
 
     * Use of SUPPORT_OPENMP from header Rconfig.h is deprecated in
       favour of the standard OpenMP define _OPENMP.
+
+    * R_GE_version has been increased to 11.
 
   BUG FIXES:
 
@@ -282,8 +288,8 @@ CHANGES IN R 3.2.2 patched:
       error pages.
 
     * nchar(x, "w") assumed -1 for characters it did not know about
-      (e.g. zero-width spaces): it now assumes 1 (and knows about
-      zero-width characters).
+      (e.g. zero-width spaces): it now assumes 1.  It now knows about
+      zero-width characters and a few extra double-width characters.
 
 CHANGES IN R 3.2.2:
 

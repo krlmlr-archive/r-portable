@@ -91,8 +91,8 @@ S3/S4 classes as slots should be reinstalled.
 character vector.
 </p>
 </li>
-<li> <p><code>rapply</code> preserves attributes on the list when
-<code>how="replace"</code>.
+<li> <p><code>rapply()</code> preserves attributes on the list when
+<code>how = "replace"</code>.
 </p>
 </li>
 <li><p> New S3 generic function <code>sigma()</code> with methods for
@@ -177,6 +177,11 @@ in a different R session.
 storage format for R plots, but it is now not completely silly to
 use a snapshot as a format for transferring an R plot between two
 R sessions.
+</p>
+<p>The underlying changes mean that
+packages providing graphics devices (e.g., <code>Cairo</code>,
+<code>RSvgDevice</code>, <code>cairoDevice</code>) will need to be
+reinstalled.
 </p>
 <p>Code for restoring snapshots was contributed by from Jeroen Ooms
 and JJ Allaire.
@@ -286,6 +291,9 @@ first argument has gained a <code>const</code> qualifier.
 </li>
 <li><p> Use of <span class="samp">SUPPORT_OPENMP</span> from header &lsquo;<span class="file">Rconfig.h</span>&rsquo; is
 deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</span>.
+</p>
+</li>
+<li> <p><code>R_GE_version</code> has been increased to <code>11</code>.
 </p>
 </li></ul>
 
@@ -447,8 +455,9 @@ retrieving http error pages.
 </p>
 </li>
 <li> <p><code>nchar(x, "w")</code> assumed -1 for characters it did not
-know about (e.g. zero-width spaces): it now assumes 1 (and
-knows about zero-width characters).
+know about (e.g. zero-width spaces): it now assumes 1.
+It now  knows about zero-width characters and a few extra
+double-width characters.
 </p>
 </li></ul>
 

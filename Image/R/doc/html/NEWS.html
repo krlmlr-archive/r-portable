@@ -197,9 +197,12 @@ version no longer ends in the package name, e.g. from a symlink.
 </li>
 <li> <p><code>abbreviate()</code> has more support for multi-byte
 character sets &ndash; it no longer removes bytes within characters and
-it knows about (English) vowels with accents.  It is still only
+knows about Latin vowels with accents.  It is still only
 really suitable for (most) European languages, and still warns on
 non-ASCII input.
+</p>
+<p><code>abbreviate(use.classes = FALSE)</code> is now implemented, and
+that is more suitable for non-European languages.
 </p>
 </li></ul>
 
@@ -472,13 +475,17 @@ It now knows about most zero-width characters and a few more
 double-width characters.
 </p>
 </li>
-<li><p> Help for <code>which.min</code> is now more precise about behavior
-with logical arguments.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16532">PR#16532</a>)
+<li><p> Help for <code>which.min()</code> is now more precise about
+behavior with logical arguments.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16532">PR#16532</a>)
 </p>
 </li>
 <li><p> The print width of character strings marked as
 <code>"latin1"</code> or <code>"bytes"</code> was in some cases computed
 incorrectly.
+</p>
+</li>
+<li> <p><code>abbreviate()</code> did not give names to the return value
+if <code>minlength</code> was zero, unlike when it was positive.
 </p>
 </li></ul>
 

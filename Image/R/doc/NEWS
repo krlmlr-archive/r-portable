@@ -135,10 +135,12 @@ CHANGES IN R-devel:
       package name, e.g. from a symlink.
 
     * abbreviate() has more support for multi-byte character sets - it
-      no longer removes bytes within characters and it knows about
-      (English) vowels with accents.  It is still only really suitable
-      for (most) European languages, and still warns on non-ASCII
-      input.
+      no longer removes bytes within characters and knows about Latin
+      vowels with accents.  It is still only really suitable for (most)
+      European languages, and still warns on non-ASCII input.
+
+      abbreviate(use.classes = FALSE) is now implemented, and that is
+      more suitable for non-European languages.
 
   UTILITIES:
 
@@ -301,11 +303,14 @@ CHANGES IN R 3.2.2 patched:
       most zero-width characters and a few more double-width
       characters.
 
-    * Help for which.min is now more precise about behavior with
+    * Help for which.min() is now more precise about behavior with
       logical arguments.  (PR#16532)
 
     * The print width of character strings marked as "latin1" or
       "bytes" was in some cases computed incorrectly.
+
+    * abbreviate() did not give names to the return value if minlength
+      was zero, unlike when it was positive.
 
 CHANGES IN R 3.2.2:
 

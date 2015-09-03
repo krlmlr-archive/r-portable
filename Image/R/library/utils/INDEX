@@ -74,7 +74,7 @@ getAnywhere             Retrieve an R Object, Including from a
                         Namespace
 getFromNamespace        Utility functions for Developing Namespaces
 getParseData            Get detailed parse information from object.
-getS3method             Get an S3 Method
+getS3method             Get An S3 Method
 getSrcFilename          Source Reference Utilities
 getWindowsHandle        Get a Windows Handle
 getWindowsHandles       Get handles of windows.
@@ -90,7 +90,6 @@ hsearch_db              Help Search Utilities
 install.packages        Install Packages from Repositories or Local
                         Files
 installed.packages      Find Installed Packages
-isS3method              Is 'method' the Name of an S3 Method?
 localeToCharset         Select a Suitable Encoding Name from a Locale
                         Name
 ls.str                  List Objects and their Structure

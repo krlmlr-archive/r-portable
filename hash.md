@@ -1,10 +1,10 @@
 
-r-portable image information (branch: 3.2.1)
+r-portable image information (branch: 3.2.0)
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/3.2.1/R.tar.gz) (185.5 MB, MD5 hash: `da10cb0bf349634a4842c009bccfa3be`, uncompressed 590.8 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/3.2.1/R.iso.gz) (186 MB, MD5 hash: `d87894e0c86f1abecb3d5bb70aeb9c99`, uncompressed 605.6 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/3.2.1/R.vhd.gz) (188.1 MB, MD5 hash: `fdf903965ffc3e2dcfb1f852ae600318`, uncompressed 653.3 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/3.2.0/R.tar.gz) (185.4 MB, MD5 hash: `5d4fa9cda0c943b2702f6e62b2cbd0f2`, uncompressed 590.6 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/3.2.0/R.iso.gz) (185.9 MB, MD5 hash: `54ecf6eb69d55699e7a510c6feecfcc8`, uncompressed 605.3 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/3.2.0/R.vhd.gz) (188 MB, MD5 hash: `2101f9ae25c7176baa68ac5128028f24`, uncompressed 651.3 MB)
 
 
 
@@ -12,25 +12,25 @@ r-portable image information (branch: 3.2.1)
 
 ### R version
 
-R version 3.2.1 (2015-06-18)
+R version 3.2.0 (2015-04-16)
 
 ### Package versions
 
 ####  base 
-[`base`](http://cran.r-project.org/package=base) (3.2.1),
-[`compiler`](http://cran.r-project.org/package=compiler) (3.2.1),
-[`datasets`](http://cran.r-project.org/package=datasets) (3.2.1),
-[`graphics`](http://cran.r-project.org/package=graphics) (3.2.1),
-[`grDevices`](http://cran.r-project.org/package=grDevices) (3.2.1),
-[`grid`](http://cran.r-project.org/package=grid) (3.2.1),
-[`methods`](http://cran.r-project.org/package=methods) (3.2.1),
-[`parallel`](http://cran.r-project.org/package=parallel) (3.2.1),
-[`splines`](http://cran.r-project.org/package=splines) (3.2.1),
-[`stats`](http://cran.r-project.org/package=stats) (3.2.1),
-[`stats4`](http://cran.r-project.org/package=stats4) (3.2.1),
-[`tcltk`](http://cran.r-project.org/package=tcltk) (3.2.1),
-[`tools`](http://cran.r-project.org/package=tools) (3.2.1),
-[`utils`](http://cran.r-project.org/package=utils) (3.2.1) 
+[`base`](http://cran.r-project.org/package=base) (3.2.0),
+[`compiler`](http://cran.r-project.org/package=compiler) (3.2.0),
+[`datasets`](http://cran.r-project.org/package=datasets) (3.2.0),
+[`graphics`](http://cran.r-project.org/package=graphics) (3.2.0),
+[`grDevices`](http://cran.r-project.org/package=grDevices) (3.2.0),
+[`grid`](http://cran.r-project.org/package=grid) (3.2.0),
+[`methods`](http://cran.r-project.org/package=methods) (3.2.0),
+[`parallel`](http://cran.r-project.org/package=parallel) (3.2.0),
+[`splines`](http://cran.r-project.org/package=splines) (3.2.0),
+[`stats`](http://cran.r-project.org/package=stats) (3.2.0),
+[`stats4`](http://cran.r-project.org/package=stats4) (3.2.0),
+[`tcltk`](http://cran.r-project.org/package=tcltk) (3.2.0),
+[`tools`](http://cran.r-project.org/package=tools) (3.2.0),
+[`utils`](http://cran.r-project.org/package=utils) (3.2.0) 
 ####  recommended 
 [`boot`](http://cran.r-project.org/package=boot) (1.3-16),
 [`class`](http://cran.r-project.org/package=class) (7.3-12),
@@ -40,7 +40,7 @@ R version 3.2.1 (2015-06-18)
 [`KernSmooth`](http://cran.r-project.org/package=KernSmooth) (2.23-14),
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-31),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-40),
-[`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-1),
+[`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-0),
 [`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-6),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-120),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-9),
@@ -76,7 +76,7 @@ R version 3.2.1 (2015-06-18)
 [`stringi`](http://cran.r-project.org/package=stringi) (0.5-5),
 [`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.10.0),
-[`translations`](http://cran.r-project.org/package=translations) (3.2.1),
+[`translations`](http://cran.r-project.org/package=translations) (3.2.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2),
 [`xml2`](http://cran.r-project.org/package=xml2) (0.1.2),
 [`yaml`](http://cran.r-project.org/package=yaml) (2.1.13) 

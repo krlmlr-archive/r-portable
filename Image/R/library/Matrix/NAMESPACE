@@ -77,6 +77,7 @@ export("%&%",
        "sparseVector",
        "symmpart",
        "skewpart",
+       "tcrossprod",
        "tril", "triu",
        "updown",
        "pack", "unpack"
@@ -334,9 +335,5 @@ S3method(c, abIndex)# < for now -- S4 method on c() seems "difficult"
 
 ## So that such dispatch also works inside base functions:
 S3method(as.array, Matrix)
-S3method(as.array, sparseVector)
 S3method(as.matrix, Matrix)
-S3method(as.matrix, sparseVector)
 S3method(as.vector, Matrix)
-S3method(as.vector, sparseVector)
-

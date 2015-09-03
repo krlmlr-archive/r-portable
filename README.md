@@ -1,8 +1,8 @@
 
 
-r-portable (branch: 3.2.1)
+r-portable (branch: 3.2.0)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/3.2.1)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/3.2.1)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/3.2.0)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/3.2.0)
 
 Archives and disk images that contain everything necessary to build R packages on Windows.
 
@@ -10,7 +10,7 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 ## Download
 
-Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/3.2.1/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/3.2.1/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/3.2.1/R.vhd.gz)
+Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/3.2.0/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/3.2.0/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/3.2.0/R.vhd.gz)
 
 Hashes, file sizes, and image contents are listed in a [separate file](hash.md).
 

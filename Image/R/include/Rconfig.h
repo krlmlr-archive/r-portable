@@ -21,7 +21,6 @@
 #else
 #define SIZEOF_SIZE_T 4
 #endif
-/* #undef HAVE_ALLOCA_H */
 
 #endif /* not R_CONFIG_H */
 

@@ -125,8 +125,6 @@ charToRaw               Convert to or from Raw Vectors
 character               Character Vectors
 charmatch               Partial String Matching
 chartr                  Character Translation and Casefolding
-chkDots                 Warn About Extraneous Arguments in the "..." of
-                        Its Caller
 chol                    The Choleski Decomposition
 chol2inv                Inverse from Choleski (or QR) Decomposition
 class                   Object Classes
@@ -137,8 +135,7 @@ comment                 Query or Set a '"comment"' Attribute
 complex                 Complex Vectors
 conditions              Condition Handling and Recovery
 conflicts               Search for Masked Objects on the Search Path
-connections             Functions to Manipulate Connections (Files,
-                        URLs, ...)
+connections             Functions to Manipulate Connections
 contributors            R Project Contributors
 copyright               Copyrights of Files Used to Build R
 cosh                    Hyperbolic Functions
@@ -250,7 +247,7 @@ l10n_info               Localization Information
 labels                  Find Labels from Object
 lapply                  Apply a Function over a List or Vector
 length                  Length of an Object
-lengths                 Lengths of List or Vector Elements
+lengths                 Lengths of List Elements
 levels                  Levels Attributes
 libcurlVersion          Report Version of libcurl
 library                 Loading/Attaching and Listing of Packages
@@ -386,7 +383,6 @@ stop                    Stop Function Execution
 stopifnot               Ensure the Truth of R Expressions
 strptime                Date-time Conversion Functions to and from
                         Character
-strrep                  Repeat the Elements of a Character Vector
 strsplit                Split the Elements of a Character Vector
 strtoi                  Convert Strings to Integers
 strtrim                 Trim Character Strings to Specified Display
@@ -431,9 +427,8 @@ unique                  Extract Unique Elements
 unlink                  Delete Files and Directories
 unlist                  Flatten Lists
 unname                  Remove 'names' or 'dimnames'
-utf8ToInt               Convert Integer Vectors to or from
-                        UTF-8-encoded Character Vectors
-validUTF8               Check if a Character Vector is Validly Encoded
+utf8ToInt               Convert to or from UTF-8-encoded Character
+                        Vectors
 vector                  Vectors
 warning                 Warning Messages
 warnings                Print Warning Messages

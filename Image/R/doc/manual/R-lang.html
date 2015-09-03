@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-08-28).
+<!-- This manual is for R, version 3.2.0 (2015-04-16).
 
 Copyright (C) 2000-2015 R Core Team
 
@@ -342,7 +342,7 @@ Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a> &nbsp; [
 parsing, object oriented programming, computing on the language, and so
 forth.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-08-28).
+<p>This manual is for R, version 3.2.0 (2015-04-16).
 </p>
 <p>Copyright &copy; 2000&ndash;2015 R Core Team
 </p>
@@ -2167,10 +2167,8 @@ selected.  If <code>i</code> contains negative elements, all elements except
 those indicated are selected.
 
 <p>If <code>i</code> is positive and exceeds <code>length(x)</code> then the
-corresponding selection is <code>NA</code>.  Negative out of bounds values
-for <code>i</code> are silently disregarded since R version 2.6.0, S compatibly,
-as they mean to drop non-existing elements and that is an empty operation
-(&ldquo;no-op&rdquo;). 
+corresponding selection is <code>NA</code>.  A negative out of bounds value
+for <code>i</code> causes an error.
 </p>
 <p>A special case is the zero index, which has null effects: <code>x[0]</code> is
 an empty vector and otherwise including zeros among positive or negative
@@ -2274,7 +2272,7 @@ operation.
 [1] 1 4
 </pre></div>
 
-<p>Indexing matrices may not contain negative indices.  <code>NA</code> and
+<p>Negative indices are not allowed in indexing matrices.  <code>NA</code> and
 zero values are allowed: rows in an index matrix containing a zero are
 ignored, whereas rows containing an <code>NA</code> produce an <code>NA</code> in
 the result.

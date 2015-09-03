@@ -180,8 +180,7 @@ Matrix::drop0(zapsmall(6*splineDesign(knots = 1:40, x = 4:37, sparse = TRUE)))
 library(tools)
 ## there are few dependencies in a vanilla R installation:
 ## lattice may not be installed
-## Avoid possibly large list from R_HOME/site-library, which --vanilla includes.
-dependsOnPkgs("lattice", lib.loc = .Library)
+dependsOnPkgs("lattice")
 
 ## This may not be installed
 gridEx <- system.file("doc", "grid.Rnw", package = "grid")

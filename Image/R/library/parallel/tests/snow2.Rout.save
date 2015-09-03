@@ -1,7 +1,7 @@
 
-R Under development (unstable) (2015-08-23 r69165) -- "Unsuffered Consequences"
+R version 3.2.0 beta (2015-04-05 r68147) -- "Full of Ingredients"
 Copyright (C) 2015 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+Platform: x86_64-unknown-linux-gnu (64-bit)
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -50,4 +50,4 @@ Calculations on Transformed Scale;  Intervals on Original Scale
 > 
 > proc.time()
    user  system elapsed 
-  0.130   0.017   0.499 
+  0.164   0.022   0.611 

@@ -1,12 +1,11 @@
 Package: cluster
-Version: 2.0.3
-Date: 2015-07-20
+Version: 2.0.1
+Date: 2015-01-31
 Priority: recommended
-Title: "Finding Groups in Data": Cluster Analysis Extended Rousseeuw et
-        al.
-Description: Methods for Cluster analysis.  Much extended the original from
+Title: Cluster Analysis Extended Rousseeuw et al.
+Description: Cluster analysis methods.  Much extended the original from
 	Peter Rousseeuw, Anja Struyf and Mia Hubert,
-	based on Kaufman and Rousseeuw (1990) "Finding Groups in Data".
+	based on Kaufman and Rousseeuw (1990).
 Maintainer: Martin Maechler <maechler@stat.math.ethz.ch>
 Authors@R: c(person("Martin","Maechler", role=c("aut","cre"), email="maechler@stat.math.ethz.ch")
  ,person("Peter", "Rousseeuw", role="aut", email="rousse@uia.ua.ac.be",
@@ -18,8 +17,8 @@ Authors@R: c(person("Martin","Maechler", role=c("aut","cre"), email="maechler@st
  ,person("Matthias", "Studer", role="ctb")
  ,person("Pierre", "Roudier", role="ctb")
  )
-Depends: R (>= 2.15.0), utils
-Imports: graphics, grDevices, stats
+Depends: R (>= 2.15.0), stats, utils
+Imports: graphics, grDevices
 Suggests: MASS
 SuggestsNote: two small examples using MASS' cov.rob() and mvrnorm()
 LazyLoad: yes
@@ -27,8 +26,7 @@ LazyData: yes
 ByteCompile: yes
 BuildResaveData: no
 License: GPL (>= 2)
-NeedsCompilation: yes
-Packaged: 2015-07-20 08:32:32 UTC; maechler
+Packaged: 2015-01-31 19:19:48 UTC; maechler
 Author: Martin Maechler [aut, cre],
   Peter Rousseeuw [aut] (Fortran original),
   Anja Struyf [aut] (S original),
@@ -36,7 +34,8 @@ Author: Martin Maechler [aut, cre],
   Kurt Hornik [trl, ctb] (port to R; maintenance(1999-2000)),
   Matthias Studer [ctb],
   Pierre Roudier [ctb]
+NeedsCompilation: yes
 Repository: CRAN
-Date/Publication: 2015-07-21 07:53:10
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-09-02 02:30:35 UTC; windows
+Date/Publication: 2015-01-31 23:10:41
+Built: R 3.2.0; x86_64-w64-mingw32; 2015-04-17 11:49:23 UTC; windows
 Archs: i386, x64

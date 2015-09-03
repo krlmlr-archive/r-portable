@@ -15,7 +15,7 @@
  *
  *  You should have received a copy of the GNU Lesser General Public License
  *  along with this program; if not, a copy is available at
- *  https://www.R-project.org/Licenses/
+ *  http://www.r-project.org/Licenses/
  *
 
  * Rmath.h  should contain ALL headers from R's C code in `src/nmath'
@@ -41,7 +41,7 @@
 /*-- Mathlib as part of R --  define this for standalone : */
 /* #undef MATHLIB_STANDALONE */
 
-#define R_VERSION_STRING "3.3.0"
+#define R_VERSION_STRING "3.2.0"
 
 #ifndef HAVE_EXPM1
 # define HAVE_EXPM1 1
@@ -262,7 +262,6 @@ double  Rlog1p(double);
 #define log1pmx		Rf_log1pmx
 #define logspace_add	Rf_logspace_add
 #define logspace_sub	Rf_logspace_sub
-#define logspace_sum	Rf_logspace_sum
 #define pbeta		Rf_pbeta
 #define pbeta_raw	Rf_pbeta_raw
 #define pbinom		Rf_pbinom
@@ -399,7 +398,7 @@ double  log1pexp(double); // <-- ../nmath/plogis.c
 double  lgamma1p(double);
 double  logspace_add(double, double);
 double  logspace_sub(double, double);
-double  logspace_sum(const double *, int);
+double  logspace_sum(double *, int);
 
 	/* Beta Distribution */
 

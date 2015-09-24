@@ -60,7 +60,7 @@ Function DownloadAndUnpack {
         $url_path = "old/"
     }
 
-    $rurl = "http://cran.r-project.org/bin/windows/base/" + $url_path + "R-" + version + "-win.exe"
+    $rurl = "http://cran.r-project.org/bin/windows/base/" + $url_path + "R-" + $version + "-win.exe"
 
     Progress ("Downloading R from: " + $rurl)
     Invoke-WebRequest $rurl -OutFile .\DL\R-win.exe

@@ -134,6 +134,9 @@ Function CreateImage {
         $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-Volume).DriveLetter + ":"
         $VHDPath
 
+        Progress "Checking disk space."
+        Get-WmiObject -class win32_LogicalDisk
+
         Progress "Copying to VHD file."
         cp -Recurse "Image\*" ($VHDPath + "\")
 

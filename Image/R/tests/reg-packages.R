@@ -90,8 +90,8 @@ pkgApath <- file.path(pkgPath, "pkgA")
 if("pkgA" %in% p.lis && !dir.exists(d <- pkgApath)) {
     cat("symlink 'pkgA' does not exist as directory ",d,"; copying it\n", sep='')
     file.copy(file.path(pkgPath, "xDir", "pkg"), to = d, recursive=TRUE)
-    ## if even the copy failed :
-    if(!dir.exists(d)) p.lis <- p.lis[p.lis != "pkgA"]
+    ## if even the copy failed (NB: pkgB depends on pkgA)
+    if(!dir.exists(d)) p.lis <- p.lis[!(p.lis %in% c("pkgA", "pkgB"))]
 }
 for(p. in p.lis) {
     cat("building package", p., "...\n")
@@ -108,7 +108,7 @@ stopifnot(identical(res[,"Package"], setNames(,sort(c(p.lis, "myTst")))),
 ### Specific Tests on our "special" packages: ------------------------------
 
 ## These used to fail because of the sym.link in pkgA
-if(dir.exists(pkgApath)) {
+if("pkgA" %in% p.lis && dir.exists(pkgApath)) {
     cat("undoc(pkgA):\n"); print(uA <- tools::undoc(dir = pkgApath))
     cat("codoc(pkgA):\n"); print(cA <- tools::codoc(dir = pkgApath))
     stopifnot(identical(uA$`code objects`, c("nil", "search")),
@@ -137,7 +137,7 @@ if(dir.exists(file.path("myLib", "pkgA"))) {
 ## let alone where they are installed
 if(dir.exists(file.path("myLib", "exNSS4")) &&
    dir.exists(file.path(.Library, "Matrix"))) {
-    for(ns in c("pkgB", "pkgA", "Matrix", "exNSS4")) unloadNamespace(ns)
+    for(ns in c(rev(p.lis), "Matrix")) unloadNamespace(ns)
     ## Both exNSS4 and Matrix define "atomicVector" *the same*,
     ## but  'exNSS4'  has it extended - and hence *both* are registered in cache -> "conflicts"
     requireNamespace("exNSS4", lib= "myLib")

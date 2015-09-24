@@ -208,6 +208,10 @@ that is more suitable for non-European languages.
 when <code>x</code> is of length one, 
 thanks to Haverty's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>.
 </p>
+<p>More consistent, partly not back-compatible behavior of <code>NA</code>
+and <code>NaN</code> coercion to complex numbers, operations less often
+resulting in complex <code>NA</code> (<code>NA_complex_</code>).
+</p>
 </li></ul>
 
 
@@ -499,6 +503,19 @@ when it failed to create a directory.  (<a href="https://bugs.R-project.org/bugz
 <li><p> When operating in a multibyte locale, <code>grep()</code>
 and related functions did not handle UTF-8 strings properly.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16264">PR#16264</a>)
+</p>
+</li>
+<li> <p><code>read.dcf()</code> misread lines longer than 8191 characters.
+(Reported by Hervé Pagès with a patch.)
+</p>
+</li>
+<li> <p><code>within(df, ..)</code> no longer drops columns whose name
+start with a <code>"."</code>.
+</p>
+</li>
+<li><p> The built-in <code>HTTP</code> server converted entire
+<code>Content-Type</code> to lowercase including paramters which
+can cause issues for multi-part form boundaries (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16541">PR#16541</a>).
 </p>
 </li></ul>
 

@@ -125,7 +125,7 @@ Function CreateImage {
         $VHDPath
 
         Progress "Copying to VHD file."
-        cp -Recurse "Image\*" ($VHDPath + "\")
+        cp -Recurse -Force "Image\*" ($VHDPath + "\")
 
         Progress "Creating ISO file."
         Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }

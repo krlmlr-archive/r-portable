@@ -143,6 +143,9 @@ Function CreateImage {
         Progress "Copying to VHD file."
         cp -Recurse "Image\*" ($VHDPath + "\")
 
+        Progress "Wait for RDP access."
+        $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
         Progress "Creating ISO file."
         Exec { .\Tools\cdrtools\mkisofs -o R.iso -V R-portable -R -J Image }
 

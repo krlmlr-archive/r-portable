@@ -1,8 +1,8 @@
 
 
-r-portable (branch: stable)
+r-portable (branch: master-single)
 ==========
-[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/stable)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/stable)
+[![Build status](https://ci.appveyor.com/api/projects/status/w016xch3qm00msde/branch/master-single)](https://ci.appveyor.com/project/krlmlr/r-portable/branch/master-single)
 
 Archives and disk images that contain everything necessary to build R packages on Windows.
 
@@ -10,7 +10,7 @@ Built by [AppVeyor](http://www.appveyor.com/). Uses [innounp](http://innounp.sou
 
 ## Download
 
-Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/stable/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/stable/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/stable/R.vhd.gz)
+Most recent version: [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master-single/R.tar.gz) [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master-single/R.iso.gz) [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master-single/R.vhd.gz)
 
 Hashes, file sizes, and image contents are listed in a [separate file](hash.md).
 

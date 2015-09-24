@@ -43,9 +43,26 @@ Function DownloadAndUnpack {
         Return
     }
 
-    $rurl = "http://cran.r-project.org/bin/windows/base/R-devel-win.exe"
+    $branch = $env:APPVEYOR_REPO_BRANCH
+    Progress ("Branch name: " + $branch)
+    $version = $branch -replace "-.*$",""
+    Progress ("Version: " + $version)
 
-    Progress "Downloading R"
+    If ($version -eq "master") {
+        $url_path = ""
+        $version = "devel"
+    }
+    ElseIf ($version -eq "stable") {
+        $url_path = ""
+        $version = $(ConvertFrom-JSON $(Invoke-WebRequest http://rversions.r-pkg.org/r-release).Content).version
+    }
+    Else {
+        $url_path = "old/"
+    }
+
+    $rurl = "http://cran.r-project.org/bin/windows/base/" + $url_path + "R-" + version + "-win.exe"
+
+    Progress ("Downloading R from: " + $rurl)
     Invoke-WebRequest $rurl -OutFile .\DL\R-win.exe
 
     Progress "Determining Rtools version"

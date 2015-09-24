@@ -137,6 +137,9 @@ Function CreateImage {
         Progress "Checking disk space."
         Get-WmiObject -class win32_LogicalDisk
 
+        Progress "Checking size of image."
+        Get-ChildItem Image | Measure-Object -property length -sum
+
         Progress "Copying to VHD file."
         cp -Recurse "Image\*" ($VHDPath + "\")
 

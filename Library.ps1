@@ -141,7 +141,7 @@ Function CreateImage {
         $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
         Progress "Checking size of image."
-        Get-ChildItem Image | Measure-Object -property length -sum
+        Get-ChildItem -Recurse Image | Measure-Object -property length -sum
 
         Progress "Copying to VHD file."
         cp -Recurse "Image\*" ($VHDPath + "\")

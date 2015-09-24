@@ -43,16 +43,37 @@ Function DownloadAndUnpack {
         Return
     }
 
-    $rurl = "https://cran.r-project.org/bin/windows/base/old/" + $env:APPVEYOR_REPO_BRANCH + "/R-" + $env:APPVEYOR_REPO_BRANCH + "-win.exe"
+    $branch = $env:APPVEYOR_REPO_BRANCH
+    Progress ("Branch name: " + $branch)
+    $version = $branch -replace "-.*$",""
+    Progress ("Version: " + $version)
 
-    Progress "Downloading R"
+    If ($version -eq "master") {
+        $url_path = ""
+        $version = "devel"
+    }
+    ElseIf ($version -eq "stable") {
+        $url_path = ""
+        $version = $(ConvertFrom-JSON $(Invoke-WebRequest http://rversions.r-pkg.org/r-release).Content).version
+    }
+    ElseIf ($version -eq "patched") {
+        $url_path = ""
+        $version = $(ConvertFrom-JSON $(Invoke-WebRequest http://rversions.r-pkg.org/r-release).Content).version + "patched"
+    }
+    Else {
+        $url_path = "old/"
+    }
+
+    $rurl = "http://cran.r-project.org/bin/windows/base/" + $url_path + "R-" + $version + "-win.exe"
+
+    Progress ("Downloading R from: " + $rurl)
     Invoke-WebRequest $rurl -OutFile .\DL\R-win.exe
 
     Progress "Determining Rtools version"
     $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
     $rtoolsurl = "http://cran.r-project.org/bin/windows/Rtools/Rtools$rtoolsver.exe"
 
-    Progress "Downloading Rtools"
+    Progress ("Downloading Rtools from: " + $rtoolsurl)
     Invoke-WebRequest $rtoolsurl -OutFile "DL\Rtools-current.exe"
 
     Progress "Preparing image"
@@ -60,7 +81,7 @@ Function DownloadAndUnpack {
     md .\Image
 
     # R
-    Progress "Extracting R (devel)"
+    Progress "Extracting R"
     .\Tools\innounp\innounp.exe -x -dImage .\DL\R-win.exe > .\R-win.log
     mv ".\Image\{app}" .\Image\R
     rm .\Image\install_script.iss
@@ -112,6 +133,12 @@ Function CreateImage {
 
         $VHDPath = [string](Mount-DiskImage -ImagePath $ImageFullPath -Passthru | Get-DiskImage | Get-Disk | Get-Partition | Get-Volume).DriveLetter + ":"
         $VHDPath
+
+        Progress "Checking disk space."
+        Get-WmiObject -class win32_LogicalDisk
+
+        Progress "Checking size of image."
+        Get-ChildItem -Recurse Image | Measure-Object -property length -sum
 
         Progress "Copying to VHD file."
         cp -Recurse "Image\*" ($VHDPath + "\")

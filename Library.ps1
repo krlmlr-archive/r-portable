@@ -56,6 +56,10 @@ Function DownloadAndUnpack {
         $url_path = ""
         $version = $(ConvertFrom-JSON $(Invoke-WebRequest http://rversions.r-pkg.org/r-release).Content).version
     }
+    ElseIf ($version -eq "patched") {
+        $url_path = ""
+        $version = $(ConvertFrom-JSON $(Invoke-WebRequest http://rversions.r-pkg.org/r-release).Content).version + "patched"
+    }
     Else {
         $url_path = "old/"
     }

@@ -1,4 +1,4 @@
-clone_depth: 5
+clone_depth: 2
 
 environment:
   DEPLOY_KEY:

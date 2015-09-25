@@ -53,13 +53,6 @@ Function DownloadAndUnpack {
     Progress "Downloading R (stable)"
     Invoke-WebRequest $rurl_stable -OutFile .\DL\R-stable-win.exe
 
-    Progress "Determining Rtools version"
-    $rtoolsver = $(Invoke-WebRequest http://cran.r-project.org/bin/windows/Rtools/VERSION.txt).Content.Split(' ')[2].Split('.')[0..1] -Join ''
-    $rtoolsurl = "http://cran.r-project.org/bin/windows/Rtools/Rtools$rtoolsver.exe"
-
-    Progress "Downloading Rtools"
-    Invoke-WebRequest $rtoolsurl -OutFile "DL\Rtools-current.exe"
-
     Progress "Preparing image"
     rm -Recurse -Force .\Image
     md .\Image
@@ -85,15 +78,6 @@ Function DownloadAndUnpack {
     # Additional R packages
     Progress "Installing additional packages"
     Exec { .\Image\R\bin\x64\Rscript.exe -e "install.packages(commandArgs(TRUE), repos='http://cran.r-project.org')" devtools testthat knitr plyr } > .\R-packages.log
-
-    # Rtools
-    Progress "Extracting Rtools"
-    .\Tools\innounp\innounp.exe -x -dImage .\DL\Rtools-current.exe > .\Rtools-current.log
-    mv ".\Image\{app}" .\Image\Rtools
-    rm .\Image\install_script.iss
-    # Don't seem to need those to build packages -- only to build R
-    rm ".\Image\{code_rhome}" -Recurse
-    rm ".\Image\{code_rhome64}" -Recurse
 }
 
 Function CreateImage {

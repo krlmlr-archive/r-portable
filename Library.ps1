@@ -137,9 +137,6 @@ Function CreateImage {
         Progress "Checking disk space."
         Get-WmiObject -class win32_LogicalDisk
 
-        Progress "Wait for RDP access."
-        $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-
         Progress "Checking size of image."
         Get-ChildItem -Recurse Image | Measure-Object -property length -sum
 

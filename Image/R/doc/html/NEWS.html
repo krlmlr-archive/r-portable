@@ -241,7 +241,7 @@ longer than 8192 characters, thanks to Karl Millar's <a href="https://bugs.R-pro
 </p>
 </li>
 <li> <p><code>rank()</code> gains a <code>ties.method = "last"</code> option,
-for convenience (and symmetry), as proposed by Marius Hofert.
+for convenience (and symmetry).
 </p>
 </li>
 <li> <p><code>getSource(vignette(..))</code> is the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> source file name of
@@ -394,6 +394,10 @@ error).
 <li> <p><code>xpdrows.data.frame()</code> was not checking for unique
 row names; in particular, this affected assignment to non-existing
 rows via numerical indexing. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16570">PR#16570</a>)
+</p>
+</li>
+<li> <p><code>tail.matrix()</code> did not work for zero rows matrices,
+and produced <code>"[1e+05,]"</code> row &ldquo;labels&rdquo;.
 </p>
 </li></ul>
 

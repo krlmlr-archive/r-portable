@@ -170,7 +170,7 @@ CHANGES IN R-devel:
       than 8192 characters, thanks to Karl Millar's PR#16544.
 
     * rank() gains a ties.method = "last" option, for convenience (and
-      symmetry), as proposed by Marius Hofert.
+      symmetry).
 
     * getSource(vignette(..)) is the R source file name of a vignette.
 
@@ -261,6 +261,9 @@ CHANGES IN R-devel:
     * xpdrows.data.frame() was not checking for unique row names; in
       particular, this affected assignment to non-existing rows via
       numerical indexing. (PR#16570)
+
+    * tail.matrix() did not work for zero rows matrices, and produced
+      "[1e+05,]" row "labels".
 
 CHANGES IN R 3.2.2 patched:
 

@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205 MB, MD5 hash: `5dab5b0c87d57d34c4785059da9bf155`, uncompressed 474.9 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (205.5 MB, MD5 hash: `41a46747d74e335942e96cf93a22da78`, uncompressed 491 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.3 MB, MD5 hash: `b2ad6f9f37dd6dea8c1f6b868b18f750`, uncompressed 529 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205 MB, MD5 hash: `610f7dea53863ebc5e34bfa0553944b6`, uncompressed 474.9 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (205.5 MB, MD5 hash: `415db6c8a5699f24a347e0bccc9b7fea`, uncompressed 491 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.3 MB, MD5 hash: `2f0c5aa7baa86f8f9ea8326d3ffad8c6`, uncompressed 529 MB)
 
 
 
@@ -68,7 +68,7 @@ R Under development (unstable) (2015-11-11 r69621)
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.3),
 [`praise`](http://cran.r-project.org/package=praise) (1.0.0),
 [`R6`](http://cran.r-project.org/package=R6) (2.1.1),
-[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.1),
+[`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.2),
 [`roxygen2`](http://cran.r-project.org/package=roxygen2) (5.0.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.3.1),
 [`rversions`](http://cran.r-project.org/package=rversions) (1.0.2),

@@ -385,7 +385,8 @@ rather than only using active mode (reported by Dan Tenenbaum).
 </p>
 </li>
 <li> <p><code>which.min(x)</code> and <code>which.max(x)</code> may be much
-faster for logical and integer <code>x</code> and now also work for long vectors.
+faster for logical and integer <code>x</code> and now also work for long
+vectors.
 </p>
 </li></ul>
 
@@ -416,8 +417,9 @@ defaults to <code>clang</code>).
 <span class="option">-fopenmp=libomp</span> (clang) and <span class="option">-qopenmp</span> (Intel C).
 </p>
 </li>
-<li><p> Various OpenMP macros can be set to override the default
-behaviour of <code>configure</code>: see file &lsquo;<span class="file">config.site</span>&rsquo;.
+<li><p> Various macros can be set to override the default
+behaviour of <code>configure</code> when detecting OpenMP: see file
+&lsquo;<span class="file">config.site</span>&rsquo;.
 </p>
 </li></ul>
 
@@ -508,13 +510,14 @@ if <code>minlength</code> was zero, unlike when it was positive.
 when it failed to create a directory.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16537">PR#16537</a>)
 </p>
 </li>
-<li><p> When operating in a multibyte locale, <code>grep()</code>
-and related functions did not handle UTF-8 strings properly.
+<li><p> When operating in a non-UTF-8 multibyte locale
+(e.g. an East Asian locale on Windows), <code>grep()</code> and
+related functions did not handle UTF-8 strings properly.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16264">PR#16264</a>)
 </p>
 </li>
-<li> <p><code>read.dcf()</code> misread lines longer than 8191 characters.
-(Reported by Hervé Pagès with a patch.)
+<li> <p><code>read.dcf()</code> sometimes misread lines longer than 8191
+characters.  (Reported by Hervé Pagès with a patch.)
 </p>
 </li>
 <li> <p><code>within(df, ..)</code> no longer drops columns whose name

@@ -423,6 +423,11 @@ and produced <code>"[1e+05,]"</code> row &ldquo;labels&rdquo;.
 <li><p> Data frames with column name <code>"stringsAsFactors"</code> now
 format and print correctly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16580">PR#16580</a>)
 </p>
+</li>
+<li><p> The X11 device froze on Red Hat Enterprise Linux 6. It now
+waits for MapNotify events instead of Expose events, thanks to
+Siteshwar Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
+</p>
 </li></ul>
 
 

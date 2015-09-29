@@ -281,6 +281,10 @@ CHANGES IN R-devel:
     * Data frames with column name "stringsAsFactors" now format and
       print correctly.  (PR#16580)
 
+    * The X11 device froze on Red Hat Enterprise Linux 6. It now waits
+      for MapNotify events instead of Expose events, thanks to
+      Siteshwar Vashisht. (PR#16497)
+
 CHANGES IN R 3.2.2 patched:
 
   NEW FEATURES:

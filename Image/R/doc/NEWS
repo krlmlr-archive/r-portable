@@ -394,7 +394,7 @@ CHANGES IN R 3.2.2 patched:
       multi-part form boundaries (PR#16541).
 
     * Modifying slots of S4 objects could fail when the methods package
-      was not attached (PR#16545).
+      was not attached. (PR#16545)
 
     * splineDesign(*, outer.ok=TRUE) (splines) is better now
       (PR#16549), and interpSpline() now allows sparse=TRUE for speedup
@@ -402,6 +402,12 @@ CHANGES IN R 3.2.2 patched:
 
     * If the expression in the traceback was too long, traceback() did
       not report the source line number.  (Patch by Kirill Muller.)
+
+    * The browser did not truncate the display of the function when
+      exiting with options("deparse.max.lines") set.  (PR#16581)
+
+    * When bs(*, Boundary.knots=) had boundary knots inside the data
+      range, extrapolation was somewhat off.  (Patch by Trevor Hastie.)
 
 CHANGES IN R 3.2.2:
 

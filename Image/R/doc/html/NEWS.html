@@ -269,7 +269,7 @@ functions from default packages other than base which are used in
 the package code but not imported are reported as undefined
 globals.
 </p>
-<p>It now also checks DOIs in package &lsquo;<span class="file">CITATION</span>&rsquo; and Rd files. 
+<p>It now also checks DOIs in package &lsquo;<span class="file">CITATION</span>&rsquo; and Rd files.
 </p>
 </li></ul>
 
@@ -598,7 +598,7 @@ can cause issues for multi-part form boundaries (<a href="https://bugs.R-project
 </p>
 </li>
 <li><p> Modifying slots of S4 objects could fail when the
-<span class="pkg">methods</span> package was not attached (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16545">PR#16545</a>).
+<span class="pkg">methods</span> package was not attached. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16545">PR#16545</a>)
 </p>
 </li>
 <li> <p><code>splineDesign(*, outer.ok=TRUE)</code> (<span class="pkg">splines</span>) is better now
@@ -606,9 +606,19 @@ can cause issues for multi-part form boundaries (<a href="https://bugs.R-project
 for speedup with non-small sizes.
 </p>
 </li>
-<li><p> If the expression in the traceback was too long, 
-<code>traceback()</code> did not report the source line number.  (Patch 
+<li><p> If the expression in the traceback was too long,
+<code>traceback()</code> did not report the source line number.  (Patch
 by Kirill Müller.)
+</p>
+</li>
+<li><p> The browser did not truncate the display of the function when
+exiting with <code>options("deparse.max.lines")</code> set.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16581">PR#16581</a>)
+</p>
+</li>
+<li><p> When <code>bs(*, Boundary.knots=)</code> had boundary knots inside
+the data range, extrapolation was somewhat off.  (Patch by Trevor
+Hastie.)
 </p>
 </li></ul>
 

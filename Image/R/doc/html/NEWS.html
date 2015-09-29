@@ -377,6 +377,11 @@ results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">P
 than retrieving HTTP error pages (where the ISP reports the
 error).
 </p>
+</li>
+<li> <p><code>xpdrows.data.frame()</code> was not checking for unique
+row names; in particular, this affected assignment to non-existing
+rows via numerical indexing. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16570">PR#16570</a>)
+</p>
 </li></ul>
 
 

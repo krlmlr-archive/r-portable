@@ -249,6 +249,10 @@ CHANGES IN R-devel:
     * method = "libcurl" connections signal errors rather than
       retrieving HTTP error pages (where the ISP reports the error).
 
+    * xpdrows.data.frame() was not checking for unique row names; in
+      particular, this affected assignment to non-existing rows via
+      numerical indexing. (PR#16570)
+
 CHANGES IN R 3.2.2 patched:
 
   NEW FEATURES:

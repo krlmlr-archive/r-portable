@@ -1,11 +1,11 @@
-8022facd387a2063fea688c442b8600c *DESCRIPTION
+40cb88a2d4fabea6e2d89bdff60dc759 *DESCRIPTION
 1b16b9a04c8550cab50a266bb68ee667 *INDEX
 a085c7c24ade7b2da1aabe7068a47a49 *LICENSE
 5623cfa8db2d8a12156c8e08dbbb7c99 *Meta/Rd.rds
 57c9eb8c7993e5d136d8641209e70804 *Meta/hsearch.rds
 1166d90ac9f13aa8a038e2c6dd896703 *Meta/links.rds
 6f0bb11e0acbe4c73c3015614c8256d3 *Meta/nsInfo.rds
-1c382b27415c481e283e2701b06d8520 *Meta/package.rds
+4a4011c4cb2993a8ce28f01d13da72fd *Meta/package.rds
 e6afd78ac4185a0808a2f1a5ba183961 *Meta/vignette.rds
 4713058135841cd36e63debfcbdee1b3 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/magrittr
@@ -17,8 +17,8 @@ bd5c1a8d2c1de5e36a4e6c8473e20078 *R/magrittr.rdb
 d412378d3f4b00c0fbc78a3bbd82d7ac *doc/magrittr.html
 76d15d9b5df59e066671a6448c320963 *help/AnIndex
 535b54e6757bc6bd966bd07f523dc306 *help/aliases.rds
-5e9dd9b00338cb34744ae23faae89360 *help/magrittr.rdb
-42e6ec5b782748734fd0b71b9af99923 *help/magrittr.rdx
-e7b39dcfe7f7676121c7d049ceecb500 *help/paths.rds
+7ab9dd37eace366ddc121852883c07b7 *help/magrittr.rdb
+324017faf2ddde8a7f5b4d69b9cb16d1 *help/magrittr.rdx
+23212055af1465675ebba9c61255dddd *help/paths.rds
 dc77c709e05d57e38c5046b795b83bb9 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css

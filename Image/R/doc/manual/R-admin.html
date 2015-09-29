@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-10-03).
+<!-- This manual is for R, version 3.3.0 Under development (2015-10-04).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-10-03).
+<p>This manual is for R, version 3.3.0 Under development (2015-10-04).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -2084,8 +2084,8 @@ Next: <a href="#Running-R" accesskey="n" rel="next">Running R</a>, Previous: <a 
 
 <p>The front page of a <acronym>CRAN</acronym> site has a link &lsquo;Download R for OS
 X&rsquo;. Click on that, then download the file <samp>R-3.3.0.pkg</samp>
-and install it. This runs on OS X 10.9 and later (Mavericks, Yosemite
-&hellip;<a name="DOCF13" href="#FOOT13"><sup>13</sup></a>).
+and install it. This runs on OS X 10.9 and later (Mavericks, Yosemite,
+El Capitan<a name="DOCF13" href="#FOOT13"><sup>13</sup></a>, &hellip;).
 </p>
 <p>Installers for R-patched and R-devel are usually available from
 <a href="https://r.research.att.com">https://r.research.att.com</a>.
@@ -2117,7 +2117,7 @@ want this time &hellip;).
 package and the <code>X11</code> device: attempting to use these without
 XQuartz will remind you.
 </p>
-<p>If you update your OS X version, you should re-install R (and
+<p>If you update your OS X version, you should re-install R (and perhaps
 XQuartz): the installer tailors the installation to the current version
 of the OS.
 </p>
@@ -2147,7 +2147,7 @@ distribution.
 </p>
 <p>There is a GUI console normally installed with the R icon in
 <samp>/Applications</samp> which you can run by double-clicking (e.g. from
-Launchpad or Finder).  (If you cannot find there it was possibly
+Launchpad or Finder).  (If you cannot find it there it was possibly
 installed elsewhere so try searching for it in Spotlight.) This is
 usually referred to as <small>R.APP</small> to distinguish it from command-line R:
 its user manual is currently part of the OS X FAQ at
@@ -2155,13 +2155,13 @@ its user manual is currently part of the OS X FAQ at
 can be viewed from <small>R.APP</small>&rsquo;s &lsquo;Help&rsquo; menu.
 </p>
 
-<p>You can run command-line R from a Terminal<a name="DOCF14" href="#FOOT14"><sup>14</sup></a> so these can be typed as commands like any other
-Unix-alike: see the next chapter of this manual.  There are some small
-differences which may surprise users of R on other platforms, notably
-the default location of the personal library directory (under
-<samp>~/Library/R</samp>, e.g. <samp>~/Library/R/3.3/library</samp>), and that
-warnings, messages and other output to <samp>stderr</samp> are highlighted in
-bold.
+<p>You can run command-line R from a Terminal<a name="DOCF14" href="#FOOT14"><sup>14</sup></a> so these
+can be typed as commands like any other Unix-alike: see the next chapter
+of this manual.  There are some small differences which may surprise
+users of R on other platforms, notably the default location of the
+personal library directory (under <samp>~/Library/R</samp>,
+e.g. <samp>~/Library/R/3.3/library</samp>), and that warnings, messages and
+other output to <samp>stderr</samp> are highlighted in bold.
 </p>
 <p>It has been reported that running <small>R.APP</small> under Yosemite may fail if no
 preferences are stored, so if it fails when launched for the very first
@@ -2208,14 +2208,14 @@ links to <samp>R</samp> and <samp>Rscript</samp> in <samp>/usr/bin</samp> or
 <samp>/usr/local/bin</samp> should also be removed.
 </p>
 <p>If you want to get rid of R more completely using a Terminal, simply
-run (prepend <code>sudo</code> if needed):
+run (use <samp>/usr/local/bin</samp> on El Capitan):
 </p>
 <div class="example">
-<pre class="example">rm -rf /Library/Frameworks/R.framework /Applications/R.app \
+<pre class="example">sudo rm -rf /Library/Frameworks/R.framework /Applications/R.app \
    /usr/bin/R /usr/bin/Rscript
 </pre></div>
 
-<p>The installation consisted of four Apple packages:
+<p>The installation consists of four Apple packages:
 <code>org.r-project.R.x86_64.fw.pkg</code>,
 <code>org.r-project.R.x86_64.GUI.pkg</code>,
 <code>org.r-project.x86_64.tcltk.x11</code> and
@@ -2226,7 +2226,7 @@ for the R framework when installing multiple R versions in parallel),
 or after you have deleted the files.
 </p>
 <p>Uninstalling the Tcl/Tk or Texinfo components (which are installed under
-<samp>/usr/local</samp>) is not simple.  You can list the files they installed
+<samp>/usr/local</samp>) is not as simple.  You can list the files they installed
 in a Terminal by
 </p>
 <div class="example">
@@ -3675,13 +3675,14 @@ Building PDF package manuals (including the R reference manual) and
 vignettes is sensitive to the version of the LaTeX package
 <strong>hyperref</strong> and we recommend that the TeX distribution used is
 kept up-to-date.  A number of standard LaTeX packages are required
-(including <strong>fancyvrb</strong>, <strong>url</strong> and some of the font packages such
-as <strong>times</strong>, <strong>helvetic</strong>, <strong>ec</strong> and <strong>cm-super</strong>) and others
-such as <strong>hyperref</strong> and <strong>inconsolata</strong> are desirable (and without
-them you may need to change R&rsquo;s defaults: see <a href="#Making-the-manuals">Making the manuals</a>).  Note that package <strong>hyperref</strong> (currently) requires
-packages <strong>kvoptions</strong>, <strong>ltxcmds</strong> and <strong>refcount</strong>.  For
-distributions based on TeXLive the simplest approach may be to install
-collections <strong>collection-latex</strong>, <strong>collection-fontsrecommended</strong>,
+(including <strong>url</strong> and some of the font packages such as <strong>times</strong>,
+<strong>helvetic</strong>, <strong>ec</strong> and <strong>cm-super</strong>) and others such as
+<strong>hyperref</strong> and <strong>inconsolata</strong> are desirable (and without them you
+may need to change R&rsquo;s defaults: see <a href="#Making-the-manuals">Making the manuals</a>).  Note
+that package <strong>hyperref</strong> (currently) requires packages
+<strong>kvoptions</strong>, <strong>ltxcmds</strong> and <strong>refcount</strong>.  For distributions
+based on TeXLive the simplest approach may be to install collections
+<strong>collection-latex</strong>, <strong>collection-fontsrecommended</strong>,
 <strong>collection-latexrecommended</strong>, <strong>collection-fontsextra</strong> and
 <strong>collection-latexextra</strong> (assuming they are not installed by
 default): Fedora uses names like <strong>texlive-collection-fontsextra</strong> and
@@ -5344,9 +5345,10 @@ built for 10.6 to 10.8 but these has not been tested recently.
 </p>
 <p>To build R you need Apple&rsquo;s &lsquo;Command Line Tools&rsquo;: these can be
 (re-)installed by <code>xcode-select --install</code>.  (If you have a
-fresh installation, running e.g. <code>make</code> in a terminal will
+fresh OS installation, running e.g. <code>make</code> in a terminal will
 offer the installation of the command-line tools.  If you have installed
-Xcode, this provides the command-line tools.)
+Xcode, this provides the command-line tools.  The tools will need to be
+reinstalled when OS X is upgraded, as upgrading partially removes them.)
 </p>
 <p>You need <code>readline</code> (or to configure using
 <samp>--without-readline</samp>), and a Fortran compiler.  Those and other
@@ -5463,9 +5465,9 @@ that if you install tools from the sources they will by default be
 installed under <samp>/usr/local</samp> and not supersede the system
 versions.
 </p>
-<p>If you upgrade your OS you should re-install any of XQuartz, the
-&lsquo;Command Line Tools&rsquo; and Java which you have installed.  (Upgrading may
-partially remove previous versions which can be confusing.)
+<p>If you upgrade your OS you should re-install the &lsquo;Command Line Tools&rsquo;
+and may need to re-install XQuartz and Java (this has been needed for
+some upgrades but not others).
 </p>
 
 <table summary="" class="menu" border="0" cellspacing="0">
@@ -5491,34 +5493,29 @@ Next: <a href="#Tcl_002fTk-headers-and-libraries" accesskey="n" rel="next">Tcl/T
 <h4 class="subsection">C.3.1 El Capitan</h4>
 
 
-<p>[El Capitan was released at the end of September 2015, and experience to
-date is with systems which have been updated from Mavericks.  Upgraded
-systems need at least the Command Line Tools reinstalled.]
+<p>El Capitan was released at the end of September 2015, and experience to
+date is with systems which have been updated from Yosemite or earlier.
+Upgraded systems need the Command Line Tools reinstalled.
 </p>
 <p>There are problems resulting from the new-to-El-Capitan restriction that
 only Apple is allowed to install software under <samp>/usr</samp>: this
 affects <em>inter alia</em> <code>MacTeX</code> and <code>XQuartz</code>.  For
 <code>MacTeX</code> it is necessary to include <samp>/Library/TeX/texbin</samp> in
-your path rather than <samp>/usr/texbin</samp>.  It is not currently possible
-to install <code>XQuartz</code> cleanly on El Capitan as the installer tries
-to make links under <samp>/usr</samp>, but a pre-existing installation will
-continue to work.
+your path rather than <samp>/usr/texbin</samp>.  Upgrading will move
+disallowed files to under <samp>/Library/SystemMigration/usr</samp>: this
+includes <samp>/usr/X11R6</samp>, <samp>/usr/texbin</samp>, <samp>/usr/bin/R</samp>,
+<samp>/usr/bin/Rscript</samp> but not the link <samp>/usr/X11</samp>.
 </p>
-<p><code>configure</code> should to be told to look for <code>X11</code> in
+<p><code>configure</code> can be told to look for <code>X11</code> in
 <code>XQuartz</code>&rsquo;s main location of <samp>/opt/X11</samp>, e.g. by
 </p><div class="example">
 <pre class="example">--x-includes=/opt/X11/include --x-libraries=/opt/X11/lib
 </pre></div>
 
-<p>It may be necessary for a clean installation for <code>XQuartz</code> to
-replace <samp>/usr/X11</samp> by <samp>/opt/X11</samp> in file
-<samp>/usr/local/lib/tkConfig.sh</samp>, and to use
-<code>install_name_tool</code> to adjust
-<samp>/usr/local/lib/libtk8.6.dylib</samp> to link to libraries under
-<samp>/opt/X11</samp> rather than <samp>/usr/X11</samp>.  Updated installations seem
-to preserve <samp>/usr/X11</samp>, but there are packages assuming
-<samp>/usr/X11R6</samp>, a link that no longer exists.
+<p>although the linked versions under <samp>/usr/X11</samp> will be found (if the
+link is present).
 </p>
+
 <hr>
 <a name="Tcl_002fTk-headers-and-libraries"></a>
 <div class="header">
@@ -5548,10 +5545,11 @@ in the native OS X style: this will not work with <small>R.APP</small> because o
 conflicts over the OS X menu, but for those only using command-line R
 this provides a much more intuitive interface to Tk for experienced Mac
 users.  Most versions of OS X come with Aqua Tcl/Tk libraries, but these
-are not at all recent versions of Tcl/Tk (8.5.9 in Yosemite).  It is
-better to install Tcl/Tk 8.6.x from the sources or a binary distribution
-from <a href="https://www.activestate.com/activetcl/downloads">https://www.activestate.com/activetcl/downloads</a>.  Configure
-R with
+are not at all recent versions of Tcl/Tk (8.5.9 in El Capitan, which is
+not even the latest patched version in that series).  It is better to
+install Tcl/Tk 8.6.x from the sources or a binary distribution from
+<a href="https://www.activestate.com/activetcl/downloads">https://www.activestate.com/activetcl/downloads</a>.  Configure R
+with
 </p><div class="example">
 <pre class="example">--with-tcl-config=/Library/Frameworks/Tcl.framework/tclConfig.sh 
 --with-tk-config=/Library/Frameworks/Tk.framework/tkConfig.sh
@@ -6398,10 +6396,10 @@ Next: <a href="#The-Inno-Setup-installer" accesskey="n" rel="next">The Inno Setu
 LaTeX includes a suitable port of <code>pdftex</code>.  This can be set up
 to install extra packages &lsquo;on the fly&rsquo;, which is the simplest way to use
 it (and the default).  The &lsquo;basic&rsquo; version of &lsquo;<samp>MiKTeX</samp>&rsquo; almost
-suffices: when last tested packages
+suffices: when last checked packages
 </p>
 <div class="example">
-<pre class="example">epsf fancyvrb inconsolata listings mptopdf natbib url
+<pre class="example">epsf inconsolata mptopdf url
 </pre></div>
 
 <p>needed to be added (on the fly or <em>via</em> the &lsquo;<samp>MiKTeX</samp>&rsquo; Package
@@ -6923,14 +6921,15 @@ and the Intel C compiler.</p>
 Strawberry Perl, <a href="http://strawberryperl.com/">http://strawberryperl.com/</a> and ActivePerl,
 <a href="https://www.activestate.com/activeperl">https://www.activestate.com/activeperl</a>.</p>
 <h3><a name="FOOT13" href="#DOCF13">(13)</a></h3>
-<p>It seems that because of a security change in El
-Capitan earlier versions of the installer will fail there, but those as
-from R 3.2.2 should work.</p>
+<p>for R 3.2.1 and earlier, the installer will
+attempt unsuccessfully to install <code>R</code> and <code>Rscript</code> in
+<samp>/usr/bin</samp>.</p>
 <h3><a name="FOOT14" href="#DOCF14">(14)</a></h3>
 <p>The installer as
 from R 3.2.2 puts links to <code>R</code> and <code>Rscript</code> in
 <samp>/usr/bin</samp> (Mavericks, Yosemite) or <samp>/usr/local/bin</samp> (El
-Capitan and later).</p>
+Capitan and later). If these are missing, you can run directly the
+versions in <samp>/Library/Frameworks/R.framework/Resources/</samp>.</p>
 <h3><a name="FOOT15" href="#DOCF15">(15)</a></h3>
 <p>unless they were excluded in the build.</p>
 <h3><a name="FOOT16" href="#DOCF16">(16)</a></h3>

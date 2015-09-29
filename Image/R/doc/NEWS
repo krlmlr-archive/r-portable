@@ -221,6 +221,10 @@ CHANGES IN R-devel:
     * The minimum supported version of OS X is 10.6 ('Snow Leopard'):
       even that has been unsupported by Apple since 2012.
 
+    * The configure default on OS X is --disable-R-framework: enable
+      this if you intend to install under /Library/Frameworks and use
+      with R.app.
+
   C-LEVEL FACILITIES:
 
     * The API call logspace_sum introduced in R 3.2.0 is now remapped

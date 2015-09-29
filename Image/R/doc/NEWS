@@ -172,6 +172,8 @@ CHANGES IN R-devel:
     * rank() gains a ties.method = "last" option, for convenience (and
       symmetry), as proposed by Marius Hofert.
 
+    * getSource(vignette(..)) is the R source file name of a vignette.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

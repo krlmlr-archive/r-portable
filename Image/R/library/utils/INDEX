@@ -152,7 +152,7 @@ update.packages         Compare Installed Packages with CRAN-like
 url.show                Display a text URL
 utils-deprecated        Deprecated Functions in Package 'utils'
 utils-package           The R Utils Package
-vignette                View or List Package Vignettes
+vignette                View, List or Get R Source of Package Vignettes
 win.version             Get Windows Version
 winDialog               Dialog Boxes under Windows
 winMenuAdd              User Menus under Windows

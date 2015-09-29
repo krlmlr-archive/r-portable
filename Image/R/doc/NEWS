@@ -253,7 +253,7 @@ CHANGES IN R-devel:
 
     * R_GE_version has been increased to 11.
 
-    * New R_orderVector1(), as fast one-argument version of
+    * New API call R_orderVector1(), a faster one-argument version of
       R_orderVector().
 
   BUG FIXES:
@@ -261,9 +261,9 @@ CHANGES IN R-devel:
     * C-level asChar(x) is fixed for when x is not a vector, and it
       returns "TRUE"/"FALSE" instead of "T"/"F" for logical vectors.
 
-    * .colSums() etc (with an initial dot) first argument is now named
-      x rather than X (matching colSums()): error messages are thereby
-      corrected.
+    * The first arguments of .colSums() etc (with an initial dot) are
+      now named x rather than X (matching colSums()): thus error
+      messages are corrected.
 
     * A coef() method for class "maov" has been added to allow vcov()
       to work with multivariate results. (PR#16380)
@@ -275,15 +275,15 @@ CHANGES IN R-devel:
       particular, this affected assignment to non-existing rows via
       numerical indexing. (PR#16570)
 
-    * tail.matrix() did not work for zero rows matrices, and produced
-      "[1e+05,]" row "labels".
+    * tail.matrix() did not work for zero rows matrices, and could
+      produce row "labels" such as "[1e+05,]".
 
     * Data frames with column name "stringsAsFactors" now format and
       print correctly.  (PR#16580)
 
-    * The X11 device froze on Red Hat Enterprise Linux 6. It now waits
-      for MapNotify events instead of Expose events, thanks to
-      Siteshwar Vashisht. (PR#16497)
+    * The X11() device sometimes froze on Red Hat Enterprise Linux 6.
+      It now waits for MapNotify events instead of Expose events,
+      thanks to Siteshwar Vashisht. (PR#16497)
 
 CHANGES IN R 3.2.2 patched:
 

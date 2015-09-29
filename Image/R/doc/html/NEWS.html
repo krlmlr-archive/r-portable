@@ -379,8 +379,8 @@ deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</s
 <li> <p><code>R_GE_version</code> has been increased to <code>11</code>.
 </p>
 </li>
-<li><p> New <code>R_orderVector1()</code>, as fast one-argument version of
-<code>R_orderVector()</code>.
+<li><p> New API call <code>R_orderVector1()</code>, a faster
+one-argument version of <code>R_orderVector()</code>.
 </p>
 </li></ul>
 
@@ -396,9 +396,9 @@ vector, and it returns <code>"TRUE"</code>/<code>"FALSE"</code> instead of
 <code>"T"</code>/<code>"F"</code> for logical vectors.
 </p>
 </li>
-<li> <p><code>.colSums()</code> etc (with an initial dot) first argument
-is now named <code>x</code> rather than <code>X</code> (matching
-<code>colSums()</code>): error messages are thereby corrected.
+<li><p> The first arguments of <code>.colSums()</code> etc (with an
+initial dot) are now named <code>x</code> rather than <code>X</code> (matching
+<code>colSums()</code>): thus error messages are corrected.
 </p>
 </li>
 <li><p> A <code>coef()</code> method for class <code>"maov"</code> has been
@@ -417,16 +417,17 @@ rows via numerical indexing. (<a href="https://bugs.R-project.org/bugzilla3/show
 </p>
 </li>
 <li> <p><code>tail.matrix()</code> did not work for zero rows matrices,
-and produced <code>"[1e+05,]"</code> row &ldquo;labels&rdquo;.
+and could produce row &ldquo;labels&rdquo; such as <code>"[1e+05,]"</code>.
 </p>
 </li>
 <li><p> Data frames with column name <code>"stringsAsFactors"</code> now
 format and print correctly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16580">PR#16580</a>)
 </p>
 </li>
-<li><p> The X11 device froze on Red Hat Enterprise Linux 6. It now
-waits for MapNotify events instead of Expose events, thanks to
-Siteshwar Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
+<li><p> The <code>X11()</code> device sometimes froze on Red Hat
+Enterprise Linux 6. It now waits for <code>MapNotify</code> events
+instead of <code>Expose</code> events, thanks to Siteshwar
+Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
 </p>
 </li></ul>
 

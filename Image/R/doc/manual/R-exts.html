@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-11-10).
+<!-- This manual is for R, version 3.3.0 Under development (2015-11-11).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-11-10).
+<p>This manual is for R, version 3.3.0 Under development (2015-11-11).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -1915,6 +1915,7 @@ functionality, respectively.
 compiler flags are used in the <samp>configure</samp> tests as when compiling
 R or your package.  Under a Unix-alike, you can achieve this by
 including the following fragment early in <samp>configure.ac</samp>
+(<em>before</em> calling <code>AC_PROG_CC</code>)
 </p>
 <div class="example">
 <pre class="example">: ${R_HOME=`R RHOME`}
@@ -1938,9 +1939,11 @@ might contain spaces.)
 </pre></div>
 
 <p>and packages written with C++ need to pick up the details for the C++
-compiler and switch the current language to C++ by
+compiler and switch the current language to C++ by something like
 </p><div class="example">
-<pre class="example">AC_LANG(C++)
+<pre class="example">CXX=`&quot;${R_HOME}/bin/R&quot; CMD config CXX`
+CXXFLAGS=`&quot;${R_HOME}/bin/R&quot; CMD config CXXFLAGS`
+AC_LANG(C++)
 </pre></div>
 
 <p>The latter is important, as for example C headers may not be available
@@ -1972,9 +1975,8 @@ override the test for the FORTRAN linker flags.)
 
 <p><strong>N.B.</strong>: If the <code>configure</code> script creates files, e.g.
 <samp>src/Makevars</samp>, you do need a <code>cleanup</code> script to remove
-them.  Otherwise if the package has vignettes, <code>R CMD build</code>
-will ship the files that are created.  For example, package
-<a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> has
+them.  Otherwise <code>R CMD build</code> may ship the files that are
+created.  For example, package <a href="https://CRAN.R-project.org/package=RODBC"><strong>RODBC</strong></a> has
 </p>
 <div class="example">
 <pre class="example">#!/bin/sh

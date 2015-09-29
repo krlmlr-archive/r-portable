@@ -262,6 +262,13 @@ CHANGES IN R 3.2.2 patched:
     * which.min(x) and which.max(x) may be much faster for logical and
       integer x and now also work for long vectors.
 
+    * The 'emulation' part of tools::texi2dvi() has been somewhat
+      enhanced, including supporting quiet = TRUE.  It can be selected
+      by texi2dvi = "emulation".
+
+      (Windows) MiKTeX removed its texi2dvi.exe command in Sept 2015:
+      tools::texi2dvi() tries texify.exe if it is not found.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The included configuration code for libintl has been updated to
@@ -281,6 +288,10 @@ CHANGES IN R 3.2.2 patched:
 
     * Various macros can be set to override the default behaviour of
       configure when detecting OpenMP: see file config.site.
+
+    * Source installation on Windows has been modified to allow for
+      MiKTeX installations without texi2dvi.exe.  See file
+      MkRules.dist.
 
   BUG FIXES:
 

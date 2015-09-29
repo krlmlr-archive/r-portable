@@ -403,6 +403,15 @@ rather than only using active mode (reported by Dan Tenenbaum).
 faster for logical and integer <code>x</code> and now also work for long
 vectors.
 </p>
+</li>
+<li><p> The &lsquo;emulation&rsquo; part of <code>tools::texi2dvi()</code> has
+been somewhat enhanced, including supporting <code>quiet = TRUE</code>.
+It can be selected by <code>texi2dvi = "emulation"</code>.
+</p>
+<p>(Windows) MiKTeX removed its <code>texi2dvi.exe</code> command in Sept
+2015: <code>tools::texi2dvi()</code> tries <code>texify.exe</code> if it is
+not found.
+</p>
 </li></ul>
 
 
@@ -435,6 +444,11 @@ defaults to <code>clang</code>).
 <li><p> Various macros can be set to override the default
 behaviour of <code>configure</code> when detecting OpenMP: see file
 &lsquo;<span class="file">config.site</span>&rsquo;.
+</p>
+</li>
+<li><p> Source installation on Windows has been modified to allow
+for MiKTeX installations without <code>texi2dvi.exe</code>.  See file
+&lsquo;<span class="file">MkRules.dist</span>&rsquo;.
 </p>
 </li></ul>
 

@@ -147,7 +147,7 @@ CHANGES IN R-devel:
       more suitable for non-European languages.
 
     * match(x, table) is faster, sometimes by an order of magnitude,
-      when x is of length one, incomparables is unchanged thanks to
+      when x is of length one and incomparables is unchanged, thanks to
       Haverty's PR#16491.
 
     * More consistent, partly not back-compatible behavior of NA and
@@ -172,7 +172,7 @@ CHANGES IN R-devel:
   DEPRECATED AND DEFUNCT:
 
     * The previously included versions of zlib, bzip2, xz and PCRE have
-      been removed, so suitable external (usuallly system) versions are
+      been removed, so suitable external (usually system) versions are
       required (see the 'R Installation and Administration' manual).
 
     * The unexported and undocumented Windows-only devices cairo_bmp(),
@@ -343,7 +343,7 @@ CHANGES IN R 3.2.2 patched:
       ".".
 
     * The built-in HTTP server converted entire Content-Type to
-      lowercase including paramters which can cause issues for
+      lowercase including parameters which can cause issues for
       multi-part form boundaries (PR#16541).
 
 CHANGES IN R 3.2.2:

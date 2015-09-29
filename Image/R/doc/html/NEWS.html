@@ -211,8 +211,8 @@ that is more suitable for non-European languages.
 </p>
 </li>
 <li> <p><code>match(x, table)</code> is faster, sometimes by an order of
-magnitude, when <code>x</code> is of length one, 
-<code>incomparables</code> is unchanged thanks to Haverty's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>.
+magnitude, when <code>x</code> is of length one and <code>incomparables</code>
+is unchanged, thanks to Haverty's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>.
 </p>
 </li>
 <li><p> More consistent, partly not back-compatible behavior of
@@ -256,7 +256,7 @@ globals.
 <ul>
 <li><p> The previously included versions of <code>zlib</code>,
 <code>bzip2</code>, <code>xz</code> and PCRE have been removed, so suitable
-external (usuallly system) versions are required (see the
+external (usually system) versions are required (see the
 &lsquo;R Installation and Administration&rsquo; manual).
 </p>
 </li>
@@ -531,7 +531,7 @@ start with a <code>"."</code>.
 </p>
 </li>
 <li><p> The built-in <code>HTTP</code> server converted entire
-<code>Content-Type</code> to lowercase including paramters which
+<code>Content-Type</code> to lowercase including parameters which
 can cause issues for multi-part form boundaries (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16541">PR#16541</a>).
 </p>
 </li></ul>

@@ -20,5 +20,5 @@ NeedsCompilation: yes
 Packaged: 2015-04-22 15:26:12 UTC; yihui
 Repository: CRAN
 Date/Publication: 2015-04-22 22:33:46
-Built: R 3.2.2; x86_64-w64-mingw32; 2015-10-01 02:30:26 UTC; windows
+Built: R 3.2.2; x86_64-w64-mingw32; 2015-10-03 02:37:04 UTC; windows
 Archs: i386, x64

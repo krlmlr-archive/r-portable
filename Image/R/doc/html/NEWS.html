@@ -476,6 +476,11 @@ not found.
 <li><p> (Windows only) Shortcuts for printing and saving have
 been added to menus in <code>Rgui.exe</code>.  (Request of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16572">PR#16572</a>.)
 </p>
+</li>
+<li> <p><code>loess(..., iterTrace=TRUE)</code> now provides diagnostics
+for robustness iterations, and the <code>print()</code> method for
+<code>summary(&lt;loess&gt;)</code> shows slightly more.
+</p>
 </li></ul>
 
 
@@ -648,6 +653,10 @@ Hastie.)
 </li>
 <li> <p><code>var()</code> and hence <code>sd()</code> warn about
 <code>factor</code> arguments which are deprecated now. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16564">PR#16564</a>)
+</p>
+</li>
+<li> <p><code>loess(*, weights = *)</code> stored wrong weights and hence
+gave slightly wrong predictions for <code>newdata</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16587">PR#16587</a>)
 </p>
 </li></ul>
 

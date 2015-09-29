@@ -315,6 +315,10 @@ CHANGES IN R 3.2.2 patched:
     * (Windows only) Shortcuts for printing and saving have been added
       to menus in Rgui.exe.  (Request of PR#16572.)
 
+    * loess(..., iterTrace=TRUE) now provides diagnostics for
+      robustness iterations, and the print() method for
+      summary(<loess>) shows slightly more.
+
   INSTALLATION and INCLUDED SOFTWARE:
 
     * The included configuration code for libintl has been updated to
@@ -428,6 +432,9 @@ CHANGES IN R 3.2.2 patched:
 
     * var() and hence sd() warn about factor arguments which are
       deprecated now. (PR#16564)
+
+    * loess(*, weights = *) stored wrong weights and hence gave
+      slightly wrong predictions for newdata.  (PR#16587)
 
 CHANGES IN R 3.2.2:
 

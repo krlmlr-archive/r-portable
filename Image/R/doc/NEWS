@@ -356,6 +356,10 @@ CHANGES IN R 3.2.2 patched:
     * Modifying slots of S4 objects could fail when the methods package
       was not attached (PR#16545).
 
+    * splineDesign(*, outer.ok=TRUE) (splines) is better now
+      (PR#16549), and interpSpline() now allows sparse=TRUE for speedup
+      with non-small sizes.
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

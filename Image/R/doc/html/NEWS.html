@@ -547,6 +547,11 @@ can cause issues for multi-part form boundaries (<a href="https://bugs.R-project
 <li><p> Modifying slots of S4 objects could fail when the
 <span class="pkg">methods</span> package was not attached (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16545">PR#16545</a>).
 </p>
+</li>
+<li> <p><code>splineDesign(*, outer.ok=TRUE)</code> (<span class="pkg">splines</span>) is better now
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16549">PR#16549</a>), and <code>interpSpline()</code> now allows <code>sparse=TRUE</code>
+for speedup with non-small sizes.
+</p>
 </li></ul>
 
 

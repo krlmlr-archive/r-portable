@@ -172,8 +172,6 @@ CHANGES IN R-devel:
     * rank() gains a ties.method = "last" option, for convenience (and
       symmetry).
 
-    * getSource(vignette(..)) is the R source file name of a vignette.
-
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -291,6 +289,9 @@ CHANGES IN R 3.2.2 patched:
 
       (Windows) MiKTeX removed its texi2dvi.exe command in Sept 2015:
       tools::texi2dvi() tries texify.exe if it is not found.
+
+    * (Windows only) Shortcuts for printing and saving have been added
+      to menus in Rgui.exe.  (Request of PR#16572.)
 
   INSTALLATION and INCLUDED SOFTWARE:
 

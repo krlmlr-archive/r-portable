@@ -107,8 +107,6 @@ getIdentification	setWindowTitle
 getParseData	getParseData
 getParseText	getParseData
 getS3method	getS3method
-getSource	vignette
-getSource.vignette	vignette
 getSrcDirectory	sourceutils
 getSrcFilename	sourceutils
 getSrcLocation	sourceutils

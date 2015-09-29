@@ -394,6 +394,9 @@ CHANGES IN R 3.2.2 patched:
       (PR#16549), and interpSpline() now allows sparse=TRUE for speedup
       with non-small sizes.
 
+    * If the expression in the traceback was too long, traceback() did
+      not report the source line number.  (Patch by Kirill Muller.)
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

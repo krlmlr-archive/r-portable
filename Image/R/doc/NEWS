@@ -238,6 +238,9 @@ CHANGES IN R-devel:
 
     * R_GE_version has been increased to 11.
 
+    * New R_orderVector1(), as fast one-argument version of
+      R_orderVector().
+
   BUG FIXES:
 
     * C-level asChar(x) is fixed for when x is not a vector, and it

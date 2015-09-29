@@ -1,6 +1,6 @@
 R FAQ
 Frequently Asked Questions on R
-Version 3.2.2015-08-09
+Version 3.2.2015-11-07
 Kurt Hornik
 
 
@@ -537,7 +537,7 @@ obtained by 'citation()'.
 ===================================
 
 Thanks to Martin Maechler <Martin.Maechler@R-project.org>, there are
-four mailing lists devoted to R.
+several mailing lists devoted to R, including the following:
 
 'R-announce'
      A moderated list for major announcements about the development of R
@@ -553,6 +553,9 @@ four mailing lists devoted to R.
 'R-devel'
      This list is for questions and discussion about code development in
      R.
+'R-package-devel'
+     A list which which provides a forum for learning about the R
+     package development process.
 
 Please read the posting guide
 (https://www.R-project.org/posting-guide.html) _before_ sending anything

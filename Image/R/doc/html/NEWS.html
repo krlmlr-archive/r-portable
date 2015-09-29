@@ -249,6 +249,11 @@ for convenience (and symmetry).
 <li> <p><code>regmatches(invert = NA)</code> can now be used to extract
 both non-matched and matched substrings.
 </p>
+</li>
+<li> <p><code>data.frame()</code> gains argument <code>fix.empty.names</code>;
+<code>as.data.frame.list()</code> gets new <code>cut.names</code>,
+<code>col.names</code> and <code>fix.empty.names</code>.
+</p>
 </li></ul>
 
 
@@ -402,6 +407,10 @@ rows via numerical indexing. (<a href="https://bugs.R-project.org/bugzilla3/show
 </li>
 <li> <p><code>tail.matrix()</code> did not work for zero rows matrices,
 and produced <code>"[1e+05,]"</code> row &ldquo;labels&rdquo;.
+</p>
+</li>
+<li><p> Data frames with column name <code>"stringsAsFactors"</code> now
+format and print correctly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16580">PR#16580</a>)
 </p>
 </li></ul>
 

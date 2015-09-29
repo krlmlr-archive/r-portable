@@ -175,6 +175,9 @@ CHANGES IN R-devel:
     * regmatches(invert = NA) can now be used to extract both
       non-matched and matched substrings.
 
+    * data.frame() gains argument fix.empty.names; as.data.frame.list()
+      gets new cut.names, col.names and fix.empty.names.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -267,6 +270,9 @@ CHANGES IN R-devel:
 
     * tail.matrix() did not work for zero rows matrices, and produced
       "[1e+05,]" row "labels".
+
+    * Data frames with column name "stringsAsFactors" now format and
+      print correctly.  (PR#16580)
 
 CHANGES IN R 3.2.2 patched:
 

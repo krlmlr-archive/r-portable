@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;testthat&rsquo; version 0.10.0</h2>
+</div><h2>Documentation for package &lsquo;testthat&rsquo; version 0.11.0</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 </ul>
@@ -55,19 +55,27 @@
 <tr><td style="width: 25%;"><a href="equivalence.html">expect_equivalent</a></td>
 <td>Expectation: is the object equal to a value?</td></tr>
 <tr><td style="width: 25%;"><a href="matching-expectations.html">expect_error</a></td>
-<td>Expectation: does string/output/warning/error match a regular expression?</td></tr>
+<td>Expectation: does string/output/message/warning/error match a regular expression?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_true.html">expect_false</a></td>
 <td>Expectation: is the object true/false?</td></tr>
+<tr><td style="width: 25%;"><a href="expect-compare.html">expect_gt</a></td>
+<td>Expectation: is returned value less or greater than specified value?</td></tr>
+<tr><td style="width: 25%;"><a href="expect-compare.html">expect_gte</a></td>
+<td>Expectation: is returned value less or greater than specified value?</td></tr>
 <tr><td style="width: 25%;"><a href="equivalence.html">expect_identical</a></td>
 <td>Expectation: is the object equal to a value?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_is.html">expect_is</a></td>
 <td>Expectation: does the object inherit from a class?</td></tr>
 <tr><td style="width: 25%;"><a href="expect-compare.html">expect_less_than</a></td>
 <td>Expectation: is returned value less or greater than specified value?</td></tr>
+<tr><td style="width: 25%;"><a href="expect-compare.html">expect_lt</a></td>
+<td>Expectation: is returned value less or greater than specified value?</td></tr>
+<tr><td style="width: 25%;"><a href="expect-compare.html">expect_lte</a></td>
+<td>Expectation: is returned value less or greater than specified value?</td></tr>
 <tr><td style="width: 25%;"><a href="matching-expectations.html">expect_match</a></td>
-<td>Expectation: does string/output/warning/error match a regular expression?</td></tr>
+<td>Expectation: does string/output/message/warning/error match a regular expression?</td></tr>
 <tr><td style="width: 25%;"><a href="matching-expectations.html">expect_message</a></td>
-<td>Expectation: does string/output/warning/error match a regular expression?</td></tr>
+<td>Expectation: does string/output/message/warning/error match a regular expression?</td></tr>
 <tr><td style="width: 25%;"><a href="expect-compare.html">expect_more_than</a></td>
 <td>Expectation: is returned value less or greater than specified value?</td></tr>
 <tr><td style="width: 25%;"><a href="expect_named.html">expect_named</a></td>
@@ -75,11 +83,13 @@
 <tr><td style="width: 25%;"><a href="expect_null.html">expect_null</a></td>
 <td>Expectation: is the object NULL?</td></tr>
 <tr><td style="width: 25%;"><a href="matching-expectations.html">expect_output</a></td>
-<td>Expectation: does string/output/warning/error match a regular expression?</td></tr>
+<td>Expectation: does string/output/message/warning/error match a regular expression?</td></tr>
+<tr><td style="width: 25%;"><a href="expect_silent.html">expect_silent</a></td>
+<td>Expect that code has no output, messages, or warnings.</td></tr>
 <tr><td style="width: 25%;"><a href="expect_true.html">expect_true</a></td>
 <td>Expectation: is the object true/false?</td></tr>
 <tr><td style="width: 25%;"><a href="matching-expectations.html">expect_warning</a></td>
-<td>Expectation: does string/output/warning/error match a regular expression?</td></tr>
+<td>Expectation: does string/output/message/warning/error match a regular expression?</td></tr>
 <tr><td style="width: 25%;"><a href="fail.html">fail</a></td>
 <td>A default expectation that always fails.</td></tr>
 <tr><td style="width: 25%;"><a href="ListReporter-class.html">ListReporter</a></td>
@@ -89,7 +99,7 @@
 <tr><td style="width: 25%;"><a href="make_expectation.html">make_expectation</a></td>
 <td>Make an equality test.</td></tr>
 <tr><td style="width: 25%;"><a href="matching-expectations.html">matching-expectations</a></td>
-<td>Expectation: does string/output/warning/error match a regular expression?</td></tr>
+<td>Expectation: does string/output/message/warning/error match a regular expression?</td></tr>
 <tr><td style="width: 25%;"><a href="MinimalReporter-class.html">MinimalReporter</a></td>
 <td>Test reporter: minimal.</td></tr>
 <tr><td style="width: 25%;"><a href="MinimalReporter-class.html">MinimalReporter-class</a></td>
@@ -98,8 +108,6 @@
 <td>Multi reporter: combine several reporters in one.</td></tr>
 <tr><td style="width: 25%;"><a href="MultiReporter-class.html">MultiReporter-class</a></td>
 <td>Multi reporter: combine several reporters in one.</td></tr>
-<tr><td style="width: 25%;"><a href="not.html">not</a></td>
-<td>Negate an expectation</td></tr>
 <tr><td style="width: 25%;"><a href="Reporter-class.html">Reporter</a></td>
 <td>Stub object for managing a reporter of tests.</td></tr>
 <tr><td style="width: 25%;"><a href="Reporter-class.html">Reporter-class</a></td>
@@ -118,7 +126,11 @@
 <td>Skip a test.</td></tr>
 <tr><td style="width: 25%;"><a href="skip.html">skip_if_not_installed</a></td>
 <td>Skip a test.</td></tr>
+<tr><td style="width: 25%;"><a href="skip.html">skip_on_appveyor</a></td>
+<td>Skip a test.</td></tr>
 <tr><td style="width: 25%;"><a href="skip.html">skip_on_cran</a></td>
+<td>Skip a test.</td></tr>
+<tr><td style="width: 25%;"><a href="skip.html">skip_on_os</a></td>
 <td>Skip a test.</td></tr>
 <tr><td style="width: 25%;"><a href="skip.html">skip_on_travis</a></td>
 <td>Skip a test.</td></tr>
@@ -145,7 +157,7 @@
 <tr><td style="width: 25%;"><a href="testthat_results.html">testthat_results</a></td>
 <td>Create a 'testthat_results' object from the test results as stored in the ListReporter results field.</td></tr>
 <tr><td style="width: 25%;"><a href="test_package.html">test_check</a></td>
-<td>Run all tests in an installed package</td></tr>
+<td>Run all tests in an installed package.</td></tr>
 <tr><td style="width: 25%;"><a href="test_dir.html">test_dir</a></td>
 <td>Run all of the tests in a directory.</td></tr>
 <tr><td style="width: 25%;"><a href="test_examples.html">test_example</a></td>
@@ -155,7 +167,7 @@
 <tr><td style="width: 25%;"><a href="test_file.html">test_file</a></td>
 <td>Run all tests in specified file.</td></tr>
 <tr><td style="width: 25%;"><a href="test_package.html">test_package</a></td>
-<td>Run all tests in an installed package</td></tr>
+<td>Run all tests in an installed package.</td></tr>
 <tr><td style="width: 25%;"><a href="test_that.html">test_that</a></td>
 <td>Create a test.</td></tr>
 <tr><td style="width: 25%;"><a href="watch.html">watch</a></td>

@@ -158,6 +158,13 @@ CHANGES IN R-devel:
       work automatically on any objects for which appropriate methods
       on those generics are defined.
 
+    * The logic for selecting the default screen device on OS X has
+      been simplified: it is now quartz() if that is available even if
+      environment variable DISPLAY has been set by the user.
+
+      The choice can easily be overridden _via_ environment variable
+      R_INTERACTIVE_DEVICE.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -345,6 +352,9 @@ CHANGES IN R 3.2.2 patched:
     * The built-in HTTP server converted entire Content-Type to
       lowercase including parameters which can cause issues for
       multi-part form boundaries (PR#16541).
+
+    * Modifying slots of S4 objects could fail when the methods package
+      was not attached (PR#16545).
 
 CHANGES IN R 3.2.2:
 

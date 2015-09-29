@@ -1,5 +1,5 @@
 
-R Under development (unstable) (2015-09-25 r69431) -- "Unsuffered Consequences"
+R Under development (unstable) (2015-10-06 r69476) -- "Unsuffered Consequences"
 Copyright (C) 2015 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -1153,4 +1153,11 @@ Formal class 'signature' [package "methods"] with 3 slots
 > stopifnot(identical(getClasses(which(search() == "package:stats4")), cl4),
 + 	  c("mle", "profile.mle", "summary.mle") %in% cl4)
 > ## failed after an optimization patch
+> 
+> detach("package:methods", force=TRUE)
+> C1@slot1 <- pi
+> stopifnot(identical(C1@slot1, pi))
+> stopifnot(require("methods"))
+Loading required package: methods
+> ## Slot assignment failed in R <= 3.2.2, C code calling checkAtAssignment()
 > 

@@ -225,6 +225,15 @@ less often resulting in complex <code>NA</code> (<code>NA_complex_</code>).
 objects for which appropriate methods on those generics are
 defined.
 </p>
+</li>
+<li><p> The logic for selecting the default screen device on OS X
+has been simplified: it is now <code>quartz()</code> if that is
+available even if environment variable <span class="env">DISPLAY</span> has been set
+by the user.
+</p>
+<p>The choice can easily be overridden <em>via</em> environment
+variable <span class="env">R_INTERACTIVE_DEVICE</span>.
+</p>
 </li></ul>
 
 
@@ -533,6 +542,10 @@ start with a <code>"."</code>.
 <li><p> The built-in <code>HTTP</code> server converted entire
 <code>Content-Type</code> to lowercase including parameters which
 can cause issues for multi-part form boundaries (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16541">PR#16541</a>).
+</p>
+</li>
+<li><p> Modifying slots of S4 objects could fail when the
+<span class="pkg">methods</span> package was not attached (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16545">PR#16545</a>).
 </p>
 </li></ul>
 

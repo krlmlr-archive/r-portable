@@ -34,5 +34,5 @@ Maintainer: Hadley Wickham <h.wickham@gmail.com>
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2015-04-15 21:00:16
-Built: R 3.2.2; x86_64-w64-mingw32; 2015-10-15 03:14:35 UTC; windows
+Built: R 3.2.2; x86_64-w64-mingw32; 2015-10-16 03:21:41 UTC; windows
 Archs: i386, x64

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-10-15).
+<!-- This manual is for R, version 3.3.0 Under development (2015-10-16).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-10-15).
+<p>This manual is for R, version 3.3.0 Under development (2015-10-16).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -522,8 +522,8 @@ created if necessary).  The alpha, beta and RC versions of an upcoming
 the four-week period prior to the release.
 </p>
 <p>Note that &lsquo;<samp>https:</samp>&rsquo; is required<a name="DOCF2" href="#FOOT2"><sup>2</sup></a>,
-and that the SSL certificate for the Subversion server of the R project
-should be recognized as from a trusted source.
+and that the SSL certificate for the Subversion server of the R
+project should be recognized as from a trusted source.
 </p>
 <p>Note that retrieving the sources by e.g. <code>wget -r</code> or
 <code>svn export</code> from that URL will not work (and will give a error
@@ -2737,11 +2737,27 @@ FFLAGS=-g -O -mtune=native
 FCFLAGS=-g -O -mtune=native
 </pre></div>
 
+<p>Another use is to override the settings in a binary installation of R.
+For example, to use a different Fortran compiler on OS X
+</p>
+<div class="example">
+<pre class="example">F77 = /usr/local/gfortran/bin/gfortran
+FC = /usr/local/gfortran/bin/gfortran
+FLIBS = -L/usr/local/gfortran/lib/gcc/x86_64-apple-darwin14/5.2.0 
+  -L/usr/local/gfortran/lib -lgfortran -lquadmath -lm
+</pre></div>
+
+<p>(line split for legibility here).
+</p>
 <p>There is also provision for a site-wide <samp>Makevars.site</samp> file under
 <samp><var>R_HOME</var>/etc</samp> (in a sub-architecture-specific directory if
 appropriate).  This is read immediately after <samp>Makeconf</samp>, and an
 alternative file can be specified by environment variable
 <code>R_MAKEVARS_SITE</code>.
+</p>
+<p>Note that these mechanisms do not work with packages which fail to pass
+settings down to sub-makes, perhaps reading <samp>etc/Makeconf</samp> in
+makefiles in subdirectories.  Fortunately such packages are unusual.
 </p>
 <hr>
 <a name="Multiple-sub_002darchitectures"></a>

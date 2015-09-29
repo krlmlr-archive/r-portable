@@ -169,6 +169,9 @@ CHANGES IN R-devel:
       system(*,intern=TRUE) no longer truncates (output) lines longer
       than 8192 characters, thanks to Karl Millar's PR#16544.
 
+    * rank() gains a ties.method = "last" option, for convenience (and
+      symmetry), as proposed by Marius Hofert.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

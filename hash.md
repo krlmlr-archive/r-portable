@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (204.9 MB, MD5 hash: `51cdb88da3ac4693296eb9882c1ae0f2`, uncompressed 474.6 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (205.4 MB, MD5 hash: `60cedb9bd299c320715d8e4f264da41c`, uncompressed 490.7 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.3 MB, MD5 hash: `29425c3746ab236feb876f9759002abb`, uncompressed 531 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (204.9 MB, MD5 hash: `bf395fcff05ec01a22e4b48b96ee787c`, uncompressed 474.6 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (205.4 MB, MD5 hash: `daeb71ab5adabe3f66d77ca88817101e`, uncompressed 490.7 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.3 MB, MD5 hash: `5ce125161ed44ff9307b8a18f6dea326`, uncompressed 531 MB)
 
 
 
@@ -12,7 +12,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2015-10-15 r69519)
+R Under development (unstable) (2015-10-16 r69529)
 
 ### Package versions
 

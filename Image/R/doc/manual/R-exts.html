@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-10-15).
+<!-- This manual is for R, version 3.3.0 Under development (2015-10-16).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-10-15).
+<p>This manual is for R, version 3.3.0 Under development (2015-10-16).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4825,9 +4825,13 @@ portable code (including not as guards in C/C++ headers).  Other macros,
 typically upper-case, may be defined by the compiler or system headers
 and can cause problems.
 The most common issue involves the names of the Intel CPU registers such
-as <code>CS</code>, <code>DS</code> and <code>SS</code> defined on i586/x64 Solaris in
+as <code>CS</code>, <code>DS</code>, <code>ES</code>, <code>FS</code>, <code>GS</code> and <code>SS</code>
+(and more with longer abbreviations) defined on i586/x64 Solaris in
 <samp>&lt;sys/regset.h&gt;</samp> and often included indirectly by <samp>&lt;stdlib.h&gt;</samp>
 and other core headers.
+
+</li><li> <code>typedef</code>s in OS headers can conflict with those in the package: an
+example is <code>index_t</code> defined in <samp>&lt;sys/types.h&gt;</samp> on Solaris.
 </li></ul>
 
 <p>Some additional information for C++ is available at

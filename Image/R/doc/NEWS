@@ -145,6 +145,10 @@ CHANGES IN R-devel:
       match(x, table) is faster, sometimes by an order of magnitude,
       when x is of length one, thanks to Haverty's PR#16491.
 
+      More consistent, partly not back-compatible behavior of NA and
+      NaN coercion to complex numbers, operations less often resulting
+      in complex NA (NA_complex_).
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -320,6 +324,16 @@ CHANGES IN R 3.2.2 patched:
 
     * When operating in a multibyte locale, grep() and related
       functions did not handle UTF-8 strings properly.  (PR#16264)
+
+    * read.dcf() misread lines longer than 8191 characters.  (Reported
+      by Herve Pages with a patch.)
+
+    * within(df, ..) no longer drops columns whose name start with a
+      ".".
+
+    * The built-in HTTP server converted entire Content-Type to
+      lowercase including paramters which can cause issues for
+      multi-part form boundaries (PR#16541).
 
 CHANGES IN R 3.2.2:
 

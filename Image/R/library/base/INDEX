@@ -134,7 +134,7 @@ col                     Column Indexes
 colSums                 Form Row and Column Sums and Means
 commandArgs             Extract Command Line Arguments
 comment                 Query or Set a '"comment"' Attribute
-complex                 Complex Vectors
+complex                 Complex Numbers and Basic Functionality
 conditions              Condition Handling and Recovery
 conflicts               Search for Masked Objects on the Search Path
 connections             Functions to Manipulate Connections (Files,

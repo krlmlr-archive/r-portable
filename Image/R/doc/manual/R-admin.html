@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-09-21).
+<!-- This manual is for R, version 3.3.0 Under development (2015-09-24).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-09-21).
+<p>This manual is for R, version 3.3.0 Under development (2015-09-24).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -5568,17 +5568,17 @@ Next: <a href="#Frameworks" accesskey="n" rel="next">Frameworks</a>, Previous: <
 <a name="Java"></a>
 <h4 class="subsection">C.3.3 Java</h4>
 
-<p>The situation with Java support on OS X is messy.
+<p>The situation with Java support on OS X is messy.<a name="DOCF60" href="#FOOT60"><sup>60</sup></a>
 </p>
 <p>OS X no longer comes with an installed Java runtime (JRE), and an OS X
 upgrade removes one if already installed: it is intended to be installed
 at first use.  Check if a JRE is installed by running <code>java
 -version</code> in a <code>Terminal</code> window: if Java is not installed this
 should prompt you to install it.  You can also install directly the
-latest Java from Oracle (currently Java 8 from
+latest Java from Oracle (currently from
 <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">http://www.oracle.com/technetwork/java/javase/downloads/index.html</a>).
 </p>
-<p>You may need to install what Apple calls &lsquo;legacy Java&rsquo;<a name="DOCF60" href="#FOOT60"><sup>60</sup></a> to suppress pop-up
+<p>You may need to install what Apple calls &lsquo;legacy Java&rsquo;<a name="DOCF61" href="#FOOT61"><sup>61</sup></a> to suppress pop-up
 messages, even if you have a current version installed.
 </p>
 <p>To see what compatible versions of Java are currently installed, run
@@ -5747,7 +5747,7 @@ option <samp>--with-internal-tzcode</samp> is recommended, and required if
 you find time-zone abbreviations being given odd values (as has been
 seen on 64-bit builds without it).
 </p>
-<p>When using the Oracle compilers<a name="DOCF61" href="#FOOT61"><sup>61</sup></a> do <em>not</em> specify <samp>-fast</samp>, as this
+<p>When using the Oracle compilers<a name="DOCF62" href="#FOOT62"><sup>62</sup></a> do <em>not</em> specify <samp>-fast</samp>, as this
 disables <acronym>IEEE</acronym> arithmetic and <code>make check</code> will fail.
 </p>
 <p>It has been reported that some Solaris installations need
@@ -6180,7 +6180,7 @@ in <samp>src/main/complex.c</samp> on that platform.  It has been reported
 that some C99 long double mathematical functions are missing, so
 configuring with <samp>--disable-long-double</samp> was required.
 </p>
-<p>Only building as a shared library can possibly work,<a name="DOCF62" href="#FOOT62"><sup>62</sup></a> so use e.g.
+<p>Only building as a shared library can possibly work,<a name="DOCF63" href="#FOOT63"><sup>63</sup></a> so use e.g.
 </p>
 <div class="example">
 <pre class="example">./configure --disable-nls --enable-R-shlib FLIBS=-lgfortran
@@ -6300,7 +6300,7 @@ will not need to build add-on packages from source; see <a href="#Add_002don-pac
 </p>
 <p>We have found that the build process for R is quite sensitive to
 the choice of tools: please follow our instructions <strong>exactly</strong>,
-even to the choice of particular versions of the tools.<a name="DOCF63" href="#FOOT63"><sup>63</sup></a>  The build process for add-on packages is somewhat more
+even to the choice of particular versions of the tools.<a name="DOCF64" href="#FOOT64"><sup>64</sup></a>  The build process for add-on packages is somewhat more
 forgiving, but we recommend using the exact toolset at first, and only
 substituting other tools once you are familiar with the process.
 </p>
@@ -6310,7 +6310,7 @@ the R mailing lists unless you have followed all the prescriptions.</em>
 </p>
 <p>We have collected most of the necessary tools (unfortunately not all,
 due to license or size limitations) into an executable installer
-named<a name="DOCF64" href="#FOOT64"><sup>64</sup></a>  <samp>Rtools31.exe</samp>,
+named<a name="DOCF65" href="#FOOT65"><sup>65</sup></a>  <samp>Rtools31.exe</samp>,
 available from <a href="https://CRAN.R-project.org/bin/windows/Rtools/">https://CRAN.R-project.org/bin/windows/Rtools/</a>. You
 should download and run it, choosing the default &ldquo;Package authoring
 installation&rdquo; to build add-on packages, or the &ldquo;full installation&rdquo; if
@@ -6353,7 +6353,7 @@ use filepaths containing spaces: you can always use the short forms
 
 <p>It is essential that the directory containing the command line tools
 comes first or second in the path: there are typically like-named
-tools<a name="DOCF65" href="#FOOT65"><sup>65</sup></a> in other directories, and they will <strong>not</strong>
+tools<a name="DOCF66" href="#FOOT66"><sup>66</sup></a> in other directories, and they will <strong>not</strong>
 work. The ordering of the other directories is less important, but if in
 doubt, use the order above.
 </p>
@@ -6488,7 +6488,7 @@ project&rsquo;s runtime.
 </p>
 <p>This toolchain uses <em>multilib</em>: that is there is a single front-end
 such as <code>gcc.exe</code> for each of the compilers and 32-bit (the
-default) and 64-bit compilation are selected by the flags<a name="DOCF66" href="#FOOT66"><sup>66</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
+default) and 64-bit compilation are selected by the flags<a name="DOCF67" href="#FOOT67"><sup>67</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
 respectively.  The tools are all 32-bit Windows executables and should
 be able to run on any current version of Windows&mdash;however you do need a
 64-bit version of Windows to build 64-bit R as the build process runs
@@ -7092,26 +7092,29 @@ which is distributed separately at that site.</p>
 <p>It is reported that for some non-Apple
 toolchains <code>CPPFLAGS</code> needed to contain <code>-D__ACCELERATE__</code>.</p>
 <h3><a name="FOOT60" href="#DOCF60">(60)</a></h3>
+<p>For more
+detals see <a href="http://www.macstrategy.com/article.php?3">http://www.macstrategy.com/article.php?3</a>.</p>
+<h3><a name="FOOT61" href="#DOCF61">(61)</a></h3>
 <p>e.g.
 <code>Java For OS X 2015-001</code> from
 <a href="https://support.apple.com/kb/DL1572">https://support.apple.com/kb/DL1572</a>.</p>
-<h3><a name="FOOT61" href="#DOCF61">(61)</a></h3>
+<h3><a name="FOOT62" href="#DOCF62">(62)</a></h3>
 <p>including <code>gcc</code> for
 Sparc from Oracle.</p>
-<h3><a name="FOOT62" href="#DOCF62">(62)</a></h3>
+<h3><a name="FOOT63" href="#DOCF63">(63)</a></h3>
 <p>Windows
 DLLs need to have all links resolved at build time and so cannot resolve
 against <samp>R.bin</samp>.</p>
-<h3><a name="FOOT63" href="#DOCF63">(63)</a></h3>
+<h3><a name="FOOT64" href="#DOCF64">(64)</a></h3>
 <p>For
 example, the Cygwin version of <code>make 3.81</code> fails to work
 correctly.</p>
-<h3><a name="FOOT64" href="#DOCF64">(64)</a></h3>
-<p>for R 3.0.0 and later.</p>
 <h3><a name="FOOT65" href="#DOCF65">(65)</a></h3>
+<p>for R 3.0.0 and later.</p>
+<h3><a name="FOOT66" href="#DOCF66">(66)</a></h3>
 <p>such as <code>sort</code>, <code>find</code> and perhaps
 <code>make</code>.</p>
-<h3><a name="FOOT66" href="#DOCF66">(66)</a></h3>
+<h3><a name="FOOT67" href="#DOCF67">(67)</a></h3>
 <p>these
 flags apply to the compilers: some of the tools use different flags.
 32-bit builds are the default.</p>

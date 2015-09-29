@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-09-21).
+<!-- This manual is for R, version 3.3.0 Under development (2015-09-24).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-09-21).
+<p>This manual is for R, version 3.3.0 Under development (2015-09-24).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4506,6 +4506,13 @@ precede<a name="DOCF65" href="#FOOT65"><sup>65</sup></a> the libraries (typicall
 specified by <samp>-l</samp> options) to be found from those directories,
 and libraries are searched once in the order they are specified.  Not
 all linkers allow a space after <samp>-L</samp> .
+
+</li><li> Some people have a need to set a locale.  Locale names are not portable,
+and e.g. &lsquo;<samp>fr_FR.utf8</samp>&rsquo; is common used on Linux but not accepted on
+either Solaris or OS X.  &lsquo;<samp>fr_FR.UTF-8</samp>&rsquo; is more portable, being
+accepted on recent Linux, AIX, FreBSD, OS X and Solaris (at least).
+However, some Linux distributions micro-package, so locales defined by
+<strong>glibc</strong> (including these examples) may not be installed.
 
 </li></ul>
 

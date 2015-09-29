@@ -93,7 +93,7 @@ FCLIBS =
 F77 = $(BINPREF)gfortran $(M_ARCH)
 F77_VISIBILITY = 
 FFLAGS = -O2 $(DEBUGFLAG) -mtune=core2
-FLIBS = -lgfortran
+FLIBS = -lgfortran -lm -lquadmath
 FCPICFLAGS =
 FPICFLAGS = 
 FOUNDATION_CPPFLAGS =

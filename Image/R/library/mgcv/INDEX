@@ -126,6 +126,8 @@ smooth.construct.ds.smooth.spec
                         Low rank Duchon 1977 splines
 smooth.construct.fs.smooth.spec
                         Factor smooth interactions in GAMs
+smooth.construct.gp.smooth.spec
+                        Low rank Gaussian process smooths
 smooth.construct.mrf.smooth.spec
                         Markov Random Field Smooths
 smooth.construct.ps.smooth.spec

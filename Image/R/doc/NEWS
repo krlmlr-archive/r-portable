@@ -20,7 +20,7 @@ CHANGES IN R-devel:
       successfully negotiate a cryptographic protocol (TLS/SSL, ...)
       and the server's identity has to be verifiable _via_ the
       available certificates.  Different access methods may allow
-      different protocols or use certificate bundles: we have
+      different protocols or use private certificate bundles: we have
       experienced a https: CRAN mirror which can be accessed by one
       browser but not another nor by download.file() on the same Linux
       machine.
@@ -78,12 +78,16 @@ CHANGES IN R-devel:
     * Graphics devices cairo_pdf() and cairo_ps() now allow non-default
       values of the cairographics 'fallback resolution' to be set.
 
-    * file() gets an explicit method argument instead of implicitly
+      This now defaults to 300 on all platforms: that is the default
+      documented by cairographics, but apparently was not used by all
+      system installations.
+
+    * file() gains an explicit method argument rather than implicitly
       using getOption("url.method", "default").
 
     * Thanks to a patch from Tomas Kalibera, x[x != 0] is now typically
-      _faster_ than x[which(x != 0)] (in the case where x has no NAs,
-      the two are equivalent).
+      faster than x[which(x != 0)] (in the case where x has no NAs, the
+      two are equivalent).
 
     * read.table() now always uses the names for a named colClasses
       argument (previously names were only used when colClasses was too
@@ -142,10 +146,11 @@ CHANGES IN R-devel:
       abbreviate(use.classes = FALSE) is now implemented, and that is
       more suitable for non-European languages.
 
-      match(x, table) is faster, sometimes by an order of magnitude,
-      when x is of length one, thanks to Haverty's PR#16491.
+    * match(x, table) is faster, sometimes by an order of magnitude,
+      when x is of length one, incomparables is unchanged thanks to
+      Haverty's PR#16491.
 
-      More consistent, partly not back-compatible behavior of NA and
+    * More consistent, partly not back-compatible behavior of NA and
       NaN coercion to complex numbers, operations less often resulting
       in complex NA (NA_complex_).
 
@@ -167,8 +172,8 @@ CHANGES IN R-devel:
       required (see the 'R Installation and Administration' manual).
 
     * The unexported and undocumented Windows-only devices cairo_bmp(),
-      cairo_png() and cairo_tiff() have been removed.  (The devices
-      should be used as e.g.  bmp(type = "cairo").)
+      cairo_png() and cairo_tiff() have been removed.  (These devices
+      should be used as e.g. bmp(type = "cairo").)
 
     * (Windows only) Function setInternet2() has no effect and will be
       removed in due course.  The choice between methods "internal" and
@@ -193,7 +198,7 @@ CHANGES IN R-devel:
 
     * configure uses pkg-config for PNG, TIFF and JPEG where this is
       available.  This should work better with multiple installs and
-      with static libs.
+      with those using static libraries.
 
     * The minimum supported version of OS X is 10.6 ('Snow Leopard'):
       even that has been unsupported by Apple since 2012.
@@ -216,14 +221,15 @@ CHANGES IN R-devel:
     * C-level asChar(x) is fixed for when x is not a vector, and it
       returns "TRUE"/"FALSE" instead of "T"/"F" for logical vectors.
 
-    * .colSums() etc (with an initial dot) first argument name x
-      matches colSums() such that error messages are correct.
+    * .colSums() etc (with an initial dot) first argument is now named
+      x rather than X (matching colSums()): error messages are thereby
+      corrected.
 
     * A coef() method for class "maov" has been added to allow vcov()
       to work with multivariate results. (PR#16380)
 
-    * libcurl connections signal errors rather than retrieving HTTP
-      error pages.
+    * method = "libcurl" connections signal errors rather than
+      retrieving HTTP error pages (where the ISP reports the error).
 
 CHANGES IN R 3.2.2 patched:
 

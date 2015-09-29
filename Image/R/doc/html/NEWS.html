@@ -35,9 +35,10 @@ making use of them.
 have to successfully negotiate a cryptographic protocol (TLS/SSL,
 ...) and the server's identity has to be verifiable <em>via</em>
 the available certificates.  Different access methods may allow
-different protocols or use certificate bundles: we have experienced a
-<span class="samp">https:</span> CRAN mirror which can be accessed by one browser but
-not another nor by <code>download.file()</code> on the same Linux machine.
+different protocols or use private certificate bundles: we have
+experienced a <span class="samp">https:</span> CRAN mirror which can be accessed by
+one browser but not another nor by <code>download.file()</code> on the
+same Linux machine.
 </p>
 </li></ul>
 
@@ -121,15 +122,19 @@ complex value with zero real part and missing imaginary part.
 now allow non-default values of the cairographics &lsquo;fallback
 resolution&rsquo; to be set.
 </p>
+<p>This now defaults to 300 on all platforms: that is the default
+documented by cairographics, but apparently was not used by all
+system installations.
+</p>
 </li>
-<li> <p><code>file()</code> gets an explicit <code>method</code> argument
-instead of implicitly using
+<li> <p><code>file()</code> gains an explicit <code>method</code> argument
+rather than implicitly using
 <code>getOption("url.method", "default")</code>.
 </p>
 </li>
 <li><p> Thanks to a patch from Tomas Kalibera, <code>x[x != 0]</code> is
-now typically <em>faster</em> than <code>x[which(x != 0)]</code> (in the
-case where <code>x</code> has no NAs, the two are equivalent).
+now typically faster than <code>x[which(x != 0)]</code> (in the case
+where <code>x</code> has no NAs, the two are equivalent).
 </p>
 </li>
 <li> <p><code>read.table()</code> now always uses the names for a named
@@ -204,13 +209,15 @@ non-ASCII input.
 <p><code>abbreviate(use.classes = FALSE)</code> is now implemented, and
 that is more suitable for non-European languages.
 </p>
-<p><code>match(x, table)</code> is faster, sometimes by an order of magnitude,
-when <code>x</code> is of length one, 
-thanks to Haverty's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>.
+</li>
+<li> <p><code>match(x, table)</code> is faster, sometimes by an order of
+magnitude, when <code>x</code> is of length one, 
+<code>incomparables</code> is unchanged thanks to Haverty's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16491">PR#16491</a>.
 </p>
-<p>More consistent, partly not back-compatible behavior of <code>NA</code>
-and <code>NaN</code> coercion to complex numbers, operations less often
-resulting in complex <code>NA</code> (<code>NA_complex_</code>).
+</li>
+<li><p> More consistent, partly not back-compatible behavior of
+<code>NA</code> and <code>NaN</code> coercion to complex numbers, operations
+less often resulting in complex <code>NA</code> (<code>NA_complex_</code>).
 </p>
 </li></ul>
 
@@ -249,8 +256,8 @@ external (usuallly system) versions are required (see the
 </li>
 <li><p> The unexported and undocumented Windows-only devices
 <code>cairo_bmp()</code>, <code>cairo_png()</code> and <code>cairo_tiff()</code>
-have been removed.  (The devices should be used as e.g.
-<code>bmp(type = "cairo")</code>.)
+have been removed.  (These devices should be used as
+e.g. <code>bmp(type = "cairo")</code>.)
 </p>
 </li>
 <li><p> (Windows only)  Function <code>setInternet2()</code> has no effect
@@ -289,7 +296,7 @@ Windows).
 </li>
 <li> <p><code>configure</code> uses <code>pkg-config</code> for PNG, TIFF
 and JPEG where this is available.  This should work better with
-multiple installs and with static libs.
+multiple installs and with those using static libraries.
 </p>
 </li>
 <li><p> The minimum supported version of OS X is 10.6 (&lsquo;Snow
@@ -333,8 +340,8 @@ vector, and it returns <code>"TRUE"</code>/<code>"FALSE"</code> instead of
 </p>
 </li>
 <li> <p><code>.colSums()</code> etc (with an initial dot) first argument
-name <code>x</code> matches <code>colSums()</code> such that error messages
-are correct.
+is now named <code>x</code> rather than <code>X</code> (matching
+<code>colSums()</code>): error messages are thereby corrected.
 </p>
 </li>
 <li><p> A <code>coef()</code> method for class <code>"maov"</code> has been
@@ -342,8 +349,9 @@ added to allow <code>vcov()</code> to work with multivariate
 results. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16380">PR#16380</a>)
 </p>
 </li>
-<li> <p><code>libcurl</code> connections signal errors rather than
-retrieving HTTP error pages.
+<li> <p><code>method = "libcurl"</code> connections signal errors rather
+than retrieving HTTP error pages (where the ISP reports the
+error).
 </p>
 </li></ul>
 

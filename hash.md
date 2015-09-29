@@ -2,12 +2,12 @@
 ```
 ## Warning: closing unused connection 5 (gzip -l -q R.tar.gz)
 ```
-r-portable image information (branch: no-rtools)
+r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/no-rtools/R.tar.gz) (204.8 MB, MD5 hash: `d05190fc33294a9cdbaee0ea6b1a6e23`, uncompressed 474.5 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/no-rtools/R.iso.gz) (205.4 MB, MD5 hash: `5613d25db9898d0b559c9007d3bd9bcf`, uncompressed 490.6 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/no-rtools/R.vhd.gz) (207.4 MB, MD5 hash: `08d6adabaa076e2ad0b3f190f82954cb`, uncompressed 533 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (204.8 MB, MD5 hash: `98552216cfdcb26398d58ee375ef3a13`, uncompressed 474.5 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (205.4 MB, MD5 hash: `dcff5b8f9dd4574ad4b7e9c3554f5569`, uncompressed 490.6 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.3 MB, MD5 hash: `aa72e41487fcc0c1005898efa2666a64`, uncompressed 531 MB)
 
 
 
@@ -15,7 +15,7 @@ r-portable image information (branch: no-rtools)
 
 ### R version
 
-R Under development (unstable) (2015-09-24 r69424)
+R Under development (unstable) (2015-09-28 r69437)
 
 ### Package versions
 

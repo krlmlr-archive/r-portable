@@ -165,6 +165,10 @@ CHANGES IN R-devel:
       The choice can easily be overridden _via_ environment variable
       R_INTERACTIVE_DEVICE.
 
+    * On unixy platforms (with the getline C library function),
+      system(*,intern=TRUE) no longer truncates (output) lines longer
+      than 8192 characters, thanks to Karl Millar's PR#16544.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

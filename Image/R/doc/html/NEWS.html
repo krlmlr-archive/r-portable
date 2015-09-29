@@ -234,6 +234,11 @@ by the user.
 <p>The choice can easily be overridden <em>via</em> environment
 variable <span class="env">R_INTERACTIVE_DEVICE</span>.
 </p>
+</li>
+<li><p> On unixy platforms (with the <code>getline</code> C library function),
+<code>system(*,intern=TRUE)</code> no longer truncates (output) lines
+longer than 8192 characters, thanks to Karl Millar's <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16544">PR#16544</a>.
+</p>
 </li></ul>
 
 

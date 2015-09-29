@@ -178,6 +178,8 @@ CHANGES IN R-devel:
     * data.frame() gains argument fix.empty.names; as.data.frame.list()
       gets new cut.names, col.names and fix.empty.names.
 
+    * plot(x ~ x, *) now warns that it is the same as plot(x ~ 1, *).
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -414,6 +416,9 @@ CHANGES IN R 3.2.2 patched:
 
     * When bs(*, Boundary.knots=) had boundary knots inside the data
       range, extrapolation was somewhat off.  (Patch by Trevor Hastie.)
+
+    * var() hence sd() now signal an error for factor() arguments.
+      (PR#16564)
 
 CHANGES IN R 3.2.2:
 

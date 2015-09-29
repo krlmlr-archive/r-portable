@@ -254,6 +254,10 @@ both non-matched and matched substrings.
 <code>as.data.frame.list()</code> gets new <code>cut.names</code>,
 <code>col.names</code> and <code>fix.empty.names</code>.
 </p>
+</li>
+<li> <p><code>plot(x ~ x, *)</code> now warns that it is the same as
+<code>plot(x ~ 1, *)</code>.
+</p>
 </li></ul>
 
 
@@ -628,6 +632,10 @@ exiting with <code>options("deparse.max.lines")</code> set.
 <li><p> When <code>bs(*, Boundary.knots=)</code> had boundary knots inside
 the data range, extrapolation was somewhat off.  (Patch by Trevor
 Hastie.)
+</p>
+</li>
+<li> <p><code>var()</code> hence <code>sd()</code> now signal an error for
+<code>factor()</code> arguments. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16564">PR#16564</a>)
 </p>
 </li></ul>
 

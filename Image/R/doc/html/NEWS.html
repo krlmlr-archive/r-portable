@@ -219,6 +219,12 @@ magnitude, when <code>x</code> is of length one,
 <code>NA</code> and <code>NaN</code> coercion to complex numbers, operations
 less often resulting in complex <code>NA</code> (<code>NA_complex_</code>).
 </p>
+</li>
+<li> <p><code>lengths()</code> considers methods for <code>length</code> and
+<code>[[</code> on <code>x</code>, so it should work automatically on any
+objects for which appropriate methods on those generics are
+defined.
+</p>
 </li></ul>
 
 

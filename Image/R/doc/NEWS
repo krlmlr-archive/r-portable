@@ -154,6 +154,10 @@ CHANGES IN R-devel:
       NaN coercion to complex numbers, operations less often resulting
       in complex NA (NA_complex_).
 
+    * lengths() considers methods for length and [[ on x, so it should
+      work automatically on any objects for which appropriate methods
+      on those generics are defined.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

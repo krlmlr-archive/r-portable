@@ -7,4 +7,4 @@ Maintainer: R Core Team <R-core@r-project.org>
 Description: Graphics devices and support for base and grid graphics.
 License: Part of R 3.3.0
 Suggests: KernSmooth
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-10-01 02:16:06 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-10-02 02:19:53 UTC; windows

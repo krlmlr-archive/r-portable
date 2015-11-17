@@ -446,6 +446,9 @@ CHANGES IN R 3.2.2 patched:
 
     * data(package=*) is more careful in determining the path.
 
+    * prettyNum(*, decimal.mark, big.mark): fixed bug introduced when
+      fixing PR#16411.
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

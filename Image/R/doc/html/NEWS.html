@@ -265,6 +265,11 @@ recorded plot.  <code>replayPlot()</code> has new argument
 <code>reloadPkgs</code> to load/attach any package names that were
 stored as part of a recorded plot.
 </p>
+</li>
+<li><p> S4 dispatch works within calls to <code>.Internal()</code>. This means
+explicit S4 generics are no longer needed for <code>unlist</code>,
+<code>is.unsorted</code> and <code>as.vector</code>.
+</p>
 </li></ul>
 
 

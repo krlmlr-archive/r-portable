@@ -185,6 +185,10 @@ CHANGES IN R-devel:
       new argument reloadPkgs to load/attach any package names that
       were stored as part of a recorded plot.
 
+    * S4 dispatch works within calls to .Internal(). This means
+      explicit S4 generics are no longer needed for unlist, is.unsorted
+      and as.vector.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

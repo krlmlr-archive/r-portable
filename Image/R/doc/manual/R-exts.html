@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-11-11).
+<!-- This manual is for R, version 3.3.0 Under development (2015-11-16).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-11-11).
+<p>This manual is for R, version 3.3.0 Under development (2015-11-16).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -13139,13 +13139,14 @@ More specifically, <code>indx &lt;- order(x, y, na.last, decreasing)</code> corr
 <code>R_orderVector(indx, n, Rf_lang2(x, y), nalast, decreasing)</code> and for
 three vectors, <code>Rf_lang3(x,y,z)</code> is used as <var>arglist</var>.
 </p>
-<p>When ordering only one vector, <code>R_orderVector1()</code> is faster and
-corresponds to R&rsquo;s <code>indx &lt;- order(x, na.last, decreasing)</code>.
+<p>Both <code>R_orderVector</code> and <code>R_orderVector1</code> assume the vector
+<code>indx</code> to be allocated to length &gt;= n.  On return,
+<code>indx[]</code> contains a permutation of <code>0:(n-1)</code>, i.e., 0-based C
+indices (and not 1-based R indices, as R&rsquo;s <code>order()</code>).
 </p>
-<p>Note that both <code>R_orderVector*()</code> assume the vector <code>indx</code>
-to be allocated to length &gt;= n.  On return, <code>indx[]</code>
-contains a permutation of <code>0:(n-1)</code>, i.e., 0-based C indices (and not
-1-based R indices, as R&rsquo;s <code>order()</code>).
+<p>When ordering only one vector, <code>R_orderVector1</code> is faster and
+corresponds (but is 0-based) to R&rsquo;s <code>indx &lt;- order(x, na.last,
+decreasing)</code>.  It was added in R 3.3.0.
 </p></dd></dl>
 
 <p>All other sort routines are declared in header file

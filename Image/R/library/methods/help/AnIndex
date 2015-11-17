@@ -233,6 +233,7 @@ insertMethodInEmptyList	MethodsList
 insertSource	evalSource
 integer-class	BasicClasses
 integrate-class	setOldClass
+internalDispatchMethod-class	RMethodUtils
 is	is
 isClass	findClass
 isClassDef	RClassUtils

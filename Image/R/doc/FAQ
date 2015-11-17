@@ -199,7 +199,7 @@ script files.
    The design of R has been heavily influenced by two existing
 languages: Becker, Chambers & Wilks' S (*note What is S?::) and
 Sussman's Scheme
-(http://www.cs.indiana.edu/scheme-repository/home.html).  Whereas the
+(https://www.cs.indiana.edu/scheme-repository/home.html).  Whereas the
 resulting language is very similar in appearance to S, the underlying
 implementation and semantics are derived from Scheme.  *Note What are
 the differences between R and S?::, for further details.
@@ -378,7 +378,7 @@ Iacus).  The "R for Mac OS X FAQ
 details.
 
    Snapshots of the r-patched and r-devel versions of R are available as
-Apple installer packages at <http://r.research.att.com>.
+Apple installer packages at <https://r.research.att.com>.
 
 2.6 Are there Unix-like binaries for R?
 =======================================
@@ -644,7 +644,7 @@ all Open Source licenses, permits all and any use of the package.  It
 only restricts distribution of R or of other programs containing code
 from R. This is made clear in clause 6 ("No Discrimination Against
 Fields of Endeavor") of the Open Source Definition
-(http://www.opensource.org/docs/definition.html):
+(https://opensource.org/docs/definition.html):
 
      The license must not restrict anyone from making use of the program
      in a specific field of endeavor.  For example, it may not restrict
@@ -1178,7 +1178,7 @@ enterprise-class statistical analysis system based on R, suitable for
 deployment in professional, commercial and regulated environments.
 
    See also
-<http://en.wikipedia.org/wiki/R_programming_language#Commercialized_versions_of_R>
+<https://en.wikipedia.org/wiki/R_programming_language#Commercialized_versions_of_R>
 for pointers to commercialized versions of R.
 
 4 R Web Interfaces
@@ -1621,7 +1621,7 @@ from transcript files).
 
    The latest stable version of ESS is available via CRAN or the ESS web
 page (http://ESS.R-project.org/).  The HTML version of the documentation
-can be found at <http://stat.ethz.ch/ESS/>.
+can be found at <https://stat.ethz.ch/ESS/>.
 
    ESS comes with detailed installation instructions.
 
@@ -2823,8 +2823,8 @@ maintainers, mentioning the package in the subject line.
 
    A bug report can be generated using the function 'bug.report()'.  For
 reports on R this will open the Web page at
-<http://bugs.R-project.org/>: for a contributed package it will open the
-package's bug tracker Web page or help you compose an email to the
+<https://bugs.R-project.org/>: for a contributed package it will open
+the package's bug tracker Web page or help you compose an email to the
 maintainer.
 
    There is a section of the bug repository for suggestions for

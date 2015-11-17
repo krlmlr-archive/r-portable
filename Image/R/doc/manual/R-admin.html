@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-11-18).
+<!-- This manual is for R, version 3.3.0 Under development (2015-11-20).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-11-18).
+<p>This manual is for R, version 3.3.0 Under development (2015-11-20).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -3646,9 +3646,8 @@ functions<a name="DOCF34" href="#FOOT34"><sup>34</sup></a> are essential, and ot
 (version 1.0.6 or later: called <strong>bzip2-libs</strong>/<strong>bzip2-devel</strong> or
 <strong>libbz2-1.0</strong>/<strong>libbz2-dev</strong> by some Linux distributions),
 <code>liblzma</code><a name="DOCF36" href="#FOOT36"><sup>36</sup></a> version 5.0.3 or
-later, PCRE (version 8.10 or later, preferably 8.32 or
-later<a name="DOCF37" href="#FOOT37"><sup>37</sup></a>) and <code>libcurl</code> (version 7.28.0 or later) are
-required.  Information on <code>libcurl</code> is found from the
+later, PCRE (version 8.32 or later<a name="DOCF37" href="#FOOT37"><sup>37</sup></a>) and <code>libcurl</code> (version 7.28.0
+or later) are required.  Information on <code>libcurl</code> is found from the
 <code>curl-config</code> script: if that is missing or needs to be
 overridden<a name="DOCF38" href="#FOOT38"><sup>38</sup></a> there are macros to do so
 described in file <samp>config.site</samp>.
@@ -7028,12 +7027,12 @@ functionality of headers <samp>wchar.h</samp> and <samp>wctype.h</samp>, types
 possible names in Linux distributions include
 <code>xz-devel</code>/<code>xz-libs</code> and <code>liblzma-dev</code>.</p>
 <h3><a name="FOOT37" href="#DOCF37">(37)</a></h3>
-<p>and not PCRE2, which started at version 10.0.  PCRE must
-be built with UTF-8 support (not the default) and support for Unicode
-properties is assumed by some R packages.  Only the first is tested
-by <code>configure</code>, but both can be checked at run-time by calling
-<code>pcre_config()</code>. JIT support is desirable for the best
-performance.</p>
+<p>and not PCRE2, which started
+at version 10.0.  PCRE must be built with UTF-8 support (not the
+default) and support for Unicode properties is assumed by some R
+packages.  Only the first is tested by <code>configure</code>, but both can
+be checked at run-time by calling <code>pcre_config()</code>. JIT support is
+desirable for the best performance.</p>
 <h3><a name="FOOT38" href="#DOCF38">(38)</a></h3>
 <p>for example to specify static linking with a build
 which has both shared and static libraries.</p>

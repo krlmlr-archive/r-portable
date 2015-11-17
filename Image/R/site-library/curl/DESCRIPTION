@@ -1,7 +1,7 @@
 Package: curl
 Type: Package
 Title: A Modern and Flexible Web Client for R
-Version: 0.9.3
+Version: 0.9.4
 Authors@R: c(
     person("Jeroen", "Ooms", , "jeroen.ooms@stat.ucla.edu", role = c("cre", "aut")),
     person("Hadley", "Wickham", , "hadley@rstudio.com", role = "ctb"),
@@ -26,12 +26,12 @@ VignetteBuilder: knitr
 Depends: R (>= 2.10.0)
 LazyData: true
 NeedsCompilation: yes
-Packaged: 2015-08-25 12:25:52 UTC; jeroen
+Packaged: 2015-11-20 11:16:49 UTC; jeroen
 Author: Jeroen Ooms [cre, aut],
   Hadley Wickham [ctb],
   RStudio [cph]
 Maintainer: Jeroen Ooms <jeroen.ooms@stat.ucla.edu>
 Repository: CRAN
-Date/Publication: 2015-08-25 15:52:45
-Built: R 3.2.2; x86_64-w64-mingw32; 2015-11-20 03:45:36 UTC; windows
+Date/Publication: 2015-11-20 18:08:01
+Built: R 3.2.2; x86_64-w64-mingw32; 2015-11-21 03:20:35 UTC; windows
 Archs: i386, x64

@@ -241,6 +241,8 @@ CHANGES IN R-devel:
       this if you intend to install under /Library/Frameworks and use
       with R.app.
 
+    * The minimum supported version of PCRE is 8.32 (from Nov 2012).
+
   C-LEVEL FACILITIES:
 
     * The API call logspace_sum introduced in R 3.2.0 is now remapped

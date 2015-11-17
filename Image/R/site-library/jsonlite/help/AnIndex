@@ -14,4 +14,3 @@ toJSON, fromJSON	fromJSON
 unbox	unbox
 unserializeJSON	serializeJSON
 validate	validate
-View	fromJSON

@@ -6,7 +6,7 @@
 \newcommand{\CRANpkg}{\href{http://CRAN.R-project.org/package=#1}{\pkg{#1}}}
 %% NB: The date (yyyy-mm-dd) is the "Packaged:" date in ../DESCRIPTION
 
-\section{Changes in version 1.2-3 (2015-11-11, svn ..................)}{
+\section{Changes in version 1.2-3 (2015-11-19, svn r3155)}{
   \subsection{New Features}{
     \itemize{
       \item \code{MatrixClass()} is exported now.

@@ -186,6 +186,9 @@ CHANGES IN R-devel:
       explicit S4 generics are no longer needed for unlist, is.unsorted
       and as.vector.
 
+    * Only font family names starting with "Hershey" (and not "Her" as
+      before) are given special treatment by the graphics engine.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -241,7 +244,9 @@ CHANGES IN R-devel:
       this if you intend to install under /Library/Frameworks and use
       with R.app.
 
-    * The minimum supported version of PCRE is 8.32 (from Nov 2012).
+    * The minimum preferred version of PCRE has since R 3.0.0 been 8.32
+      (released in Nov 2012).  Versions 8.10 to 8.31 are now deprecated
+      (with warnings fron configure), but for now still accepted.
 
   C-LEVEL FACILITIES:
 
@@ -321,6 +326,12 @@ CHANGES IN R 3.2.2 patched:
     * loess(..., iterTrace=TRUE) now provides diagnostics for
       robustness iterations, and the print() method for
       summary(<loess>) shows slightly more.
+
+    * The included version of PCRE has been updated to 8.38, a bug-fix
+      release.
+
+    * View() now displays nested data frames in a more friendly way.
+      (Request with patch in PR#15915.)
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -1335,7 +1346,7 @@ CHANGES IN R 3.1.3:
     * abs() failed with named arguments when the argument was complex.
       (PR#16047)
 
-    * "noquote" objects may now be used as columns in dataframes.
+    * "noquote" objects may now be used as columns in data frames.
       (PR#15997)
 
     * Some values with extremely long names were printed incorrectly.
@@ -2650,7 +2661,7 @@ CHANGES IN R 3.0.3:
       time.  (The platforms affected include Linux and OS X, but not
       Windows nor Solaris.)
 
-    * rowsum() has more support for matrices and dataframes with 2^31
+    * rowsum() has more support for matrices and data frames with 2^31
       or more elements. (PR#15587)
 
     * predict(<lm object>, interval = "confidence", scale =
@@ -3379,7 +3390,7 @@ CHANGES IN R 3.0.0:
       representable as an integer (as often happens for package
       Matrix), this is converted to an integer.
 
-    * Matrix indexing of dataframes by two-column numeric indices is
+    * Matrix indexing of data frames by two-column numeric indices is
       now supported for replacement as well as extraction.
 
     * setNames() now has a default for its object argument, useful for

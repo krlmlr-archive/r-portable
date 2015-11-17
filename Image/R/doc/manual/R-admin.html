@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-11-26).
+<!-- This manual is for R, version 3.3.0 Under development (2015-11-28).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-11-26).
+<p>This manual is for R, version 3.3.0 Under development (2015-11-28).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -3616,7 +3616,7 @@ that options essential to run the compiler even for linking, such as
 those to set the architecture, should be specified as part of <code>CC</code>
 rather than in <code>CFLAGS</code>.)
 </p>
-<p>Unless you do not want to view graphs on-screen (or use a Mac) you need
+<p>Unless you do not want to view graphs on-screen (or use OS X) you need
 &lsquo;<samp>X11</samp>&rsquo; installed, including its headers and client libraries. For
 recent Fedora distributions it means (at least) RPMs &lsquo;<samp>libX11</samp>&rsquo;,
 &lsquo;<samp>libX11-devel</samp>&rsquo;, &lsquo;<samp>libXt</samp>&rsquo; and &lsquo;<samp>libXt-devel</samp>&rsquo;.  On Debian we
@@ -3646,11 +3646,26 @@ functions<a name="DOCF34" href="#FOOT34"><sup>34</sup></a> are essential, and ot
 (version 1.0.6 or later: called <strong>bzip2-libs</strong>/<strong>bzip2-devel</strong> or
 <strong>libbz2-1.0</strong>/<strong>libbz2-dev</strong> by some Linux distributions),
 <code>liblzma</code><a name="DOCF36" href="#FOOT36"><sup>36</sup></a> version 5.0.3 or
-later, PCRE (version 8.32 or later<a name="DOCF37" href="#FOOT37"><sup>37</sup></a>) and <code>libcurl</code> (version 7.28.0
-or later) are required.  Information on <code>libcurl</code> is found from the
-<code>curl-config</code> script: if that is missing or needs to be
-overridden<a name="DOCF38" href="#FOOT38"><sup>38</sup></a> there are macros to do so
-described in file <samp>config.site</samp>.
+later are required.
+</p>
+<p>PCRE<a name="DOCF37" href="#FOOT37"><sup>37</sup></a> (version 8.32 or later, although versions 8.10&ndash;8.31 will
+be accepted with a deprecation warning) is required (or just its library
+and headers if packaged separately).  PCRE must be built with UTF-8
+support (not the default, and checked by <code>configure</code>) and
+support for Unicode properties is assumed by some R packages.  JIT
+support is desirable for the best performance: support for this and
+Unicode properties can be checked at run-time by calling
+<code>pcre_config()</code>.  If building PCRE for use with R a suitable
+<code>configure</code> command might be
+</p><div class="example">
+<pre class="example">/configure --enable-utf --enable-unicode-properties --enable-jit --disable-cpp
+</pre></div>
+<p>The <samp>--enable-jit</samp> flag is supported for most common CPUs.
+</p>
+<p>Library <code>libcurl</code> (version 7.28.0 or later) is required.
+Information on <code>libcurl</code> is found from the <code>curl-config</code>
+script: if that is missing or needs to be overridden<a name="DOCF38" href="#FOOT38"><sup>38</sup></a> there are macros to do so described in file
+<samp>config.site</samp>.
 </p>
 <p>A <code>tar</code> program is needed to unpack the sources and packages
 (including the recommended packages).  A version<a name="DOCF39" href="#FOOT39"><sup>39</sup></a> that can
@@ -7027,15 +7042,12 @@ functionality of headers <samp>wchar.h</samp> and <samp>wctype.h</samp>, types
 possible names in Linux distributions include
 <code>xz-devel</code>/<code>xz-libs</code> and <code>liblzma-dev</code>.</p>
 <h3><a name="FOOT37" href="#DOCF37">(37)</a></h3>
-<p>and not PCRE2, which started
-at version 10.0.  PCRE must be built with UTF-8 support (not the
-default) and support for Unicode properties is assumed by some R
-packages.  Only the first is tested by <code>configure</code>, but both can
-be checked at run-time by calling <code>pcre_config()</code>. JIT support is
-desirable for the best performance.</p>
+<p>sometimes known as PCRE1, and not PCRE2 which started at
+version 10.0.</p>
 <h3><a name="FOOT38" href="#DOCF38">(38)</a></h3>
-<p>for example to specify static linking with a build
-which has both shared and static libraries.</p>
+<p>for
+example to specify static linking with a build which has both shared and
+static libraries.</p>
 <h3><a name="FOOT39" href="#DOCF39">(39)</a></h3>
 <p>Such as
 <acronym>GNU</acronym> <code>tar</code> 1.15 or later, <code>bsdtar</code> (from

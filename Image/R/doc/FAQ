@@ -1,6 +1,6 @@
 R FAQ
 Frequently Asked Questions on R
-Version 3.2.2015-11-21
+Version 3.2.2015-11-26
 Kurt Hornik
 
 
@@ -616,25 +616,8 @@ can be found at the URL
 
      <https://CRAN.R-project.org/>
 
-Daily mirrors are available at URLs including
-
-     <http://cran.at.R-project.org/>  (Wirtschaftsuniversität
-                                      Wien, Austria)
-     <http://cran.au.R-project.org/>  (University of Melbourne,
-                                      Australia)
-     <http://cran.br.R-project.org/>  (Universidade Federal do
-                                      Paraná, Brazil)
-     <http://cran.ch.R-project.org/>  (ETH Zürich, Switzerland)
-     <http://cran.dk.R-project.org/>  (dotsrc.org, Aalborg,
-                                      Denmark)
-     <http://cran.es.R-project.org/>  (Spanish National Research
-                                      Network, Madrid, Spain)
-     <http://cran.pt.R-project.org/>  (Universidade do Porto,
-                                      Portugal)
-     <http://cran.uk.R-project.org/>  (U of Bristol, United
-                                      Kingdom)
-
-See <https://CRAN.R-project.org/mirrors.html> for a complete list of
+and is mirrored daily to many sites around the world.  See
+<https://CRAN.R-project.org/mirrors.html> for a complete list of
 mirrors.  Please use the CRAN site closest to you to reduce network
 load.
 

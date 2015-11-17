@@ -266,6 +266,11 @@ stored as part of a recorded plot.
 explicit S4 generics are no longer needed for <code>unlist</code>,
 <code>is.unsorted</code> and <code>as.vector</code>.
 </p>
+</li>
+<li><p> Only font family names starting with <span class="samp">"Hershey"</span> (and
+not <span class="samp">"Her"</span> as before) are given special treatment by the
+graphics engine.
+</p>
 </li></ul>
 
 
@@ -357,7 +362,10 @@ Leopard&rsquo;): even that has been unsupported by Apple since 2012.
 install under &lsquo;<span class="file">/Library/Frameworks</span>&rsquo; and use with <code>R.app</code>.
 </p>
 </li>
-<li><p> The minimum supported version of PCRE is 8.32 (from Nov 2012).
+<li><p> The minimum preferred version of PCRE has since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.0.0
+been 8.32 (released in Nov 2012).  Versions 8.10 to 8.31 are now
+deprecated (with warnings fron <code>configure</code>), but for now
+still accepted.
 </p>
 </li></ul>
 
@@ -485,6 +493,14 @@ been added to menus in <code>Rgui.exe</code>.  (Request of <a href="https://bugs
 <li> <p><code>loess(..., iterTrace=TRUE)</code> now provides diagnostics
 for robustness iterations, and the <code>print()</code> method for
 <code>summary(&lt;loess&gt;)</code> shows slightly more.
+</p>
+</li>
+<li><p> The included version of PCRE has been updated to 8.38, a
+bug-fix release.
+</p>
+</li>
+<li> <p><code>View()</code> now displays nested data frames in a more
+friendly way.  (Request with patch in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15915">PR#15915</a>.)
 </p>
 </li></ul>
 
@@ -1993,7 +2009,7 @@ was complex.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=160
 </p>
 </li>
 <li> <p><code>"noquote"</code> objects may now be used as columns in
-dataframes.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15997">PR#15997</a>)
+data frames.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15997">PR#15997</a>)
 </p>
 </li>
 <li><p> Some values with extremely long names were printed
@@ -3826,7 +3842,7 @@ second before the epoch&rsquo;, most conversions which should have given
 Linux and OS X, but not Windows nor Solaris.)
 </p>
 </li>
-<li> <p><code>rowsum()</code> has more support for matrices and dataframes
+<li> <p><code>rowsum()</code> has more support for matrices and data frames
 with <i>2^31</i> or more elements. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=15587">PR#15587</a>)
 </p>
 </li>
@@ -4885,7 +4901,7 @@ which is representable as an integer (as often happens for package
 <a href="https://CRAN.R-project.org/package=Matrix"><span class="pkg">Matrix</span></a>), this is converted to an integer.
 </p>
 </li>
-<li><p> Matrix indexing of dataframes by two-column numeric indices
+<li><p> Matrix indexing of data frames by two-column numeric indices
 is now supported for replacement as well as extraction.
 </p>
 </li>

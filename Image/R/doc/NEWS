@@ -444,6 +444,8 @@ CHANGES IN R 3.2.2 patched:
     * poly(x, ..) now works when either raw=TRUE or coef is specified.
       (PR#16597)
 
+    * data(package=*) is more careful in determining the path.
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:

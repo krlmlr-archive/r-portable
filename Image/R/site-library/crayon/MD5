@@ -1,13 +1,13 @@
 175d390058b8a9b12995525725218cf4 *ANSI-256-OSX.png
 5a18e3dc240c1f6cfffd6059c8de5345 *ANSI-8-OSX.png
-2bc1c2cc4f2aebfc10ee347826c76902 *DESCRIPTION
+edc188524c6c83427e367f613fb51899 *DESCRIPTION
 51476aa81f3d19c7cfd36b1c9a984ac2 *INDEX
 dd9b9a646c92126c8c99c14a7a11753a *LICENSE
 d4b8d249ea6a56e4b954463b5dce047c *Meta/Rd.rds
 6a72f2b367f66036f6956be1ae78936b *Meta/hsearch.rds
 55006d701880d0f1fcb260fca44a915f *Meta/links.rds
 ee315901eaefe9492aa51f1438ec19a7 *Meta/nsInfo.rds
-b74d8f3ff0ce2c60263a7139f0eb7f9f *Meta/package.rds
+bfc4bbda90ebf9bd55710bcb945e9013 *Meta/package.rds
 64928d706521370c17e31bd27c620e87 *NAMESPACE
 28dc4982d39c9cbe65c9e3c5d4ba6c02 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/crayon
@@ -16,8 +16,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/crayon
 51454c415a280eee6802d63d9558ddf5 *README.markdown
 c41e49113f74be3bd6f555ed8bdfaaea *help/AnIndex
 60427a8ad630f48bca49e8738bcb34eb *help/aliases.rds
-908f3c90b92f6bfd1565ded02237ff03 *help/crayon.rdb
-118f7a15c5f2164fd72894c4f7ef4c34 *help/crayon.rdx
-f8f7e802cab40b5721959077eb6990d1 *help/paths.rds
+dbcec11d09182a175d954bb5693170e4 *help/crayon.rdb
+81650885b9033721ab13f95b4934aa4d *help/crayon.rdx
+5591cfda9ae2cddf6ebd6fafba1b30aa *help/paths.rds
 245a9306db960f42907f1eb4ca2904d4 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css

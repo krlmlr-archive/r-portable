@@ -1,7 +1,13 @@
 callFun                 Call an RStudio API function
+document_position       Create a Document Position
+document_range          Create a Range
+getActiveDocumentContext
+                        Get the Active Document Context
 getVersion              Return the current version of the RStudio API
 hasFun                  Exists/get for RStudio functions
+insertText              Modify the Contents of a Document
 isAvailable             Check if RStudio is running.
+navigateToFile          Navigate to File
 previewRd               Preview an Rd topic in the Help pane
 sourceMarkers           Display Source Markers
 versionInfo             RStudio Version Information

@@ -293,7 +293,7 @@ CHANGES IN R-devel:
       It now waits for MapNotify events instead of Expose events,
       thanks to Siteshwar Vashisht. (PR#16497)
 
-CHANGES IN R 3.2.2 patched:
+CHANGES IN R 3.2.3:
 
   NEW FEATURES:
 

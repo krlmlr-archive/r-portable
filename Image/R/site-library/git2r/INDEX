@@ -35,6 +35,10 @@ cred_ssh_key            Create a new passphrase-protected ssh key
                         credential object
 cred_ssh_key-class      S4 class to handle a passphrase-protected ssh
                         key credential object
+cred_token              Create a new personal access token credential
+                        object
+cred_token-class        S4 class to handle a personal access token
+                        credential object
 cred_user_pass          Create a new plain-text username and password
                         credential object
 cred_user_pass-class    S4 class to handle plain-text username and
@@ -118,8 +122,10 @@ references              Get all references that can be found in a
                         repository.
 reflog                  List and view reflog information
 remote_add              Add a remote to a repo
+remote_ls               List references in a remote repository
 remote_remove           Remove a remote
 remote_rename           Rename a remote
+remote_set_url          Set the remote's url in the configuration
 remote_url              Get the remote url for remotes in a repo
 remotes                 Get the configured remotes for a repo
 repository              Open a repository
@@ -148,6 +154,7 @@ show,git_stash-method   Brief summary of a stash
 show,git_tag-method     Brief summary of a tag
 show,git_time-method    Brief summary of 'git_time'
 show,git_tree-method    Brief summary of tree
+ssl_cert_locations      Set the SSL certificate-authority locations
 stash                   Stash
 stash_drop              Drop stash
 stash_list              List stashes in repository

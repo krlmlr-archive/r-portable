@@ -47,8 +47,7 @@ commit,git_repository-method	commit-methods
 commits	commits-methods
 commits,git_repository-method	commits-methods
 commits,missing-method	commits-methods
-config	config-methods
-config,git_repository-method	config-methods
+config	config
 content	content-methods
 content,git_blob-method	content-methods
 contributions	contributions-methods
@@ -58,10 +57,10 @@ contributions,missing-method	contributions-methods
 cred_env	cred_env-methods
 cred_env,character,character-method	cred_env-methods
 cred_env-class	cred_env-class
-cred_ssh_key	cred_ssh_key-methods
-cred_ssh_key,character,character,character-method	cred_ssh_key-methods
-cred_ssh_key,character,character,missing-method	cred_ssh_key-methods
+cred_ssh_key	cred_ssh_key
 cred_ssh_key-class	cred_ssh_key-class
+cred_token	cred_token
+cred_token-class	cred_token-class
 cred_user_pass	cred_user_pass-methods
 cred_user_pass,character,character-method	cred_user_pass-methods
 cred_user_pass-class	cred_user_pass-class
@@ -72,7 +71,8 @@ descendant_of,git_commit,git_commit-method	descendant_of-methods
 diff,git_repository-method	diff-methods
 diff,git_tree-method	diff-methods
 discover_repository	discover_repository-methods
-discover_repository,character-method	discover_repository-methods
+discover_repository,character,missing-method	discover_repository-methods
+discover_repository,character,numeric-method	discover_repository-methods
 fetch	fetch-methods
 fetch,git_repository-method	fetch-methods
 fetch_heads	fetch_heads-methods
@@ -182,10 +182,14 @@ remotes,git_repository-method	remotes-methods
 remotes,missing-method	remotes-methods
 remote_add	remote_add-methods
 remote_add,git_repository,character,character-method	remote_add-methods
+remote_ls	remote_ls-methods
+remote_ls,character-method	remote_ls-methods
 remote_remove	remote_remove-methods
 remote_remove,git_repository,character-method	remote_remove-methods
 remote_rename	remote_rename-methods
 remote_rename,git_repository,character,character-method	remote_rename-methods
+remote_set_url	remote_set_url-methods
+remote_set_url,git_repository,character,character-method	remote_set_url-methods
 remote_url	remote_url-methods
 remote_url,git_repository-method	remote_url-methods
 repository	repository-methods
@@ -225,6 +229,7 @@ show,git_time-method	show-git_time-method
 show,git_time-methods	show-git_time-method
 show,git_tree-method	show-git_tree-method
 show,git_tree-methods	show-git_tree-method
+ssl_cert_locations	ssl_cert_locations
 stash	stash-methods
 stash,git_repository-method	stash-methods
 stash_drop	stash_drop-methods

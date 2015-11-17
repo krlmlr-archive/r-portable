@@ -1,6 +1,6 @@
 R FAQ
 Frequently Asked Questions on R
-Version 3.2.2015-11-07
+Version 3.2.2015-11-21
 Kurt Hornik
 
 
@@ -1440,13 +1440,14 @@ Bioconductor (https://www.bioconductor.org/) is an open source and open
 development software project for the analysis and comprehension of
 genomic data.  Most Bioconductor components are distributed as R add-on
 packages.  Initially most of the Bioconductor software packages
-(https://www.bioconductor.org/packages/bioc/) focused primarily on DNA
-microarray data analysis.  As the project has matured, the functional
-scope of the software packages broadened to include the analysis of all
-types of genomic data, such as SAGE, sequence, or SNP data.  In
-addition, there are metadata (annotation, CDF and probe) and experiment
-data packages.  See <https://www.bioconductor.org/download/> for
-available packages and a complete taxonomy via BioC Views.
+(https://bioconductor.org/packages/release/BiocViews.html#___Software)
+focused primarily on DNA microarray data analysis.  As the project has
+matured, the functional scope of the software packages broadened to
+include the analysis of all types of genomic data, such as SAGE,
+sequence, or SNP data.  In addition, there are metadata (annotation, CDF
+and probe) and experiment data packages.  See
+<https://www.bioconductor.org/download/> for available packages and a
+complete taxonomy via BioC Views.
 
 5.1.5 Other add-on packages
 ---------------------------

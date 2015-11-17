@@ -15,15 +15,11 @@
 
 
 <ul>
-<li> <p><code>nchar(x)</code> gains a new argument <code>keepNA</code> which
-governs how the result for <code>NA</code>s in <code>x</code> is determined.
-The new default <code>keepNA = NA</code> returns <code>NA</code> where
+<li> <p><code>nchar(x, *)</code>'s argument <code>keepNA</code> governing how
+the result for <code>NA</code>s in <code>x</code> is determined, gets a new
+default <code>keepNA = NA</code> which returns <code>NA</code> where
 <code>x</code> is <code>NA</code>, except for <code>type = "width"</code> which still
 returns <code>2</code>, the formatting / printing width of <code>NA</code>.
-</p>
-<p><code>nzchar(x)</code> gets the same new argument, but with default
-<code>keepNA = FALSE</code>.  Hence <code>nzchar(x)</code> still returns a
-non-<code>NA</code> logical vector.
 </p>
 </li>
 <li><p> All builds have support for <span class="samp">https:</span> URLs in the
@@ -664,6 +660,13 @@ Hastie.)
 <li> <p><code>loess(*, weights = *)</code> stored wrong weights and hence
 gave slightly wrong predictions for <code>newdata</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16587">PR#16587</a>)
 </p>
+</li>
+<li> <p><code>aperm(a, *)</code> now preserves <code>names(dim(a))</code>.
+</p>
+</li>
+<li> <p><code>poly(x, ..)</code> now works when either <code>raw=TRUE</code> or
+<code>coef</code> is specified.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16597">PR#16597</a>)
+</p>
 </li></ul>
 
 
@@ -904,10 +907,12 @@ with <code>repos = NULL</code> if it can infer the type of file.
 </li>
 <li> <p><code>nchar(x, *)</code> and <code>nzchar(x)</code> gain a new argument
 <code>keepNA</code> which governs how the result for <code>NA</code>s in
-<code>x</code> is determined.  For the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.x series, the default
+<code>x</code> is determined.  For <code>nzchar()</code> in general and
+<code>nchar()</code> in the <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.x series, the default
 remains <code>FALSE</code> which is fully back compatible.
-From <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0, the default will change to <code>keepNA = NA</code> and
-you are advised to consider this for code portability.
+From <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0, <code>nchar()</code>'s default will change to
+<code>keepNA = NA</code> and you are advised to consider this for code
+portability.
 </p>
 </li>
 <li> <p><code>news()</code> more flexibly extracts dates from package

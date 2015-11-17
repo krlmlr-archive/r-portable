@@ -1094,3 +1094,25 @@ for(n in 1:6) { if(n %% 10 == 0) cat(n,"\n")
 }
 ## gave (typically slightly) wrong predictions in R <= 3.2.2
 
+
+## aperm() for named dim()s:
+na <- list(A=LETTERS[1:2], B=letters[1:3], C=LETTERS[21:25], D=letters[11:17])
+da <- lengths(na)
+A <- array(1:210, dim=da, dimnames=na)
+aA <- aperm(A)
+a2 <- aperm(A, (pp <- c(3:1,4)))
+stopifnot(identical(     dim(aA), rev(da)),# including names(.)
+	  identical(dimnames(aA), rev(na)),
+	  identical(     dim(a2), da[pp]), # including names(.)
+	  identical(dimnames(a2), na[pp]))
+## dim(aperm(..)) did lose names() in R <= 3.2.2
+
+
+## poly() / predict(poly()) with NAs -- PR#16597
+fm <- lm(y ~ poly(x, 3), data=data.frame(x=1:7, y=sin(1:7)))
+x <- c(1,NA,3:7)
+stopifnot(all.equal(c(predict(fm, newdata=list(x = 1:3)), `4`=NA),
+		      predict(fm, newdata=list(x=c(1:3,NA))), tol=1e-15),
+	  all.equal(unclass(poly(x, degree=2, raw=TRUE)),
+		    cbind(x, x^2), check.attributes=FALSE))
+## both gave error about NA in R <= 3.2.2

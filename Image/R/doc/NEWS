@@ -4,13 +4,10 @@ CHANGES IN R-devel:
 
   SIGNIFICANT USER-VISIBLE CHANGES:
 
-    * nchar(x) gains a new argument keepNA which governs how the result
-      for NAs in x is determined.  The new default keepNA = NA returns
-      NA where x is NA, except for type = "width" which still returns
-      2, the formatting / printing width of NA.
-
-      nzchar(x) gets the same new argument, but with default keepNA =
-      FALSE.  Hence nzchar(x) still returns a non-NA logical vector.
+    * nchar(x, *)'s argument keepNA governing how the result for NAs in
+      x is determined, gets a new default keepNA = NA which returns NA
+      where x is NA, except for type = "width" which still returns 2,
+      the formatting / printing width of NA.
 
     * All builds have support for https: URLs in the default methods
       for download.file(), url() and code making use of them.
@@ -440,6 +437,11 @@ CHANGES IN R 3.2.2 patched:
     * loess(*, weights = *) stored wrong weights and hence gave
       slightly wrong predictions for newdata.  (PR#16587)
 
+    * aperm(a, *) now preserves names(dim(a)).
+
+    * poly(x, ..) now works when either raw=TRUE or coef is specified.
+      (PR#16597)
+
 CHANGES IN R 3.2.2:
 
   SIGNIFICANT USER-VISIBLE CHANGES:
@@ -591,10 +593,11 @@ CHANGES IN R 3.2.1:
       it can infer the type of file.
 
     * nchar(x, *) and nzchar(x) gain a new argument keepNA which
-      governs how the result for NAs in x is determined.  For the R
-      3.2.x series, the default remains FALSE which is fully back
-      compatible.  From R 3.3.0, the default will change to keepNA = NA
-      and you are advised to consider this for code portability.
+      governs how the result for NAs in x is determined.  For nzchar()
+      in general and nchar() in the R 3.2.x series, the default remains
+      FALSE which is fully back compatible.  From R 3.3.0, nchar()'s
+      default will change to keepNA = NA and you are advised to
+      consider this for code portability.
 
     * news() more flexibly extracts dates from package NEWS.Rd files.
 

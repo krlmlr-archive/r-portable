@@ -27,7 +27,7 @@ DT_ARCH = -m i386 --as-flags --32
 RC_ARCH = -F pe-i386
 # Used by packages tcltk and tkrplot
 TCL_HOME = $(R_HOME)/Tcl
-LOCAL_SOFT = d:/RCompile/r-compiling/local/local320
+LOCAL_SOFT = d:/RCompile/r-compiling/local/local323
 NM_FILTER = 
 
 ifneq ($(strip $(LOCAL_SOFT)),)

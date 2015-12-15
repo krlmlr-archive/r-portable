@@ -7,4 +7,4 @@ Maintainer: R Core Team <R-core@r-project.org>
 Description: R utility functions.
 License: Part of R 3.3.0
 Suggests: methods, XML
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-05 03:17:55 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-06 03:16:12 UTC; windows

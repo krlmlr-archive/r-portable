@@ -204,6 +204,16 @@ CHANGES IN R-devel:
       changing functionality, thanks to proposals from Peter Haverty
       and Suharto Anggono.  (PR#16640)
 
+    * match.arg(arg) (the one-argument case) is faster; so is
+      sort.int().  (PR#16640)
+
+    * The format method for object_size objects now also accepts
+      "binary" units (and e.g. Tb).  (PR#16649)
+
+    * Profiling now records calls of the form foo::bar and some similar
+      cases directly rather than as calls to <Anonymous>.  Contributed
+      by Winston Chang.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -271,6 +281,12 @@ CHANGES IN R-devel:
     * The minimum preferred version of PCRE has since R 3.0.0 been 8.32
       (released in Nov 2012).  Versions 8.10 to 8.31 are now deprecated
       (with warnings from configure), but for now still accepted.
+
+  PACKAGE INSTALLATION:
+
+    * The make macro AWK which used to be made available to files such
+      as src/Makefile is no longer set.  [Announced and will be
+      implemented once packages are updated.]
 
   C-LEVEL FACILITIES:
 
@@ -341,6 +357,10 @@ CHANGES IN R 3.2.3 patched:
       favour of the standard OpenMP define _OPENMP.
 
       (This has been the recommendation in the manual for a while now.)
+
+    * The make macro @codeAWK which is long unused by R itself but
+      recorded in file etc/Makeconf is deprecated and will be removed
+      in R 3.3.0.
 
   BUG FIXES:
 

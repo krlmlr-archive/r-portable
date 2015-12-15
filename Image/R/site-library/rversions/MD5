@@ -1,11 +1,11 @@
-10e28d5a247fc147319d2220a8adfb04 *DESCRIPTION
+86ba941b88679231cdd6694fe84c21b9 *DESCRIPTION
 8b98f412af302c6acbddce848eefc8ea *INDEX
 8488c7e8cbfc04df9ff69dd011f878da *LICENSE
 2dea7dde1c4e468537d5a099db0189aa *Meta/Rd.rds
 6b13adc08b948fbbd43cb2ace5060601 *Meta/hsearch.rds
 fffc82cf09c1022b9e56d3de346b1cdf *Meta/links.rds
 35c2c8b276b69c5875b5522dc30722c0 *Meta/nsInfo.rds
-b120607e5b40ba69f85b24922adb7789 *Meta/package.rds
+ec939b74046d341ccdafd8b66961366f *Meta/package.rds
 7765ed71a74613595221dc717f858e5f *NAMESPACE
 21bb9926c912279ba94e0b20ab563e7c *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/rversions
@@ -14,8 +14,8 @@ e6720327e8bba17ab2697254cfc18d9a *R/rversions.rdx
 e2c8f11262c64ea485c87106c815975a *README.md
 31b32c2bbee23167dcc291a18d6b8138 *help/AnIndex
 7a619d658d63b9533c4f34114382904a *help/aliases.rds
-487a5b112627d547b51b3962b9b2eeca *help/paths.rds
-88892c8c104832dd5eeeb49b8f5d03ec *help/rversions.rdb
-4d8515fbd12c25065c842e9e2cb12d85 *help/rversions.rdx
+e2937eae6d8022f286a6213b88499b27 *help/paths.rds
+1db63f3d03b5d794ff034b6f7a7a9440 *help/rversions.rdb
+bc3e02870056f926add2d398204af2d2 *help/rversions.rdx
 681e683a2d5eb709bee6ba331caf0523 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css

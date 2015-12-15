@@ -290,6 +290,19 @@ included as they are used by current packages.)
 without changing functionality, thanks to proposals from Peter
 Haverty and Suharto Anggono.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16640">PR#16640</a>)
 </p>
+</li>
+<li> <p><code>match.arg(arg)</code> (the one-argument case) is faster; so
+is <code>sort.int()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16640">PR#16640</a>)
+</p>
+</li>
+<li><p> The <code>format</code> method for <code>object_size</code> objects now
+also accepts &ldquo;binary&rdquo; units (and e.g. Tb).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16649">PR#16649</a>)
+</p>
+</li>
+<li><p> Profiling now records calls of the form <code>foo::bar</code> and
+some similar cases directly rather than as calls to
+<code>&lt;Anonymous&gt;</code>.  Contributed by Winston Chang.
+</p>
 </li></ul>
 
 
@@ -397,6 +410,19 @@ install under &lsquo;<span class="file">/Library/Frameworks</span>&rsquo; and us
 been 8.32 (released in Nov 2012).  Versions 8.10 to 8.31 are now
 deprecated (with warnings from <code>configure</code>), but for now
 still accepted.
+</p>
+</li></ul>
+
+
+
+
+<h4>PACKAGE INSTALLATION</h4>
+
+
+<ul>
+<li><p> The <code>make</code> macro <code>AWK</code> which used to be made
+available to files such as &lsquo;<span class="file">src/Makefile</span>&rsquo; is no longer set.
+[Announced and will be implemented once packages are updated.]
 </p>
 </li></ul>
 
@@ -516,6 +542,11 @@ in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-projec
 deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</span>.
 </p>
 <p>(This has been the recommendation in the manual for a while now.)
+</p>
+</li>
+<li><p> The <code>make</code> macro @codeAWK which is long unused by
+<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> itself but recorded in file &lsquo;<span class="file">etc/Makeconf</span>&rsquo; is deprecated
+and will be removed in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0.
 </p>
 </li></ul>
 

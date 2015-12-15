@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-01-04).
+<!-- This manual is for R, version 3.3.0 Under development (2016-01-06).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-01-04).
+<p>This manual is for R, version 3.3.0 Under development (2016-01-06).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4776,7 +4776,8 @@ and possibly more.  This means that calling <code>sqrt</code> on an integer
 type may have &lsquo;overloading ambiguity&rsquo; as it could be promoted to any of
 the supported floating-point types: this is commonly seen on Solaris,
 but for <code>pow</code> also seen on OS X.  (C++11 requires additional
-overloads for integer types.)
+overloads for integer types, and ambiguous overloads are more common in
+C++11/C++14 compiler modes.)
 
 <p>A not-uncommonly-seen problem is to mistakenly call <code>floor(x/y)</code> or
 <code>ceil(x/y)</code> for <code>int</code> arguments <code>x</code> and <code>y</code>.  Since
@@ -8291,8 +8292,8 @@ Next: <a href="#Using-Undefined-Behaviour-Sanitizer" accesskey="n" rel="next">Us
 
 <p><code>AddressSanitizer</code> (&lsquo;ASan&rsquo;) is a tool with similar aims to the
 memory checker in <code>valgrind</code>.  It is available with suitable
-builds<a name="DOCF91" href="#FOOT91"><sup>91</sup></a> of <code>gcc</code> and <code>clang</code> on common
-Linux and OS X platforms.  See
+builds<a name="DOCF91" href="#FOOT91"><sup>91</sup></a> of <code>gcc</code> and <code>clang</code> on common Linux
+and OS X platforms.  See
 <a href="http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation">http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation</a>,
 <a href="http://clang.llvm.org/docs/AddressSanitizer.html">http://clang.llvm.org/docs/AddressSanitizer.html</a> and
 <a href="https://code.google.com/p/address-sanitizer/">https://code.google.com/p/address-sanitizer/</a>.
@@ -8340,10 +8341,10 @@ CFLAGS=&quot;-fno-omit-frame-pointer -g -O2 -Wall -pedantic -mtune=native&quot;
 into the R executable.  However this check can be enabled on a
 per-package basis by using a <samp>~/.R/Makevars</samp> file like
 </p><div class="example">
-<pre class="example">CC = gcc-4.9 -std=gnu99 -fsanitize=address -fno-omit-frame-pointer
-CXX = g++-4.9 -fsanitize=address -fno-omit-frame-pointer
-F77 = gfortran-4.9 -fsanitize=address
-FC = gfortran-4.9 -fsanitize=address
+<pre class="example">CC = gcc -std=gnu99 -fsanitize=address -fno-omit-frame-pointer
+CXX = g++ -fsanitize=address -fno-omit-frame-pointer
+F77 = gfortran -fsanitize=address
+FC = gfortran -fsanitize=address
 </pre></div>
 <p>(Note that <code>-fsanitize=address</code> has to be part of the compiler
 specification to ensure it is used for linking.  These settings will not
@@ -8437,20 +8438,19 @@ packages are attempts to coerce a <code>NaN</code> or infinity to type
 might be <code>NA_INTEGER</code>.
 </p>
 <p>&lsquo;UBSanitizer&rsquo; is a tool for C/C++ source code selected by
-<samp>-fsanitize=undefined</samp> in suitable builds of <code>clang</code>, and
-GCC as from 4.9.0.  Its (main) runtime library is linked into each
-package&rsquo;s DLL, so it is less often needed to be included in
-<code>MAIN_LDFLAGS</code>.
+<samp>-fsanitize=undefined</samp> in suitable builds<a name="DOCF95" href="#FOOT95"><sup>95</sup></a> of <code>clang</code> and GCC.  Its (main) runtime library is
+linked into each package&rsquo;s DLL, so it is less often needed to be
+included in <code>MAIN_LDFLAGS</code>.
 </p>
 <p>Some versions have greatly increased compilation times on a few
-files<a name="DOCF95" href="#FOOT95"><sup>95</sup></a>.
+files<a name="DOCF96" href="#FOOT96"><sup>96</sup></a>.
 </p>
 <p>This sanitizer can be combined with the Address Sanitizer by
 <samp>-fsanitize=undefined,address</samp> (where both are supported).
 </p>
 <p>Finer control of what is checked can be achieved by other options: for
 <code>clang</code> see
-<a href="http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation">http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation</a>.<a name="DOCF96" href="#FOOT96"><sup>96</sup></a>
+<a href="http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation">http://clang.llvm.org/docs/UsersManual.html#controlling-code-generation</a>.<a name="DOCF97" href="#FOOT97"><sup>97</sup></a>
 The current set for <code>clang</code> is (on a single line):
 </p><div class="example">
 <pre class="example">-fsanitize=alignment,bool,bounds,enum,float-cast-overflow,
@@ -8491,12 +8491,12 @@ could try building R with something like
 </p><div class="example">
 <pre class="example">R_OPENMP_CFLAGS=&quot;-fopenmp=libomp&quot;
 </pre></div>
-<p>or add <code>-lclang_rt.asan_cxx-x86_64</code><a name="DOCF97" href="#FOOT97"><sup>97</sup></a> or similar to <code>LD_FLAGS</code>).
+<p>or add <code>-lclang_rt.asan_cxx-x86_64</code><a name="DOCF98" href="#FOOT98"><sup>98</sup></a> or similar to <code>LD_FLAGS</code>).
 </p>
 <p>See <a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a> (or
 the manual for your version of GCC, installed or <em>via</em>
 <a href="https://gcc.gnu.org/onlinedocs/">https://gcc.gnu.org/onlinedocs/</a>) for the options supported by
-GCC: 5.3.0 supports
+GCC: 5.3 supports
 </p><div class="example">
 <pre class="example">-fsanitize=alignment,bool,bounds,enum,float-cast-overflow,
 integer-divide-by-zero,non-null-attribute,null,object-size,
@@ -8576,7 +8576,7 @@ Next: <a href="#Fortran-array-bounds-checking" accesskey="n" rel="next">Fortran 
 
 <p>&lsquo;Dr. Memory&rsquo; from <a href="http://www.drmemory.org/">http://www.drmemory.org/</a> is a memory checker
 for (currently) 32-bit Windows, Linux and OS X with similar aims to
-<code>valgrind</code>.  It works with unmodified executables<a name="DOCF98" href="#FOOT98"><sup>98</sup></a>
+<code>valgrind</code>.  It works with unmodified executables<a name="DOCF99" href="#FOOT99"><sup>99</sup></a>
 and detects memory access errors, uninitialized reads and memory leaks.
 </p>
 <hr>
@@ -9009,7 +9009,7 @@ can be used with other languages which can generate C interfaces, for
 example C++ (see <a href="#Interfacing-C_002b_002b-code">Interfacing C++ code</a>).
 </p>
 <p>The first argument to each function is a character string specifying the
-symbol name as known<a name="DOCF99" href="#FOOT99"><sup>99</sup></a> to C or
+symbol name as known<a name="DOCF100" href="#FOOT100"><sup>100</sup></a> to C or
 FORTRAN, that is the function or subroutine name.  (That the symbol is
 loaded can be tested by, for example, <code>is.loaded(&quot;cg&quot;)</code>.  Use the
 name you pass to <code>.C</code> or <code>.Fortran</code> rather than the translated
@@ -9133,7 +9133,7 @@ elements of the C array are copied to create new elements of a character
 vector.  This means that the contents of the character strings of the
 <code>char **</code> array can be changed, including to <code>\0</code> to shorten
 the string, but the strings cannot be lengthened.  It is
-possible<a name="DOCF100" href="#FOOT100"><sup>100</sup></a> to allocate a new string <em>via</em>
+possible<a name="DOCF101" href="#FOOT101"><sup>101</sup></a> to allocate a new string <em>via</em>
 <code>R_alloc</code> and replace an entry in the <code>char **</code> array by the
 new string.  However, when character vectors are used other than in a
 read-only way, the <code>.Call</code> interface is much to be preferred.
@@ -9407,7 +9407,7 @@ static R_CMethodDef cMethods[] = {
 <p>One can also specify whether each argument is used simply as input, or
 as output, or as both input and output.  The style field in the
 description of a method is used for this.  The purpose is to
-allow<a name="DOCF101" href="#FOOT101"><sup>101</sup></a> R to transfer values
+allow<a name="DOCF102" href="#FOOT102"><sup>102</sup></a> R to transfer values
 more efficiently across the R-C/FORTRAN interface by avoiding copying
 values when it is not necessary. Typically, one omits this information
 in the registration data.
@@ -9589,9 +9589,9 @@ needs to declare them as a comma-separated list in the field
 that the <samp>include</samp> directories in the installed linked-to packages
 are added to the include paths for C and C++ code.
 </p>
-<p>It must specify<a name="DOCF102" href="#FOOT102"><sup>102</sup></a>
+<p>It must specify<a name="DOCF103" href="#FOOT103"><sup>103</sup></a>
 &lsquo;<samp>Imports</samp>&rsquo; or &lsquo;<samp>Depends</samp>&rsquo; of those packages, for they have to be
-loaded<a name="DOCF103" href="#FOOT103"><sup>103</sup></a> prior to this one
+loaded<a name="DOCF104" href="#FOOT104"><sup>104</sup></a> prior to this one
 (so the path to their compiled code has been registered).
 </p>
 
@@ -9939,7 +9939,7 @@ PKG_LIBS=-L&quot;$(PKGB_PATH)$(R_ARCH)&quot; -lpackB
 
 <p>This will work for installation, but very likely not when package
 <code>packB</code> is loaded, as the path to package <strong>packB</strong>&rsquo;s <samp>lib</samp>
-directory is not in the <code>ld.so</code><a name="DOCF104" href="#FOOT104"><sup>104</sup></a>  search path.  You can arrange to
+directory is not in the <code>ld.so</code><a name="DOCF105" href="#FOOT105"><sup>105</sup></a>  search path.  You can arrange to
 put it there <strong>before</strong> R is launched by setting (on some
 platforms) <code>LD_RUN_PATH</code> or <code>LD_LIBRARY_PATH</code> or adding to the
 <code>ld.so</code> cache (see <code>man ldconfig</code>).  On platforms that
@@ -10111,7 +10111,7 @@ the arguments can be extracted.
 </p>
 <p>In each case the R objects are available for manipulation <em>via</em>
 a set of functions and macros defined in the header file
-<samp>Rinternals.h</samp> or some S-compatibility macros<a name="DOCF105" href="#FOOT105"><sup>105</sup></a> defined
+<samp>Rinternals.h</samp> or some S-compatibility macros<a name="DOCF106" href="#FOOT106"><sup>106</sup></a> defined
 in <samp>Rdefines.h</samp>.  See <a href="#Interface-functions-_002eCall-and-_002eExternal">Interface functions .Call and .External</a>
 for details on <code>.Call</code> and <code>.External</code>.
 </p>
@@ -10130,7 +10130,7 @@ interfaces as read-only.
 </p>
 <p>To handle R objects from within C code we use the macros and functions
 that have been used to implement the core parts of R.  A
-public<a name="DOCF106" href="#FOOT106"><sup>106</sup></a>  subset of these is defined in the header file
+public<a name="DOCF107" href="#FOOT107"><sup>107</sup></a>  subset of these is defined in the header file
 <samp>Rinternals.h</samp> in the directory <samp><var>R_INCLUDE_DIR</var></samp> (default
 <samp><var>R_HOME</var>/include</samp>) that should be available on any R
 installation.
@@ -10142,7 +10142,7 @@ make use of the source code for inspirational examples.
 </p>
 <p>It is necessary to know something about how R objects are handled in
 C code.  All the R objects you will deal with will be handled with
-the type <em>SEXP</em><a name="DOCF107" href="#FOOT107"><sup>107</sup></a>, which is a
+the type <em>SEXP</em><a name="DOCF108" href="#FOOT108"><sup>108</sup></a>, which is a
 pointer to a structure with typedef <code>SEXPREC</code>.  Think of this
 structure as a <em>variant type</em> that can handle all the usual types
 of R objects, that is vectors of various modes, functions,
@@ -10392,7 +10392,7 @@ object, you can change the type by using
 
 <p>Protection is needed as a new <em>object</em> is created; the object
 formerly pointed to by the <code>SEXP</code> is still protected but now
-unused.<a name="DOCF108" href="#FOOT108"><sup>108</sup></a>
+unused.<a name="DOCF109" href="#FOOT109"><sup>109</sup></a>
 </p>
 <p>All the coercion functions do their own error-checking, and generate
 <code>NA</code>s with a warning or stop with an error as appropriate.
@@ -10722,7 +10722,7 @@ creates a new binding or changes the value of an existing binding in the
 specified environment frame; it is the analogue of <code>assign(symbol,
 value, envir = rho, inherits = FALSE)</code>, but unlike <code>assign</code>,
 <code>defineVar</code> does not make a copy of the object
-<code>value</code>.<a name="DOCF109" href="#FOOT109"><sup>109</sup></a>  <code>setVar</code> searches for an existing
+<code>value</code>.<a name="DOCF110" href="#FOOT110"><sup>110</sup></a>  <code>setVar</code> searches for an existing
 binding for <code>symbol</code> in <code>rho</code> or its enclosing environments.
 If a binding is found, its value is changed to <code>value</code>.  Otherwise,
 a new binding with the specified value is created in the global
@@ -11501,7 +11501,7 @@ corresponding to the <code>i</code>&rsquo;th element of the <code>STRSXP</code>
 <code>theta</code>.  Here, <code>STRING_ELT(theta, i)</code> accesses the
 <code>i</code>&rsquo;th element of the <code>STRSXP</code> <code>theta</code>.  Macro
 <code>CHAR()</code> extracts the actual character
-representation<a name="DOCF110" href="#FOOT110"><sup>110</sup></a> of it: it returns a pointer.  We then
+representation<a name="DOCF111" href="#FOOT111"><sup>111</sup></a> of it: it returns a pointer.  We then
 install the name and use <code>findVar</code> to find its value.
 </p>
 <div class="example">
@@ -11563,7 +11563,7 @@ Next: <a href="#External-pointers-and-weak-references" accesskey="n" rel="next">
 user and evaluate it.  The previous section covered evaluation, but the
 expression will be entered as text and needs to be parsed first.  A
 small part of R&rsquo;s parse interface is declared in header file
-<samp>R_ext/Parse.h</samp><a name="DOCF111" href="#FOOT111"><sup>111</sup></a>.
+<samp>R_ext/Parse.h</samp><a name="DOCF112" href="#FOOT112"><sup>112</sup></a>.
 </p>
 <p>An example of the usage can be found in the (example) Windows package
 <strong>windlgs</strong> included in the R source tree.  The essential part is
@@ -12023,7 +12023,7 @@ user code, it is <em>essential</em> to include the appropriate header
 files when using these entry points.
 </p></blockquote>
 
-<p>This remapping can cause problems<a name="DOCF112" href="#FOOT112"><sup>112</sup></a>, and can be eliminated by defining <code>R_NO_REMAP</code> and
+<p>This remapping can cause problems<a name="DOCF113" href="#FOOT113"><sup>113</sup></a>, and can be eliminated by defining <code>R_NO_REMAP</code> and
 prepending &lsquo;<samp>Rf_</samp>&rsquo; to <em>all</em> the function names used from
 <samp>Rinternals.h</samp> and <samp>R_ext/Error.h</samp>.  These problems can
 usually be avoided by including other headers (such as system headers
@@ -12826,7 +12826,7 @@ accurately even for small <var>x</var>, i.e., 0 &lt; x &lt; 0.5.
 <dd><p>Computes <code>cos(pi * x)</code> (where <code>pi</code> is 3.14159...),
 accurately, notably for half integer <var>x</var>.
 </p>
-<p>This might be provided by your platform<a name="DOCF113" href="#FOOT113"><sup>113</sup></a>, in which case it is not included in <samp>Rmath.h</samp>, but is
+<p>This might be provided by your platform<a name="DOCF114" href="#FOOT114"><sup>114</sup></a>, in which case it is not included in <samp>Rmath.h</samp>, but is
 in <samp>math.h</samp> which <samp>Rmath.h</samp> includes.
 </p></dd></dl>
 
@@ -13408,7 +13408,7 @@ the code is indeed being used with R.
 <p>Header file <samp>Rconfig.h</samp> (included by <samp>R.h</samp>) is used to define
 platform-specific macros that are mainly for use in other header files.
 The macro <code>WORDS_BIGENDIAN</code> is defined on
-big-endian<a name="DOCF114" href="#FOOT114"><sup>114</sup></a>
+big-endian<a name="DOCF115" href="#FOOT115"><sup>115</sup></a>
 systems (e.g. most OSes on Sparc and PowerPC hardware) and not on
 little-endian systems (nowadays all the commoner R platforms).  It
 can be useful when manipulating binary files.
@@ -13896,7 +13896,7 @@ Next: <a href="#Embedding-R-under-Windows" accesskey="n" rel="next">Embedding R 
 <a name="Embedding-R-under-Unix_002dalikes-1"></a>
 <h3 class="section">8.1 Embedding R under Unix-alikes</h3>
 
-<p>R can be built as a shared library<a name="DOCF115" href="#FOOT115"><sup>115</sup></a> if configured with <samp>--enable-R-shlib</samp>.  This
+<p>R can be built as a shared library<a name="DOCF116" href="#FOOT116"><sup>116</sup></a> if configured with <samp>--enable-R-shlib</samp>.  This
 shared library can be used to run R from alternative front-end
 programs.  We will assume this has been done for the rest of this
 section.  Also, it can be built as a static library if configured with
@@ -13963,7 +13963,7 @@ and R does look there for system components.)
 </p>
 <p>The other senses in which this example is too simple are that all the
 internal defaults are used and that control is handed over to the
-R main loop.  There are a number of small examples<a name="DOCF116" href="#FOOT116"><sup>116</sup></a> in the
+R main loop.  There are a number of small examples<a name="DOCF117" href="#FOOT117"><sup>117</sup></a> in the
 <samp>tests/Embedding</samp> directory.  These make use of
 <code>Rf_initEmbeddedR</code> in <samp>src/main/Rembedded.c</samp>, and essentially
 use
@@ -14468,7 +14468,7 @@ extern uintptr_t R_CStackStart; /* Initial stack address */
 defined in R, so your code needs to define <code>HAVE_UINTPTR_T</code>
 appropriately.
 </p>
-<p>These will be set<a name="DOCF117" href="#FOOT117"><sup>117</sup></a> when <code>Rf_initialize_R</code> is called, to values appropriate to the
+<p>These will be set<a name="DOCF118" href="#FOOT118"><sup>118</sup></a> when <code>Rf_initialize_R</code> is called, to values appropriate to the
 main thread.  Stack-checking can be disabled by setting
 <code>R_CStackLimit = (uintptr_t)-1</code> immediately after
 <code>Rf_initialize_R</code> is called, but it is better to if possible set
@@ -14733,7 +14733,7 @@ and <code>select.list()</code>.  It would be possible to replace all of these,
 but it seems easier to allow GraphApp to handle most of them.
 </p>
 <p>It is possible to run R in a GUI in a single thread (as
-<samp>RGui.exe</samp> shows) but it will normally be easier<a name="DOCF118" href="#FOOT118"><sup>118</sup></a> to
+<samp>RGui.exe</samp> shows) but it will normally be easier<a name="DOCF119" href="#FOOT119"><sup>119</sup></a> to
 use multiple threads.
 </p>
 <p>Note that R&rsquo;s own front ends use a stack size of 10Mb, whereas MinGW
@@ -15884,12 +15884,10 @@ they are freed.</p>
 fixed-size arrays by default in <code>gfortran</code>, for example.</p>
 <h3><a name="FOOT91" href="#DOCF91">(91)</a></h3>
 <p>currently only on &lsquo;<samp>ix86</samp>&rsquo;/&lsquo;<samp>x86_64</samp>&rsquo; Linux
-and OS X (including the builds in Xcode 7 beta but not earlier Apple
-releases).  On some platforms, e.g. Fedora, the runtime library,
-<strong>libasan</strong>, needs to be installed separately. OS X users can install
-a suitable <code>clang</code> from the sources,
-<a href="http://llvm.org/releases/">http://llvm.org/releases/</a> or possibly distributions such as
-MacPorts or Homebrew.</p>
+and OS X (including the builds in Xcode 7 but not earlier Apple
+releases).  On some platforms the runtime library, <strong>libasan</strong>, needs
+to be installed separately, and for checking C++ you may also need
+<strong>libubsan</strong>.</p>
 <h3><a name="FOOT92" href="#DOCF92">(92)</a></h3>
 <p>part of the LLVM project and
 in distributed in <code>llvm</code> RPMs and <code>.deb</code>s on Linux.  It is not
@@ -15902,79 +15900,83 @@ currently shipped by Apple.</p>
 <a href="https://llvm.org/svn/llvm-project/compiler-rt/trunk/lib/asan/scripts/asan_symbolize.py">https://llvm.org/svn/llvm-project/compiler-rt/trunk/lib/asan/scripts/asan_symbolize.py</a>:
 it makes use of <code>llvm-symbolizer</code> if available.</p>
 <h3><a name="FOOT95" href="#DOCF95">(95)</a></h3>
+<p>On some
+platforms the runtime library, <strong>libubsan</strong>, needs to be installed
+separately.</p>
+<h3><a name="FOOT96" href="#DOCF96">(96)</a></h3>
 <p>e.g. <samp>src/main/dotcode.c</samp> and parts of the
 <strong>Matrix</strong> sources with <code>clang</code> 3.7.0 amd later.</p>
-<h3><a name="FOOT96" href="#DOCF96">(96)</a></h3>
+<h3><a name="FOOT97" href="#DOCF97">(97)</a></h3>
 <p>or
 the user manual for your version of <code>clang</code>, e.g.
 <a href="http://llvm.org/releases/3.6.2/tools/docs/UsersManual.html">http://llvm.org/releases/3.6.2/tools/docs/UsersManual.html</a>.</p>
-<h3><a name="FOOT97" href="#DOCF97">(97)</a></h3>
+<h3><a name="FOOT98" href="#DOCF98">(98)</a></h3>
 <p>This includes the C++
 UBSAN handlers, despite its name.</p>
-<h3><a name="FOOT98" href="#DOCF98">(98)</a></h3>
+<h3><a name="FOOT99" href="#DOCF99">(99)</a></h3>
 <p>but
 works better if inlining and frame pointer optimizations are disabled.</p>
-<h3><a name="FOOT99" href="#DOCF99">(99)</a></h3>
+<h3><a name="FOOT100" href="#DOCF100">(100)</a></h3>
 <p>possibly after some platform-specific
 translation, e.g. adding leading or trailing underscores.</p>
-<h3><a name="FOOT100" href="#DOCF100">(100)</a></h3>
+<h3><a name="FOOT101" href="#DOCF101">(101)</a></h3>
 <p>Note that this is then not checked for over-runs by
 option <code>CBoundsCheck = TRUE</code>.</p>
-<h3><a name="FOOT101" href="#DOCF101">(101)</a></h3>
-<p>but this is not currently done.</p>
 <h3><a name="FOOT102" href="#DOCF102">(102)</a></h3>
-<p>whether or not &lsquo;<samp>LinkingTo</samp>&rsquo; is used.</p>
+<p>but this is not currently done.</p>
 <h3><a name="FOOT103" href="#DOCF103">(103)</a></h3>
+<p>whether or not &lsquo;<samp>LinkingTo</samp>&rsquo; is used.</p>
+<h3><a name="FOOT104" href="#DOCF104">(104)</a></h3>
 <p>so there needs to be a corresponding <code>import</code> or
 <code>importFrom</code> entry in the <samp>NAMESPACE</samp> file.</p>
-<h3><a name="FOOT104" href="#DOCF104">(104)</a></h3>
+<h3><a name="FOOT105" href="#DOCF105">(105)</a></h3>
 <p><code>dyld</code> on OS X,
 and <code>DYLD_LIBRARY_PATHS</code> below.</p>
-<h3><a name="FOOT105" href="#DOCF105">(105)</a></h3>
+<h3><a name="FOOT106" href="#DOCF106">(106)</a></h3>
 <p>That is,
 similar to those defined in S version 4 from the 1990s: these are
 not kept up to date and are not recommended for new projects.</p>
-<h3><a name="FOOT106" href="#DOCF106">(106)</a></h3>
+<h3><a name="FOOT107" href="#DOCF107">(107)</a></h3>
 <p>see <a href="#The-R-API">The R API</a>: note that these are not all part of
 the API.</p>
-<h3><a name="FOOT107" href="#DOCF107">(107)</a></h3>
+<h3><a name="FOOT108" href="#DOCF108">(108)</a></h3>
 <p>SEXP is an acronym for <em>S</em>imple
 <em>EXP</em>ression, common in LISP-like language syntaxes.</p>
-<h3><a name="FOOT108" href="#DOCF108">(108)</a></h3>
+<h3><a name="FOOT109" href="#DOCF109">(109)</a></h3>
 <p>If no coercion was required, <code>coerceVector</code> would
 have passed the old object through unchanged.</p>
-<h3><a name="FOOT109" href="#DOCF109">(109)</a></h3>
+<h3><a name="FOOT110" href="#DOCF110">(110)</a></h3>
 <p>You can assign a <em>copy</em> of the object in the
 environment frame <code>rho</code> using <code>defineVar(symbol,
 duplicate(value), rho)</code>).</p>
-<h3><a name="FOOT110" href="#DOCF110">(110)</a></h3>
+<h3><a name="FOOT111" href="#DOCF111">(111)</a></h3>
 <p>see <a href="#Character-encoding-issues">Character encoding issues</a> for why this
 might not be what is required.</p>
-<h3><a name="FOOT111" href="#DOCF111">(111)</a></h3>
+<h3><a name="FOOT112" href="#DOCF112">(112)</a></h3>
 <p>This is only guaranteed to show the
 current interface: it is liable to change.</p>
-<h3><a name="FOOT112" href="#DOCF112">(112)</a></h3>
+<h3><a name="FOOT113" href="#DOCF113">(113)</a></h3>
 <p>Known problems are redefining
 <code>LENGTH</code>, <code>error</code>, <code>length</code>, <code>vector</code> and
 <code>warning</code></p>
-<h3><a name="FOOT113" href="#DOCF113">(113)</a></h3>
+<h3><a name="FOOT114" href="#DOCF114">(114)</a></h3>
 <p>It is an optional C11
 extension.</p>
-<h3><a name="FOOT114" href="#DOCF114">(114)</a></h3>
-<p><a href="https://en.wikipedia.org/wiki/Endianness">https://en.wikipedia.org/wiki/Endianness</a>.</p>
 <h3><a name="FOOT115" href="#DOCF115">(115)</a></h3>
+<p><a href="https://en.wikipedia.org/wiki/Endianness">https://en.wikipedia.org/wiki/Endianness</a>.</p>
+<h3><a name="FOOT116" href="#DOCF116">(116)</a></h3>
 <p>In the parlance of OS X
 this is a <em>dynamic</em> library, and is the normal way to build R on
 that platform.</p>
-<h3><a name="FOOT116" href="#DOCF116">(116)</a></h3>
+<h3><a name="FOOT117" href="#DOCF117">(117)</a></h3>
 <p>but these
 are not part of the automated test procedures and so little tested.</p>
-<h3><a name="FOOT117" href="#DOCF117">(117)</a></h3>
+<h3><a name="FOOT118" href="#DOCF118">(118)</a></h3>
 <p>at least on platforms where the values are
 available, that is having <code>getrlimit</code> and on Linux or having
 <code>sysctl</code> supporting <code>KERN_USRSTACK</code>, including FreeBSD and OS
 X.</p>
-<h3><a name="FOOT118" href="#DOCF118">(118)</a></h3>
+<h3><a name="FOOT119" href="#DOCF119">(119)</a></h3>
 <p>An
 attempt to use only threads in the late 1990s failed to work correctly
 under Windows 95, the predominant version of Windows at that time.</p>

@@ -222,6 +222,9 @@ CHANGES IN R-devel:
     * Reference class finalizers run at exit, as well as on garbage
       collection.
 
+    * Avoid parallel dependency on stats for port choice and random
+      number seeds. (PR#16668)
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

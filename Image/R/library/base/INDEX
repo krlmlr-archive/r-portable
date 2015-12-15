@@ -179,7 +179,7 @@ environment variables   Environment Variables
 eval                    Evaluate an (Unevaluated) Expression
 exists                  Is an Object Defined?
 expand.grid             Create a Data Frame from All Combinations of
-                        Factors
+                        Factor Variables
 expression              Unevaluated Expressions
 extSoftVersion          Report Versions of Third-Party Software
 factor                  Factors

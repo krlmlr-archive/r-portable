@@ -458,8 +458,8 @@ instead of <code>Expose</code> events, thanks to Siteshwar
 Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
 </p>
 </li>
-<li> <p><code>as(1L, "numeric")</code> and  <code>as(1L, "double")</code> now
-give the same as <code>as.double(1L)</code>.
+<li> <p><code>cor()</code> is now guaranteed to return a value with 
+absolute value less than or equal to 1. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16638">PR#16638</a>)
 </p>
 </li></ul>
 
@@ -516,6 +516,10 @@ error for invalid dimnames as <code>matrix()</code> has always done.
 </li>
 <li> <p><code>addmargins()</code> now adds dimnames for the extended
 margins in all cases, as always documented.
+</p>
+</li>
+<li> <p><code>heatmap()</code> evaluated its <code>add.expr</code> argument
+in the wrong environment.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16583">PR#16583</a>)
 </p>
 </li></ul>
 

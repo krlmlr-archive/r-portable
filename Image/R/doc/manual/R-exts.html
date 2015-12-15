@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-12-21).
+<!-- This manual is for R, version 3.3.0 Under development (2015-12-22).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-12-21).
+<p>This manual is for R, version 3.3.0 Under development (2015-12-22).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4349,6 +4349,11 @@ file by
 <pre class="example">SystemRequirements: GNU make
 </pre></div>
 
+<p>and ensure that you use the value of environment variable <code>MAKE</code>
+(and not just <code>make</code>) in your scripts.  (On some platforms GNU
+make is available under a name such as <code>gmake</code>, and there
+<code>SystemRequirements</code> is used to set <code>MAKE</code>.)
+</p>
 <p>If you only need GNU make for parts of the package which are rarely
 needed (for example to create bibliography files under
 <samp>vignettes</samp>), use a file called <samp>GNUmakefile</samp> rather than

@@ -305,8 +305,8 @@ CHANGES IN R-devel:
       It now waits for MapNotify events instead of Expose events,
       thanks to Siteshwar Vashisht. (PR#16497)
 
-    * as(1L, "numeric") and as(1L, "double") now give the same as
-      as.double(1L).
+    * cor() is now guaranteed to return a value with absolute value
+      less than or equal to 1. (PR#16638)
 
 CHANGES IN R 3.2.3 patched:
 
@@ -339,6 +339,9 @@ CHANGES IN R 3.2.3 patched:
 
     * addmargins() now adds dimnames for the extended margins in all
       cases, as always documented.
+
+    * heatmap() evaluated its add.expr argument in the wrong
+      environment.  (PR#16583)
 
 CHANGES IN R 3.2.3:
 

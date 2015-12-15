@@ -205,6 +205,10 @@ CHANGES IN R-devel:
 
       It now also checks DOIs in package CITATION and Rd files.
 
+    * R CMD Rdconv and R CMD Rd2pdf each have a new option
+      --RdMacros=pkglist which allows Rd macros to be specified before
+      processing.
+
   DEPRECATED AND DEFUNCT:
 
     * The previously included versions of zlib, bzip2, xz and PCRE have

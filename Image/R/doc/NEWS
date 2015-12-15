@@ -239,6 +239,8 @@ CHANGES IN R-devel:
       --RdMacros=pkglist which allows Rd macros to be specified before
       processing.
 
+    * switch() now warns when no alternatives are provided,
+
   DEPRECATED AND DEFUNCT:
 
     * The previously included versions of zlib, bzip2, xz and PCRE have

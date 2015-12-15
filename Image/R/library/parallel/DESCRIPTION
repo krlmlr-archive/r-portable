@@ -11,4 +11,4 @@ License: Part of R 3.3.0
 Imports: tools
 Suggests: methods
 Enhances: snow, nws, Rmpi
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-12-15 03:21:28 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-12-16 03:22:42 UTC; windows

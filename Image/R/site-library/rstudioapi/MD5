@@ -1,11 +1,11 @@
-68c921d5161ed7a475aa99def85b8ff3 *DESCRIPTION
+41e26aad217bbb0cf53aebb2aa2df4b3 *DESCRIPTION
 b9c7ee7197514e6c6340f0ce58087ed5 *INDEX
 2491c4039e00be047cce99c452d3fd00 *LICENSE
 85fbbe41e17cad1e5911ed99ff50880d *Meta/Rd.rds
 54406411a9b9a943656c2fa8b2e77a72 *Meta/hsearch.rds
 41bbd55bb236ba7a5d02c6eeebe5d49f *Meta/links.rds
 f789b65597024e8b2752d2331b315490 *Meta/nsInfo.rds
-f9340ddcf5bbe6577a6be080d4021eb2 *Meta/package.rds
+eec8f0300bdb285629e321b5235b006b *Meta/package.rds
 d0ea64db9fed6e54eddfaa73df86c131 *NAMESPACE
 dbecd33b8b5b9ba09c4a0e72ec1f2bfb *NEWS
 ebf0fc819595d631b8bf280c4b049940 *R/rstudioapi
@@ -13,8 +13,8 @@ b3d727b85cd958840adef11a1049d836 *R/rstudioapi.rdb
 4bcb5aaba5016641311df7694f70b9c5 *R/rstudioapi.rdx
 4ef34335f9d74c7377ed0e5903d7b7f5 *help/AnIndex
 a9f4ece618f39467a87fb600f067522c *help/aliases.rds
-90cd6bf0838c437b6735c3ca51f8ee9a *help/paths.rds
-5d26dfda29f88890a474f0675a48c902 *help/rstudioapi.rdb
-d9d74ae1b987c7e86d60eb109681e7b8 *help/rstudioapi.rdx
+0b8cad49d64613b0b3a5e62ee310b8b6 *help/paths.rds
+465b2ac8708163210132e22ef90fa072 *help/rstudioapi.rdb
+5bf923337c0e7073c499dfcc14e7c37b *help/rstudioapi.rdx
 248c836888b5f94332ffad1f701d4d38 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css

@@ -281,7 +281,12 @@ graphics engine.
 </li>
 <li><p> The version of LAPACK included in the sources has been
 updated to 3.6.0, including those &lsquo;deprecated&rsquo; routines
-which were previously included.
+which were previously included.  <em>Ca</em> 40 double-complex
+routines have been added at the request of a package maintainer.
+</p>
+<p>As before, the details of what is included are in
+&lsquo;<span class="file">src/modules/lapack/README</span>&rsquo; and this now gives information on
+earlier additions.
 </p>
 </li>
 <li> <p><code>tapply()</code> has been made considerably more efficient
@@ -528,6 +533,10 @@ gracefully on signal interrupts.
 <li><p> The <code>data.frame</code> method of <code>rbind()</code> construction
 <code>row.names</code> works better in borderline integer cases, but
 may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16666">PR#16666</a>)
+</p>
+</li>
+<li> <p><code>url</code> connections with <code>method = "libcurl"</code> are
+destroyed properly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16681">PR#16681</a>)
 </p>
 </li></ul>
 

@@ -196,7 +196,12 @@ CHANGES IN R-devel:
 
     * The version of LAPACK included in the sources has been updated to
       3.6.0, including those 'deprecated' routines which were
-      previously included.
+      previously included.  _Ca_ 40 double-complex routines have been
+      added at the request of a package maintainer.
+
+      As before, the details of what is included are in
+      src/modules/lapack/README and this now gives information on
+      earlier additions.
 
     * tapply() has been made considerably more efficient without
       changing functionality, thanks to proposals from Peter Haverty
@@ -355,6 +360,9 @@ CHANGES IN R-devel:
     * The data.frame method of rbind() construction row.names works
       better in borderline integer cases, but may change the names
       assigned.  (PR#16666)
+
+    * url connections with method = "libcurl" are destroyed properly.
+      (PR#16681)
 
 CHANGES IN R 3.2.3 patched:
 

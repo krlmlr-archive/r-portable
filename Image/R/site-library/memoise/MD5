@@ -1,11 +1,11 @@
-28bbbb05085e1fc0cd874e5018abefe7 *DESCRIPTION
+91013ae2781ea7a498a73430bb8ebcaf *DESCRIPTION
 92b8ed5322a7ec6aadae0456dc36bb7d *INDEX
 5a2ffc012eac074809a07ea440f872a8 *LICENSE
 e543cbc6cb6cd9bfe0de4a6603020a79 *Meta/Rd.rds
 9852e0162c411a83665bb19086f458fe *Meta/hsearch.rds
 831bc10cdbc891a9ee00fab0ce31381a *Meta/links.rds
 88fe6c5c491d1a36856c44b23c6e8190 *Meta/nsInfo.rds
-12ab0e0bde3013830bb65b030e13aa11 *Meta/package.rds
+87db3492371a5182dd35bf1e96b26048 *Meta/package.rds
 29ff4bc0eaf941a3184340888a3adfce *NAMESPACE
 46d7d31fbc75bc3b4484b8ab0b5c4b22 *NEWS.md
 ebf0fc819595d631b8bf280c4b049940 *R/memoise
@@ -13,8 +13,8 @@ ebf0fc819595d631b8bf280c4b049940 *R/memoise
 47469483f72af0732c34ac160ee3895e *R/memoise.rdx
 da4f9aa5a77f3a23dd1436516ddb718a *help/AnIndex
 967297cf4f9c821727622dde3c2b4cf0 *help/aliases.rds
-6b5fc8199c54aa8ef07bfe366cd82eca *help/memoise.rdb
-6f762c1deaf19b23ebcd5d9eb64f2a8f *help/memoise.rdx
-8cb6ddddd2abcc388867e9426ddf0807 *help/paths.rds
+0f17724b62d65a609984211f32d96f75 *help/memoise.rdb
+548abae4400d9961b9734a957b55aa4c *help/memoise.rdx
+634ec3e648cc2a9af4ffe4ab6d230d30 *help/paths.rds
 f85102ae0a601ce277a70d4bf0704915 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css

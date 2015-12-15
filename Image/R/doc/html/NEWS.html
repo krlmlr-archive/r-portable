@@ -374,7 +374,7 @@ whose <span class="samp">VignetteBuilder</span> package is not available.
 (<em>via</em> <a href="https://CRAN.R-project.org/package=codetools"><span class="pkg">codetools</span></a>) with only the base package
 attached.  Functions from default packages other than <span class="pkg">base</span>
 which are used in the package code but not imported are reported
-as undefined globals, with a suggested addiiton to the
+as undefined globals, with a suggested addition to the
 <code>NAMESPACE</code> file.
 </p>
 </li>
@@ -427,7 +427,7 @@ since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b><
 S4 object into its own list such that the end result is roughly
 equivalent to using <code>[[&lt;-</code>. That behavior is deprecated. In
 the future, the S4 value will be coerced to a list with
-<code>as.list</code>.
+<code>as.list()</code>.
 </p>
 </li></ul>
 
@@ -538,8 +538,8 @@ included within an <code>extern "C"</code> block, and almost all the
 packages affected by this change are doing so.
 </p>
 </li>
-<li><p> Including header &lsquo;<span class="file">S.h</span>&rsquo; from C++ code will fail on some
-platforms, and so gives a compilation warning on all.
+<li><p> Including header &lsquo;<span class="file">S.h</span>&rsquo; from C++ code would fail on some
+platforms, and so gives a compilation error on all.
 </p>
 </li>
 <li><p> The deprecated header &lsquo;<span class="file">Rdefines.h</span>&rsquo; is now compatible
@@ -613,6 +613,11 @@ may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/s
 proposal by Werner Stahel (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>).  In addition, it now works
 for multivariate linear models (<code>"mlm"</code>, <code>manova</code>)
 thanks to a proposal by Daniel Wollschlaeger.
+
+</p>
+</li>
+<li><p> (X11 only)  <code>getGraphicsEvent()</code> miscoded buttons and 
+missed mouse motion events.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16700">PR#16700</a>)
 
 </p>
 </li></ul>
@@ -743,6 +748,11 @@ could segfault or recycle wrongly.  (<a href="https://bugs.R-project.org/bugzill
 </li>
 <li> <p><code>saveRDS(*, compress = "gzip")</code> now works as
 documented.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16653">PR#16653</a>)
+</p>
+</li>
+<li><p> (Windows only) The <code>Rgui</code> front end did not 
+always initialize the console properly, and could cause
+<span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> to crash.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16998">PR#16998</a>)
 </p>
 </li></ul>
 

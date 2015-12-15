@@ -268,7 +268,7 @@ CHANGES IN R-devel:
       with only the base package attached.  Functions from default
       packages other than base which are used in the package code but
       not imported are reported as undefined globals, with a suggested
-      addiiton to the NAMESPACE file.
+      addition to the NAMESPACE file.
 
     * R CMD check --as-cran now also checks DOIs in package CITATION
       and Rd files.
@@ -302,7 +302,7 @@ CHANGES IN R-devel:
     * [<- with an S4 value into a list currently embeds the S4 object
       into its own list such that the end result is roughly equivalent
       to using [[<-. That behavior is deprecated. In the future, the S4
-      value will be coerced to a list with as.list.
+      value will be coerced to a list with as.list().
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -378,8 +378,8 @@ CHANGES IN R-devel:
       within an extern "C" block, and almost all the packages affected
       by this change are doing so.
 
-    * Including header S.h from C++ code will fail on some platforms,
-      and so gives a compilation warning on all.
+    * Including header S.h from C++ code would fail on some platforms,
+      and so gives a compilation error on all.
 
     * The deprecated header Rdefines.h is now compatible with defining
       R_NO_REMAP.
@@ -429,6 +429,9 @@ CHANGES IN R-devel:
       Werner Stahel (PR#16665).  In addition, it now works for
       multivariate linear models ("mlm", manova) thanks to a proposal
       by Daniel Wollschlaeger.
+
+    * (X11 only) getGraphicsEvent() miscoded buttons and missed mouse
+      motion events.  (PR#16700)
 
 CHANGES IN R 3.2.3 patched:
 
@@ -514,6 +517,9 @@ CHANGES IN R 3.2.3 patched:
 
     * saveRDS(*, compress = "gzip") now works as documented.
       (PR#16653)
+
+    * (Windows only) The Rgui front end did not always initialize the
+      console properly, and could cause R to crash.  (PR#16998)
 
 CHANGES IN R 3.2.3:
 

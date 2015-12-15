@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205.5 MB, MD5 hash: `a693c3f3af8c7d22dc1acfbe3d67210e`, uncompressed 476 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (206.1 MB, MD5 hash: `31998c1c3d7b0b1ca7d8f4c73e14bdb1`, uncompressed 492.1 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (208 MB, MD5 hash: `94fdb4c22c8d9fffed97be7c12c4b1cb`, uncompressed 529 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205.6 MB, MD5 hash: `f1ece06257b8f60240131d308234d4cf`, uncompressed 476 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (206.1 MB, MD5 hash: `aaa2c176a1cfdfa026cfd9fcee3bb185`, uncompressed 492.1 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.9 MB, MD5 hash: `dea49bf5e36cb7353f09b6dddd08442d`, uncompressed 529 MB)
 
 
 

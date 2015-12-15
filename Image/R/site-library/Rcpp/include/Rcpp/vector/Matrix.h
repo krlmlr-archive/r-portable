@@ -32,7 +32,9 @@ public:
     struct r_type : traits::integral_constant<int,RTYPE>{} ;
     struct can_have_na : traits::true_type{} ;
     typedef MatrixRow<RTYPE> Row ;
+    typedef ConstMatrixRow<RTYPE> ConstRow ;
     typedef MatrixColumn<RTYPE> Column ;
+    typedef ConstMatrixColumn<RTYPE> ConstColumn ;
     typedef SubMatrix<RTYPE> Sub ;
 
     typedef StoragePolicy<Matrix> Storage ;
@@ -103,7 +105,9 @@ public:
     }
 
     inline Row row( int i ){ return Row( *this, i ) ; }
+    inline ConstRow row( int i ) const{ return ConstRow( *this, i ) ; }
     inline Column column( int i ){ return Column(*this, i ) ; }
+    inline ConstColumn column( int i ) const{ return ConstColumn( *this, i ) ; }
 
     inline const_iterator begin() const{ return VECTOR::begin() ; }
     inline const_iterator end() const{ return VECTOR::end() ; }
@@ -145,11 +149,14 @@ public:
     inline Row operator()( int i, internal::NamedPlaceHolder ) {
       return Row( *this, i ) ;
     }
+    inline ConstRow operator()( int i, internal::NamedPlaceHolder ) const {
+      return ConstRow( *this, i ) ;
+    }
     inline Column operator()( internal::NamedPlaceHolder, int i ) {
       return Column( *this, i ) ;
     }
-    inline Column operator()( internal::NamedPlaceHolder, int i ) const {
-      return Column( *this, i ) ;
+    inline ConstColumn operator()( internal::NamedPlaceHolder, int i ) const {
+      return ConstColumn( *this, i ) ;
     }
     inline Sub operator()( const Range& row_range, const Range& col_range) {
       return Sub( const_cast<Matrix&>(*this), row_range, col_range ) ;
@@ -239,6 +246,39 @@ inline std::ostream &operator<<(std::ostream & s, const Matrix<REALSXP, StorageP
     s.flags(flags);
     return s;
 }
+
+#define RCPP_GENERATE_MATRIX_SCALAR_OPERATOR(__OPERATOR__)                                                                    \
+    template <int RTYPE, template <class> class StoragePolicy >                                                               \
+    inline Matrix<RTYPE, StoragePolicy> operator __OPERATOR__ (const Matrix<RTYPE, StoragePolicy> &lhs,                       \
+        const typename Matrix<RTYPE, StoragePolicy>::stored_type &rhs) {                                                      \
+        Vector<RTYPE, StoragePolicy> v = static_cast<const Vector<RTYPE, StoragePolicy> &>(lhs) __OPERATOR__ rhs;             \
+        v.attr("dim") = Vector<INTSXP>::create(lhs.nrow(), lhs.ncol());                                                       \
+        return as< Matrix<RTYPE, StoragePolicy> >(v);                                                                         \
+    }
+
+RCPP_GENERATE_MATRIX_SCALAR_OPERATOR(+)
+RCPP_GENERATE_MATRIX_SCALAR_OPERATOR(-)
+RCPP_GENERATE_MATRIX_SCALAR_OPERATOR(*)
+RCPP_GENERATE_MATRIX_SCALAR_OPERATOR(/)
+
+#undef RCPP_GENERATE_MATRIX_SCALAR_OPERATOR
+
+#define RCPP_GENERATE_SCALAR_MATRIX_OPERATOR(__OPERATOR__)                                                                    \
+    template <int RTYPE, template <class> class StoragePolicy >                                                               \
+    inline Matrix<RTYPE, StoragePolicy> operator __OPERATOR__ (const typename Matrix<RTYPE, StoragePolicy>::stored_type &lhs, \
+        const Matrix<RTYPE, StoragePolicy> &rhs) {                                                                            \
+        Vector<RTYPE, StoragePolicy> v = static_cast<const Vector<RTYPE, StoragePolicy> &>(rhs);                              \
+        v = lhs __OPERATOR__ v;                                                                                               \
+        v.attr("dim") = Vector<INTSXP>::create(rhs.nrow(), rhs.ncol());                                                       \
+        return as< Matrix<RTYPE, StoragePolicy> >(v);                                                                         \
+    }
+
+RCPP_GENERATE_SCALAR_MATRIX_OPERATOR(+)
+RCPP_GENERATE_SCALAR_MATRIX_OPERATOR(-)
+RCPP_GENERATE_SCALAR_MATRIX_OPERATOR(*)
+RCPP_GENERATE_SCALAR_MATRIX_OPERATOR(/)
+
+#undef RCPP_GENERATE_SCALAR_MATRIX_OPERATOR
 
 template<template <class> class StoragePolicy >
 inline std::ostream &operator<<(std::ostream & s, const Matrix<INTSXP, StoragePolicy> & rhs) {

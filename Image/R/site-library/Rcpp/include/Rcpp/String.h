@@ -217,6 +217,14 @@ namespace Rcpp {
             setBuffer(); buffer += CHAR(proxy_sexp); valid = false;
             return *this;
         }
+        inline String& operator+=(const const_StringProxy& proxy) {
+            RCPP_STRING_DEBUG("String::operator+=(const StringProxy&)");
+            if (is_na()) return *this;
+            SEXP proxy_sexp = proxy;
+            if (proxy_sexp == NA_STRING) { data = Rcpp_ReplaceObject(data, NA_STRING); valid = true; buffer_ready = false; return *this;}
+            setBuffer(); buffer += CHAR(proxy_sexp); valid = false;
+            return *this;
+        }
         inline String& operator+=(SEXP x) {
             RCPP_STRING_DEBUG("String::operator+=(SEXP)");
             if (is_na()) return *this;
@@ -547,5 +555,25 @@ namespace Rcpp {
     }
 
 } // Rcpp
+
+/** hash can be in std or std::tr1 */
+#if defined(RCPP_USING_CXX11) || defined(HAS_TR1)
+namespace std
+{
+#ifndef RCPP_USING_CXX11
+namespace tr1 {
+#endif
+    template <>
+    struct hash<Rcpp::String>
+    {
+        size_t operator()(const Rcpp::String & s) const{
+            return hash<string>()(s.get_cstring());
+        }
+    };
+#ifndef RCPP_USING_CXX11
+}
+#endif
+}
+#endif
 
 #endif

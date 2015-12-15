@@ -3,6 +3,38 @@
 \newcommand{\ghpr}{\href{https://github.com/RcppCore/Rcpp/pull/#1}{##1}}
 \newcommand{\ghit}{\href{https://github.com/RcppCore/Rcpp/issues/#1}{##1}}
 
+\section{Changes in Rcpp version 0.12.3 (2016-01-10)}{
+  \itemize{
+    \item Changes in Rcpp API:
+    \itemize{
+      \item Const iterators now \code{CharacterVector} now behave like regular
+      iterators (PR \ghpr{404} by Dan fixing \ghit{362}).
+      \item Math operators between matrix and scalars type have been added (PR
+      \ghpr{406} by Qiang fixing \ghit{365}).
+      \item A missing \code{std::hash} function interface for
+      \code{Rcpp::String} has been addded (PR \ghpr{408} by Qiang fixing
+      \ghit{84}). 
+    }
+    \item Changes in Rcpp Attributes:
+    \itemize{
+      \item Avoid invalid function names when generating C++ interfaces (PR
+      \ghpr{403} by JJ fixing \ghit{402}).
+      \item Insert additional space around \code{&} in function interface (PR 
+      \ghpr{400} by Kazuki Fukui fixing \ghit{278}).
+    }
+    \item Changes in Rcpp Modules:
+    \itemize{
+      \item The copy constructor now initialized the base class (PR \ghpr{411}
+      by Joshua Pritikin fixing \ghit{410})
+    }
+    \item Changes in Rcpp Repository:
+    \itemize{
+      \item Added a file \code{Contributing.md} providing some points to
+      potential contributors (PR \ghpr{414} closing issue \ghit{413})
+    }
+  }
+}
+
 \section{Changes in Rcpp version 0.12.2 (2015-11-14)}{
   \itemize{
     \item Changes in Rcpp API:

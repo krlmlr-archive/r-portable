@@ -215,6 +215,10 @@ CHANGES IN R-devel:
       cases directly rather than as calls to <Anonymous>.  Contributed
       by Winston Chang.
 
+    * New string utilities startsWith(x, prefix) and endsWith(x,
+      suffix).  Also provide speedups for some grepl("^...",*) uses,
+      related to proposals in (PR#16490).
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

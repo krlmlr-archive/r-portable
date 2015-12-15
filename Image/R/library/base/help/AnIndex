@@ -569,6 +569,7 @@ enclosure	environment
 encodeString	encodeString
 Encoding	Encoding
 Encoding<-	Encoding
+endsWith	startsWith
 enquote	substitute
 env.profile	environment
 environment	environment
@@ -1322,6 +1323,7 @@ srcfilecopy-class	srcfile
 srcref	srcfile
 srcref-class	srcfile
 standardGeneric	standardGeneric
+startsWith	startsWith
 Startup	Startup
 stderr	showConnections
 stdin	showConnections

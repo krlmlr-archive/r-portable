@@ -382,6 +382,7 @@ source                  Read R Code from a File or a Connection
 split                   Divide into Groups and Reassemble
 sprintf                 Use C-style String Formatting Commands
 srcfile                 References to source files
+startsWith              Does String Start or End With Another String?
 stop                    Stop Function Execution
 stopifnot               Ensure the Truth of R Expressions
 strptime                Date-time Conversion Functions to and from

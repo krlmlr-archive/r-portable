@@ -309,6 +309,10 @@ some similar cases directly rather than as calls to
 <code>endsWith(x, suffix)</code>.  Also provide speedups for some
 <code>grepl("^...",*)</code> uses, related to proposals in (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16490">PR#16490</a>).
 </p>
+</li>
+<li><p> Reference class finalizers run at exit, as well as on
+garbage collection.
+</p>
 </li></ul>
 
 
@@ -511,6 +515,10 @@ absolute value less than or equal to 1. (<a href="https://bugs.R-project.org/bug
 <li> <p><code>withCallingHandler()</code> now (again) handles warnings
 even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16111">PR#16111</a>)
 </p>
+</li>
+<li><p> Blocking socket connection selection recovers more
+gracefully on signal interrupts.
+</p>
 </li></ul>
 
 
@@ -538,6 +546,10 @@ package.
 </li>
 <li> <p><code>shQuote()</code> gains <code>type = "cmd2"</code> for quoting
 in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16636">PR#16636</a>.)
+</p>
+</li>
+<li> <p><code>rbind.data.frame()</code> gets optional argument <code>stringsAsFactors</code>
+(instead of only depending on <code>getOption("stringsAsFactors")</code>).
 </p>
 </li></ul>
 

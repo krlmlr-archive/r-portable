@@ -219,6 +219,9 @@ CHANGES IN R-devel:
       suffix).  Also provide speedups for some grepl("^...",*) uses,
       related to proposals in (PR#16490).
 
+    * Reference class finalizers run at exit, as well as on garbage
+      collection.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -343,6 +346,9 @@ CHANGES IN R-devel:
     * withCallingHandler() now (again) handles warnings even during S4
       generic's argument evaluation.  (PR#16111)
 
+    * Blocking socket connection selection recovers more gracefully on
+      signal interrupts.
+
 CHANGES IN R 3.2.3 patched:
 
   NEW FEATURES:
@@ -358,6 +364,9 @@ CHANGES IN R 3.2.3 patched:
 
     * shQuote() gains type = "cmd2" for quoting in cmd.exe in Windows.
       (Response to PR#16636.)
+
+    * rbind.data.frame() gets optional argument stringsAsFactors
+      (instead of only depending on getOption("stringsAsFactors")).
 
   DEPRECATED AND DEFUNCT:
 

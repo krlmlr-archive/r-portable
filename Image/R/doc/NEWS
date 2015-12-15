@@ -200,6 +200,10 @@ CHANGES IN R-devel:
       routines dgegv and dggsvd _are_ included as they are used by
       current packages.)
 
+    * tapply() has been made considerably more efficient without
+      changing functionality, thanks to proposals from Peter Haverty
+      and Suharto Anggono.  (PR#16488)
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -355,6 +359,10 @@ CHANGES IN R 3.2.3 patched:
 
     * heatmap() evaluated its add.expr argument in the wrong
       environment.  (PR#16583)
+
+    * require() etc now give the correct entry of lib.loc in the
+      warning about an old version of a package masking a newer
+      required one.
 
 CHANGES IN R 3.2.3:
 

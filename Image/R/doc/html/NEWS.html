@@ -276,7 +276,7 @@ graphics engine.
 <code>as.vector</code>) when subassigned into atomic vectors.
 </p>
 </li>
-<li> <p><code>findInterval()</code> gets a  <code>left.open</code> option.
+<li> <p><code>findInterval()</code> gets a <code>left.open</code> option.
 </p>
 </li>
 <li><p> The version of LAPACK included in the sources has been
@@ -284,6 +284,11 @@ updated to 3.6.0.  (It does not include most of the deprecated
 routines removed in that version.  For the time being, the
 deprecated routines <code>dgegv</code> and <code>dggsvd</code> <em>are</em>
 included as they are used by current packages.)
+</p>
+</li>
+<li> <p><code>tapply()</code> has been made considerably more efficient
+without changing functionality, thanks to proposals from Peter
+Haverty and Suharto Anggono.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16488">PR#16488</a>)
 </p>
 </li></ul>
 
@@ -537,6 +542,11 @@ margins in all cases, as always documented.
 </li>
 <li> <p><code>heatmap()</code> evaluated its <code>add.expr</code> argument
 in the wrong environment.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16583">PR#16583</a>)
+</p>
+</li>
+<li> <p><code>require()</code> etc now give the correct entry of
+<code>lib.loc</code> in the warning about an old version of a package
+masking a newer required one.
 </p>
 </li></ul>
 

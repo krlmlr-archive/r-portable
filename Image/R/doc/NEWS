@@ -462,8 +462,7 @@ CHANGES IN R 3.2.3 patched:
       stringsAsFactors (instead of only depending on
       getOption("stringsAsFactors")).
 
-    * The as.hclust method for "dendrogram"s failed often when there
-      ties in the heights.
+      smooth(x, *) now also works for long vectors.
 
   DEPRECATED AND DEFUNCT:
 
@@ -532,6 +531,23 @@ CHANGES IN R 3.2.3 patched:
 
     * (Windows only) The Rgui front end did not always initialize the
       console properly, and could cause R to crash.  (PR#16998)
+
+    * The as.hclust method for "dendrogram"s failed often when there
+      were ties in the heights.
+
+    * reorder() and midcache.dendrogram() now are non-recursive and
+      hence applicable to somewhat deeply nested dendrograms, thanks to
+      a proposal by Suharto Anggono in PR#16424.
+
+    * cor.test() now calculates very small p values more accurately
+      (affecting the result only in extreme not statistically relevant
+      cases).  (PR#16704)
+
+    * smooth(*, do.ends=TRUE) did not always work correctly in R
+      versions between 3.0.0 and 3.2.3.
+
+    * pretty(D) for date-time objects D now also works well if range(D)
+      is (much) smaller than a second.
 
 CHANGES IN R 3.2.3:
 

@@ -361,7 +361,7 @@ Sint).
 would sometimes give misleading labels on the breaks, as they
 were set to the day before the start of the period being
 displayed.  The display format has been changed, and the shift of the
-start day has been made conditional on <code>right = TRUE</code> (the 
+start day has been made conditional on <code>right = TRUE</code> (the
 default).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16679">PR#16679</a>)
 </p>
 </li></ul>
@@ -490,13 +490,13 @@ not found.  (OS X is the main instance.)
 </li>
 <li><p> (Windows) An experimental build of R based on <code>gcc</code>
 4.9.3 is now available on CRAN on the &lsquo;<span class="file">bin/windows/base/rdevel.html</span>&rsquo;
-snapshot page.  This build will require recompilation of at least those 
-packages that include C++ code, and possibly others.  The CRAN 
+snapshot page.  This build will require recompilation of at least those
+packages that include C++ code, and possibly others.  The CRAN
 binary packages still use the older toolchain, so package installs
-default to <code>type = "source"</code>.  
+default to <code>type = "source"</code>.
 </p>
-<p>During the transition, the environment variable <span class="env">R_COMPILED_BY</span> will 
-be defined to indicate which toolchain was used to compile R (and hence, 
+<p>During the transition, the environment variable <span class="env">R_COMPILED_BY</span> will
+be defined to indicate which toolchain was used to compile R (and hence,
 which should be used to compile code in packages).
 </p>
 </li></ul>
@@ -629,7 +629,7 @@ thanks to a proposal by Daniel Wollschlaeger.
 
 </p>
 </li>
-<li><p> (X11 only)  <code>getGraphicsEvent()</code> miscoded buttons and 
+<li><p> (X11 only)  <code>getGraphicsEvent()</code> miscoded buttons and
 missed mouse motion events.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16700">PR#16700</a>)
 
 </p>
@@ -666,9 +666,7 @@ in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-projec
 optional argument <code>stringsAsFactors</code> (instead of only
 depending on <code>getOption("stringsAsFactors")</code>).
 </p>
-</li>
-<li><p> The <code>as.hclust</code> method for <code>"dendrogram"</code>s failed often
-when there ties in the heights.
+<p><code>smooth(x, *)</code> now also works for long vectors.
 </p>
 </li></ul>
 
@@ -767,9 +765,31 @@ could segfault or recycle wrongly.  (<a href="https://bugs.R-project.org/bugzill
 documented.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16653">PR#16653</a>)
 </p>
 </li>
-<li><p> (Windows only) The <code>Rgui</code> front end did not 
+<li><p> (Windows only) The <code>Rgui</code> front end did not
 always initialize the console properly, and could cause
 <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> to crash.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16998">PR#16998</a>)
+</p>
+</li>
+<li><p> The <code>as.hclust</code> method for <code>"dendrogram"</code>s failed often
+when there were ties in the heights.
+</p>
+</li>
+<li> <p><code>reorder()</code> and <code>midcache.dendrogram()</code> now are
+non-recursive and hence applicable to somewhat deeply nested
+dendrograms, thanks to a proposal by Suharto Anggono in <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16424">PR#16424</a>.
+</p>
+</li>
+<li> <p><code>cor.test()</code> now calculates very small p values
+more accurately (affecting the result only in extreme not
+statistically relevant cases).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16704">PR#16704</a>)
+</p>
+</li>
+<li> <p><code>smooth(*, do.ends=TRUE)</code> did not always work correctly
+in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> versions between 3.0.0 and 3.2.3.
+</p>
+</li>
+<li> <p><code>pretty(D)</code> for date-time objects <code>D</code> now also
+works well if <code>range(D)</code> is (much) smaller than a second.
 </p>
 </li></ul>
 

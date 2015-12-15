@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-02-08).
+<!-- This manual is for R, version 3.3.0 Under development (2016-02-10).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-02-08).
+<p>This manual is for R, version 3.3.0 Under development (2016-02-10).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -2860,10 +2860,10 @@ known problems mixing C++11 with Fortran.)
 essential that it selects the correct compiler, <em>via</em> something like
 </p>
 <div class="example">
-<pre class="example">CXX1X=`&quot;${R_HOME}/bin/R&quot; CMD config CXX11X`
-CXX1XSTD=`&quot;${R_HOME}/bin/R&quot; CMD config CXX11XSTD`
+<pre class="example">CXX1X=`&quot;${R_HOME}/bin/R&quot; CMD config CXX1X`
+CXX1XSTD=`&quot;${R_HOME}/bin/R&quot; CMD config CXX1XSTD`
 CXX=&quot;$(CXX1X) $(CXX1XSTD)&quot;
-CXXFLAGS=`&quot;${R_HOME}/bin/R&quot; CMD config CXX11XFLAGS`
+CXXFLAGS=`&quot;${R_HOME}/bin/R&quot; CMD config CXX1XFLAGS`
 AC_LANG(C++)
 </pre></div>
 

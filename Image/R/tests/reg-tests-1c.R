@@ -1356,3 +1356,37 @@ stopifnot(
     identical(f.raw[["default"]], f.raw[[opts["gzip"]]]))
 ## compress = "gzip" failed (PR#16653), but compress = c(a = "xz") did too
 
+
+## recursive dendrogram methods and deeply nested dendrograms
+op <- options(expressions = 999)# , verbose = 2) # -> max. depth= 961
+set.seed(11); d <- mkDend(1500, "A", method="single")
+rd <- reorder(d, nobs(d):1)
+## Error: evaluation nested too deeply: infinite recursion .. in R <= 3.2.3
+stopifnot(is.leaf(r1 <- rd[[1]]),    is.leaf(r2 <- rd[[2:1]]),
+	  attr(r1, "label") == "A1458", attr(r2, "label") == "A1317")
+options(op)# revert
+
+
+## cor.test() with extremely small p values
+b <- 1:10; set.seed(1)
+for(n in 1:256) {
+    a <- round(jitter(b, f = 1/8), 3)
+    p1 <- cor.test(a, b)$ p.value
+    p2 <- cor.test(a,-b)$ p.value
+    stopifnot(abs(p1 - p2) < 8e-16 * (p1+p2))
+    ## on two different Linuxen, they actually are always equal
+}
+## were slightly off in R <= 3.2.3. PR#16704
+
+
+## prettyDate() for subsecond ranges
+sTime <- structure(1455056860.75, class = c("POSIXct", "POSIXt"))
+set.seed(7); for(n in 1:64) {
+    x <- sTime + .001*rlnorm(1) * 0:9
+    np <- length(px <- pretty(x))# n = 5
+    p1 <- pretty(sTime)
+    stopifnot(3 <= np, np <= 8, min(px) <= min(x), max(x) <= max(px),
+	      min(p1) <= sTime, sTime <= max(p1))
+}
+## failed in R <= 3.2.3
+

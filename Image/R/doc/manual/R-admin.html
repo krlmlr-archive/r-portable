@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-12-18).
+<!-- This manual is for R, version 3.3.0 Under development (2015-12-19).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -335,7 +335,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-12-18).
+<p>This manual is for R, version 3.3.0 Under development (2015-12-19).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -3906,12 +3906,13 @@ a sub-architecture-specific version).  A typical setting for
 R_JAVA_LD_LIBRARY_PATH=${JAVA_HOME}/lib/amd64/server
 </pre></div>
 
-<p>Note that this unfortunately depends on the exact version of the JRE/JDK
+<p>Unfortunately this depends on the exact version of the JRE/JDK
 installed, and so may need updating if the Java installation is updated.
 This can be done by running <code>R CMD javareconf</code> which updates
-settings in both <samp>etc/Makeconf</samp> and
+settings in both <samp><var>R_HOME</var>/etc/Makeconf</samp> and
 <samp><var>R_HOME</var>/etc/ldpaths</samp>. See <code>R CMD javareconf --help</code> for
-details.
+details: note that this needs to be done by the account owning the R
+installation.
 </p>
 <p>Another way of overriding those settings is to set the environment variable
 <a name="index-R_005fJAVA_005fLD_005fLIBRARY_005fPATH-1"></a>
@@ -3924,7 +3925,7 @@ Java-using packages.  For example
 </pre></div>
 
 <p>It may be possible to avoid this by specifying an invariant link as the
-path. For example, on that system any of
+path when configuring. For example, on that system any of
 </p>
 <div class="example">
 <pre class="example">JAVA_HOME=/usr/lib/jvm/java

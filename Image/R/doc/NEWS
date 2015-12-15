@@ -328,6 +328,9 @@ CHANGES IN R 3.2.3 patched:
     * ngettext() now uses the same default domain as gettext().
       (PR#14605)
 
+    * array(.., dimnames = *) now signals the same error for invalid
+      dimnames as matrix() has always done.
+
 CHANGES IN R 3.2.3:
 
   NEW FEATURES:

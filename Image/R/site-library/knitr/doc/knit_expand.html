@@ -220,7 +220,7 @@ knit_expand(text = &quot;The value of pi is {{pi}}.&quot;)
 <pre><code class="r">knit_expand(text = &quot;The value of a is {{a}}, so a + 1 is {{a+1}}.&quot;, a = rnorm(1))
 </code></pre>
 
-<pre><code>## [1] &quot;The value of a is 0.675948577663774, so a + 1 is 1.67594857766377.&quot;
+<pre><code>## [1] &quot;The value of a is 0.763505108227911, so a + 1 is 1.76350510822791.&quot;
 </code></pre>
 
 <pre><code class="r">knit_expand(text = &quot;The area of a circle with radius {{r}} is {{pi*r^2}}&quot;, r = 5)
@@ -260,7 +260,7 @@ knit_expand(text = &quot;The value of pi is {{pi}}.&quot;)
 <pre><code class="r">knit_expand(text = &quot;you cannot see the value of x {{x=rnorm(1)}}but it is indeed created: x = {{x}}&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;you cannot see the value of x but it is indeed created: x = 1.76234484714171&quot;
+<pre><code>## [1] &quot;you cannot see the value of x but it is indeed created: x = -0.229246007427008&quot;
 </code></pre>
 
 <pre><code class="r">res = knit_expand(text = c(&quot; x | x^2&quot;, &quot;{{x=1:5;paste(sprintf(\&quot;%2d | %3d\&quot;, x, x^2), collapse = \&quot;\n\&quot;)}}&quot;))

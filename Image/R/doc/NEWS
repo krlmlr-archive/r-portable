@@ -354,6 +354,9 @@ CHANGES IN R-devel:
     * Blocking socket connection selection recovers more gracefully on
       signal interrupts.
 
+    * rbind.data.frame()'s row.names construction now works better in
+      borderline integer cases.  (PR#16666)
+
 CHANGES IN R 3.2.3 patched:
 
   NEW FEATURES:

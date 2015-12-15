@@ -368,6 +368,9 @@ CHANGES IN R 3.2.3 patched:
       warning about an old version of a package masking a newer
       required one.
 
+    * The internal deparser did not add parentheses when necessary
+      before [] or [[]].  (Reported by Lukas Stadler).
+
 CHANGES IN R 3.2.3:
 
   NEW FEATURES:

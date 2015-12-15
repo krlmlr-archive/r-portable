@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-01-03).
+<!-- This manual is for R, version 3.3.0 Under development (2016-01-04).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-01-03).
+<p>This manual is for R, version 3.3.0 Under development (2016-01-04).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -1008,7 +1008,7 @@ see <a href="#Package-types">Package types</a>.
 <p>One can add subject classifications for the content of the package using
 the fields &lsquo;<samp>Classification/ACM</samp>&rsquo; or &lsquo;<samp>Classification/ACM-2012</samp>&rsquo;
 (using the Computing Classification System of the Association for
-Computing Machinery, <a href="http://www.acm.org/class/">http://www.acm.org/class/</a>; the former refers
+Computing Machinery, <a href="http://www.acm.org/about/class/">http://www.acm.org/about/class/</a>; the former refers
 to the 1998 version), &lsquo;<samp>Classification/JEL</samp>&rsquo; (the Journal of Economic
 Literature Classification System,
 <a href="https://www.aeaweb.org/econlit/jelCodes.php">https://www.aeaweb.org/econlit/jelCodes.php</a>, or
@@ -8486,14 +8486,17 @@ that would need to be linked by <code>clang++</code>, not <code>clang</code>: yo
 could try building R with something like
 </p><div class="example">
 <pre class="example">MAIN_LD=&quot;clang++ -fsanitize=undefined&quot;
-R_OPENMP_CFLAGS=&quot;-fopenmp=libomp&quot;
+</pre></div>
+<p>and perhaps for <code>clang</code> 3.7.x
+</p><div class="example">
+<pre class="example">R_OPENMP_CFLAGS=&quot;-fopenmp=libomp&quot;
 </pre></div>
 <p>or add <code>-lclang_rt.asan_cxx-x86_64</code><a name="DOCF97" href="#FOOT97"><sup>97</sup></a> or similar to <code>LD_FLAGS</code>).
 </p>
 <p>See <a href="https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html">https://gcc.gnu.org/onlinedocs/gcc/Debugging-Options.html</a> (or
 the manual for your version of GCC, installed or <em>via</em>
 <a href="https://gcc.gnu.org/onlinedocs/">https://gcc.gnu.org/onlinedocs/</a>) for the options supported by
-GCC: 5.2.0 supports
+GCC: 5.3.0 supports
 </p><div class="example">
 <pre class="example">-fsanitize=alignment,bool,bounds,enum,float-cast-overflow,
 integer-divide-by-zero,non-null-attribute,null,object-size,
@@ -8508,6 +8511,12 @@ unreachable,vla-bound,vptr
 desirable for R uses).  At the time of writing the <code>object-size</code>
 and <code>vptr</code> checks produced many warnings on GCC&rsquo;s own C++ headers,
 so should be disabled.
+</p>
+<p>GCC 6 will add
+</p><div class="example">
+<pre class="example">-fsanitize=bounds-strict
+</pre></div>
+<p>an extension of <code>bounds</code> to &lsquo;flexible array member-like arrays&rsquo;.
 </p>
 
 <p>Other useful flags include
@@ -15894,7 +15903,7 @@ currently shipped by Apple.</p>
 it makes use of <code>llvm-symbolizer</code> if available.</p>
 <h3><a name="FOOT95" href="#DOCF95">(95)</a></h3>
 <p>e.g. <samp>src/main/dotcode.c</samp> and parts of the
-<strong>Matrix</strong> sources with <code>clang</code> 3.7.0).</p>
+<strong>Matrix</strong> sources with <code>clang</code> 3.7.0 amd later.</p>
 <h3><a name="FOOT96" href="#DOCF96">(96)</a></h3>
 <p>or
 the user manual for your version of <code>clang</code>, e.g.

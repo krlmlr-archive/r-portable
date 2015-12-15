@@ -1041,8 +1041,8 @@ databases).
 ================================
 
 For package 'tcltk' to work (try 'demo(tkdensity)' or 'demo(tkttest)'
-after 'library(tcltk)') you need to have Tcl/Tk installed.  This part of
-the R installation, so it should be there.
+after 'library(tcltk)') you need to have Tcl/Tk installed.  This is part
+of the R installation, so it should be there.
 
 However, if you have the environment variable 'MY_TCLTK' set to a
 non-empty value, it is assumed that you want to use a different Tcl/Tk

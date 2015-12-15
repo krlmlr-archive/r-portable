@@ -23,5 +23,5 @@ NeedsCompilation: yes
 Packaged: 2015-07-13 09:04:45 UTC; deepayan
 Repository: CRAN
 Date/Publication: 2015-07-14 15:58:29
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-04 03:21:35 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-05 03:23:19 UTC; windows
 Archs: i386, x64

@@ -547,7 +547,12 @@ CHANGES IN R 3.2.3 patched:
       versions between 3.0.0 and 3.2.3.
 
     * pretty(D) for date-time objects D now also works well if range(D)
-      is (much) smaller than a second.
+      is (much) smaller than a second.  In the case of only one unique
+      value in D, the pretty range now is more symmetric around that
+      value than previously.
+
+    * The figures in help pages such as ?points were accidentally
+      damaged, and did not appear in R 3.2.3.  (PR#16708)
 
 CHANGES IN R 3.2.3:
 

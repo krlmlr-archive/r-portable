@@ -789,7 +789,14 @@ in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></sp
 </p>
 </li>
 <li> <p><code>pretty(D)</code> for date-time objects <code>D</code> now also
-works well if <code>range(D)</code> is (much) smaller than a second.
+works well if <code>range(D)</code> is (much) smaller than a second.  In
+the case of only one unique value in <code>D</code>, the pretty range
+now is more symmetric around that value than previously.
+</p>
+</li>
+<li><p> The figures in help pages such as <code>?points</code> were 
+accidentally damaged, and did not appear in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.3.  
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16708">PR#16708</a>)
 </p>
 </li></ul>
 

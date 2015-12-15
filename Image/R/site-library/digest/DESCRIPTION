@@ -1,12 +1,12 @@
 Package: digest
-Version: 0.6.8
-Date: 2013-12-30
+Version: 0.6.9
+Date: 2016-01-07
 Author: Dirk Eddelbuettel <edd@debian.org> with contributions 
  by Antoine Lucas, Jarek Tuszynski, Henrik Bengtsson, Simon Urbanek,
  Mario Frasca, Bryan Lewis, Murray Stokely, Hannes Muehleisen,
- Duncan Murdoch, Jim Hester and Wush Wu.
+ Duncan Murdoch, Jim Hester, Wush Wu and Thierry Onkelinx.
 Maintainer: Dirk Eddelbuettel <edd@debian.org>
-Title: Create Cryptographic Hash Digests of R Objects
+Title: Create Compact Hash Digests of R Objects
 Description: Implementation of a function 'digest()' for the creation 
  of hash digests of arbitrary R objects (using the md5, sha-1, sha-256, 
  crc32, xxhash and murmurhash algorithms) permitting easy comparison of R
@@ -21,7 +21,7 @@ Description: Implementation of a function 'digest()' for the creation
     For md5, sha-1, sha-256 and aes, this package uses small standalone
  implementations that were provided by Christophe Devine. For crc32, code
  from the zlib library is used. For sha-512, an implementation by Aaron
- D. Gifford is used. For xxHash, the implementation by Yann Collet is used.
+ D. Gifford is used. For xxhash, the implementation by Yann Collet is used.
  For murmurhash, an implementation by Shane Day is used.
  .
     Please note that this package is not meant to be deployed for 
@@ -30,9 +30,11 @@ Description: Implementation of a function 'digest()' for the creation
 Depends: R (>= 2.4.1)
 License: GPL-2
 URL: http://dirk.eddelbuettel.com/code/digest.html
-Packaged: 2014-12-31 01:14:41.779054 UTC; edd
+Suggests: knitr, rmarkdown
+VignetteBuilder: knitr
 NeedsCompilation: yes
+Packaged: 2016-01-08 04:03:12.108104 UTC; edd
 Repository: CRAN
-Date/Publication: 2014-12-31 07:47:27
-Built: R 3.2.3; x86_64-w64-mingw32; 2015-12-11 01:25:44 UTC; windows
+Date/Publication: 2016-01-08 08:49:46
+Built: R 3.2.3; x86_64-w64-mingw32; 2016-01-09 03:20:38 UTC; windows
 Archs: i386, x64

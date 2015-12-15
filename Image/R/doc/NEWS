@@ -17,8 +17,8 @@ CHANGES IN R-devel:
       successfully negotiate a cryptographic protocol (TLS/SSL, ...)
       and the server's identity has to be verifiable _via_ the
       available certificates.  Different access methods may allow
-      different protocols or use private certificate bundles: we have
-      experienced a https: CRAN mirror which can be accessed by one
+      different protocols or use private certificate bundles: we
+      encountered a https: CRAN mirror which can be accessed by one
       browser but not another nor by download.file() on the same Linux
       machine.
 

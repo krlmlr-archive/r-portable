@@ -26,6 +26,7 @@ hook_r2swf	hook_animation
 hook_scianimator	hook_animation
 image_uri	image_uri
 imgur_upload	imgur_upload
+include_graphics	include_graphics
 inline_expr	inline_expr
 kable	kable
 knit	knit
@@ -48,10 +49,12 @@ knit_print	knit_print
 knit_rd	knit_rd
 knit_rd_all	knit_rd
 knit_theme	knit_theme
+knit_watch	knit_watch
 load_cache	load_cache
 normal_print	knit_print
 opts_chunk	opts_chunk
 opts_current	opts_chunk
+opts_hooks	opts_hooks
 opts_knit	opts_knit
 opts_template	opts_template
 pandoc	pandoc

@@ -15,9 +15,10 @@ fig_path                Path for figure files
 hook_ffmpeg_html        Hooks to create animations in HTML output
 hook_movecode           Some potentially useful document hooks
 hook_pdfcrop            Built-in chunk hooks to extend knitr
-hook_plot_asciidoc      Default plot hooks for different output formats
+hook_plot_html          Default plot hooks for different output formats
 image_uri               Encode an image file to a data URI
 imgur_upload            Upload an image to imgur.com
+include_graphics        Embed external images in 'knitr' documents
 inline_expr             Wrap code using the inline R expression syntax
 kable                   Create tables in LaTeX, HTML, Markdown and
                         reStructuredText
@@ -46,10 +47,13 @@ knit_patterns           Patterns to match and extract R code in a
 knit_print              A custom printing function
 knit_rd                 Knit package documentation
 knit_theme              Syntax highlighting themes
+knit_watch              Watch an input file continuously and knit it
+                        when it is updated
 knitr-package           A general-purpose tool for dynamic report
                         generation in R
 load_cache              Load the cache database of a code chunk
 opts_chunk              Default and current chunk options
+opts_hooks              Hooks for code chunk options
 opts_knit               Options for the knitr package
 opts_template           Template for creating reusable chunk options
 pandoc                  A Pandoc wrapper to convert Markdown documents
@@ -61,7 +65,7 @@ rand_seed               An unevaluated expression to return
                         .Random.seed if exists
 read_chunk              Read chunks from an external script
 read_rforge             Read source code from R-Forge
-render_asciidoc         Set output hooks for different output formats
+render_html             Set output hooks for different output formats
 rocco                   Knit R Markdown using the classic Docco style
 rst2pdf                 A wrapper for rst2pdf
 set_alias               Set aliases for chunk options

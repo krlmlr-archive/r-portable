@@ -296,7 +296,8 @@ is <code>sort.int()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show
 </p>
 </li>
 <li><p> The <code>format</code> method for <code>object_size</code> objects now
-also accepts &ldquo;binary&rdquo; units (and e.g. Tb).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16649">PR#16649</a>)
+also accepts &ldquo;binary&rdquo; units such as <code>"KiB"</code> and e.g.,
+<code>"Tb"</code>.  (partly from <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16649">PR#16649</a>)
 </p>
 </li>
 <li><p> Profiling now records calls of the form <code>foo::bar</code> and
@@ -501,6 +502,10 @@ absolute value less than or equal to 1. (<a href="https://bugs.R-project.org/bug
 </li>
 <li><p> Array subsetting now keeps <code>names(dim(.))</code>.
 </p>
+</li>
+<li> <p><code>withCallingHandler()</code> now (again) handles warnings
+even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16111">PR#16111</a>)
+</p>
 </li></ul>
 
 
@@ -544,7 +549,7 @@ deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</s
 <p>(This has been the recommendation in the manual for a while now.)
 </p>
 </li>
-<li><p> The <code>make</code> macro @codeAWK which is long unused by
+<li><p> The <code>make</code> macro <code>AWK</code> which is long unused by
 <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> itself but recorded in file &lsquo;<span class="file">etc/Makeconf</span>&rsquo; is deprecated
 and will be removed in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0.
 </p>

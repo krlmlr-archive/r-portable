@@ -275,6 +275,9 @@ graphics engine.
 <li><p> S4 values are automatically coerced to vector (via
 <code>as.vector</code>) when subassigned into atomic vectors.
 </p>
+</li>
+<li> <p><code>findInterval()</code> gets <code>left.open</code> option.
+</p>
 </li></ul>
 
 
@@ -458,8 +461,11 @@ instead of <code>Expose</code> events, thanks to Siteshwar
 Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
 </p>
 </li>
-<li> <p><code>cor()</code> is now guaranteed to return a value with 
+<li> <p><code>cor()</code> is now guaranteed to return a value with
 absolute value less than or equal to 1. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16638">PR#16638</a>)
+</p>
+</li>
+<li><p> Array subsetting now keeps <code>names(dim(.))</code>.
 </p>
 </li></ul>
 
@@ -487,7 +493,7 @@ package.
 </p>
 </li>
 <li> <p><code>shQuote()</code> gains <code>type = "cmd2"</code> for quoting
-in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16636">PR#16636</a>.)      
+in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16636">PR#16636</a>.)
 </p>
 </li></ul>
 

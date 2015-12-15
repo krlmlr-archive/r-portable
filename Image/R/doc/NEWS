@@ -192,6 +192,8 @@ CHANGES IN R-devel:
     * S4 values are automatically coerced to vector (via as.vector)
       when subassigned into atomic vectors.
 
+    * findInterval() gets left.open option.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -307,6 +309,8 @@ CHANGES IN R-devel:
 
     * cor() is now guaranteed to return a value with absolute value
       less than or equal to 1. (PR#16638)
+
+    * Array subsetting now keeps names(dim(.)).
 
 CHANGES IN R 3.2.3 patched:
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-12-24).
+<!-- This manual is for R, version 3.3.0 Under development (2015-12-26).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-12-24).
+<p>This manual is for R, version 3.3.0 Under development (2015-12-26).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -13240,6 +13240,7 @@ See R&rsquo;s help page <code>?max.col</code>.
 
 <dl>
 <dt><a name="index-findInterval"></a>Function: <em>int</em> <strong>findInterval</strong> <em>(double* <var>xt</var>, int <var>n</var>, double <var>x</var>, Rboolean <var>rightmost_closed</var>, Rboolean <var>all_inside</var>, int <var>ilo</var>, int* <var>mflag</var>)</em></dt>
+<dt><a name="index-findInterval2_0028double_002a"></a>Function: <em>int</em> <strong>findInterval2(double*</strong> <em><var>xt</var>, int <var>n</var>, double <var>x</var>, Rboolean <var>rightmost_closed</var>, Rboolean <var>all_inside</var>, Rboolean <var>left_open</var>, int <var>ilo</var>, int* <var>mflag</var>)</em></dt>
 <dd><p>Given the ordered vector <var>xt</var> of length <var>n</var>, return the interval
 or index of <var>x</var> in <code><var>xt</var>[]</code>, typically max(<em>i</em>; 1 &lt;= i &lt;= <var>n</var> &amp; <em><var>xt</var>[i]</em> &lt;=
 <var>x</var>) where we use 1-indexing as in R and FORTRAN (but not C).  If
@@ -13254,9 +13255,17 @@ outside the <var>xt</var>[] range.  On return, <code>*<var>mflag</var></code> eq
 result of <code>findInterval()</code> and <var>x</var> is a value of a sequence which
 is increasing or decreasing for subsequent calls.
 </p>
+<p><code>findInterval2()</code> is a generalization of <code>findInterval()</code>, with
+ an extra <code>Rboolean</code> argument <var>left_open</var>.  Setting
+ <code>left_open = TRUE</code> basically replaces all left-closed right-open
+ intervals t) by left-open ones t], see the help page
+ of R function <code>findInterval</code> for details.
+</p>
 <p>There is also an <code>F77_CALL(interv)()</code> version of
 <code>findInterval()</code> with the same arguments, but all pointers.
 </p></dd></dl>
+
+
 
 <p>A system-independent interface to produce the name of a temporary
 file is provided as
@@ -14992,6 +15001,7 @@ Next: <a href="#Concept-index" accesskey="n" rel="next">Concept index</a>, Previ
 <tr><th><a name="Function-and-variable-index_vr_letter-F">F</a></th><td></td><td></td></tr>
 <tr><td></td><td valign="top"><a href="#index-FALSE"><code>FALSE</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Mathematical-constants">Mathematical constants</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-findInterval"><code>findInterval</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Utility-functions">Utility functions</a></td></tr>
+<tr><td></td><td valign="top"><a href="#index-findInterval2_0028double_002a"><code>findInterval2(double*</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Utility-functions">Utility functions</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-findVar"><code>findVar</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Finding-and-setting-variables">Finding and setting variables</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-FLIBS"><code>FLIBS</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Using-Makevars">Using Makevars</a></td></tr>
 <tr><td></td><td valign="top"><a href="#index-fmax2"><code>fmax2</code></a>:</td><td>&nbsp;</td><td valign="top"><a href="#Numerical-Utilities">Numerical Utilities</a></td></tr>

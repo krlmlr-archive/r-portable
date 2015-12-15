@@ -507,6 +507,10 @@ packages affected by this change are doing so.
 <li><p> Including header &lsquo;<span class="file">S.h</span>&rsquo; from C++ code will fail on some
 platforms, and so gives a compilation warning on all.
 </p>
+</li>
+<li><p> The deprecated header &lsquo;<span class="file">Rdefines.h</span>&rsquo; is now compatible
+with defining <code>R_NO_REMAP</code>.
+</p>
 </li></ul>
 
 
@@ -701,6 +705,10 @@ could segfault or recycle wrongly.  (<a href="https://bugs.R-project.org/bugzill
 </p>
 </li>
 <li> <p><code>plot.ts(&lt;matrix&gt;, las = 1)</code> now does use <code>las</code>.
+</p>
+</li>
+<li> <p><code>saveRDS(*, compress = "gzip")</code> now works as
+documented.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16653">PR#16653</a>)
 </p>
 </li></ul>
 

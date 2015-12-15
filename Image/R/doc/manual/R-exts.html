@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-02-02).
+<!-- This manual is for R, version 3.3.0 Under development (2016-02-03).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-02-02).
+<p>This manual is for R, version 3.3.0 Under development (2016-02-03).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -3151,8 +3151,8 @@ environment of a function for later use.
 <p>Complete checking of a package which contains a file <samp>README.md</samp>
 needs <code>pandoc</code> installed: see
 <a href="http://johnmacfarlane.net/pandoc/installing.html">http://johnmacfarlane.net/pandoc/installing.html</a>.  This
-should be reasonably current: <acronym>CRAN</acronym> used version 1.12.4.1 to
-process these files at the time of writing
+should be reasonably current: at the time of writing <acronym>CRAN</acronym> used
+version 1.12.4.2 to process these files.
 </p>
 <p>You do need to ensure that the package is checked in a suitable locale
 if it contains non-<acronym>ASCII</acronym> characters.  Such packages are likely
@@ -15981,7 +15981,8 @@ and <code>DYLD_LIBRARY_PATHS</code> below.</p>
 <h3><a name="FOOT109" href="#DOCF109">(109)</a></h3>
 <p>That is,
 similar to those defined in S version 4 from the 1990s: these are
-not kept up to date and are not recommended for new projects.</p>
+not kept up to date and are not recommended for new projects.  Prior to
+R 3.3.0 it was not compatible with defining <code>R_NO_REMAP</code>.</p>
 <h3><a name="FOOT110" href="#DOCF110">(110)</a></h3>
 <p>see <a href="#The-R-API">The R API</a>: note that these are not all part of
 the API.</p>

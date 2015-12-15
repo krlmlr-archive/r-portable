@@ -7,7 +7,10 @@ with_envvar	with_envvar
 with_libpaths	with_libpaths
 with_locale	with_locale
 with_makevars	with_makevars
+with_message_sink	with_sink
 with_options	with_options
+with_output_sink	with_sink
 with_par	with_par
 with_path	with_path
+with_sink	with_sink
 with_temp_libpaths	with_temp_libpaths

@@ -1299,15 +1299,13 @@ stopifnot(all.equal(coef(flm), cf[,"tear"]),
 ## format.POSIXlt() with modified 'zone' or length-2 format
 f0 <- "2016-01-28 01:23:45"; tz0 <- "Europe/Stockholm"
 d2 <- d1 <- rep(as.POSIXlt(f0, tz = tz0), 2)
-f1 <- format(d1, usetz=TRUE)
+(f1 <- format(d1, usetz=TRUE))
+identical(f1, rep(paste(f0, "CET"), 2))# often TRUE (but too platform dependent)
 d2$zone <- d1$zone[1] # length 1 instead of 2
 f2 <- format(d2, usetz=TRUE)## -> segfault
 f1.2 <- format(as.POSIXlt("2016-01-28 01:23:45"), format=c("%d", "%y"))# segfault
-stopifnot(
-    identical(f1, rep(paste(f0, "CET"), 2)),
-    identical(f2, rep(paste(f0,  tz0 ), 2)),
-    identical(f1.2, c("28", "16"))
-    )
+stopifnot(identical(f2, rep(paste(f0,  tz0 ), 2)),
+	  identical(f1.2, c("28", "16")))
 tims <- seq.POSIXt(as.POSIXct("2016-01-01"),
 		   as.POSIXct("2017-11-11"), by = as.difftime(pi, units="weeks"))
 form <- c("%m/%d/%y %H:%M:%S", "", "%Y-%m-%d %H:%M:%S")
@@ -1323,3 +1321,27 @@ stopifnot(identical(rf1[1:3], c("01/01/16 00:00:00", "2016-01-22 23:47:15",
 options(op)
 ## Wrong-length 'zone' or short 'x' segfaulted -- PR#16685
 ## Default 'format' setting sometimes failed for length(format) > 1
+
+
+## saveRDS(*, compress= .)
+opts <- setNames(,c("bzip2", "xz", "gzip"))
+fil <- tempfile(paste0("xx", 1:6, "_"), fileext = ".rds")
+names(fil) <- c("default", opts, FALSE,TRUE)
+xx <- 1:11
+saveRDS(xx, fil["default"])
+saveRDS(xx, fil[opts[1]], compress = opts[1])
+saveRDS(xx, fil[opts[2]], compress = opts[2])
+saveRDS(xx, fil[opts[3]], compress = opts[3])
+saveRDS(xx, fil["FALSE"], compress = FALSE)
+saveRDS(xx, fil["TRUE" ], compress = TRUE)
+f.raw <- lapply(fil, readBin, what = "raw", n = 100)
+lengths(f.raw) # 'gzip' is best in this case
+for(i in 1:6) stopifnot(identical(xx, readRDS(fil[i])))
+eMsg <- tryCatch(saveRDS(xx, tempfile(), compress = "Gzip"),
+                 error = function(e) e$message)
+stopifnot(
+    grepl("'compress'.*Gzip", eMsg), # had ".. not interpretable as logical"
+    identical(f.raw[["default"]], f.raw[["TRUE"]]),
+    identical(f.raw[["default"]], f.raw[[opts["gzip"]]]))
+## compress = "gzip" failed (PR#16653), but compress = c(a = "xz") did too
+

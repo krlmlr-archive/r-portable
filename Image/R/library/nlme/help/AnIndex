@@ -483,7 +483,6 @@ summary.pdSymm	summary.pdMat
 summary.reStruct	summary.modelStruct
 summary.varComb	summary.varFunc
 summary.varConstPower	summary.varFunc
-summary.VarCorr.lme	VarCorr
 summary.varExp	summary.varFunc
 summary.varFixed	summary.varFunc
 summary.varFunc	summary.varFunc

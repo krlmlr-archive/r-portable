@@ -411,6 +411,10 @@ CHANGES IN R 3.2.3 patched:
       e.g. before [] or [[]].  (Reported by Lukas Stadler; additional
       fixes included as well).
 
+    * as.data.frame.vector(*, row.names=*) no longer produces
+      "corrupted" data frames from row names of wrong length, but
+      rather warns about them.  This will become an error.
+
 CHANGES IN R 3.2.3:
 
   NEW FEATURES:

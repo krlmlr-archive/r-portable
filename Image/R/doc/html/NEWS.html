@@ -619,6 +619,11 @@ masking a newer required one.
 necessary,  e.g. before <code>[]</code> or <code>[[]]</code>.  (Reported by
 Lukas Stadler; additional fixes included as well).
 </p>
+</li>
+<li> <p><code>as.data.frame.vector(*, row.names=*)</code> no longer
+produces &ldquo;corrupted&rdquo; data frames from row names of wrong
+length, but rather warns about them.  This will become an error.
+</p>
 </li></ul>
 
 

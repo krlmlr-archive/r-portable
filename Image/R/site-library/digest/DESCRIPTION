@@ -36,5 +36,5 @@ NeedsCompilation: yes
 Packaged: 2016-01-08 04:03:12.108104 UTC; edd
 Repository: CRAN
 Date/Publication: 2016-01-08 08:49:46
-Built: R 3.2.3; x86_64-w64-mingw32; 2016-01-15 03:42:40 UTC; windows
+Built: R 3.2.3; x86_64-w64-mingw32; 2016-01-16 03:42:32 UTC; windows
 Archs: i386, x64

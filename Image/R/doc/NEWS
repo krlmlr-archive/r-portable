@@ -183,8 +183,8 @@ CHANGES IN R-devel:
       were stored as part of a recorded plot.
 
     * S4 dispatch works within calls to .Internal(). This means
-      explicit S4 generics are no longer needed for unlist, is.unsorted
-      and as.vector.
+      explicit S4 generics are no longer needed for unlist and
+      as.vector.
 
     * Only font family names starting with "Hershey" (and not "Her" as
       before) are given special treatment by the graphics engine.
@@ -192,7 +192,13 @@ CHANGES IN R-devel:
     * S4 values are automatically coerced to vector (via as.vector)
       when subassigned into atomic vectors.
 
-    * findInterval() gets left.open option.
+    * findInterval() gets a left.open option.
+
+    * The version of LAPACK included in the sources has been updated to
+      3.6.0.  (It does not include msot of the deprecated routines
+      removed in that version.  For the time being, the deprecated
+      routines dgegv and dggsvd _are_ included as they are used by
+      current packages.)
 
   UTILITIES:
 

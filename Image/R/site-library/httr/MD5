@@ -1,4 +1,4 @@
-7fd068967439ab040a481baef2591a78 *DESCRIPTION
+68957f94f0935a316af7116b41ed1b9a *DESCRIPTION
 dc701248310196d809f681e8faeb2bf9 *INDEX
 d8d2f9bd4836cd6c839888295d3b1da5 *LICENSE
 9793a683d209685da201ce058ec928b6 *Meta/Rd.rds
@@ -6,7 +6,7 @@ d8d2f9bd4836cd6c839888295d3b1da5 *LICENSE
 1406c071902e7f5474b36856254fdf6f *Meta/hsearch.rds
 163b5d4d4b94a14509020ec234940338 *Meta/links.rds
 a302d5c8c3f96dd0611d3dbac895fd3c *Meta/nsInfo.rds
-fac1de22b106d643594f0e11d34a4fbe *Meta/package.rds
+35a7982b0dfc6867a102bb38ec28846f *Meta/package.rds
 7d41bd118b156a067c94c48c2222352b *Meta/vignette.rds
 7e90bdf5062dcd47fd7fb98e77f1bbf8 *NAMESPACE
 ebf0fc819595d631b8bf280c4b049940 *R/httr
@@ -31,8 +31,8 @@ a18a0a6f70b3af4abc94f5c55cb41cd1 *demo/oauth2-facebook.r
 c0de6b6544b5125d958a3be6834d3347 *doc/quickstart.html
 2029be1289660db4676efdf8dfe142e2 *help/AnIndex
 b3894ef6882efadb48e5677a9b460bbc *help/aliases.rds
-eab5b72be8df2fa47ed356e8d4f7b906 *help/httr.rdb
-1c01c569297a1ab4e04662cc08025ac5 *help/httr.rdx
-710f7238048b5bfa8ec264dc94d77b51 *help/paths.rds
+040f46b411483f3f631290209a3ae183 *help/httr.rdb
+172e3a7c507b38a54a5427cfcd260a43 *help/httr.rdx
+09e8c2d63152b6d09d0579214d628d7d *help/paths.rds
 afe95c02efb0112d0823d1e9513e60d0 *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css

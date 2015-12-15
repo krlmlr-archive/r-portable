@@ -1,4 +1,4 @@
-85769b3a576b2137c5b29eaf7f65c6d1 *DESCRIPTION
+bc8ea163bdea7b636b6e1d3cf8096301 *DESCRIPTION
 37d5225e9159147ce7f8c157a021ea0b *INDEX
 02d3ac0e1d98cc9ec8219e7023d0f85e *LICENSE
 4a935040297f82b6e827857165492b37 *Meta/Rd.rds
@@ -6,7 +6,7 @@
 d9f357756211da240b3e3cb03c94fa25 *Meta/hsearch.rds
 19341e8beae1aa42e5ff1687d65e6ff1 *Meta/links.rds
 12f27a351415ebe87bd5c8cc9bbd6233 *Meta/nsInfo.rds
-4557b69b2d7dbe6110f258418e71785a *Meta/package.rds
+4629bc9802dde1f7ed2e247baec86888 *Meta/package.rds
 8dc82c63f712a541af9261fd48dba301 *Meta/vignette.rds
 4d5bb79c8321b7111082a751d55d498e *NAMESPACE
 b67be824296af0420ce3b3f1a3803ba3 *NEWS
@@ -22,12 +22,12 @@ fa30eece876be88788d9ecd57aa5b899 *doc/intro.R
 0f3155c48bc8bf2c9c9f6677445ded1a *doc/intro.html
 ec6b7f41f471db941fcc74e0bb965783 *help/AnIndex
 b6201378ca0bdc329205962b9e6d9a8e *help/aliases.rds
-c2da176ce4efdc9f18f9eb6ad0927237 *help/curl.rdb
-67cd983a32cbad01eda79b8b877a6793 *help/curl.rdx
-968ad8083b13adacafbe8c7113a2be8f *help/paths.rds
+12d5459f4711316fda81029fde0b6861 *help/curl.rdb
+4912fce0ceb4ad7d996459a3f34a856e *help/curl.rdx
+be530a4636ad6b2a4fc18088c8eb4761 *help/paths.rds
 aee5f2021b1a63a990981571db9c6b5c *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css
-5d7ce1f4511b39a65ec58e6c2f824abd *libs/i386/curl.dll
+5e8b88fe3f3bca30b19993755197e72d *libs/i386/curl.dll
 09ad3bbe4456ae3dfc404a749e7cf749 *libs/i386/symbols.rds
-04bb541ab8f79642d75ff40cefa305a9 *libs/x64/curl.dll
+312417b0e17cb1edcef07de12b96b825 *libs/x64/curl.dll
 0caafe71c1509beb19da75f99a4ab473 *libs/x64/symbols.rds

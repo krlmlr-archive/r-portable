@@ -262,9 +262,9 @@ recorded plot.  <code>replayPlot()</code> has new argument
 stored as part of a recorded plot.
 </p>
 </li>
-<li><p> S4 dispatch works within calls to <code>.Internal()</code>. This means
-explicit S4 generics are no longer needed for <code>unlist</code>,
-<code>is.unsorted</code> and <code>as.vector</code>.
+<li><p> S4 dispatch works within calls to <code>.Internal()</code>. This
+means explicit S4 generics are no longer needed for <code>unlist</code>
+and <code>as.vector</code>.
 </p>
 </li>
 <li><p> Only font family names starting with <span class="samp">"Hershey"</span> (and
@@ -276,7 +276,14 @@ graphics engine.
 <code>as.vector</code>) when subassigned into atomic vectors.
 </p>
 </li>
-<li> <p><code>findInterval()</code> gets <code>left.open</code> option.
+<li> <p><code>findInterval()</code> gets a  <code>left.open</code> option.
+</p>
+</li>
+<li><p> The version of LAPACK included in the sources has been
+updated to 3.6.0.  (It does not include msot of the deprecated
+routines removed in that version.  For the time being, the
+deprecated routines <code>dgegv</code> and <code>dggsvd</code> <em>are</em>
+included as they are used by current packages.)
 </p>
 </li></ul>
 

@@ -18,9 +18,9 @@ CHANGES IN R-devel:
       and the server's identity has to be verifiable _via_ the
       available certificates.  Different access methods may allow
       different protocols or use private certificate bundles: we
-      encountered a https: CRAN mirror which can be accessed by one
-      browser but not another nor by download.file() on the same Linux
-      machine.
+      encountered a https: CRAN mirror which could be accessed by one
+      browser but not by another nor by download.file() on the same
+      Linux machine.
 
   NEW FEATURES:
 
@@ -333,6 +333,17 @@ CHANGES IN R-devel:
     * New API call R_orderVector1(), a faster one-argument version of
       R_orderVector().
 
+    * There is a new macro, USE_CXX_HEADERS, which if set causes R
+      headers such as R.h and Rmath.h when called from C++ code in
+      packages to include the C++ versions of system headers such as
+      <cmath> rather than the C versions.  (Header Rinternals.h always
+      did.)
+
+      This is currently optional but is intended to become the default
+      before release.  The manual has long said that R headers should
+      *not* be included within an extern "C" block, and this change
+      increases the chance of compilation errors if that is done.
+
   BUG FIXES:
 
     * C-level asChar(x) is fixed for when x is not a vector, and it
@@ -379,6 +390,9 @@ CHANGES IN R-devel:
 
     * url connections with method = "libcurl" are destroyed properly.
       (PR#16681)
+
+    * dummy.coef.lm() now works in more cases, thanks to a proposal by
+      Werner Stahel.  (PR#16665)
 
 CHANGES IN R 3.2.3 patched:
 

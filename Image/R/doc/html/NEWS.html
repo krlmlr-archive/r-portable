@@ -32,9 +32,9 @@ have to successfully negotiate a cryptographic protocol (TLS/SSL,
 ...) and the server's identity has to be verifiable <em>via</em>
 the available certificates.  Different access methods may allow
 different protocols or use private certificate bundles: we
-encountered a <span class="samp">https:</span> CRAN mirror which can be accessed by
-one browser but not another nor by <code>download.file()</code> on the
-same Linux machine.
+encountered a <span class="samp">https:</span> CRAN mirror which could be accessed by
+one browser but not by another nor by <code>download.file()</code> on
+the same Linux machine.
 </p>
 </li></ul>
 
@@ -478,7 +478,6 @@ now remapped as an entry point to <code>Rf_logspace_sum</code>, and its
 first argument has gained a <code>const</code> qualifier.
 </p>
 <p>Code using it will need to be reinstalled. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16470">PR#16470</a>)
-
 </p>
 </li>
 <li> <p><code>R_GE_version</code> has been increased to <code>11</code>.
@@ -486,6 +485,18 @@ first argument has gained a <code>const</code> qualifier.
 </li>
 <li><p> New API call <code>R_orderVector1()</code>, a faster
 one-argument version of <code>R_orderVector()</code>.
+</p>
+</li>
+<li><p> There is a new macro, <code>USE_CXX_HEADERS</code>, which if set
+causes <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers such as &lsquo;<span class="file">R.h</span>&rsquo; and &lsquo;<span class="file">Rmath.h</span>&rsquo; when
+called from C++ code in packages to include the C++ versions of
+system headers such as &lsquo;<span class="file">&lt;cmath&gt;</span>&rsquo; rather than the C versions.
+(Header &lsquo;<span class="file">Rinternals.h</span>&rsquo; always did.)
+</p>
+<p>This is currently optional but is intended to become the default
+before release.  The manual has long said that <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers should
+<b>not</b> be included within an <code>extern "C"</code> block, and this
+change increases the chance of compilation errors if that is done.
 </p>
 </li></ul>
 
@@ -557,6 +568,10 @@ may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/s
 </li>
 <li> <p><code>url</code> connections with <code>method = "libcurl"</code> are
 destroyed properly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16681">PR#16681</a>)
+</p>
+</li>
+<li> <p><code>dummy.coef.lm()</code> now works in more cases, thanks to a
+proposal by Werner Stahel.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>)
 </p>
 </li></ul>
 

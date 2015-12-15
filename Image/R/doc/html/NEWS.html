@@ -596,8 +596,8 @@ masking a newer required one.
 </p>
 </li>
 <li><p> The internal deparser did not add parentheses when
-necessary before <code>[]</code> or <code>[[]]</code>.  (Reported by
-Lukas Stadler).
+necessary,  e.g. before <code>[]</code> or <code>[[]]</code>.  (Reported by
+Lukas Stadler; additional fixes included as well).
 </p>
 </li></ul>
 
@@ -2543,7 +2543,7 @@ to few breaks when some are very large. (<a href="https://bugs.R-project.org/bug
 </li>
 <li> <p><code>sub()</code> and <code>gsub()</code> did not handle regular
 expressions like <code>"\s{2,}"</code> properly if the text
-contained <code>NA</code> or non-ascii elements in a UTF-8
+contained <code>NA</code> or non-ASCII elements in a UTF-8
 locale.  Part of this was due to a bug in the TRE library.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16009">PR#16009</a>)
 </p>

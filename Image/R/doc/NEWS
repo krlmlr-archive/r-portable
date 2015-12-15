@@ -392,8 +392,9 @@ CHANGES IN R 3.2.3 patched:
       warning about an old version of a package masking a newer
       required one.
 
-    * The internal deparser did not add parentheses when necessary
-      before [] or [[]].  (Reported by Lukas Stadler).
+    * The internal deparser did not add parentheses when necessary,
+      e.g. before [] or [[]].  (Reported by Lukas Stadler; additional
+      fixes included as well).
 
 CHANGES IN R 3.2.3:
 
@@ -1713,7 +1714,7 @@ CHANGES IN R 3.1.2:
       breaks when some are very large. (PR#15988)
 
     * sub() and gsub() did not handle regular expressions like "\s{2,}"
-      properly if the text contained NA or non-ascii elements in a
+      properly if the text contained NA or non-ASCII elements in a
       UTF-8 locale.  Part of this was due to a bug in the TRE library.
       (PR#16009)
 

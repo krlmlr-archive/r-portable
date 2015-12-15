@@ -258,6 +258,12 @@ CHANGES IN R-devel:
       versions of OS X (for the latter, thanks to a suggestion of Kyaw
       Sint).
 
+    * hist() for "Date" or "POSIXt" objects would sometimes give
+      misleading labels on the breaks, as they were set to the day
+      before the start of the period being displayed.  The display
+      format has been changed, and the shift of the start day has been
+      made conditional on right = TRUE (the default).  (PR#16679)
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -455,6 +461,9 @@ CHANGES IN R 3.2.3 patched:
     * The data.frame method of rbind() gains an optional argument
       stringsAsFactors (instead of only depending on
       getOption("stringsAsFactors")).
+
+    * The as.hclust method for "dendrogram"s failed often when there
+      ties in the heights.
 
   DEPRECATED AND DEFUNCT:
 

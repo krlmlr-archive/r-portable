@@ -356,6 +356,14 @@ this change only affects Sparc Solaris.
 versions of OS X (for the latter, thanks to a suggestion of Kyaw
 Sint).
 </p>
+</li>
+<li> <p><code>hist()</code> for <code>"Date"</code> or <code>"POSIXt"</code> objects
+would sometimes give misleading labels on the breaks, as they
+were set to the day before the start of the period being
+displayed.  The display format has been changed, and the shift of the
+start day has been made conditional on <code>right = TRUE</code> (the 
+default).  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16679">PR#16679</a>)
+</p>
 </li></ul>
 
 
@@ -657,6 +665,10 @@ in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-projec
 <li><p> The <code>data.frame</code> method of <code>rbind()</code> gains an
 optional argument <code>stringsAsFactors</code> (instead of only
 depending on <code>getOption("stringsAsFactors")</code>).
+</p>
+</li>
+<li><p> The <code>as.hclust</code> method for <code>"dendrogram"</code>s failed often
+when there ties in the heights.
 </p>
 </li></ul>
 

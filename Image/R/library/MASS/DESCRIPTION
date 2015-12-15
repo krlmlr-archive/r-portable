@@ -33,5 +33,5 @@ Author: Brian Ripley [aut, cre, cph],
 Maintainer: Brian Ripley <ripley@stats.ox.ac.uk>
 Repository: CRAN
 Date/Publication: 2015-11-10 15:42:34
-Built: R 3.3.0; x86_64-w64-mingw32; 2015-12-16 03:25:19 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2015-12-17 03:22:27 UTC; windows
 Archs: i386, x64

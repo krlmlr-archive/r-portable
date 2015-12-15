@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2015-12-28).
+<!-- This manual is for R, version 3.3.0 Under development (2015-12-29).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2015-12-28).
+<p>This manual is for R, version 3.3.0 Under development (2015-12-29).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -1030,17 +1030,19 @@ language subtags which in essence are 2-letter ISO 639-1
 639-3 (<a href="https://en.wikipedia.org/wiki/ISO_639-3">https://en.wikipedia.org/wiki/ISO_639-3</a>) language
 codes.
 </p>
-<p>As of R 3.2.0, an &lsquo;<samp>RdMacros</samp>&rsquo; field can be used to hold a
-comma-separated list of packages from which the current package will import
-Rd macro definitions.  These will be imported after the system macros,
-in the order listed in the &lsquo;<samp>RdMacros</samp>&rsquo; field, before any macro
-definitions in the current package are loaded.  Macro definitions in
-individual <samp>.Rd</samp> files in the <samp>man</samp> directory are loaded
-last, and are local to later parts of that file.  In case of any
-duplicates, the last loaded definition will be used<a name="DOCF8" href="#FOOT8"><sup>8</sup></a>
-Both <code>R CMD Rd2pdf</code> and <code>R CMD Rdconv</code> have option
-<code>--RdMacros=pkglist</code>.  The option is also a comma-separated list
-of package names, and has priority over the value given in <samp>DESCRIPTION</samp>.
+<p>An &lsquo;<samp>RdMacros</samp>&rsquo; field can be used to hold a comma-separated list of
+packages from which the current package will import <samp>Rd</samp> macro
+definitions.  These will be imported after the system macros, in the
+order listed in the &lsquo;<samp>RdMacros</samp>&rsquo; field, before any macro definitions
+in the current package are loaded.  Macro definitions in individual
+<samp>.Rd</samp> files in the <samp>man</samp> directory are loaded last, and are
+local to later parts of that file.  In case of duplicates, the last
+loaded definition will be used<a name="DOCF8" href="#FOOT8"><sup>8</sup></a>  Both <code>R CMD
+Rd2pdf</code> and <code>R CMD Rdconv</code> have an optional flag
+<samp>--RdMacros=pkglist</samp>.  The option is also a comma-separated list
+of package names, and has priority over the value given in
+<samp>DESCRIPTION</samp>.  Packages using <samp>Rd</samp> macros should depend on
+R 3.2.0 or later.
 </p>
 <blockquote>
 <p><b>Note:</b> There should be no &lsquo;<samp>Built</samp>&rsquo; or &lsquo;<samp>Packaged</samp>&rsquo; fields, as these are
@@ -4847,7 +4849,9 @@ The most common issue involves the names of the Intel CPU registers such
 as <code>CS</code>, <code>DS</code>, <code>ES</code>, <code>FS</code>, <code>GS</code> and <code>SS</code>
 (and more with longer abbreviations) defined on i586/x64 Solaris in
 <samp>&lt;sys/regset.h&gt;</samp> and often included indirectly by <samp>&lt;stdlib.h&gt;</samp>
-and other core headers.  Another example is <code>ERR</code>.
+and other core headers.  Further examples are <code>ERR</code>, and <code>I</code>
+which is defined in Solaris&rsquo; <samp>&lt;complex.h&gt;</samp> as a compiler intrinsic
+for the imaginary unit.
 
 </li><li> <code>typedef</code>s in OS headers can conflict with those in the package: an
 example is <code>index_t</code> defined in <samp>&lt;sys/types.h&gt;</samp> on Solaris.
@@ -5812,18 +5816,18 @@ info).
 </p>
 <p>Finally, there is <code>\donttest</code>, used (at the beginning of a separate
 line) to mark code that should be run by <code>example()</code> but not by
-<code>R CMD check</code> (by default: as from R 3.2.0 the option
-<samp>--run-donttest</samp> can be used).  This should be needed only
-occasionally but can be used for code which might fail in circumstances
-that are hard to test for, for example in some locales.  (Use
-e.g. <code>capabilities()</code> or <code>nzchar(Sys.which(&quot;someprogram&quot;))</code> to
-test for features needed in the examples wherever possible, and you can
-also use <code>try()</code> or <code>tryCatch()</code>.  Use <code>interactive()</code> to
-condition examples which need someone to interact with.)  Note that code
-included in <code>\donttest</code> must be correct R code, and any packages
-used should be declared in the <samp>DESCRIPTION</samp> file.  It is good
-practice to include a comment in the <code>\donttest</code> section explaining
-why it is needed.
+<code>R CMD check</code> (by default: the option <samp>--run-donttest</samp> can
+be used).  This should be needed only occasionally but can be used for
+code which might fail in circumstances that are hard to test for, for
+example in some locales.  (Use e.g. <code>capabilities()</code> or
+<code>nzchar(Sys.which(&quot;someprogram&quot;))</code> to test for features needed in
+the examples wherever possible, and you can also use <code>try()</code> or
+<code>tryCatch()</code>.  Use <code>interactive()</code> to condition examples which
+need someone to interact with.)  Note that code included in
+<code>\donttest</code> must be correct R code, and any packages used should
+be declared in the <samp>DESCRIPTION</samp> file.  It is good practice to
+include a comment in the <code>\donttest</code> section explaining why it is
+needed.
 </p>
 <a name="index-_005ckeyword"></a>
 </dd>
@@ -15559,8 +15563,8 @@ required by <acronym>CRAN</acronym>, so checked by <code>R CMD check
 <p>But it is checked for Open Source packages
 by <code>R CMD check --as-cran</code>.</p>
 <h3><a name="FOOT8" href="#DOCF8">(8)</a></h3>
-<p>Duplicate
-definitions may trigger a warning:  see <a href="#User_002ddefined-macros">User-defined macros</a>.</p>
+<p>Duplicate definitions may
+trigger a warning: see <a href="#User_002ddefined-macros">User-defined macros</a>.</p>
 <h3><a name="FOOT9" href="#DOCF9">(9)</a></h3>
 <p>even one wrapped in <code>\donttest</code>.</p>
 <h3><a name="FOOT10" href="#DOCF10">(10)</a></h3>

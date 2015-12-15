@@ -244,6 +244,9 @@ CHANGES IN R-devel:
       return value includes extra partitioning information on the
       groups. The implementation came included with the new radix sort.
 
+    * rhyper(nn, m,n,k) no longer returns NA when one of the three
+      parameters exceeds the maximal integer.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

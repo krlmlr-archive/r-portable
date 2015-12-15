@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (206.6 MB, MD5 hash: `cbbb9519f101585d34d376a5050af15a`, uncompressed 486.7 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (207.1 MB, MD5 hash: `00303febe7fc7ef9516e0a32e02cb221`, uncompressed 503.3 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (209.1 MB, MD5 hash: `cf77b402d46165815d01950296aaf53a`, uncompressed 543.1 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (193.9 MB, MD5 hash: `4c5012de53bd80a992acd0ddcc6c298e`, uncompressed 373.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (194.2 MB, MD5 hash: `47aea9956f97dba58e20f25f3211cf39`, uncompressed 383 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (195.5 MB, MD5 hash: `f010c1e18fe0673ec59437d06b856115`, uncompressed 404.8 MB)
 
 
 
@@ -12,7 +12,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2016-01-21 r69971)
+R Under development (unstable) (2016-01-22 r69985)
 
 ### Package versions
 
@@ -48,8 +48,6 @@ R Under development (unstable) (2016-01-21 r69971)
 [`spatial`](http://cran.r-project.org/package=spatial) (7.3-11),
 [`survival`](http://cran.r-project.org/package=survival) (2.38-3) 
 ####  other 
-[`BH`](http://cran.r-project.org/package=BH) (1.60.0-1),
-[`brew`](http://cran.r-project.org/package=brew) (1.0-6),
 [`crayon`](http://cran.r-project.org/package=crayon) (1.3.1),
 [`curl`](http://cran.r-project.org/package=curl) (0.9.4),
 [`devtools`](http://cran.r-project.org/package=devtools) (1.9.1),
@@ -69,13 +67,11 @@ R Under development (unstable) (2016-01-21 r69971)
 [`praise`](http://cran.r-project.org/package=praise) (1.0.0),
 [`R6`](http://cran.r-project.org/package=R6) (2.1.1),
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.3),
-[`roxygen2`](http://cran.r-project.org/package=roxygen2) (5.0.1),
 [`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.4.0),
-[`rversions`](http://cran.r-project.org/package=rversions) (1.0.2),
 [`stringi`](http://cran.r-project.org/package=stringi) (1.0-1),
 [`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.11.0),
 [`translations`](http://cran.r-project.org/package=translations) (3.3.0),
 [`whisker`](http://cran.r-project.org/package=whisker) (0.3-2),
-[`xml2`](http://cran.r-project.org/package=xml2) (0.1.2),
+[`withr`](http://cran.r-project.org/package=withr) (1.0.0),
 [`yaml`](http://cran.r-project.org/package=yaml) (2.1.13) 

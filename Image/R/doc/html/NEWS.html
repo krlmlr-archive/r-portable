@@ -280,10 +280,8 @@ graphics engine.
 </p>
 </li>
 <li><p> The version of LAPACK included in the sources has been
-updated to 3.6.0.  (It does not include most of the deprecated
-routines removed in that version.  For the time being, the
-deprecated routines <code>dgegv</code> and <code>dggsvd</code> <em>are</em>
-included as they are used by current packages.)
+updated to 3.6.0, including those &lsquo;deprecated&rsquo; routines
+which were previously included.
 </p>
 </li>
 <li> <p><code>tapply()</code> has been made considerably more efficient
@@ -297,7 +295,7 @@ is <code>sort.int()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show
 </li>
 <li><p> The <code>format</code> method for <code>object_size</code> objects now
 also accepts &ldquo;binary&rdquo; units such as <code>"KiB"</code> and e.g.,
-<code>"Tb"</code>.  (partly from <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16649">PR#16649</a>)
+<code>"Tb"</code>.  (Partly from <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16649">PR#16649</a>)
 </p>
 </li>
 <li><p> Profiling now records calls of the form <code>foo::bar</code> and
@@ -315,7 +313,7 @@ garbage collection.
 </p>
 </li>
 <li><p> Avoid <span class="pkg">parallel</span> dependency on <span class="pkg">stats</span> for port
-choice and random number seeds. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16668">PR#16668</a>)
+choice and random number seeds.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16668">PR#16668</a>)
 </p>
 </li></ul>
 
@@ -527,8 +525,9 @@ even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.
 gracefully on signal interrupts.
 </p>
 </li>
-<li> <p><code>rbind.data.frame()</code>'s <code>row.names</code> construction
-now works better in borderline integer cases.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16666">PR#16666</a>)
+<li><p> The <code>data.frame</code> method of <code>rbind()</code> construction
+<code>row.names</code> works better in borderline integer cases, but
+may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16666">PR#16666</a>)
 </p>
 </li></ul>
 
@@ -559,8 +558,9 @@ package.
 in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16636">PR#16636</a>.)
 </p>
 </li>
-<li> <p><code>rbind.data.frame()</code> gets optional argument <code>stringsAsFactors</code>
-(instead of only depending on <code>getOption("stringsAsFactors")</code>).
+<li><p> The <code>data.frame</code> method of <code>rbind()</code> gains an
+optional argument <code>stringsAsFactors</code> (instead of only
+depending on <code>getOption("stringsAsFactors")</code>).
 </p>
 </li></ul>
 
@@ -629,7 +629,7 @@ Lukas Stadler; additional fixes included as well).
 </p>
 </li>
 <li> <p><code>as.data.frame.vector(*, row.names=*)</code> no longer
-produces &ldquo;corrupted&rdquo; data frames from row names of wrong
+produces &lsquo;corrupted&rsquo; data frames from row names of incorrect
 length, but rather warns about them.  This will become an error.
 </p>
 </li></ul>

@@ -195,10 +195,8 @@ CHANGES IN R-devel:
     * findInterval() gets a left.open option.
 
     * The version of LAPACK included in the sources has been updated to
-      3.6.0.  (It does not include most of the deprecated routines
-      removed in that version.  For the time being, the deprecated
-      routines dgegv and dggsvd _are_ included as they are used by
-      current packages.)
+      3.6.0, including those 'deprecated' routines which were
+      previously included.
 
     * tapply() has been made considerably more efficient without
       changing functionality, thanks to proposals from Peter Haverty
@@ -208,7 +206,7 @@ CHANGES IN R-devel:
       sort.int().  (PR#16640)
 
     * The format method for object_size objects now also accepts
-      "binary" units such as "KiB" and e.g., "Tb".  (partly from
+      "binary" units such as "KiB" and e.g., "Tb".  (Partly from
       PR#16649)
 
     * Profiling now records calls of the form foo::bar and some similar
@@ -223,7 +221,7 @@ CHANGES IN R-devel:
       collection.
 
     * Avoid parallel dependency on stats for port choice and random
-      number seeds. (PR#16668)
+      number seeds.  (PR#16668)
 
   UTILITIES:
 
@@ -354,8 +352,9 @@ CHANGES IN R-devel:
     * Blocking socket connection selection recovers more gracefully on
       signal interrupts.
 
-    * rbind.data.frame()'s row.names construction now works better in
-      borderline integer cases.  (PR#16666)
+    * The data.frame method of rbind() construction row.names works
+      better in borderline integer cases, but may change the names
+      assigned.  (PR#16666)
 
 CHANGES IN R 3.2.3 patched:
 
@@ -373,8 +372,9 @@ CHANGES IN R 3.2.3 patched:
     * shQuote() gains type = "cmd2" for quoting in cmd.exe in Windows.
       (Response to PR#16636.)
 
-    * rbind.data.frame() gets optional argument stringsAsFactors
-      (instead of only depending on getOption("stringsAsFactors")).
+    * The data.frame method of rbind() gains an optional argument
+      stringsAsFactors (instead of only depending on
+      getOption("stringsAsFactors")).
 
   DEPRECATED AND DEFUNCT:
 
@@ -418,7 +418,7 @@ CHANGES IN R 3.2.3 patched:
       fixes included as well).
 
     * as.data.frame.vector(*, row.names=*) no longer produces
-      "corrupted" data frames from row names of wrong length, but
+      'corrupted' data frames from row names of incorrect length, but
       rather warns about them.  This will become an error.
 
 CHANGES IN R 3.2.3:

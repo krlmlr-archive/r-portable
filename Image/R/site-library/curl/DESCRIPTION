@@ -1,37 +1,39 @@
 Package: curl
 Type: Package
 Title: A Modern and Flexible Web Client for R
-Version: 0.9.4
+Version: 0.9.5
 Authors@R: c(
     person("Jeroen", "Ooms", , "jeroen.ooms@stat.ucla.edu", role = c("cre", "aut")),
     person("Hadley", "Wickham", , "hadley@rstudio.com", role = "ctb"),
     person("RStudio", role = "cph")
     )
-Description: The curl() and curl_download() functions provide highly configurable
-    drop-in replacements for base url() and download.file() with better performance,
-    support for encryption (https://, ftps://), 'gzip' compression, authentication,
-    and other 'libcurl' goodies. The core of the package implements a framework for
-    performing fully customized requests where data can be processed either in memory,
-    on disk, or streaming via the callback or connection interfaces. Some knowledge of
-    'libcurl' is recommended; for a more-user-friendly web client see the 'httr' package
-    which builds on this package with HTTP specific tools and logic.
+Description: The curl() and curl_download() functions provide highly
+    configurable drop-in replacements for base url() and download.file() with
+    better performance, support for encryption (https, ftps), gzip compression,
+    authentication, and other libcurl goodies. The core of the package implements a
+    framework for performing fully customized requests where data can be processed
+    either in memory, on disk, or streaming via the callback or connection
+    interfaces. Some knowledge of libcurl is recommended; for a more-user-friendly
+    web client see the 'httr' package which builds on this package with http
+    specific tools and logic.
 License: MIT + file LICENSE
 SystemRequirements: libcurl: libcurl-devel (rpm) or
         libcurl4-openssl-dev (deb).
-URL: https://github.com/jeroenooms/curl,
+URL: https://github.com/jeroenooms/curl
         https://www.opencpu.org/posts/curl-release-0-8/
 BugReports: https://github.com/jeroenooms/curl/issues
 Suggests: testthat, knitr, jsonlite, rmarkdown, magrittr
 VignetteBuilder: knitr
-Depends: R (>= 2.10.0)
+Depends: R (>= 3.0.0)
 LazyData: true
+RoxygenNote: 5.0.1
 NeedsCompilation: yes
-Packaged: 2015-11-20 11:16:49 UTC; jeroen
+Packaged: 2016-01-23 20:44:53 UTC; jeroen
 Author: Jeroen Ooms [cre, aut],
   Hadley Wickham [ctb],
   RStudio [cph]
 Maintainer: Jeroen Ooms <jeroen.ooms@stat.ucla.edu>
 Repository: CRAN
-Date/Publication: 2015-11-20 18:08:01
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-22 09:40:22 UTC; windows
+Date/Publication: 2016-01-23 23:28:17
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-24 09:20:29 UTC; windows
 Archs: i386, x64

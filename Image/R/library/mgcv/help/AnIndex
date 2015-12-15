@@ -5,6 +5,7 @@ anova.gam	anova.gam
 bam	bam
 bam.update	bam.update
 betar	Beta
+bug.reports.mgcv	bug.reports.mgcv
 choose.k	choose.k
 coef.pdIdnot	pdIdnot
 coef.pdTens	pdTens

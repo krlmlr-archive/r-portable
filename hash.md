@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (193.9 MB, MD5 hash: `4c5012de53bd80a992acd0ddcc6c298e`, uncompressed 373.2 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (194.2 MB, MD5 hash: `47aea9956f97dba58e20f25f3211cf39`, uncompressed 383 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (195.5 MB, MD5 hash: `f010c1e18fe0673ec59437d06b856115`, uncompressed 404.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (194 MB, MD5 hash: `e8c90452231e329cc2cc66e80f37c905`, uncompressed 373.2 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (194.3 MB, MD5 hash: `2682b1245f6be9338eecacfef673f649`, uncompressed 383 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (195.6 MB, MD5 hash: `6b451ae4124debc78b901d2f8b70f5c7`, uncompressed 404.8 MB)
 
 
 
@@ -12,7 +12,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2016-01-22 r69985)
+R Under development (unstable) (2016-01-23 r69990)
 
 ### Package versions
 
@@ -41,7 +41,7 @@ R Under development (unstable) (2016-01-22 r69985)
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-33),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-45),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-3),
-[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-10),
+[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-11),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-124),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-11),
 [`rpart`](http://cran.r-project.org/package=rpart) (4.1-10),
@@ -49,8 +49,8 @@ R Under development (unstable) (2016-01-22 r69985)
 [`survival`](http://cran.r-project.org/package=survival) (2.38-3) 
 ####  other 
 [`crayon`](http://cran.r-project.org/package=crayon) (1.3.1),
-[`curl`](http://cran.r-project.org/package=curl) (0.9.4),
-[`devtools`](http://cran.r-project.org/package=devtools) (1.9.1),
+[`curl`](http://cran.r-project.org/package=curl) (0.9.5),
+[`devtools`](http://cran.r-project.org/package=devtools) (1.10.0),
 [`digest`](http://cran.r-project.org/package=digest) (0.6.9),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.8),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.2.1),
@@ -67,7 +67,7 @@ R Under development (unstable) (2016-01-22 r69985)
 [`praise`](http://cran.r-project.org/package=praise) (1.0.0),
 [`R6`](http://cran.r-project.org/package=R6) (2.1.1),
 [`Rcpp`](http://cran.r-project.org/package=Rcpp) (0.12.3),
-[`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.4.0),
+[`rstudioapi`](http://cran.r-project.org/package=rstudioapi) (0.5),
 [`stringi`](http://cran.r-project.org/package=stringi) (1.0-1),
 [`stringr`](http://cran.r-project.org/package=stringr) (1.0.0),
 [`testthat`](http://cran.r-project.org/package=testthat) (0.11.0),

@@ -12,6 +12,7 @@ bam                     Generalized additive models for very large
 bam.update              Update a strictly additive bam model for new
                         data.
 betar                   GAM beta regression family
+bug.reports.mgcv        Reporting mgcv bugs.
 cSplineDes              Evaluate cyclic B spline basis
 choose.k                Basis dimension choice for smooths
 columb                  Reduced version of Columbus OH crime data

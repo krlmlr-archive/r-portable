@@ -7,9 +7,9 @@ build_vignettes         Build package vignettes.
 build_win               Build windows binary package.
 check                   Build and check a package, cleaning up
                         automatically on success.
-check_doc               Check documentation, as 'R CMD check' does.
 check_failures          Parses R CMD check log file for ERRORs,
                         WARNINGs and NOTEs
+check_man               Check documentation, as 'R CMD check' does.
 clean_dll               Remove compiled objects from /src/ directory
 clean_source            Sources an R file in a clean environment.
 clean_vignettes         Clean built vignettes.
@@ -51,6 +51,7 @@ load_data               Load data.
 load_dll                Load a compiled DLL
 missing_s3              Find missing s3 exports.
 package_deps            Find all dependencies of a CRAN or dev package.
+package_file            Find file in a package.
 path                    Get/set the PATH variable.
 release                 Release package to CRAN.
 reload                  Unload and reload package.
@@ -73,8 +74,7 @@ update_packages         Update packages that are missing or
 use_data                Use data in a package.
 use_data_raw            Use 'data-raw' to compute package datasets.
 use_git                 Initialise a git repository.
+use_news_md             Use NEWS.md
 use_package             Use specified package.
 wd                      Set working directory.
 with_debug              Temporarily set debugging compilation flags.
-with_something          Execute code in temporarily altered
-                        environment.

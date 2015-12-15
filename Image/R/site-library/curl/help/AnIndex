@@ -19,5 +19,6 @@ ie_get_proxy_for_url	ie_proxy
 ie_proxy	ie_proxy
 ie_proxy_info	ie_proxy
 new_handle	handle
+nslookup	nslookup
 parse_date	parse_date
 parse_headers	parse_headers

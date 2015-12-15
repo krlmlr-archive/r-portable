@@ -11,7 +11,7 @@
 <div style="text-align: center;">
 <a href="../../../doc/html/packages.html"><img class="arrow" src="../../../doc/html/left.jpg" alt="[Up]" /></a>
 <a href="../../../doc/html/index.html"><img class="arrow" src="../../../doc/html/up.jpg" alt="[Top]" /></a>
-</div><h2>Documentation for package &lsquo;devtools&rsquo; version 1.9.1</h2>
+</div><h2>Documentation for package &lsquo;devtools&rsquo; version 1.10.0</h2>
 
 <ul><li><a href="../DESCRIPTION">DESCRIPTION file</a>.</li>
 <li><a href="../doc/index.html">User guides, package vignettes and other documentation.</a></li>
@@ -79,10 +79,12 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="check.html">check</a></td>
 <td>Build and check a package, cleaning up automatically on success.</td></tr>
-<tr><td style="width: 25%;"><a href="check_doc.html">check_doc</a></td>
+<tr><td style="width: 25%;"><a href="check_man.html">check_doc</a></td>
 <td>Check documentation, as 'R CMD check' does.</td></tr>
 <tr><td style="width: 25%;"><a href="check_failures.html">check_failures</a></td>
 <td>Parses R CMD check log file for ERRORs, WARNINGs and NOTEs</td></tr>
+<tr><td style="width: 25%;"><a href="check_man.html">check_man</a></td>
+<td>Check documentation, as 'R CMD check' does.</td></tr>
 <tr><td style="width: 25%;"><a href="clean_dll.html">clean_dll</a></td>
 <td>Remove compiled objects from /src/ directory</td></tr>
 <tr><td style="width: 25%;"><a href="clean_source.html">clean_source</a></td>
@@ -174,8 +176,6 @@
 <td>Install a package from a url</td></tr>
 <tr><td style="width: 25%;"><a href="install_version.html">install_version</a></td>
 <td>Install specified version of a CRAN package.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">in_dir</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
 </table>
 
 <h2><a name="L">-- L --</a></h2>
@@ -205,6 +205,8 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="package_deps.html">package_deps</a></td>
 <td>Find all dependencies of a CRAN or dev package.</td></tr>
+<tr><td style="width: 25%;"><a href="package_file.html">package_file</a></td>
+<td>Find file in a package.</td></tr>
 <tr><td style="width: 25%;"><a href="path.html">path</a></td>
 <td>Get/set the PATH variable.</td></tr>
 </table>
@@ -297,6 +299,10 @@
 <td>Use 'data-raw' to compute package datasets.</td></tr>
 <tr><td style="width: 25%;"><a href="use_git.html">use_git</a></td>
 <td>Initialise a git repository.</td></tr>
+<tr><td style="width: 25%;"><a href="infrastructure.html">use_mit_license</a></td>
+<td>Add useful infrastructure to a package.</td></tr>
+<tr><td style="width: 25%;"><a href="use_news_md.html">use_news_md</a></td>
+<td>Use NEWS.md</td></tr>
 <tr><td style="width: 25%;"><a href="use_package.html">use_package</a></td>
 <td>Use specified package.</td></tr>
 <tr><td style="width: 25%;"><a href="infrastructure.html">use_package_doc</a></td>
@@ -322,30 +328,8 @@
 <table width="100%">
 <tr><td style="width: 25%;"><a href="wd.html">wd</a></td>
 <td>Set working directory.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_collate</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
 <tr><td style="width: 25%;"><a href="with_debug.html">with_debug</a></td>
 <td>Temporarily set debugging compilation flags.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_env</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_envvar</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_lib</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_libpaths</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_locale</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_makevars</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_options</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_par</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_path</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
-<tr><td style="width: 25%;"><a href="with_something.html">with_something</a></td>
-<td>Execute code in temporarily altered environment.</td></tr>
 </table>
 
 <h2><a name="misc">-- misc --</a></h2>

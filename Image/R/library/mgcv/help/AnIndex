@@ -78,6 +78,7 @@ model.matrix.gam	model.matrix.gam
 mono.con	mono.con
 mrf	smooth.construct.mrf.smooth.spec
 mroot	mroot
+multinom	multinom
 mvn	mvn
 nb	negbin
 negbin	negbin

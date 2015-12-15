@@ -27,7 +27,7 @@ DT_ARCH = -m i386:x86-64 --as-flags --64
 RC_ARCH = -F pe-x86-64
 # Used by packages tcltk and tkrplot
 TCL_HOME = $(R_HOME)/Tcl
-LOCAL_SOFT = d:/RCompile/r-compiling/local/local320
+LOCAL_SOFT = d:/RCompile/r-compiling/local/local323
 NM_FILTER = | sed -e '/.refptr./d'
 
 ifneq ($(strip $(LOCAL_SOFT)),)

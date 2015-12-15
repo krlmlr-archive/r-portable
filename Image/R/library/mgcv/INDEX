@@ -81,6 +81,7 @@ model.matrix.gam        Extract model matrix from GAM fit
 mono.con                Monotonicity constraints for a cubic regression
                         spline
 mroot                   Smallest square root of matrix
+multinom                GAM multinomial logistic regression
 mvn                     Multivariate normal additive models
 negbin                  GAM negative binomial families
 new.name                Obtain a name for a new variable that is not

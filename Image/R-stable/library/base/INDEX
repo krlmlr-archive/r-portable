@@ -185,7 +185,7 @@ file.access             Ascertain File Accessibility
 file.choose             Choose a File Interactively
 file.info               Extract File Information
 file.path               Construct Path to File
-file.show               Display One or More Files
+file.show               Display One or More Text Files
 files                   File Manipulation
 find.package            Find Packages
 findInterval            Find Interval Numbers or Indices

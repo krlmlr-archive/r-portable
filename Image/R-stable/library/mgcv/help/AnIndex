@@ -56,6 +56,7 @@ gamObject	gamObject
 gamSim	gamSim
 gaulss	gaulss
 get.var	get.var
+gp.smooth	smooth.construct.gp.smooth.spec
 in.out	in.out
 influence.gam	influence.gam
 initial.sp	initial.sp
@@ -111,6 +112,7 @@ Predict.matrix.cs.smooth	Predict.matrix.cr.smooth
 Predict.matrix.cyclic.smooth	Predict.matrix.cr.smooth
 Predict.matrix.duchon.spline	smooth.construct.ds.smooth.spec
 Predict.matrix.fs.interaction	smooth.construct.fs.smooth.spec
+Predict.matrix.gp.smooth	smooth.construct.gp.smooth.spec
 Predict.matrix.mrf.smooth	smooth.construct.mrf.smooth.spec
 Predict.matrix.pspline.smooth	Predict.matrix.cr.smooth
 Predict.matrix.random.effect	smooth.construct.re.smooth.spec
@@ -148,6 +150,7 @@ smooth.construct.cr.smooth.spec	smooth.construct.cr.smooth.spec
 smooth.construct.cs.smooth.spec	smooth.construct.cr.smooth.spec
 smooth.construct.ds.smooth.spec	smooth.construct.ds.smooth.spec
 smooth.construct.fs.smooth.spec	smooth.construct.fs.smooth.spec
+smooth.construct.gp.smooth.spec	smooth.construct.gp.smooth.spec
 smooth.construct.mrf.smooth.spec	smooth.construct.mrf.smooth.spec
 smooth.construct.ps.smooth.spec	smooth.construct.ps.smooth.spec
 smooth.construct.re.smooth.spec	smooth.construct.re.smooth.spec

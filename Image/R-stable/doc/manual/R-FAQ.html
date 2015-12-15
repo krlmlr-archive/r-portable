@@ -118,7 +118,7 @@ ul.menu {
 
 
 <h2>Frequently Asked Questions on R</h2>
-<h3 style="text-align: center;">Version 3.2.2015-08-09</h3>
+<h3 style="text-align: center;">Version 3.2.2015-12-04</h3>
 <h3 style="text-align: center;">Kurt Hornik</h3>
 <hr>
 <a name="SEC_Contents"></a>
@@ -484,7 +484,7 @@ script files.
 </p>
 <p>The design of R has been heavily influenced by two existing languages:
 Becker, Chambers &amp; Wilks&rsquo; S (see <a href="#What-is-S_003f">What is S?</a>) and Sussman&rsquo;s
-<a href="http://www.cs.indiana.edu/scheme-repository/home.html">Scheme</a>.
+<a href="https://www.cs.indiana.edu/scheme-repository/home.html">Scheme</a>.
 Whereas the resulting language is very similar in appearance to S, the
 underlying implementation and semantics are derived from Scheme.
 See <a href="#What-are-the-differences-between-R-and-S_003f">What are the differences between R and S?</a>, for further details.
@@ -557,7 +557,7 @@ Next: <a href="#How-can-R-be-obtained_003f" accesskey="n" rel="next">How can R b
 <a name="What-is-the-current-version-of-R_003f-1"></a>
 <h3 class="section">2.3 What is the current version of R?</h3>
  
-<p>The current released version is 3.2.2.  Based on this
+<p>The current released version is 3.2.3.  Based on this
 &lsquo;major.minor.patchlevel&rsquo; numbering scheme, there are two development
 versions of R, a patched version of the current release (&lsquo;r-patched&rsquo;)
 and one working towards the next minor or eventually major (&lsquo;r-devel&rsquo;)
@@ -733,7 +733,7 @@ is maintained by <a href="mailto:Simon.Urbanek@R-project.org">Simon Urbanek</a>
 OS X <acronym>FAQ</acronym></a> has more details.
 </p>
 <p>Snapshots of the r-patched and r-devel versions of R are available as
-Apple installer packages at <a href="http://r.research.att.com">http://r.research.att.com</a>.
+Apple installer packages at <a href="https://r.research.att.com">https://r.research.att.com</a>.
 </p>
 <hr>
 <a name="Are-there-Unix_002dlike-binaries-for-R_003f"></a>
@@ -766,7 +766,7 @@ install r-base-dev</code> to obtain the additional tools required for this.
 So-called &ldquo;backports&rdquo; of the current R packages for at least the
 <em>stable</em> distribution of Debian are provided by Johannes Ranke, and
 available from <acronym>CRAN</acronym>.  See
-<a href="https://CRAN.R-project.org/bin/linux/debian/README.html">https://CRAN.R-project.org/bin/linux/debian/README.html</a> for details on R
+<a href="https://CRAN.R-project.org/bin/linux/debian/index.html">https://CRAN.R-project.org/bin/linux/debian/index.html</a> for details on R
 Debian packages and installing the backports, which should also be
 suitable for other Debian derivatives.  Native backports for Ubuntu are
 provided by Michael Rutter.
@@ -859,7 +859,7 @@ can be found at
 <blockquote>
 <p>John M. Chambers (2008), &ldquo;Software for Data Analysis: Programming with
 R&rdquo;.  Springer, New York, ISBN 978-0-387-75935-7,
-<a href="https://statweb.stanford.edu/~jmc4/Rbook/">https://statweb.stanford.edu/~jmc4/Rbook/</a>.
+<a href="http://statweb.stanford.edu/~jmc4/Rbook/">http://statweb.stanford.edu/~jmc4/Rbook/</a>.
 </p>
 <p>Peter Dalgaard (2008), &ldquo;Introductory Statistics with R&rdquo;, 2nd edition.
 Springer, ISBN 978-0-387-79053-4,
@@ -934,7 +934,7 @@ Next: <a href="#What-is-CRAN_003f" accesskey="n" rel="next">What is CRAN?</a>, P
 <h3 class="section">2.9 What mailing lists exist for R?</h3>
 
 <p>Thanks to <a href="mailto:Martin.Maechler@R-project.org">Martin Maechler</a>, there
-are four mailing lists devoted to R.
+are several mailing lists devoted to R, including the following:
 </p>
 <dl compact="compact">
 <dt><code>R-announce</code></dt>
@@ -952,6 +952,10 @@ about the development of R and the availability of new code.
 </p></dd>
 <dt><code>R-devel</code></dt>
 <dd><p>This list is for questions and discussion about code development in R.
+</p></dd>
+<dt><code>R-package-devel</code></dt>
+<dd><p>A list which which provides a forum for learning about the R package
+development process.
 </p></dd>
 </dl>
 
@@ -1022,22 +1026,8 @@ can be found at the <acronym>URL</acronym>
 <p><a href="https://CRAN.R-project.org/">https://CRAN.R-project.org/</a>
 </p></blockquote>
 
-<p>Daily mirrors are available at <acronym>URL</acronym>s including
-</p>
-<blockquote>
-<table summary="">
-<tr><td width="45%"><a href="http://cran.at.R-project.org/">http://cran.at.R-project.org/</a></td><td width="40%">(Wirtschaftsuniversit&auml;t Wien, Austria)</td></tr>
-<tr><td width="45%"><a href="http://cran.au.R-project.org/">http://cran.au.R-project.org/</a></td><td width="40%">(University of Melbourne, Australia)</td></tr>
-<tr><td width="45%"><a href="http://cran.br.R-project.org/">http://cran.br.R-project.org/</a></td><td width="40%">(Universidade Federal do Paran&aacute;, Brazil)</td></tr>
-<tr><td width="45%"><a href="http://cran.ch.R-project.org/">http://cran.ch.R-project.org/</a></td><td width="40%">(ETH Z&uuml;rich, Switzerland)</td></tr>
-<tr><td width="45%"><a href="http://cran.dk.R-project.org/">http://cran.dk.R-project.org/</a></td><td width="40%">(dotsrc.org, Aalborg, Denmark)</td></tr>
-<tr><td width="45%"><a href="http://cran.es.R-project.org/">http://cran.es.R-project.org/</a></td><td width="40%">(Spanish National Research Network, Madrid, Spain)</td></tr>
-<tr><td width="45%"><a href="http://cran.pt.R-project.org/">http://cran.pt.R-project.org/</a></td><td width="40%">(Universidade do Porto, Portugal)</td></tr>
-<tr><td width="45%"><a href="http://cran.uk.R-project.org/">http://cran.uk.R-project.org/</a></td><td width="40%">(U of Bristol, United Kingdom)</td></tr>
-</table>
-</blockquote>
-
-<p>See <a href="https://CRAN.R-project.org/mirrors.html">https://CRAN.R-project.org/mirrors.html</a> for a complete list of
+<p>and is mirrored daily to many sites around the world.
+See <a href="https://CRAN.R-project.org/mirrors.html">https://CRAN.R-project.org/mirrors.html</a> for a complete list of
 mirrors.  Please use the <acronym>CRAN</acronym> site closest to you to reduce network
 load.
 </p>
@@ -1073,7 +1063,7 @@ all Open Source licenses, permits all and any use of the package.  It
 only restricts distribution of R or of other programs containing code
 from R.  This is made clear in clause 6 (&ldquo;No Discrimination Against
 Fields of Endeavor&rdquo;) of the
-<a href="http://www.opensource.org/docs/definition.html">Open Source
+<a href="https://opensource.org/docs/definition.html">Open Source
 Definition</a>:
 </p>
 <blockquote>
@@ -1149,7 +1139,7 @@ mailing lists, bug tracking, message boards/forums, site hosting,
 permanent file archival, full backups, and total web-based
 administration.  For more information, see the R-Forge web page and
 Stefan Theu&szlig;l and Achim Zeileis (2009), &ldquo;Collaborative software
-development using R-Forge&rdquo;, <a href="http://journal.R-project.org/"><em>The R Journal</em></a>, <strong>1</strong>(1):9&ndash;14.
+development using R-Forge&rdquo;, <a href="https://journal.R-project.org/"><em>The R Journal</em></a>, <strong>1</strong>(1):9&ndash;14.
 </p>
 
 <hr>
@@ -1222,14 +1212,14 @@ S,&rdquo;  London: Chapman &amp; Hall.
 </p>
 </li><li> John M. Chambers (1998), &ldquo;Programming with Data,&rdquo; New York: Springer,
 ISBN 0-387-98503-4
-(<a href="https://statweb.stanford.edu/~jmc4/Sbook/">https://statweb.stanford.edu/~jmc4/Sbook/</a>).
+(<a href="http://statweb.stanford.edu/~jmc4/Sbook/">http://statweb.stanford.edu/~jmc4/Sbook/</a>).
 
 <p>This &ldquo;<em>Green Book</em>&rdquo; describes version 4 of S, a major revision of
 S designed by John Chambers to improve its usefulness at every stage of
 the programming process.
 </p></li></ul>
 
-<p>See <a href="https://statweb.stanford.edu/~jmc4/papers/96.7.ps">https://statweb.stanford.edu/~jmc4/papers/96.7.ps</a>
+<p>See <a href="http://statweb.stanford.edu/~jmc4/papers/96.7.ps">http://statweb.stanford.edu/~jmc4/papers/96.7.ps</a>
 for further information on the &ldquo;Evolution of the S Language&rdquo;.
 </p>
 <p>There is a huge amount of user-contributed code for S, available at the
@@ -1745,7 +1735,7 @@ environments.
 </p>
 
 <p>See also
-<a href="http://en.wikipedia.org/wiki/R_programming_language#Commercialized_versions_of_R">http://en.wikipedia.org/wiki/R_programming_language#Commercialized_versions_of_R</a>
+<a href="https://en.wikipedia.org/wiki/R_programming_language#Commercialized_versions_of_R">https://en.wikipedia.org/wiki/R_programming_language#Commercialized_versions_of_R</a>
 for pointers to commercialized versions of R.
 </p>
 <hr>
@@ -2095,8 +2085,8 @@ Next: <a href="#Other-add_002don-packages" accesskey="n" rel="next">Other add-on
 open development software project for the analysis and comprehension of
 genomic data.  Most Bioconductor components are distributed as R add-on
 packages.  Initially most of the
-<a href="https://www.bioconductor.org/packages/bioc/">Bioconductor software
-packages</a> focused primarily on DNA microarray data analysis.  As the
+<a href="https://bioconductor.org/packages/release/BiocViews.html#___Software">Bioconductor software packages</a>
+focused primarily on DNA microarray data analysis.  As the 
 project has matured, the functional scope of the software packages
 broadened to include the analysis of all types of genomic data, such as
 SAGE, sequence, or SNP data.  In addition, there are metadata
@@ -2377,7 +2367,7 @@ files).
 </p>
 <p>The latest stable version of <acronym>ESS</acronym> is available via <acronym>CRAN</acronym> or
 the <a href="http://ESS.R-project.org/">ESS web page</a>.  The <acronym>HTML</acronym> version
-of the documentation can be found at <a href="http://stat.ethz.ch/ESS/">http://stat.ethz.ch/ESS/</a>.
+of the documentation can be found at <a href="https://stat.ethz.ch/ESS/">https://stat.ethz.ch/ESS/</a>.
 </p>
 <p><acronym>ESS</acronym> comes with detailed installation instructions.
 </p>
@@ -4171,7 +4161,7 @@ the subject line.
 </p>
 <p>A bug report can be generated using the function <code>bug.report()</code>.
 For reports on R this will open the Web page at
-<a href="http://bugs.R-project.org/">http://bugs.R-project.org/</a>: for a contributed package it will open
+<a href="https://bugs.R-project.org/">https://bugs.R-project.org/</a>: for a contributed package it will open
 the package&rsquo;s bug tracker Web page or help you compose an email to the
 maintainer.
 </p>

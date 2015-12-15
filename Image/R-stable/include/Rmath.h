@@ -15,7 +15,7 @@
  *
  *  You should have received a copy of the GNU Lesser General Public License
  *  along with this program; if not, a copy is available at
- *  http://www.r-project.org/Licenses/
+ *  https://www.R-project.org/Licenses/
  *
 
  * Rmath.h  should contain ALL headers from R's C code in `src/nmath'
@@ -41,7 +41,7 @@
 /*-- Mathlib as part of R --  define this for standalone : */
 /* #undef MATHLIB_STANDALONE */
 
-#define R_VERSION_STRING "3.2.2"
+#define R_VERSION_STRING "3.2.3"
 
 #ifndef HAVE_EXPM1
 # define HAVE_EXPM1 1

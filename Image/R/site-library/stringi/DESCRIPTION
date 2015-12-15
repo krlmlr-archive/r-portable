@@ -29,5 +29,5 @@ Packaged: 2015-10-22 14:03:17 UTC; gagolews
 License_is_FOSS: yes
 Repository: CRAN
 Date/Publication: 2015-10-22 22:14:43
-Built: R 3.2.2; x86_64-w64-mingw32; 2015-10-23 02:21:35 UTC; windows
+Built: R 3.2.3; x86_64-w64-mingw32; 2015-12-11 01:25:49 UTC; windows
 Archs: i386, x64

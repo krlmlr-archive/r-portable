@@ -17,6 +17,7 @@ KhatriRao               Khatri-Rao Matrix Product
 LU-class                LU (dense) Matrix Decompositions
 Matrix                  Construct a Classed Matrix
 Matrix-class            Virtual Class "Matrix" Class of Matrices
+MatrixClass             The Matrix (Super-) Class of a Class
 MatrixFactorization-class
                         Class "MatrixFactorization" of Matrix
                         Factorizations
@@ -26,7 +27,7 @@ Schur                   Schur Decomposition of a Matrix
 Schur-class             Class "Schur" of Schur Matrix Factorizations
 SparseM-coerce-methods
                         Sparse Matrix Coercion from and to those from
-                        package "SparseM"
+                        package 'SparseM'
 TsparseMatrix-class     Class "TsparseMatrix" of Sparse Matrices in
                         Triplet Form
 USCounties              USCounties Contiguity Matrix

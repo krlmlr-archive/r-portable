@@ -271,6 +271,10 @@ explicit S4 generics are no longer needed for <code>unlist</code>,
 not <span class="samp">"Her"</span> as before) are given special treatment by the
 graphics engine.
 </p>
+</li>
+<li><p> S4 values are automatically coerced to vector (via
+<code>as.vector</code>) when subassigned into atomic vectors.
+</p>
 </li></ul>
 
 
@@ -321,6 +325,13 @@ and will be removed in due course.  The choice between methods
 and their defaults can be set <em>via</em> options.  The
 out-of-the-box default remains <code>"wininet"</code> (as it has been
 since <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.2).
+</p>
+</li>
+<li> <p><code>[&lt;-</code> with an S4 value into a list currently embeds the
+S4 object into its own list such that the end result is roughly
+equivalent to using <code>[[&lt;-</code>. That behavior is deprecated. In
+the future, the S4 value will be coerced to a list with
+<code>as.list</code>.
 </p>
 </li></ul>
 
@@ -440,6 +451,50 @@ format and print correctly.  (<a href="https://bugs.R-project.org/bugzilla3/show
 Enterprise Linux 6. It now waits for <code>MapNotify</code> events
 instead of <code>Expose</code> events, thanks to Siteshwar
 Vashisht. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16497">PR#16497</a>)
+</p>
+</li></ul>
+
+
+
+
+<h3><img src="../help/figures/../../html/logo.jpg" alt="../../html/logo.jpg" /> CHANGES IN R 3.2.3 patched</h3>
+
+
+
+<h4>NEW FEATURES</h4>
+
+
+<ul>
+<li> <p><code>install.packages()</code> and related functions now give a
+more informative warning when an attempt is made to install a base
+package.
+</p>
+</li>
+<li> <p><code>summary(x)</code> now prints with less rounding when
+<code>x</code> contains infinite values. (Request of <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16620">PR#16620</a>.)
+</p>
+</li></ul>
+
+
+
+
+<h4>BUG FIXES</h4>
+
+
+<ul>
+<li> <p><code>kmeans(x, centers = &lt;1-row&gt;)</code> now works. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16623">PR#16623</a>)
+</p>
+</li>
+<li> <p><code>Vectorize()</code> now checks for clashes in argument names.
+(<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16577">PR#16577</a>)
+</p>
+</li>
+<li> <p><code>file.copy(overwrite = FALSE)</code> would signal a successful
+copy when none had taken place.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16576">PR#16576</a>)
+</p>
+</li>
+<li> <p><code>ngettext()</code> now uses the same default domain as
+<code>gettext()</code>.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=14605">PR#14605</a>)
 </p>
 </li></ul>
 

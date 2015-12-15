@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.2.2 (2015-08-14).
+<!-- This manual is for R, version 3.2.3 (2015-12-10).
 
 Copyright (C) 2000-2015 R Core Team
 
@@ -342,7 +342,7 @@ Next: <a href="#Introduction" accesskey="n" rel="next">Introduction</a> &nbsp; [
 parsing, object oriented programming, computing on the language, and so
 forth.
 </p>
-<p>This manual is for R, version 3.2.2 (2015-08-14).
+<p>This manual is for R, version 3.2.3 (2015-12-10).
 </p>
 <p>Copyright &copy; 2000&ndash;2015 R Core Team
 </p>
@@ -2274,7 +2274,7 @@ operation.
 [1] 1 4
 </pre></div>
 
-<p>Negative indices are not allowed in indexing matrices.  <code>NA</code> and
+<p>Indexing matrices may not contain negative indices.  <code>NA</code> and
 zero values are allowed: rows in an index matrix containing a zero are
 ignored, whereas rows containing an <code>NA</code> produce an <code>NA</code> in
 the result.

@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205.4 MB, MD5 hash: `edc41b5a89597c1b9ae78538552377a0`, uncompressed 475.8 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (206 MB, MD5 hash: `53e025f7909ce5a2efeef65aff701863`, uncompressed 491.9 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.8 MB, MD5 hash: `cb87313219cb79d2ff230db3a6d169be`, uncompressed 529 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205.5 MB, MD5 hash: `292fe814766dc032462f378cfa040dad`, uncompressed 476 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (206.1 MB, MD5 hash: `dd503e45dccbc4cc926f1ddeef70449a`, uncompressed 492.1 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (207.9 MB, MD5 hash: `771d8971735828b28fd95172bfa9bfae`, uncompressed 529 MB)
 
 
 
@@ -12,7 +12,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2015-12-07 r69745)
+R Under development (unstable) (2015-12-14 r69775)
 
 ### Package versions
 
@@ -41,7 +41,7 @@ R Under development (unstable) (2015-12-07 r69745)
 [`lattice`](http://cran.r-project.org/package=lattice) (0.20-33),
 [`MASS`](http://cran.r-project.org/package=MASS) (7.3-45),
 [`Matrix`](http://cran.r-project.org/package=Matrix) (1.2-3),
-[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-9),
+[`mgcv`](http://cran.r-project.org/package=mgcv) (1.8-10),
 [`nlme`](http://cran.r-project.org/package=nlme) (3.1-122),
 [`nnet`](http://cran.r-project.org/package=nnet) (7.3-11),
 [`rpart`](http://cran.r-project.org/package=rpart) (4.1-10),
@@ -56,7 +56,7 @@ R Under development (unstable) (2015-12-07 r69745)
 [`digest`](http://cran.r-project.org/package=digest) (0.6.8),
 [`evaluate`](http://cran.r-project.org/package=evaluate) (0.8),
 [`formatR`](http://cran.r-project.org/package=formatR) (1.2.1),
-[`git2r`](http://cran.r-project.org/package=git2r) (0.12.1),
+[`git2r`](http://cran.r-project.org/package=git2r) (0.13.1),
 [`highr`](http://cran.r-project.org/package=highr) (0.5.1),
 [`httr`](http://cran.r-project.org/package=httr) (1.0.0),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.19),

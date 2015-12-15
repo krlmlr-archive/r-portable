@@ -189,6 +189,9 @@ CHANGES IN R-devel:
     * Only font family names starting with "Hershey" (and not "Her" as
       before) are given special treatment by the graphics engine.
 
+    * S4 values are automatically coerced to vector (via as.vector)
+      when subassigned into atomic vectors.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with
@@ -218,6 +221,11 @@ CHANGES IN R-devel:
       download.file() and their defaults can be set _via_ options.  The
       out-of-the-box default remains "wininet" (as it has been since R
       3.2.2).
+
+    * [<- with an S4 value into a list currently embeds the S4 object
+      into its own list such that the end result is roughly equivalent
+      to using [[<-. That behavior is deprecated. In the future, the S4
+      value will be coerced to a list with as.list.
 
   INSTALLATION and INCLUDED SOFTWARE:
 
@@ -292,6 +300,29 @@ CHANGES IN R-devel:
     * The X11() device sometimes froze on Red Hat Enterprise Linux 6.
       It now waits for MapNotify events instead of Expose events,
       thanks to Siteshwar Vashisht. (PR#16497)
+
+CHANGES IN R 3.2.3 patched:
+
+  NEW FEATURES:
+
+    * install.packages() and related functions now give a more
+      informative warning when an attempt is made to install a base
+      package.
+
+    * summary(x) now prints with less rounding when x contains infinite
+      values. (Request of PR#16620.)
+
+  BUG FIXES:
+
+    * kmeans(x, centers = <1-row>) now works. (PR#16623)
+
+    * Vectorize() now checks for clashes in argument names.  (PR#16577)
+
+    * file.copy(overwrite = FALSE) would signal a successful copy when
+      none had taken place.  (PR#16576)
+
+    * ngettext() now uses the same default domain as gettext().
+      (PR#14605)
 
 CHANGES IN R 3.2.3:
 

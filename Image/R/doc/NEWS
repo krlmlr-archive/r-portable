@@ -317,6 +317,17 @@ CHANGES IN R-devel:
       (released in Nov 2012).  Versions 8.10 to 8.31 are now deprecated
       (with warnings from configure), but for now still accepted.
 
+    * (Windows) An experimental build of R based on gcc 4.9.3 is now
+      available on CRAN on the bin/windows/base/rdevel.html snapshot
+      page.  This build will require recompilation of at least those
+      packages that include C++ code, and possibly others.  The CRAN
+      binary packages still use the older toolchain, so package
+      installs default to type = "source".
+
+      During the transition, the environment variable R_COMPILED_BY
+      will be defined to indicate which toolchain was used to compile R
+      (and hence, which should be used to compile code in packages).
+
   PACKAGE INSTALLATION:
 
     * The make macro AWK which used to be made available to files such
@@ -330,6 +341,9 @@ CHANGES IN R-devel:
       gained a const qualifier.
 
       Code using it will need to be reinstalled. (PR#16470)
+
+      Similarly, entry point log1pexp also defined in Rmath.h is
+      remapped there to Rf_log1pexp
 
     * R_GE_version has been increased to 11.
 

@@ -16,7 +16,7 @@ LINKFLAGS+= -static-libgcc
 
 ## Things which are substituted by fixed/Makefile (and also -O2 -> -O2)
 WIN = 64
-BINPREF = 
+BINPREF ?= 
 # SYMPAT = 's/^.* [BCDRT] _/ /p' for 32-bit
 # SYMPAT = 's/^.* [BCDRT] / /p' for 64-bit
 SYMPAT = 's/^.* [BCDRT] / /p'

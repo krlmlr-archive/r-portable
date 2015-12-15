@@ -455,6 +455,18 @@ been 8.32 (released in Nov 2012).  Versions 8.10 to 8.31 are now
 deprecated (with warnings from <code>configure</code>), but for now
 still accepted.
 </p>
+</li>
+<li><p> (Windows) An experimental build of R based on <code>gcc</code>
+4.9.3 is now available on CRAN on the &lsquo;<span class="file">bin/windows/base/rdevel.html</span>&rsquo;
+snapshot page.  This build will require recompilation of at least those 
+packages that include C++ code, and possibly others.  The CRAN 
+binary packages still use the older toolchain, so package installs
+default to <code>type = "source"</code>.  
+</p>
+<p>During the transition, the environment variable <span class="env">R_COMPILED_BY</span> will 
+be defined to indicate which toolchain was used to compile R (and hence, 
+which should be used to compile code in packages).
+</p>
 </li></ul>
 
 
@@ -482,6 +494,9 @@ now remapped as an entry point to <code>Rf_logspace_sum</code>, and its
 first argument has gained a <code>const</code> qualifier.
 </p>
 <p>Code using it will need to be reinstalled. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16470">PR#16470</a>)
+</p>
+<p>Similarly, entry point <code>log1pexp</code> also defined in
+&lsquo;<span class="file">Rmath.h</span>&rsquo; is remapped there to <code>Rf_log1pexp</code>
 </p>
 </li>
 <li> <p><code>R_GE_version</code> has been increased to <code>11</code>.

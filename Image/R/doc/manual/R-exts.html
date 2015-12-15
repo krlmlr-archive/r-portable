@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-01-25).
+<!-- This manual is for R, version 3.3.0 Under development (2016-01-26).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-01-25).
+<p>This manual is for R, version 3.3.0 Under development (2016-01-26).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -9852,7 +9852,8 @@ conflicts&mdash;if this happens, try defining &lsquo;<samp>NO_C_HEADERS</samp>&r
 including the R headers, and include C++ versions (such as
 &lsquo;<samp>cmath</samp>&rsquo; and &lsquo;<samp>cstdlib</samp>&rsquo;) of the appropriate headers yourself
 before the R headers. (Headers <samp>R.h</samp> and <samp>Rmath.h</samp> support
-&lsquo;<samp>NO_C_HEADERS</samp>&rsquo;: <samp>S.h</samp> does not.)
+&lsquo;<samp>NO_C_HEADERS</samp>&rsquo;: <samp>S.h</samp> does not.  Nor does <samp>Rinternals.h</samp>
+but that switches to the equivalent C++ headers when included from C++.)
 </p>
 <p>By default header <samp>Rmath.h</samp> includes <samp>math.h</samp>.  Header
 <samp>R.h</samp> includes
@@ -15690,7 +15691,7 @@ typo &lsquo;<samp>_REENTRANCE</samp>&rsquo; instead.</p>
 versions of R for Unix OSes still do.</p>
 <h3><a name="FOOT32" href="#DOCF32">(32)</a></h3>
 <p>Some distributions, notably Debian, have supplied a
-buiild of <code>clang</code> with <code>g++</code>&rsquo;s headers and library.
+build of <code>clang</code> with <code>g++</code>&rsquo;s headers and library.
 Conversely, Apple&rsquo;s command named <code>g++</code> is based on
 <code>clang</code> using <code>libcxx</code>.</p>
 <h3><a name="FOOT33" href="#DOCF33">(33)</a></h3>

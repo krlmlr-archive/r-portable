@@ -7,4 +7,4 @@ Maintainer: R Core Team <R-core@r-project.org>
 Description: Tools for package development, administration and documentation.
 License: Part of R 3.3.0
 Suggests: codetools, methods, xml2
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-26 03:29:13 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-27 03:28:08 UTC; windows

@@ -15,7 +15,7 @@ content_type            Set content-type and accept headers.
 cookies                 Access cookies in a response.
 handle                  Create a handle tied to a particular host.
 headers                 Extract the headers from a response
-http_error              Take action on http error.
+http_error              Check for an http error.
 http_status             Give information on the status of a request.
 httr                    'httr' makes http easy.
 httr_dr                 Diagnose common configuration problems
@@ -36,10 +36,9 @@ safe_callback           Generate a safe R callback.
 set_config              Set (and reset) global httr configuration.
 set_cookies             Set cookies.
 status_code             Extract status code from response.
+stop_for_status         Take action on http error.
 timeout                 Set maximum request time.
 upload_file             Upload a file with 'POST' or 'PUT'.
-url_ok                  Check for an http OK status.
-url_success             Check for an http success status.
 use_proxy               Use a proxy to connect to the internet.
 user_agent              Set user agent.
 verbose                 Give verbose output.

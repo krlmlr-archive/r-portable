@@ -320,6 +320,26 @@ garbage collection.
 <li><p> Avoid <span class="pkg">parallel</span> dependency on <span class="pkg">stats</span> for port
 choice and random number seeds.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16668">PR#16668</a>)
 </p>
+</li>
+<li><p> The radix sort algorithm and implementation from data.table
+(forder) replaces the existing but limited radix (counting) sort
+and adds a new method for <code>order()</code>. Contributed by Matthew
+Dowle and Arun Srinivasan, the new algorithm supports logical,
+integer (even with large values), real, and character vectors. It
+outperforms all other methods, but there are some caveats (see
+<code>?sort</code>).
+</p>
+</li>
+<li><p> The <code>order()</code> function gains a <code>method</code> argument
+for choosing between <code>"shell"</code> and <code>"radix"</code>.
+</p>
+</li>
+<li><p> New function <code>grouping</code> returns a permutation that
+stably rearranges data so that identical values are
+adjacent.  The return value includes extra partitioning
+information on the groups. The implementation came included with
+the new radix sort.
+</p>
 </li></ul>
 
 

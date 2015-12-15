@@ -12,5 +12,5 @@ Packaged: 2014-06-12 18:04:44 UTC; stephej1
 NeedsCompilation: yes
 Repository: CRAN
 Date/Publication: 2014-06-12 21:01:16
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-25 09:34:58 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-26 09:40:17 UTC; windows
 Archs: i386, x64

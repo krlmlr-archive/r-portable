@@ -228,6 +228,22 @@ CHANGES IN R-devel:
     * Avoid parallel dependency on stats for port choice and random
       number seeds.  (PR#16668)
 
+    * The radix sort algorithm and implementation from data.table
+      (forder) replaces the existing but limited radix (counting) sort
+      and adds a new method for order(). Contributed by Matthew Dowle
+      and Arun Srinivasan, the new algorithm supports logical, integer
+      (even with large values), real, and character vectors. It
+      outperforms all other methods, but there are some caveats (see
+      ?sort).
+
+    * The order() function gains a method argument for choosing between
+      "shell" and "radix".
+
+    * New function grouping returns a permutation that stably
+      rearranges data so that identical values are adjacent.  The
+      return value includes extra partitioning information on the
+      groups. The implementation came included with the new radix sort.
+
   UTILITIES:
 
     * R CMD check has a new option --ignore-vignettes for use with

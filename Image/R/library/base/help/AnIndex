@@ -695,6 +695,7 @@ grepl	grep
 grepRaw	grepRaw
 group generic	groupGeneric
 groupGeneric	groupGeneric
+grouping	grouping
 GSC	EnvVar
 gsub	grep
 gzcon	gzcon

@@ -221,6 +221,7 @@ gl                      Generate Factor Levels
 grep                    Pattern Matching and Replacement
 grepRaw                 Pattern Matching for Raw Vectors
 groupGeneric            S3 Group Generic Functions
+grouping                Grouping Permutation
 gzcon                   (De)compress I/O Through Connections
 hexmode                 Display Numbers in Hexadecimal
 iconv                   Convert Character Vector between Encodings

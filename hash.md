@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (194.3 MB, MD5 hash: `407be65284b4f91d90882f9e2356039a`, uncompressed 373.7 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (194.5 MB, MD5 hash: `98bb193c0e76970230dbac74120e0fd2`, uncompressed 383.5 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (195.9 MB, MD5 hash: `4a2f1bf1a7a0c39af789e53676b1499f`, uncompressed 404.8 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (196.8 MB, MD5 hash: `b2d0b98ee2723aa971bc64e0e88b5094`, uncompressed 379.7 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (197 MB, MD5 hash: `65dcd717c64f4262c146ed4c8ab96a00`, uncompressed 389.5 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (198.3 MB, MD5 hash: `8fe0fc5751415869e77e83fa809e8e55`, uncompressed 410.8 MB)
 
 
 
@@ -12,7 +12,7 @@ r-portable image information
 
 ### R version
 
-R Under development (unstable) (2016-01-25 r70000)
+R Under development (unstable) (2016-01-26 r70013)
 
 ### Package versions
 
@@ -56,13 +56,14 @@ R Under development (unstable) (2016-01-25 r70000)
 [`formatR`](http://cran.r-project.org/package=formatR) (1.2.1),
 [`git2r`](http://cran.r-project.org/package=git2r) (0.13.1),
 [`highr`](http://cran.r-project.org/package=highr) (0.5.1),
-[`httr`](http://cran.r-project.org/package=httr) (1.0.0),
+[`httr`](http://cran.r-project.org/package=httr) (1.1.0),
 [`jsonlite`](http://cran.r-project.org/package=jsonlite) (0.9.19),
 [`knitr`](http://cran.r-project.org/package=knitr) (1.12.3),
 [`magrittr`](http://cran.r-project.org/package=magrittr) (1.5),
 [`markdown`](http://cran.r-project.org/package=markdown) (0.7.7),
 [`memoise`](http://cran.r-project.org/package=memoise) (0.2.1),
 [`mime`](http://cran.r-project.org/package=mime) (0.4),
+[`openssl`](http://cran.r-project.org/package=openssl) (0.9.1),
 [`plyr`](http://cran.r-project.org/package=plyr) (1.8.3),
 [`praise`](http://cran.r-project.org/package=praise) (1.0.0),
 [`R6`](http://cran.r-project.org/package=R6) (2.1.2),

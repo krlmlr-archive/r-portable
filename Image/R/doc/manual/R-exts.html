@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-02-06).
+<!-- This manual is for R, version 3.3.0 Under development (2016-02-07).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-02-06).
+<p>This manual is for R, version 3.3.0 Under development (2016-02-07).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4375,8 +4375,8 @@ use GNU extensions in files <samp>Makevars.win</samp> or <samp>Makefile.win</sam
 </p>
 </li><li> Bash extensions also need to be avoided in shell scripts, including
 expressions in Makefiles (which are passed to the shell for processing).
-Some R platforms use strict<a name="DOCF61" href="#FOOT61"><sup>61</sup></a> Bourne
-shells: the R toolset on Windows and some Unix-alike OSes use
+Some R platforms use strict<a name="DOCF61" href="#FOOT61"><sup>61</sup></a>
+Bourne shells: the R toolset on Windows and some Unix-alike OSes use
 <code>ash</code> (<a href="https://en.wikipedia.org/wiki/Almquist_shell">https://en.wikipedia.org/wiki/Almquist_shell</a>),
 a rather minimal shell with few builtins.  Beware of assuming that all
 the POSIX command-line utilities are available, especially on Windows
@@ -15830,8 +15830,8 @@ part of Solaris Studio and available in other versions.</p>
 <h3><a name="FOOT61" href="#DOCF61">(61)</a></h3>
 <p>For example, <code>test</code>
 options <samp>-a</samp> and <samp>-e</samp> are not portable, and not supported
-in the AT&amp;T Bourne shell used on Solaris, even though they are in the
-2008 POSIX standard.  Nor does Solaris support &lsquo;<samp>$(<var>cmd</var>)</samp>&rsquo;.</p>
+in the AT&amp;T Bourne shell used on Solaris 10/11, even though they are in
+the 2008 POSIX standard.  Nor does Solaris support &lsquo;<samp>$(<var>cmd</var>)</samp>&rsquo;.</p>
 <h3><a name="FOOT62" href="#DOCF62">(62)</a></h3>
 <p>but
 note that <code>long long</code> is not a standard C++ type, and C++ compilers

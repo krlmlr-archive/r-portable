@@ -475,6 +475,11 @@ deprecated (with warnings from <code>configure</code>), but for now
 still accepted.
 </p>
 </li>
+<li> <p><code>configure</code> looks for <code>__cospi</code>, <code>__sinpi</code>
+and <code>__tanpi</code> and uses these if <code>cospi</code><em>etc</em> are
+not found.  (OS X is the main instance.)
+</p>
+</li>
 <li><p> (Windows) An experimental build of R based on <code>gcc</code>
 4.9.3 is now available on CRAN on the &lsquo;<span class="file">bin/windows/base/rdevel.html</span>&rsquo;
 snapshot page.  This build will require recompilation of at least those 

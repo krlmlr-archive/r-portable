@@ -1,12 +1,12 @@
 068c2f0744f0181a83aeadd88d80ed2a *CITATION
-640c35ee608c893ab98e577b51c842f0 *DESCRIPTION
+6cf763087fc86c81d933fc4add947832 *DESCRIPTION
 1a750dbf987ad834295900630e22098b *INDEX
 154bcd18397c1d76bb52d23b4be838b0 *Meta/Rd.rds
 8d82713b9b731e52c806548d2c421e90 *Meta/demo.rds
 eb5cecde37ed17d61637c6f0f708e1d6 *Meta/hsearch.rds
 489c976e16207a77c36e21b945921e6f *Meta/links.rds
 0f03e4d75bffd0fdf40bd20221195b65 *Meta/nsInfo.rds
-79cd50b223c3353f484b855446646d0e *Meta/package.rds
+5729938fcee7b81b63701656a3e129ac *Meta/package.rds
 95638e2df83679dc85784978c2c8ac26 *Meta/vignette.rds
 e8e5483e00338ed1a9ae3664b69bc276 *NAMESPACE
 a70f6f982a3c3cc343b5db3f0bb90949 *NEWS.Rd
@@ -83,9 +83,9 @@ e339b22d31e9ecdfdece127da3addb3d *examples/knitr-twocolumn.Rnw
 79662535f981d626ef48520494b1888f *examples/upload-github.R
 56a99ca0b642054067df32ef24521d4e *help/AnIndex
 d47f3007831219d37090df965d468487 *help/aliases.rds
-53588c0e35c062b029d6d90ca29ec377 *help/knitr.rdb
-08cc4330ea85016723e396a86bfad61d *help/knitr.rdx
-99b246d1595c001eb145d362c5fdb0d3 *help/paths.rds
+6a31106b8cbc4750729bc8d3edd58aa3 *help/knitr.rdb
+da873bf726692efe32bedb48ade72c24 *help/knitr.rdx
+b0ee039502311f81752565e0eba6afef *help/paths.rds
 d6f2f2d37279d3a8d364a268a6aff16a *html/00Index.html
 0629445e5f3de06acbaf6e4013c7deca *html/R.css
 a61df3296e8e6e1539ce106821e325e3 *misc/R.css

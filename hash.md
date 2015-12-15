@@ -2,9 +2,9 @@
 r-portable image information 
 ==========
 
-- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (205.6 MB, MD5 hash: `09896b25982b02009721b3ef4e12723a`, uncompressed 476 MB)
-- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (206.1 MB, MD5 hash: `bbba1520341d34e4fd448f84c26216c2`, uncompressed 492.1 MB)
-- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (208 MB, MD5 hash: `9b6698b13d8f2575be98646ba190da9f`, uncompressed 529 MB)
+- [R.tar.gz](https://rportable.blob.core.windows.net/r-portable/master/R.tar.gz) (206.1 MB, MD5 hash: `aa1191b6fe640d7834a3d1bf16318ca7`, uncompressed 485.6 MB)
+- [R.iso.gz](https://rportable.blob.core.windows.net/r-portable/master/R.iso.gz) (206.7 MB, MD5 hash: `0bd8e2f565950119895bcb968f89c26e`, uncompressed 502.2 MB)
+- [R.vhd.gz](https://rportable.blob.core.windows.net/r-portable/master/R.vhd.gz) (208.6 MB, MD5 hash: `0b9f17494d68412586b2fc523d658b91`, uncompressed 543.1 MB)
 
 
 
@@ -48,7 +48,7 @@ R Under development (unstable) (2015-12-26 r69814)
 [`spatial`](http://cran.r-project.org/package=spatial) (7.3-11),
 [`survival`](http://cran.r-project.org/package=survival) (2.38-3) 
 ####  other 
-[`BH`](http://cran.r-project.org/package=BH) (1.58.0-1),
+[`BH`](http://cran.r-project.org/package=BH) (1.60.0-1),
 [`brew`](http://cran.r-project.org/package=brew) (1.0-6),
 [`crayon`](http://cran.r-project.org/package=crayon) (1.3.1),
 [`curl`](http://cran.r-project.org/package=curl) (0.9.4),

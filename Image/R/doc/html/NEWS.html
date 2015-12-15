@@ -323,9 +323,9 @@ choice and random number seeds.  (<a href="https://bugs.R-project.org/bugzilla3/
 </li>
 <li><p> The radix sort algorithm and implementation from data.table
 (forder) replaces the existing but limited radix (counting) sort
-and adds a new method for <code>order()</code>. Contributed by Matt
+and adds a new method for <code>order()</code>.  Contributed by Matt
 Dowle and Arun Srinivasan, the new algorithm supports logical,
-integer (even with large values), real, and character vectors. It
+integer (even with large values), real, and character vectors.  It
 outperforms all other methods, but there are some caveats (see
 <code>?sort</code>).
 </p>
@@ -337,12 +337,24 @@ for choosing between <code>"shell"</code> and <code>"radix"</code>.
 <li><p> New function <code>grouping</code> returns a permutation that
 stably rearranges data so that identical values are
 adjacent.  The return value includes extra partitioning
-information on the groups. The implementation came included with
+information on the groups.  The implementation came included with
 the new radix sort.
 </p>
 </li>
-<li> <p><code>rhyper(nn, m,n,k)</code> no longer returns <code>NA</code> when
+<li> <p><code>rhyper(nn, m, n, k)</code> no longer returns <code>NA</code> when
 one of the three parameters exceeds the maximal integer.
+</p>
+</li>
+<li> <p><code>switch()</code> now warns when no alternatives are provided.
+</p>
+</li>
+<li> <p><code>parallel::detectCores()</code> now has default <code>logical
+	= TRUE)</code> on all platforms &ndash; as this was the default on Windows,
+this change only affects Sparc Solaris.
+</p>
+<p>Option <code>logical = FALSE</code> is now supported on Linux and recent
+versions of OS X (for the latter, thanks to a suggestion of Kyaw
+Sint).
 </p>
 </li></ul>
 
@@ -358,13 +370,16 @@ one of the three parameters exceeds the maximal integer.
 whose <span class="samp">VignetteBuilder</span> package is not available.
 </p>
 </li>
-<li> <p><code>R CMD check --as-cran</code> now checks code usage (via
-<a href="https://CRAN.R-project.org/package=codetools"><span class="pkg">codetools</span></a>) with only the base package attached, so that
-functions from default packages other than base which are used in
-the package code but not imported are reported as undefined
-globals.
+<li> <p><code>R CMD check</code> now by default checks code usage
+(<em>via</em> <a href="https://CRAN.R-project.org/package=codetools"><span class="pkg">codetools</span></a>) with only the base package
+attached.  Functions from default packages other than <span class="pkg">base</span>
+which are used in the package code but not imported are reported
+as undefined globals, with a suggested addiiton to the
+<code>NAMESPACE</code> file.
 </p>
-<p>It now also checks DOIs in package &lsquo;<span class="file">CITATION</span>&rsquo; and Rd files.
+</li>
+<li> <p><code>R CMD check --as-cran</code> now also checks DOIs in
+package &lsquo;<span class="file">CITATION</span>&rsquo; and Rd files.
 </p>
 </li>
 <li> <p><code>R CMD Rdconv</code> and <code>R CMD Rd2pdf</code> each have
@@ -372,7 +387,11 @@ a new option <span class="option">--RdMacros=pkglist</span> which allows Rd macr
 to be specified before processing.
 </p>
 </li>
-<li> <p><code>switch()</code> now warns when no alternatives are provided,
+<li> <p><code>R CMD check</code> will leave a log file
+&lsquo;<span class="file">build_vignettes.log</span>&rsquo; from the re-building of vignettes in
+the &lsquo;<span class="file">.Rcheck</span>&rsquo; directory if there is a problem, and always if
+environment variable <span class="env">_R_CHECK_ALWAYS_LOG_VIGNETTE_OUTPUT_</span> is
+set to a true value.
 </p>
 </li></ul>
 

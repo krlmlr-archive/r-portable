@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-02-04).
+<!-- This manual is for R, version 3.3.0 Under development (2016-02-06).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -288,7 +288,7 @@ Next: <a href="#R-Internal-Structures" accesskey="n" rel="next">R Internal Struc
 <p>This is a guide to the internal structures of R and coding standards for
 the core team working on R itself.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-02-04).
+<p>This manual is for R, version 3.3.0 Under development (2016-02-06).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -4617,13 +4617,15 @@ Default: false (but true for CRAN submission checks).
 <a name="index-_005fR_005fCHECK_005fALWAYS_005fLOG_005fVIGNETTE_005fOUTPUT_005f"></a>
 </dt>
 <dd><p>By default the output from running the R code in the vignettes is
-kept only if there is an error.
+kept only if there is an error.  As from R 3.3.0 this also applies to
+the <samp>build_vignettes.log</samp> log from the re-building of vignettes.
 Default: false.
 </p></dd>
 <dt><code>_R_CHECK_CLEAN_VIGN_TEST_</code>
 <a name="index-_005fR_005fCHECK_005fCLEAN_005fVIGN_005fTEST_005f"></a>
 </dt>
-<dd><p>Should the <samp>vign_test</samp> directory be removed if the test is successful?
+<dd><p>Should the <samp>vign_test</samp> directory be removed if the test is
+successful?
 Default: true.
 </p></dd>
 <dt><code>_R_CHECK_REPLACING_IMPORTS_</code>
@@ -4840,7 +4842,7 @@ Default: true (and true for CRAN submission checks).
 </dt>
 <dd><p>If set, check code usage (via <a href="https://CRAN.R-project.org/package=codetools"><strong>codetools</strong></a>) with only the base
 package attached.
-Default: false (but true for CRAN submission checks).
+Default: true.
 </p>
 </dd>
 <dt><code>_R_CHECK_EXIT_ON_FIRST_ERROR_</code>

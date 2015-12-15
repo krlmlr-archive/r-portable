@@ -490,10 +490,10 @@ one-argument version of <code>R_orderVector()</code>.
 <li><p> When <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers such as &lsquo;<span class="file">R.h</span>&rsquo; and &lsquo;<span class="file">Rmath.h</span>&rsquo; are
 called from C++ code in packages they include the C++ versions of
 system headers such as &lsquo;<span class="file">&lt;cmath&gt;</span>&rsquo; rather than the legacy
-headers such as &lsquo;<span class="file">&lt;math.h&gt;</span>&rsquo;.  (Header &lsquo;<span class="file">Rinternals.h</span>&rsquo;
-already did, and inclusion of system headers can still be
-circumvented by defining <code>NO_C_HEADERS</code>, including as from
-this version for &lsquo;<span class="file">Rinternals.h</span>&rsquo;.)
+headers such as &lsquo;<span class="file">&lt;math.h&gt;</span>&rsquo;.  (Headers &lsquo;<span class="file">Rinternals.h</span>&rsquo; and
+&lsquo;<span class="file">Rinterface.h</span>&rsquo; already did, and inclusion of system headers
+can still be circumvented by defining <code>NO_C_HEADERS</code>,
+including as from this version for those two headers.)
 </p>
 <p>The manual has long said that <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers should <b>not</b> be
 included within an <code>extern "C"</code> block, and almost all the
@@ -686,6 +686,14 @@ destroyed properly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?
 </li>
 <li> <p><code>withCallingHandler()</code> now (again) handles warnings
 even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16111">PR#16111</a>)
+</p>
+</li>
+<li> <p><code>deparse(..., control = "quoteExpressions")</code>
+incorrectly quoted empty expressions.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16686">PR#16686</a>)
+</p>
+</li>
+<li> <p><code>format()</code>ting datetime objects (<code>"POSIX[cl]?t"</code>)
+could segfault or recycle wrongly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16685">PR#16685</a>)
 </p>
 </li></ul>
 

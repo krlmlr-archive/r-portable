@@ -11,4 +11,4 @@ References: John M. Chambers (2008) ``Software for Data Analysis:
         Programming with R''; Springer NY.
 License: Part of R 3.3.0
 Suggests: codetools
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-29 03:31:44 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-30 03:32:24 UTC; windows

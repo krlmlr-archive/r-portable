@@ -336,9 +336,10 @@ CHANGES IN R-devel:
     * When R headers such as R.h and Rmath.h are called from C++ code
       in packages they include the C++ versions of system headers such
       as <cmath> rather than the legacy headers such as <math.h>.
-      (Header Rinternals.h already did, and inclusion of system headers
-      can still be circumvented by defining NO_C_HEADERS, including as
-      from this version for Rinternals.h.)
+      (Headers Rinternals.h and Rinterface.h already did, and inclusion
+      of system headers can still be circumvented by defining
+      NO_C_HEADERS, including as from this version for those two
+      headers.)
 
       The manual has long said that R headers should *not* be included
       within an extern "C" block, and almost all the packages affected
@@ -466,6 +467,12 @@ CHANGES IN R 3.2.3 patched:
 
     * withCallingHandler() now (again) handles warnings even during S4
       generic's argument evaluation.  (PR#16111)
+
+    * deparse(..., control = "quoteExpressions") incorrectly quoted
+      empty expressions.  (PR#16686)
+
+    * format()ting datetime objects ("POSIX[cl]?t") could segfault or
+      recycle wrongly.  (PR#16685)
 
 CHANGES IN R 3.2.3:
 

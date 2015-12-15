@@ -230,8 +230,8 @@ CHANGES IN R-devel:
 
     * The radix sort algorithm and implementation from data.table
       (forder) replaces the existing but limited radix (counting) sort
-      and adds a new method for order(). Contributed by Matthew Dowle
-      and Arun Srinivasan, the new algorithm supports logical, integer
+      and adds a new method for order(). Contributed by Matt Dowle and
+      Arun Srinivasan, the new algorithm supports logical, integer
       (even with large values), real, and character vectors. It
       outperforms all other methods, but there are some caveats (see
       ?sort).
@@ -333,16 +333,19 @@ CHANGES IN R-devel:
     * New API call R_orderVector1(), a faster one-argument version of
       R_orderVector().
 
-    * There is a new macro, USE_CXX_HEADERS, which if set causes R
-      headers such as R.h and Rmath.h when called from C++ code in
-      packages to include the C++ versions of system headers such as
-      <cmath> rather than the C versions.  (Header Rinternals.h always
-      did.)
+    * When R headers such as R.h and Rmath.h are called from C++ code
+      in packages they include the C++ versions of system headers such
+      as <cmath> rather than the legacy headers such as <math.h>.
+      (Header Rinternals.h already did, and inclusion of system headers
+      can still be circumvented by defining NO_C_HEADERS, including as
+      from this version for Rinternals.h.)
 
-      This is currently optional but is intended to become the default
-      before release.  The manual has long said that R headers should
-      *not* be included within an extern "C" block, and this change
-      increases the chance of compilation errors if that is done.
+      The manual has long said that R headers should *not* be included
+      within an extern "C" block, and almost all the packages affected
+      by this change are doing so.
+
+    * Including header S.h from C++ code will fail on some platforms,
+      and so gives a compilation warning on all.
 
   BUG FIXES:
 
@@ -378,9 +381,6 @@ CHANGES IN R-devel:
 
     * Array subsetting now keeps names(dim(.)).
 
-    * withCallingHandler() now (again) handles warnings even during S4
-      generic's argument evaluation.  (PR#16111)
-
     * Blocking socket connection selection recovers more gracefully on
       signal interrupts.
 
@@ -388,11 +388,10 @@ CHANGES IN R-devel:
       better in borderline integer cases, but may change the names
       assigned.  (PR#16666)
 
-    * url connections with method = "libcurl" are destroyed properly.
-      (PR#16681)
-
     * dummy.coef.lm() now works in more cases, thanks to a proposal by
-      Werner Stahel.  (PR#16665)
+      Werner Stahel (PR#16665).  In addition, it now works for
+      multivariate linear models ("mlm", manova) thanks to a propsal by
+      Daniel Wollschlaeger.
 
 CHANGES IN R 3.2.3 patched:
 
@@ -424,6 +423,9 @@ CHANGES IN R 3.2.3 patched:
     * The make macro AWK which is long unused by R itself but recorded
       in file etc/Makeconf is deprecated and will be removed in R
       3.3.0.
+
+      The C header file S.h is no longer documented: its use should be
+      replaced by R.h.
 
   BUG FIXES:
 
@@ -458,6 +460,12 @@ CHANGES IN R 3.2.3 patched:
     * as.data.frame.vector(*, row.names=*) no longer produces
       'corrupted' data frames from row names of incorrect length, but
       rather warns about them.  This will become an error.
+
+    * url connections with method = "libcurl" are destroyed properly.
+      (PR#16681)
+
+    * withCallingHandler() now (again) handles warnings even during S4
+      generic's argument evaluation.  (PR#16111)
 
 CHANGES IN R 3.2.3:
 

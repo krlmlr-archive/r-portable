@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-01-27).
+<!-- This manual is for R, version 3.3.0 Under development (2016-01-29).
 
 Copyright (C) 2001-2015 R Core Team
 
@@ -336,7 +336,7 @@ Next: <a href="#Obtaining-R" accesskey="n" rel="next">Obtaining R</a> &nbsp; [<a
 
 <p>This is a guide to installation and administration for R.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-01-27).
+<p>This manual is for R, version 3.3.0 Under development (2016-01-29).
 </p>
 <p>Copyright &copy; 2001&ndash;2015 R Core Team
 </p>
@@ -6258,54 +6258,11 @@ Next: <a href="#New-platforms" accesskey="n" rel="next">New platforms</a>, Previ
 <a name="Cygwin-1"></a>
 <h3 class="section">C.8 Cygwin</h3>
 
-<p>The Cygwin emulation layer on Windows can be treated as a Unix-alike OS.
-This is unsupported, but experiments have been conducted and a few
-workarounds added.  Cygwin has not been tested for R 3.0.0 or later.
+<p>The 32-bit version has never worked well enough to pass R&rsquo;s
+<code>make check</code>, and residual support from earlier experiments was
+removed in R 3.3.0.
 </p>
-<p>The 64-bit version is completely unsupported.  The 32-bit version has
-never worked well enough to pass R&rsquo;s <code>make check</code>.
-</p>
-<p>R requires C99 complex type support, which is available as from
-Cygwin 1.7.8 (March 2011).  However, the (then) implementation of
-<code>cacos</code> gave incorrect results, so we undefine <code>HAVE_CACOS</code>
-in <samp>src/main/complex.c</samp> on that platform.  It has been reported
-that some C99 long double mathematical functions are missing, so
-configuring with <samp>--disable-long-double</samp> was required.
-</p>
-<p>Only building as a shared library can possibly work,<a name="DOCF63" href="#FOOT63"><sup>63</sup></a> so use e.g.
-</p>
-<div class="example">
-<pre class="example">./configure --disable-nls --enable-R-shlib FLIBS=-lgfortran
-make
-</pre></div>
-
-<p>Enabling NLS does work if required, although adding
-<samp>--with-included-gettext</samp> is preferable.  You will see many
-warnings about the use of auto-import.  Setting &lsquo;<samp>FLIBS</samp>&rsquo; explicitly
-seems needed currently as the auto-detection gives an incorrect value.
-</p>
-<p>You will need the <strong>tetex-extra</strong> Cygwin package to build
-<samp>NEWS.pdf</samp> and the vignettes.
-</p>
-<p>Note that this gives you a command-line application using <code>readline</code>
-for command editing.  The &lsquo;<samp>X11</samp>&rsquo; graphics device will work if a
-suitable X server is running, and the standard Unix-alike ways of
-installing source packages work.  There was a bug in the
-<samp>/usr/lib/tkConfig.sh</samp> script in the version we looked at, which
-needs to have
-</p>
-<div class="example">
-<pre class="example">TK_LIB_SPEC='-ltk84'
-</pre></div>
-
-<p>The overhead of using shell scripts makes this noticeably slower than a
-native build of R on Windows.
-</p>
-<p>Even when R could be built, not all the tests passed: there were
-incorrect results from wide-character regular expressions code and from
-sourcing CR-delimited files.
-</p>
-<p>Do not use Cygwin&rsquo;s BLAS library: it is known to give incorrect results.
+<p>The 64-bit version is completely unsupported.
 </p>
 <hr>
 <a name="New-platforms"></a>
@@ -6392,7 +6349,7 @@ will not need to build add-on packages from source; see <a href="#Add_002don-pac
 </p>
 <p>We have found that the build process for R is quite sensitive to
 the choice of tools: please follow our instructions <strong>exactly</strong>,
-even to the choice of particular versions of the tools.<a name="DOCF64" href="#FOOT64"><sup>64</sup></a>  The build process for add-on packages is somewhat more
+even to the choice of particular versions of the tools.<a name="DOCF63" href="#FOOT63"><sup>63</sup></a>  The build process for add-on packages is somewhat more
 forgiving, but we recommend using the exact toolset at first, and only
 substituting other tools once you are familiar with the process.
 </p>
@@ -6402,7 +6359,7 @@ the R mailing lists unless you have followed all the prescriptions.</em>
 </p>
 <p>We have collected most of the necessary tools (unfortunately not all,
 due to license or size limitations) into an executable installer
-named<a name="DOCF65" href="#FOOT65"><sup>65</sup></a>  <samp>Rtools31.exe</samp>,
+named<a name="DOCF64" href="#FOOT64"><sup>64</sup></a>  <samp>Rtools31.exe</samp>,
 available from <a href="https://CRAN.R-project.org/bin/windows/Rtools/">https://CRAN.R-project.org/bin/windows/Rtools/</a>. You
 should download and run it, choosing the default &ldquo;Package authoring
 installation&rdquo; to build add-on packages, or the &ldquo;full installation&rdquo; if
@@ -6445,7 +6402,7 @@ use filepaths containing spaces: you can always use the short forms
 
 <p>It is essential that the directory containing the command line tools
 comes first or second in the path: there are typically like-named
-tools<a name="DOCF66" href="#FOOT66"><sup>66</sup></a> in other directories, and they will <strong>not</strong>
+tools<a name="DOCF65" href="#FOOT65"><sup>65</sup></a> in other directories, and they will <strong>not</strong>
 work. The ordering of the other directories is less important, but if in
 doubt, use the order above.
 </p>
@@ -6580,7 +6537,7 @@ project&rsquo;s runtime.
 </p>
 <p>This toolchain uses <em>multilib</em>: that is there is a single front-end
 such as <code>gcc.exe</code> for each of the compilers and 32-bit (the
-default) and 64-bit compilation are selected by the flags<a name="DOCF67" href="#FOOT67"><sup>67</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
+default) and 64-bit compilation are selected by the flags<a name="DOCF66" href="#FOOT66"><sup>66</sup></a>  <samp>-m32</samp> and <samp>-m64</samp>
 respectively.  The tools are all 32-bit Windows executables and should
 be able to run on any current version of Windows&mdash;however you do need a
 64-bit version of Windows to build 64-bit R as the build process runs
@@ -7192,19 +7149,15 @@ details see <a href="http://www.macstrategy.com/article.php?3">http://www.macstr
 <p>including <code>gcc</code> for
 Sparc from Oracle.</p>
 <h3><a name="FOOT63" href="#DOCF63">(63)</a></h3>
-<p>Windows
-DLLs need to have all links resolved at build time and so cannot resolve
-against <samp>R.bin</samp>.</p>
-<h3><a name="FOOT64" href="#DOCF64">(64)</a></h3>
 <p>For
 example, the Cygwin version of <code>make 3.81</code> fails to work
 correctly.</p>
-<h3><a name="FOOT65" href="#DOCF65">(65)</a></h3>
+<h3><a name="FOOT64" href="#DOCF64">(64)</a></h3>
 <p>for R 3.0.0 and later.</p>
-<h3><a name="FOOT66" href="#DOCF66">(66)</a></h3>
+<h3><a name="FOOT65" href="#DOCF65">(65)</a></h3>
 <p>such as <code>sort</code>, <code>find</code> and perhaps
 <code>make</code>.</p>
-<h3><a name="FOOT67" href="#DOCF67">(67)</a></h3>
+<h3><a name="FOOT66" href="#DOCF66">(66)</a></h3>
 <p>these
 flags apply to the compilers: some of the tools use different flags.
 32-bit builds are the default.</p>

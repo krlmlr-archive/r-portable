@@ -323,7 +323,7 @@ choice and random number seeds.  (<a href="https://bugs.R-project.org/bugzilla3/
 </li>
 <li><p> The radix sort algorithm and implementation from data.table
 (forder) replaces the existing but limited radix (counting) sort
-and adds a new method for <code>order()</code>. Contributed by Matthew
+and adds a new method for <code>order()</code>. Contributed by Matt
 Dowle and Arun Srinivasan, the new algorithm supports logical,
 integer (even with large values), real, and character vectors. It
 outperforms all other methods, but there are some caveats (see
@@ -487,16 +487,21 @@ first argument has gained a <code>const</code> qualifier.
 one-argument version of <code>R_orderVector()</code>.
 </p>
 </li>
-<li><p> There is a new macro, <code>USE_CXX_HEADERS</code>, which if set
-causes <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers such as &lsquo;<span class="file">R.h</span>&rsquo; and &lsquo;<span class="file">Rmath.h</span>&rsquo; when
-called from C++ code in packages to include the C++ versions of
-system headers such as &lsquo;<span class="file">&lt;cmath&gt;</span>&rsquo; rather than the C versions.
-(Header &lsquo;<span class="file">Rinternals.h</span>&rsquo; always did.)
+<li><p> When <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers such as &lsquo;<span class="file">R.h</span>&rsquo; and &lsquo;<span class="file">Rmath.h</span>&rsquo; are
+called from C++ code in packages they include the C++ versions of
+system headers such as &lsquo;<span class="file">&lt;cmath&gt;</span>&rsquo; rather than the legacy
+headers such as &lsquo;<span class="file">&lt;math.h&gt;</span>&rsquo;.  (Header &lsquo;<span class="file">Rinternals.h</span>&rsquo;
+already did, and inclusion of system headers can still be
+circumvented by defining <code>NO_C_HEADERS</code>, including as from
+this version for &lsquo;<span class="file">Rinternals.h</span>&rsquo;.)
 </p>
-<p>This is currently optional but is intended to become the default
-before release.  The manual has long said that <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers should
-<b>not</b> be included within an <code>extern "C"</code> block, and this
-change increases the chance of compilation errors if that is done.
+<p>The manual has long said that <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> headers should <b>not</b> be
+included within an <code>extern "C"</code> block, and almost all the
+packages affected by this change are doing so.
+</p>
+</li>
+<li><p> Including header &lsquo;<span class="file">S.h</span>&rsquo; from C++ code will fail on some
+platforms, and so gives a compilation warning on all.
 </p>
 </li></ul>
 
@@ -553,10 +558,6 @@ absolute value less than or equal to 1. (<a href="https://bugs.R-project.org/bug
 <li><p> Array subsetting now keeps <code>names(dim(.))</code>.
 </p>
 </li>
-<li> <p><code>withCallingHandler()</code> now (again) handles warnings
-even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16111">PR#16111</a>)
-</p>
-</li>
 <li><p> Blocking socket connection selection recovers more
 gracefully on signal interrupts.
 </p>
@@ -566,12 +567,11 @@ gracefully on signal interrupts.
 may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16666">PR#16666</a>)
 </p>
 </li>
-<li> <p><code>url</code> connections with <code>method = "libcurl"</code> are
-destroyed properly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16681">PR#16681</a>)
-</p>
-</li>
 <li> <p><code>dummy.coef.lm()</code> now works in more cases, thanks to a
-proposal by Werner Stahel.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>)
+proposal by Werner Stahel (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>).  In addition, it now works
+for multivariate linear models (<code>"mlm"</code>, <code>manova</code>)
+thanks to a propsal by Daniel Wollschlaeger.
+
 </p>
 </li></ul>
 
@@ -625,6 +625,9 @@ deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</s
 <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> itself but recorded in file &lsquo;<span class="file">etc/Makeconf</span>&rsquo; is deprecated
 and will be removed in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.3.0.
 </p>
+<p>The C header file &lsquo;<span class="file">S.h</span>&rsquo; is no longer documented: its use
+should be replaced by &lsquo;<span class="file">R.h</span>&rsquo;.
+</p>
 </li></ul>
 
 
@@ -675,6 +678,14 @@ Lukas Stadler; additional fixes included as well).
 <li> <p><code>as.data.frame.vector(*, row.names=*)</code> no longer
 produces &lsquo;corrupted&rsquo; data frames from row names of incorrect
 length, but rather warns about them.  This will become an error.
+</p>
+</li>
+<li> <p><code>url</code> connections with <code>method = "libcurl"</code> are
+destroyed properly. (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16681">PR#16681</a>)
+</p>
+</li>
+<li> <p><code>withCallingHandler()</code> now (again) handles warnings
+even during S4 generic's argument evaluation.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16111">PR#16111</a>)
 </p>
 </li></ul>
 

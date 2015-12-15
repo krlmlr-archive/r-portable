@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-01-27).
+<!-- This manual is for R, version 3.3.0 Under development (2016-01-29).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-01-27).
+<p>This manual is for R, version 3.3.0 Under development (2016-01-29).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -9853,27 +9853,27 @@ possible.  Examples have been seen where merely loading a DLL that
 contained calls to C++ I/O upset R&rsquo;s own C I/O (for example by
 resetting buffers on open files).
 </p>
-<p>Most R header files can be included within C++ programs, and they
+<p>Most R header files can be included within C++ programs but they
 should <strong>not</strong> be included within an <code>extern &quot;C&quot;</code> block (as
 they include system headers<a name="DOCF106" href="#FOOT106"><sup>106</sup></a>).  It may not be possible
-to include some R headers as they in turn include C header files that
-may cause conflicts&mdash;if this happens, try defining &lsquo;<samp>NO_C_HEADERS</samp>&rsquo;
-before including the R headers, and include C++ versions (such as
-&lsquo;<samp>cmath</samp>&rsquo; and &lsquo;<samp>cstdlib</samp>&rsquo;) of the appropriate headers yourself
-before the R headers. (Headers <samp>R.h</samp> and <samp>Rmath.h</samp> support
-&lsquo;<samp>NO_C_HEADERS</samp>&rsquo;: <samp>S.h</samp> does not.  Nor does <samp>Rinternals.h</samp>
-but that switches to the equivalent C++ headers when included from C++.)
+to include some R headers as they in turn include system header files
+that may cause conflicts&mdash;if this happens, try defining
+&lsquo;<samp>NO_C_HEADERS</samp>&rsquo; before including the R headers, and include C++
+versions (such as &lsquo;<samp>cmath</samp>&rsquo; and &lsquo;<samp>cstdlib</samp>&rsquo;) of the appropriate
+headers yourself before the R headers. (Headers <samp>R.h</samp> and
+<samp>Rmath.h</samp> support &lsquo;<samp>NO_C_HEADERS</samp>&rsquo;: the legacy header <samp>S.h</samp>
+does not.  Header <samp>Rinternals.h</samp> does as from R 3.3.0.)
 </p>
-<p>By default header <samp>Rmath.h</samp> includes <samp>math.h</samp>.  Header
-<samp>R.h</samp> includes
+<p>By default header <samp>Rmath.h</samp> includes <samp>math.h</samp> or <samp>cmath</samp>.
+Header <samp>R.h</samp> includes
 </p>
 <div class="example">
 <pre class="example">limits.h math.h stddef.h stdio.h stdlib.h string.h
 </pre></div>
 
-<p>directly or indirectly, and either <samp>stddef.h</samp> or <samp>cstddef</samp>
-needs to be included before <samp>R.h</samp> if &lsquo;<samp>NO_C_HEADERS</samp>&rsquo; is
-defined.
+<p>or their C++ equivalents directly or indirectly, and either
+<samp>stddef.h</samp> or <samp>cstddef</samp> needs to be included before <samp>R.h</samp>
+if &lsquo;<samp>NO_C_HEADERS</samp>&rsquo; is defined.
 </p>
 <hr>
 <a name="Fortran-I_002fO"></a>
@@ -12039,19 +12039,8 @@ be changed with considerable notice.
 there that can be included too, but many of the features they contain
 should be regarded as undocumented and unstable.
 </p>
-<p>An alternative is to include the header file <samp>S.h</samp>, which may be
-useful when porting code from S.  This includes rather less than
-<samp>R.h</samp>, and has some extra compatibility definitions (for example
-the <code>S_complex</code> type from S).
-</p>
-<p>The defines used for compatibility with S sometimes causes
-conflicts (notably with Windows headers), and the known
-problematic defines can be removed by defining <code>STRICT_R_HEADERS</code>.
-</p>
 <p>Most of these header files, including all those included by <samp>R.h</samp>,
-can be used from C++ code.  Some others need to be included within an
-<code>extern &quot;C&quot;</code> declaration, and for clarity this is advisable for all
-R header files.
+can be used from C++ code.
 </p>
 <blockquote>
 <p><b>Note:</b> Because R re-maps many of its external names to avoid clashes with

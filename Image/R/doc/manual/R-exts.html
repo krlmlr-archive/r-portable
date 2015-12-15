@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- This manual is for R, version 3.3.0 Under development (2016-01-02).
+<!-- This manual is for R, version 3.3.0 Under development (2016-01-03).
 
 Copyright (C) 1999-2015 R Core Team
 
@@ -432,7 +432,7 @@ Next: <a href="#Acknowledgements" accesskey="n" rel="next">Acknowledgements</a> 
 R add-on packages, writing R documentation, R&rsquo;s system and
 foreign language interfaces, and the R <acronym>API</acronym>.
 </p>
-<p>This manual is for R, version 3.3.0 Under development (2016-01-02).
+<p>This manual is for R, version 3.3.0 Under development (2016-01-03).
 </p>
 <p>Copyright &copy; 1999&ndash;2015 R Core Team
 </p>
@@ -13401,12 +13401,8 @@ platform-specific macros that are mainly for use in other header files.
 The macro <code>WORDS_BIGENDIAN</code> is defined on
 big-endian<a name="DOCF114" href="#FOOT114"><sup>114</sup></a>
 systems (e.g. most OSes on Sparc and PowerPC hardware) and not on
-little-endian systems (such as <code>i686</code> and <code>x86_64</code> on all
-OSes, and Linux on Alpha and Itanium).  It can be useful when
-manipulating binary files.  The macro <code>SUPPORT_OPENMP</code> is defined
-on suitable systems and can be used in conjunction with the
-<code>SUPPORT_OPENMP_*</code> macros in packages that want to make use of
-OpenMP.
+little-endian systems (nowadays all the commoner R platforms).  It
+can be useful when manipulating binary files.
 </p>
 <p>Header file <samp>Rversion.h</samp> (<strong>not</strong> included by <samp>R.h</samp>)
 defines a macro <code>R_VERSION</code> giving the version number encoded as an
@@ -13427,8 +13423,8 @@ header file <samp>Rversion.h</samp> for their format.  Note that the minor
 version includes the patchlevel (as in &lsquo;<samp>2.2</samp>&rsquo;).
 </p>
 <p>Packages which use <code>alloca</code> need to ensure it is defined: as it is
-neither C99 nor POSIX there is no standard way to do so.  As from R
-3.2.2 one can use
+part of neither C nor POSIX there is no standard way to do so.  As
+from R 3.2.2 one can use
 </p>
 <div class="example">
 <pre class="example">#include &lt;Rconfig.h&gt; // for HAVE_ALLOCA_H
@@ -13457,11 +13453,11 @@ Next: <a href="#Controlling-visibility" accesskey="n" rel="next">Controlling vis
 <h3 class="section">6.14 Inlining C functions</h3>
 <a name="index-R_005fINLINE"></a>
 
-<p>The C99 keyword <code>inline</code> should be recognized by all compilers now
-used to build R.  Portable code which might be used with earlier
-versions of R can be written using the macro <code>R_INLINE</code> (defined
-in file <samp>Rconfig.h</samp> included by <samp>R.h</samp>), as for example from
-package <a href="https://CRAN.R-project.org/package=cluster"><strong>cluster</strong></a>
+<p>The C99 keyword <code>inline</code> should be recognized by all compilers
+nowadays used to build R.  Portable code which might be used with
+earlier versions of R can be written using the macro <code>R_INLINE</code>
+(defined in file <samp>Rconfig.h</samp> included by <samp>R.h</samp>), as for
+example from package <a href="https://CRAN.R-project.org/package=cluster"><strong>cluster</strong></a>
 </p>
 <div class="example">
 <pre class="example">#include &lt;R.h&gt;

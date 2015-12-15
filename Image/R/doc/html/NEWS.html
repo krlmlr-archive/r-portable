@@ -288,7 +288,7 @@ included as they are used by current packages.)
 </li>
 <li> <p><code>tapply()</code> has been made considerably more efficient
 without changing functionality, thanks to proposals from Peter
-Haverty and Suharto Anggono.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16488">PR#16488</a>)
+Haverty and Suharto Anggono.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16640">PR#16640</a>)
 </p>
 </li></ul>
 
@@ -415,10 +415,6 @@ first argument has gained a <code>const</code> qualifier.
 
 </p>
 </li>
-<li><p> Use of <span class="samp">SUPPORT_OPENMP</span> from header &lsquo;<span class="file">Rconfig.h</span>&rsquo; is
-deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</span>.
-</p>
-</li>
 <li> <p><code>R_GE_version</code> has been increased to <code>11</code>.
 </p>
 </li>
@@ -506,6 +502,20 @@ package.
 </li>
 <li> <p><code>shQuote()</code> gains <code>type = "cmd2"</code> for quoting
 in <code>cmd.exe</code> in Windows.  (Response to <a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16636">PR#16636</a>.)
+</p>
+</li></ul>
+
+
+
+
+<h4>DEPRECATED AND DEFUNCT</h4>
+
+
+<ul>
+<li><p> Use of <span class="samp">SUPPORT_OPENMP</span> from header &lsquo;<span class="file">Rconfig.h</span>&rsquo; is
+deprecated in favour of the standard OpenMP define <span class="samp">_OPENMP</span>.
+</p>
+<p>(This has been the recommendation in the manual for a while now.)
 </p>
 </li></ul>
 

@@ -202,7 +202,7 @@ CHANGES IN R-devel:
 
     * tapply() has been made considerably more efficient without
       changing functionality, thanks to proposals from Peter Haverty
-      and Suharto Anggono.  (PR#16488)
+      and Suharto Anggono.  (PR#16640)
 
   UTILITIES:
 
@@ -280,9 +280,6 @@ CHANGES IN R-devel:
 
       Code using it will need to be reinstalled. (PR#16470)
 
-    * Use of SUPPORT_OPENMP from header Rconfig.h is deprecated in
-      favour of the standard OpenMP define _OPENMP.
-
     * R_GE_version has been increased to 11.
 
     * New API call R_orderVector1(), a faster one-argument version of
@@ -337,6 +334,13 @@ CHANGES IN R 3.2.3 patched:
 
     * shQuote() gains type = "cmd2" for quoting in cmd.exe in Windows.
       (Response to PR#16636.)
+
+  DEPRECATED AND DEFUNCT:
+
+    * Use of SUPPORT_OPENMP from header Rconfig.h is deprecated in
+      favour of the standard OpenMP define _OPENMP.
+
+      (This has been the recommendation in the manual for a while now.)
 
   BUG FIXES:
 

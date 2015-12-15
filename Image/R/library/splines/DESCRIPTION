@@ -9,4 +9,4 @@ Maintainer: R Core Team <R-core@r-project.org>
 Description: Regression spline functions and classes.
 License: Part of R 3.3.0
 Suggests: Matrix, methods
-Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-03 03:21:51 UTC; windows
+Built: R 3.3.0; x86_64-w64-mingw32; 2016-01-04 03:19:15 UTC; windows

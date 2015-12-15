@@ -434,11 +434,6 @@ CHANGES IN R-devel:
       better in borderline integer cases, but may change the names
       assigned.  (PR#16666)
 
-    * dummy.coef.lm() now works in more cases, thanks to a proposal by
-      Werner Stahel (PR#16665).  In addition, it now works for
-      multivariate linear models ("mlm", manova) thanks to a proposal
-      by Daniel Wollschlaeger.
-
     * (X11 only) getGraphicsEvent() miscoded buttons and missed mouse
       motion events.  (PR#16700)
 
@@ -531,6 +526,11 @@ CHANGES IN R 3.2.3 patched:
 
     * (Windows only) The Rgui front end did not always initialize the
       console properly, and could cause R to crash.  (PR#16998)
+
+    * dummy.coef.lm() now works in more cases, thanks to a proposal by
+      Werner Stahel (PR#16665).  In addition, it now works for
+      multivariate linear models ("mlm", manova) thanks to a proposal
+      by Daniel Wollschlaeger.
 
     * The as.hclust method for "dendrogram"s failed often when there
       were ties in the heights.

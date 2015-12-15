@@ -622,13 +622,6 @@ gracefully on signal interrupts.
 may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16666">PR#16666</a>)
 </p>
 </li>
-<li> <p><code>dummy.coef.lm()</code> now works in more cases, thanks to a
-proposal by Werner Stahel (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>).  In addition, it now works
-for multivariate linear models (<code>"mlm"</code>, <code>manova</code>)
-thanks to a proposal by Daniel Wollschlaeger.
-
-</p>
-</li>
 <li><p> (X11 only)  <code>getGraphicsEvent()</code> miscoded buttons and
 missed mouse motion events.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16700">PR#16700</a>)
 
@@ -770,6 +763,12 @@ always initialize the console properly, and could cause
 <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> to crash.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16998">PR#16998</a>)
 </p>
 </li>
+<li> <p><code>dummy.coef.lm()</code> now works in more cases, thanks to a
+proposal by Werner Stahel (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>).  In addition, it now works
+for multivariate linear models (<code>"mlm"</code>, <code>manova</code>)
+thanks to a proposal by Daniel Wollschlaeger.
+</p>
+</li>
 <li><p> The <code>as.hclust</code> method for <code>"dendrogram"</code>s failed often
 when there were ties in the heights.
 </p>
@@ -794,8 +793,8 @@ the case of only one unique value in <code>D</code>, the pretty range
 now is more symmetric around that value than previously.
 </p>
 </li>
-<li><p> The figures in help pages such as <code>?points</code> were 
-accidentally damaged, and did not appear in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.3.  
+<li><p> The figures in help pages such as <code>?points</code> were
+accidentally damaged, and did not appear in <span style="font-family: Courier New, Courier; color: #666666;"><b>R</b></span> 3.2.3.
 (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16708">PR#16708</a>)
 </p>
 </li></ul>

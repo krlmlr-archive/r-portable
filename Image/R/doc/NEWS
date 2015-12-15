@@ -394,8 +394,8 @@ CHANGES IN R-devel:
 
     * dummy.coef.lm() now works in more cases, thanks to a proposal by
       Werner Stahel (PR#16665).  In addition, it now works for
-      multivariate linear models ("mlm", manova) thanks to a propsal by
-      Daniel Wollschlaeger.
+      multivariate linear models ("mlm", manova) thanks to a proposal
+      by Daniel Wollschlaeger.
 
 CHANGES IN R 3.2.3 patched:
 
@@ -476,6 +476,8 @@ CHANGES IN R 3.2.3 patched:
 
     * format()ting datetime objects ("POSIX[cl]?t") could segfault or
       recycle wrongly.  (PR#16685)
+
+    * plot.ts(<matrix>, las = 1) now does use las.
 
 CHANGES IN R 3.2.3:
 

@@ -574,7 +574,7 @@ may change the names assigned.  (<a href="https://bugs.R-project.org/bugzilla3/s
 <li> <p><code>dummy.coef.lm()</code> now works in more cases, thanks to a
 proposal by Werner Stahel (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16665">PR#16665</a>).  In addition, it now works
 for multivariate linear models (<code>"mlm"</code>, <code>manova</code>)
-thanks to a propsal by Daniel Wollschlaeger.
+thanks to a proposal by Daniel Wollschlaeger.
 
 </p>
 </li></ul>
@@ -698,6 +698,9 @@ incorrectly quoted empty expressions.  (<a href="https://bugs.R-project.org/bugz
 </li>
 <li> <p><code>format()</code>ting datetime objects (<code>"POSIX[cl]?t"</code>)
 could segfault or recycle wrongly.  (<a href="https://bugs.R-project.org/bugzilla3/show_bug.cgi?id=16685">PR#16685</a>)
+</p>
+</li>
+<li> <p><code>plot.ts(&lt;matrix&gt;, las = 1)</code> now does use <code>las</code>.
 </p>
 </li></ul>
 

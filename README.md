@@ -1,4 +1,6 @@
+# I'm not working on this project anymore
 
+The R installers and packages install sufficiently fast, this cannot be beaten by extracting files from an image.
 
 r-portable 
 ==========

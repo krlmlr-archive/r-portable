@@ -18,4 +18,4 @@ Hashes, file sizes, and image contents are listed in a [separate file](hash.md).
 
 Earlier versions are available through the [AppVeyor build history](https://ci.appveyor.com/project/krlmlr/r-portable/history) in the corresponding "ARTIFACTS" section of the individual builds.  ([Direct link](https://ci.appveyor.com/project/krlmlr/r-portable/build/artifacts) to the artifacts for the *latest* build.)
 
-MIT © [Kirill Müller](https://github.com/krlmlr).
+GPL-3 © [Kirill Müller](https://github.com/krlmlr).
